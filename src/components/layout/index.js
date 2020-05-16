@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import Character from "../character";
+import Setup from "../setup";
 
 const Layout = () => {
     const [showSidebar, setSidebar] = useState(false);
@@ -13,7 +14,8 @@ const Layout = () => {
             </Sidebar>
             <Main>
                 main
-         </Main>
+                <Setup />
+            </Main>
         </Wrapper>
     )
 }
