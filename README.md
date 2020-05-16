@@ -12,6 +12,11 @@
 ### To do
 
 - character builder
+-- Set Gender
+-- Set Body Type
+-- Set Race
+-- Set Icon
+-- Stat Buy
 
 ### Dev info
 
