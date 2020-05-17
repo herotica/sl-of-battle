@@ -17,11 +17,13 @@ export const SideBarMain = observer(() => {
     bodyShape,
     eyeColor,
     hairColor,
+    skinColor,
     penisSize,
     breastSize,
     vaginaSize,
     anusSize,
     throatSize,
+    grapplingProwess,
     tongueProwess,
     touchProwess,
     cockProwess,
@@ -32,7 +34,8 @@ export const SideBarMain = observer(() => {
     mouthResistance,
     cockResistance,
     vaginaResistance,
-    anusResistance
+    anusResistance,
+    orgasmLimit
   } = useGlobalDataStore();
   return (
     <MainWrapper>
@@ -43,6 +46,7 @@ export const SideBarMain = observer(() => {
       <div>::body {bodyShape}</div>
       <div>::eyecol {eyeColor}</div>
       <div>::haircol {hairColor}</div>
+      <div>::skin {skinColor}</div>
       <div>Genitals</div>
       <div>::penisSize {penisSize}</div>
       <div>::breastSize {breastSize}</div>
@@ -50,6 +54,7 @@ export const SideBarMain = observer(() => {
       <div>::anusSize {anusSize}</div>
       <div>::throatSize {throatSize}</div>
       <div>====Prowess</div>
+      <div>::Grappling {grapplingProwess}</div>
       <div>::Tongue {tongueProwess}</div>
       <div>::Touch {touchProwess}</div>
       <div>::cock {cockProwess}</div>
@@ -62,6 +67,7 @@ export const SideBarMain = observer(() => {
       <div>::cock {cockResistance}</div>
       <div>::Pussy {vaginaResistance}</div>
       <div>::Anus {anusResistance}</div>
+      <div>orgasmLimit: {orgasmLimit}</div>
       <div>====Items</div>
     </MainWrapper>
   );

@@ -25,13 +25,29 @@ const Setup = () => {
   };
 
   const {
+    changePowerPoints,
     setGender,
     setBodyShape,
     setRace,
     setEyeColor,
     setHairColor,
-    setSkinColor
+    setSkinColor,
+    adjPenisSize,
+    adjBreastSize,
+    adjVaginaSize,
+    adjAnusSize,
+    adjThroatSize,
+    setHeight,
+    adjOrgasmLimit,
+    changeTouchResistance,
+    changeBreastResistance,
+    changeMouthResistance,
+    changeCockResistance,
+    changeVaginaResistance,
+    changeAnusResistance,
+    changeGrapplingProwess
   } = useGlobalDataStore();
+
   const SetupPages = [
     {
       title: "Name & Gender",
@@ -41,7 +57,11 @@ const Setup = () => {
           name: "Male",
           img: Images.gender.male,
           details: "Be a Male",
-          onSelect: () => setGender(gender.male)
+          onSelect: () => {
+            changeGrapplingProwess(15);
+            setGender(gender.male);
+          },
+          onUnSel: () => changeGrapplingProwess(-15)
         },
         {
           name: "Female",
@@ -63,12 +83,40 @@ const Setup = () => {
         {
           name: "Petite",
           details: "very small, tight frame",
-          onSelect: () => setBodyShape(bodyShape.petite)
+          onSelect: () => {
+            setBodyShape(bodyShape.petite);
+            adjPenisSize(-2);
+            adjBreastSize(-2);
+            adjVaginaSize(-2);
+            adjAnusSize(-2);
+            adjThroatSize(-2);
+          },
+          onUnSel: () => {
+            adjPenisSize(2);
+            adjBreastSize(2);
+            adjVaginaSize(2);
+            adjAnusSize(2);
+            adjThroatSize(2);
+          }
         },
         {
           name: "Small",
-          details: "A small youthful frame",
-          onSelect: () => setBodyShape(bodyShape.small)
+          details: "A small, youthful frame",
+          onSelect: () => {
+            setBodyShape(bodyShape.small);
+            adjPenisSize(-1);
+            adjBreastSize(-1);
+            adjVaginaSize(-1);
+            adjAnusSize(-1);
+            adjThroatSize(-2);
+          },
+          onUnSel: () => {
+            adjPenisSize(1);
+            adjBreastSize(1);
+            adjVaginaSize(1);
+            adjAnusSize(1);
+            adjThroatSize(2);
+          }
         },
         {
           name: "Medium",
@@ -78,17 +126,53 @@ const Setup = () => {
         {
           name: "Chubby",
           details: "A soft and plump shape",
-          onSelect: () => setBodyShape(bodyShape.chubby)
+          onSelect: () => {
+            setBodyShape(bodyShape.chubby);
+            adjBreastSize(2);
+            adjAnusSize(1);
+            adjThroatSize(1);
+          },
+          onUnSel: () => {
+            adjBreastSize(-2);
+            adjAnusSize(-1);
+            adjThroatSize(-1);
+          }
         },
         {
           name: "Buxom",
           details: "A plump rounded figure with generous breasts",
-          onSelect: () => setBodyShape(bodyShape.buxom)
+          onSelect: () => {
+            setBodyShape(bodyShape.buxom);
+            adjBreastSize(3);
+            adjAnusSize(2);
+            adjVaginaSize(1);
+            adjThroatSize(1);
+          },
+          onUnSel: () => {
+            adjBreastSize(-3);
+            adjAnusSize(-2);
+            adjVaginaSize(-1);
+            adjThroatSize(-1);
+          }
         },
         {
           name: "Muscular",
           details: "Powerful and strong figure",
-          onSelect: () => setBodyShape(bodyShape.muscular)
+          onSelect: () => {
+            setBodyShape(bodyShape.muscular);
+            changeGrapplingProwess(20);
+            adjPenisSize(1);
+            adjBreastSize(1);
+            adjVaginaSize(1);
+            adjAnusSize(1);
+          },
+          onUnSel: () => {
+            changeGrapplingProwess(-20);
+            adjPenisSize(-1);
+            adjBreastSize(-1);
+            adjVaginaSize(-1);
+            adjAnusSize(-1);
+          }
         }
       ]
     },
@@ -98,12 +182,28 @@ const Setup = () => {
         {
           name: "Human",
           details: "A normal human",
-          onSelect: () => setRace(raceType.human)
+          onSelect: () => {
+            setRace(raceType.human);
+            changePowerPoints(10);
+          },
+          onUnSel: () => {
+            changePowerPoints(-10);
+          }
         },
         {
           name: "Dwarf",
           details: "A hardy but short dwarf",
-          onSelect: () => setRace(raceType.dwarf)
+          onSelect: () => {
+            setRace(raceType.dwarf);
+            changePowerPoints(10);
+            setHeight(-1);
+            adjOrgasmLimit(1);
+          },
+          onUnSel: () => {
+            changePowerPoints(-10);
+            setHeight(+1);
+            adjOrgasmLimit(-1);
+          }
         },
         {
           name: "Orc",
@@ -192,11 +292,17 @@ const Selections = ({ title, component, selections, back, forward }) => {
           {selections.map((selection, index) => {
             const OnPress = () => {
               if (index !== selectedIndex) {
+                selectedIndex !== false &&
+                  selections[selectedIndex].hasOwnProperty("onUnSel") &&
+                  selections[selectedIndex].onUnSel();
                 setSelIndex(index);
+                selection.onSelect();
               } else {
+                selections[selectedIndex].onUnSel &&
+                  selections[selectedIndex].onUnSel();
+
                 setSelIndex(false);
               }
-              selection.onSelect();
             };
 
             return (
@@ -251,8 +357,12 @@ const BtnWrapper = styled.div`
 `;
 const PageBtn = styled.button`
   border: 2px solid grey;
-  background: none;
+  background: rgba(124, 124, 124, 0.6);
   color: white;
+  font-size: 28px;
+  padding: 2px 10px;
+  border-radius: 4px;
+  cursor: pointer;
 `;
 
 export default Setup;

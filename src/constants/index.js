@@ -10,13 +10,14 @@ export const gender = {
   female: "female",
   futanari: "futa"
 };
-export const humanHeight = {
-  petite: "petite",
-  small: "small",
-  medium: "medium",
-  tall: "tall",
-  giant: "giant"
-};
+export const humanHeight = [
+  "petite",
+  "small",
+  "medium",
+  "big",
+  "tall",
+  "giant"
+];
 export const bodyShape = {
   petite: "petite",
   small: "small",

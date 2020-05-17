@@ -20,10 +20,6 @@ export function createGlobalStore() {
     setRace(newVal) {
       this.race = newVal;
     },
-    height: false,
-    setHeight(newVal) {
-      this.height = newVal;
-    },
     bodyShape: false,
     setBodyShape(newVal) {
       this.bodyShape = newVal;
@@ -41,34 +37,58 @@ export function createGlobalStore() {
       this.skinColor = newSkinColor;
     },
 
-    // Sex Organs
-    penisSize: 0,
-    setPenisSize(newVal) {
-      this.penisSize = newVal;
+    // Sex Organs/ height size 0->5
+    maxVal: 20,
+    minVal: -100,
+    normaliseVal() {
+      this.maxVal = 5; // Ran after initial character setup
+      this.minVal = 0;
+
+      this.height = checkedVal(0, this.height, 0, this.maxVal);
+      this.penisSize = checkedVal(0, this.penisSize, 0, this.maxVal);
+      this.breastSize = checkedVal(0, this.breastSize, 0, this.maxVal);
+      this.vaginaSize = checkedVal(0, this.vaginaSize, 0, this.maxVal);
+      this.anusSize = checkedVal(0, this.anusSize, 0, this.maxVal);
+      this.throatSize = checkedVal(0, this.throatSize, 0, this.maxVal);
     },
-    breastSize: 0,
-    setBreastSize(newVal) {
-      this.breastSize = newVal;
+    height: 2,
+    setHeight(newVal) {
+      this.height = checkedVal(newVal, this.height, 0, this.maxVal);
     },
-    vaginaSize: 0,
-    setVaginaSize(newVal) {
-      this.vaginaSize = newVal;
+    penisSize: 2,
+    adjPenisSize(newVal) {
+      this.penisSize = checkedVal(newVal, this.penisSize, 0, this.maxVal);
     },
-    anusSize: 0,
-    setAnusSize(newVal) {
-      this.anusSize = newVal;
+    breastSize: 2,
+    adjBreastSize(newVal) {
+      this.breastSize = checkedVal(newVal, this.breastSize, 0, this.maxVal);
     },
-    throatSize: 0,
-    setThroatSize(newVal) {
-      this.throatSize = newVal;
+    vaginaSize: 2,
+    adjVaginaSize(newVal) {
+      this.vaginaSize = checkedVal(newVal, this.vaginaSize, 0, this.maxVal);
+    },
+    anusSize: 2,
+    adjAnusSize(newVal) {
+      this.anusSize = checkedVal(newVal, this.anusSize, 0, this.maxVal);
+    },
+    throatSize: 2,
+    adjThroatSize(newVal) {
+      this.throatSize = checkedVal(newVal, this.throatSize, 0, this.maxVal);
+    },
+
+    // Setup
+    powerPoints: 20, // spent at character setup
+    changePowerPoints(newVal) {
+      this.powerPoints = checkedVal(newVal, this.powerPoints, 0, 100);
     },
 
     // Skills
-    powerPoints: 20, // spent at character setup
-    changePowerPoints(newVal) {
-        this.powerPoints = checkedVal(newVal, this.powerPoints, 0, 100);
-      },
+
     // -- prowess is the ability to pleasure with.. 1- 100
+    grapplingProwess: 5,
+    changeGrapplingProwess(newVal) {
+      this.grapplingProwess = checkedVal(newVal, this.grapplingProwess, 1, 100);
+    },
     tongueProwess: 5,
     changeTongueProwess(newVal) {
       this.tongueProwess = checkedVal(newVal, this.tongueProwess, 1, 100);
@@ -113,6 +133,12 @@ export function createGlobalStore() {
     anusResistance: 5,
     changeAnusResistance(newVal) {
       this.anusResistance = checkedVal(newVal, this.anusResistance, 1, 100);
+    },
+
+    // Orgasm Limit, is 'hp'
+    orgasmLimit: 3,
+    adjOrgasmLimit(newVal) {
+      this.orgasmLimit = checkedVal(newVal, this.orgasmLimit, 1, 100);
     },
 
     // Items

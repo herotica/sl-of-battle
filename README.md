@@ -13,10 +13,12 @@
 
 
 - character builder
--- custom choices effects
+-- detailed effects
 -- Set Icon
 -- set picture
+-- choice icons
 -- Skill Buy
+-- On setup complete, normalise values
 
 - sidebar styling/design
 
