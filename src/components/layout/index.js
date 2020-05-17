@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   display: flex;
 `;
 const WideSidebar = styled.div`
-  width: 300px;
+  flex: 0 0 300px;
   background: darkgrey;
 `;
 const SmSidebar = styled.div`

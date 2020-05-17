@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Images from "./choiceImages";
 import { useGlobalDataStore } from "../../state";
+import { SetName } from "./customComponents";
 import {
   gender,
   bodyShape,
@@ -25,38 +26,43 @@ const Setup = () => {
   };
 
   const {
-    changePowerPoints,
     setGender,
     setBodyShape,
     setRace,
     setEyeColor,
     setHairColor,
     setSkinColor,
+    setHeight,
     adjPenisSize,
     adjBreastSize,
     adjVaginaSize,
     adjAnusSize,
     adjThroatSize,
-    setHeight,
-    adjOrgasmLimit,
+    changeGrapplingProwess,
+    changeTongueProwess,
+    changeTouchProwess,
+    changeCockProwess,
+    changeVaginaProwess,
+    changeAnusProwess,
+    changePowerPoints,
     changeTouchResistance,
     changeBreastResistance,
     changeMouthResistance,
     changeCockResistance,
     changeVaginaResistance,
     changeAnusResistance,
-    changeGrapplingProwess
+    adjOrgasmLimit
   } = useGlobalDataStore();
 
   const SetupPages = [
     {
       title: "Name & Gender",
-      component: "setName",
+      component: <SetName />,
       selections: [
         {
           name: "Male",
           img: Images.gender.male,
-          details: "Be a Male",
+          details: "Be a Male, strong grappler.",
           onSelect: () => {
             changeGrapplingProwess(15);
             setGender(gender.male);
@@ -82,6 +88,7 @@ const Setup = () => {
       selections: [
         {
           name: "Petite",
+          img: Images.bodyShape.petite,
           details: "very small, tight frame",
           onSelect: () => {
             setBodyShape(bodyShape.petite);
@@ -101,6 +108,7 @@ const Setup = () => {
         },
         {
           name: "Small",
+          img: Images.bodyShape.small,
           details: "A small, youthful frame",
           onSelect: () => {
             setBodyShape(bodyShape.small);
@@ -120,11 +128,13 @@ const Setup = () => {
         },
         {
           name: "Medium",
+          img: Images.bodyShape.medium,
           details: "Gentle and feminine curves",
           onSelect: () => setBodyShape(bodyShape.medium)
         },
         {
           name: "Chubby",
+          img: Images.bodyShape.chubby,
           details: "A soft and plump shape",
           onSelect: () => {
             setBodyShape(bodyShape.chubby);
@@ -140,6 +150,7 @@ const Setup = () => {
         },
         {
           name: "Buxom",
+          img: Images.bodyShape.buxom,
           details: "A plump rounded figure with generous breasts",
           onSelect: () => {
             setBodyShape(bodyShape.buxom);
@@ -157,6 +168,7 @@ const Setup = () => {
         },
         {
           name: "Muscular",
+          img: Images.bodyShape.muscular,
           details: "Powerful and strong figure",
           onSelect: () => {
             setBodyShape(bodyShape.muscular);
@@ -181,59 +193,139 @@ const Setup = () => {
       selections: [
         {
           name: "Human",
-          details: "A normal human",
+          details: "A normal human, very varied.",
           onSelect: () => {
             setRace(raceType.human);
-            changePowerPoints(10);
+            changePowerPoints(20);
           },
           onUnSel: () => {
-            changePowerPoints(-10);
+            changePowerPoints(-20);
           }
         },
         {
           name: "Dwarf",
-          details: "A hardy but short dwarf",
+          details: "A hardy but short dwarf, resistant and strong.",
           onSelect: () => {
             setRace(raceType.dwarf);
             changePowerPoints(10);
             setHeight(-1);
             adjOrgasmLimit(1);
+            changeTouchResistance(10);
           },
           onUnSel: () => {
             changePowerPoints(-10);
-            setHeight(+1);
+            setHeight(1);
             adjOrgasmLimit(-1);
+            changeTouchResistance(-10);
           }
         },
         {
           name: "Orc",
-          details: "A powerful Orc",
-          onSelect: () => setRace(raceType.orc)
+          details: "A powerful Orc, tall and gifted with large organs.",
+          onSelect: () => {
+            setRace(raceType.orc);
+            setHeight(2);
+            adjPenisSize(1);
+            adjBreastSize(1);
+            changeCockProwess(15);
+            changeCockResistance(10);
+            changeAnusResistance(10);
+          },
+          onUnSel: () => {
+            setHeight(-2);
+            adjPenisSize(-1);
+            adjBreastSize(-1);
+            changeCockProwess(-15);
+            changeCockResistance(10);
+            changeAnusResistance(-10);
+          }
         },
         {
           name: "Elf",
-          details: "Lithe and feminine Elf",
-          onSelect: () => setRace(raceType.elf)
+          details: "Lithe and feminine Elf, resistance to much pleasure.",
+          onSelect: () => {
+            setRace(raceType.elf);
+            setHeight(1);
+            changeVaginaProwess(10);
+            changeVaginaResistance(10);
+            changeMouthResistance(10);
+            changeTongueProwess(5);
+            changeBreastResistance(5);
+          },
+          onUnSel: () => {
+            setHeight(-1);
+            changeVaginaProwess(-10);
+            changeVaginaResistance(-10);
+            changeMouthResistance(-10);
+            changeTongueProwess(-5);
+            changeBreastResistance(-5);
+          }
         },
         {
           name: "Dark Elf",
-          details: "A plumper stronger Elf",
-          onSelect: () => setRace(raceType.darkelf)
+          details: "A plumper stronger Elf, seductively capable.",
+          onSelect: () => {
+            setRace(raceType.darkelf);
+            setHeight(1);
+            changeVaginaProwess(15);
+            changeTouchProwess(10);
+            changeTongueProwess(10);
+          },
+          onUnSel: () => {
+            setHeight(-1);
+            changeVaginaProwess(-15);
+            changeTouchProwess(-10);
+            changeTongueProwess(-10);
+          }
         },
         {
           name: "Gnome",
-          details: "Small but intelligent",
-          onSelect: () => setRace(raceType.gnome)
+          details: "Small but intelligent, good with their tongue.",
+          onSelect: () => {
+            setRace(raceType.gnome);
+            changePowerPoints(5);
+            setHeight(-2);
+            changeTongueProwess(10);
+            changeVaginaResistance(10);
+          },
+          onUnSel: () => {
+            changePowerPoints(-5);
+            setHeight(2);
+            changeTongueProwess(-10);
+            changeVaginaResistance(-10);
+          }
         },
         {
           name: "Succubus",
           details: "Wise, alluring & seductive.",
-          onSelect: () => setRace(raceType.succubus)
+          onSelect: () => {
+            setRace(raceType.succubus);
+            changeTongueProwess(15);
+            changeVaginaProwess(15);
+            changeMouthResistance(5);
+          },
+          onUnSel: () => {
+            changeTongueProwess(-15);
+            changeVaginaProwess(-15);
+            changeMouthResistance(-5);
+          }
         },
         {
           name: "Fairy",
-          details: "Small and graceful.",
-          onSelect: () => setRace(raceType.fairy)
+          details: "Small and graceful. knows how to use their tight holes.",
+          onSelect: () => {
+            setRace(raceType.fairy);
+            setHeight(-2);
+            changeAnusProwess(10);
+            changeVaginaProwess(15);
+            changeTongueProwess(5);
+          },
+          onUnSel: () => {
+            setHeight(2);
+            changeAnusProwess(-10);
+            changeVaginaProwess(-15);
+            changeTongueProwess(-5);
+          }
         }
       ]
     },

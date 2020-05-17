@@ -13,11 +13,14 @@
 
 
 - character builder
--- detailed effects
+
+-- set Name
 -- Set Icon
 -- set picture
 -- choice icons
 -- Skill Buy
+-- Styling
+-- Display setup effects sidebar (hide bad numbers)
 -- On setup complete, normalise values
 
 - sidebar styling/design
