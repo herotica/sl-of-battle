@@ -16,6 +16,10 @@ export function createGlobalStore() {
         setGender(newVal) {
             this.gender = newVal;
         },
+        race: 'Human',
+        setRace(newVal) {
+            this.race = newVal;
+        },
         height: false,
         setHeight(newVal) {
             this.height = newVal;
@@ -31,6 +35,10 @@ export function createGlobalStore() {
         hairColor: false,
         setHairColor(newHairColor) {
             this.hairColor = newHairColor;
+        },
+        skinColor: false,
+        setSkinColor(newSkinColor) {
+            this.skinColor = newSkinColor;
         },
 
         // Sex Organs

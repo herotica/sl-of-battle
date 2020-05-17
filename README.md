@@ -13,11 +13,10 @@
 
 
 - character builder
--- Set Gender
--- Set Body Type
--- Set Race
+-- custom choices effects
 -- Set Icon
--- Stat Buy
+-- set picture
+-- Skill Buy
 
 - sidebar styling/design
 

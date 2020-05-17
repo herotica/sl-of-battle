@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Character from "../character";
+import Character, { SideBarMain } from "../character";
 import Setup from "../setup";
 
 const Layout = () => {
@@ -10,11 +10,14 @@ const Layout = () => {
   return (
     <Wrapper>
       {showSidebar ? (
-        <WideSidebar onClick={expandSidebar}>
-          SideBar <Character />
+        <WideSidebar onClick={hideSidebar}>
+          SideBar <SideBarMain />
         </WideSidebar>
       ) : (
-        <SmSidebar onClick={expandSidebar}>Small</SmSidebar>
+        <SmSidebar onClick={expandSidebar}>
+          Small
+          <Character />
+        </SmSidebar>
       )}
       <Main>
         <Setup />
@@ -40,6 +43,7 @@ const SmSidebar = styled.div`
 const Main = styled.div`
   background: lightgrey;
   flex-grow: 1;
+  overflow-y: auto;
 `;
 
 export default Layout;

@@ -5,6 +5,11 @@ export const Rooms = {
   setup: "setup",
   main: "main"
 };
+export const gender = {
+  male: "male",
+  female: "female",
+  futanari: "futa"
+};
 export const humanHeight = {
   petite: "petite",
   small: "small",
@@ -17,9 +22,18 @@ export const bodyShape = {
   small: "small",
   medium: "medium",
   chubby: "chubby",
-  curvy: "curvy",
   buxom: "buxom",
   muscular: "muscular"
+};
+export const raceType = {
+  human: "human",
+  dwarf: "dwarf",
+  orc: "orc",
+  elf: "elf",
+  darkelf: "dark elf",
+  gnome: "gnome",
+  succubus: "succubus",
+  fairy: "fairy"
 };
 export const colors = {
   black: "black",
@@ -39,7 +53,8 @@ export const skinColor = {
   tan: "tan",
   olive: "olive",
   dark: "dark",
-  ebony: "ebony"
+  ebony: "ebony",
+  green: "green"
 };
 // All sexual organ sizes are from 0-5 (6 in total)
 export const PenisSize = ["tiny", "small", "normal", "big", "huge", "massive"];
