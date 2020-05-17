@@ -35,27 +35,27 @@ export const raceType = {
   succubus: "succubus",
   fairy: "fairy"
 };
-export const colors = {
-  black: "black",
-  brown: "brown",
-  blonde: "blonde",
-  auburn: "auburn",
-  red: "red",
-  white: "white",
-  blue: "blue",
-  green: "green",
-  grey: "grey",
-  hazel: "hazel"
-};
-export const skinColor = {
-  pale: "pale",
-  fair: "fair",
-  tan: "tan",
-  olive: "olive",
-  dark: "dark",
-  ebony: "ebony",
-  green: "green"
-};
+export const colors = [
+  "black",
+  "brown",
+  "blonde",
+  "auburn",
+  "red",
+  "white",
+  "blue",
+  "green",
+  "grey",
+  "hazel"
+];
+export const skinColor = [
+  "pale",
+  "fair",
+  "tan",
+  "olive",
+  "dark",
+  "ebony",
+  "green"
+];
 // All sexual organ sizes are from 0-5 (6 in total)
 export const PenisSize = ["tiny", "small", "normal", "big", "huge", "massive"];
 export const BreastSize = [

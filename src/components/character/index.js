@@ -21,7 +21,18 @@ export const SideBarMain = observer(() => {
     breastSize,
     vaginaSize,
     anusSize,
-    throatSize
+    throatSize,
+    tongueProwess,
+    touchProwess,
+    cockProwess,
+    vaginaProwess,
+    anusProwess,
+    touchResistance,
+    breastResistance,
+    mouthResistance,
+    cockResistance,
+    vaginaResistance,
+    anusResistance
   } = useGlobalDataStore();
   return (
     <MainWrapper>
@@ -33,11 +44,25 @@ export const SideBarMain = observer(() => {
       <div>::eyecol {eyeColor}</div>
       <div>::haircol {hairColor}</div>
       <div>Genitals</div>
-      <div>::eyecol {penisSize}</div>
-      <div>::eyecol {breastSize}</div>
+      <div>::penisSize {penisSize}</div>
+      <div>::breastSize {breastSize}</div>
       <div>::vaginaSize {vaginaSize}</div>
-      <div>::eyecol {anusSize}</div>
+      <div>::anusSize {anusSize}</div>
       <div>::throatSize {throatSize}</div>
+      <div>====Prowess</div>
+      <div>::Tongue {tongueProwess}</div>
+      <div>::Touch {touchProwess}</div>
+      <div>::cock {cockProwess}</div>
+      <div>::Pussy {vaginaProwess}</div>
+      <div>::Anus {anusProwess}</div>
+      <div>====Resistance</div>
+      <div>::Touch {touchResistance}</div>
+      <div>::Breasts {breastResistance}</div>
+      <div>::mouth {mouthResistance}</div>
+      <div>::cock {cockResistance}</div>
+      <div>::Pussy {vaginaResistance}</div>
+      <div>::Anus {anusResistance}</div>
+      <div>====Items</div>
     </MainWrapper>
   );
 });

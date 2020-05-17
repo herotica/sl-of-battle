@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Images from "./choiceImages";
 import { useGlobalDataStore } from "../../state";
-import { gender, bodyShape, raceType } from "../../constants";
+import {
+  gender,
+  bodyShape,
+  raceType,
+  colors,
+  skinColor
+} from "../../constants";
 
 // move between pages, trigegr events display choices, finish
 const Setup = () => {
@@ -18,7 +24,14 @@ const Setup = () => {
     }
   };
 
-  const { setGender, setBodyShape, setRace } = useGlobalDataStore();
+  const {
+    setGender,
+    setBodyShape,
+    setRace,
+    setEyeColor,
+    setHairColor,
+    setSkinColor
+  } = useGlobalDataStore();
   const SetupPages = [
     {
       title: "Name & Gender",
@@ -123,6 +136,27 @@ const Setup = () => {
           onSelect: () => setRace(raceType.fairy)
         }
       ]
+    },
+    {
+      title: "Eye Color",
+      selections: colors.map(col => ({
+        name: col,
+        onSelect: () => setEyeColor(col)
+      }))
+    },
+    {
+      title: "Hair Color",
+      selections: colors.map(col => ({
+        name: col,
+        onSelect: () => setHairColor(col)
+      }))
+    },
+    {
+      title: "Skin Color",
+      selections: skinColor.map(col => ({
+        name: col,
+        onSelect: () => setSkinColor(col)
+      }))
     }
   ];
 
