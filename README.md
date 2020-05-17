@@ -11,12 +11,15 @@
 
 ### To do
 
+
 - character builder
 -- Set Gender
 -- Set Body Type
 -- Set Race
 -- Set Icon
 -- Stat Buy
+
+- sidebar styling/design
 
 ### Dev info
 

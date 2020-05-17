@@ -71,11 +71,10 @@ const Selections = ({ title, component, selections }) => {
 }
 
 const Wrapper = styled.div`
-          width: 100%;
-          height: 100%;
-          background: darkgreen;
-          margin: 32px;
-        `
+    height: 100%;
+    background: darkgreen;
+    margin: 32px;
+`
 const SelectionBox = styled.div`
     height: 600px;
     color: white;
