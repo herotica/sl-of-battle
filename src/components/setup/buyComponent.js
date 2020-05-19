@@ -267,7 +267,7 @@ const BuySkills = observer(() => {
                   <BuyImg src={option.img} alt={option.name} />
                   <Title>{option.name}</Title>
                   <Text>{option.description}</Text>
-                  <Text notAfford={powerPoints <= option.cost}>
+                  <Text notAfford={powerPoints < option.cost}>
                     Cost: {option.cost}
                   </Text>
                 </SelectionBox>

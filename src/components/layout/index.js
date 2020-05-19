@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Character, { SideBarMain } from "../character";
 import Setup from "../setup";
+import { useGlobalDataStore } from "../../state";
+import { observer } from "mobx-react-lite";
+import { Rooms } from "../../constants";
 
 const Layout = () => {
   const [showSidebar, setSidebar] = useState(false);
@@ -11,7 +14,7 @@ const Layout = () => {
     <Wrapper>
       {showSidebar ? (
         <WideSidebar onClick={hideSidebar}>
-          SideBar <SideBarMain />
+          <SideBarMain />
         </WideSidebar>
       ) : (
         <SmSidebar onClick={expandSidebar}>
@@ -20,11 +23,29 @@ const Layout = () => {
         </SmSidebar>
       )}
       <Main>
-        <Setup />
+        <RoomManager />
       </Main>
     </Wrapper>
   );
 };
+
+const RoomManager = observer(() => {
+  const { currentRoom, setRoom } = useGlobalDataStore();
+
+  switch (currentRoom) {
+    case Rooms.setup:
+      return <Setup />;
+    case Rooms.main:
+      return <div>Main page</div>;
+    default:
+      return (
+        <div>
+          Error with room
+          <button onClick={() => setRoom(Rooms.main)}>Reset Room</button>
+        </div>
+      );
+  }
+});
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,6 +56,7 @@ const Wrapper = styled.div`
 const WideSidebar = styled.div`
   flex: 0 0 300px;
   background: darkgrey;
+  overflow-y: auto;
 `;
 const SmSidebar = styled.div`
   width: 80px;

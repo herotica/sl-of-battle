@@ -5,6 +5,7 @@ import { useGlobalDataStore } from "../../state";
 import { observer } from "mobx-react-lite";
 import { SetName, SetupImg } from "./customComponents";
 import BuyComponent from "./buyComponent";
+import Complete from "./complete";
 import {
   gender,
   bodyShape,
@@ -365,7 +366,8 @@ const Setup = () => {
       title: "Set Icon & Image",
       component: <SetupImg />
     },
-    { title: "Buy Skills", component: <BuyComponent /> }
+    { title: "Buy Skills", component: <BuyComponent /> },
+    { title: "Create Character", component: <Complete /> }
   ];
 
   return (

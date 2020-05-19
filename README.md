@@ -12,6 +12,8 @@
 
 -- On setup complete, normalise values
 -- move to mainMenu
+-- preselect choice
+-- hide setup btn start & end
 -- save Char
 -- new Char
 -- choice icons

@@ -1,7 +1,6 @@
 export const mobileBreakpoint = "800px";
 
 export const Rooms = {
-  newGame: "newGame",
   setup: "setup",
   main: "main"
 };

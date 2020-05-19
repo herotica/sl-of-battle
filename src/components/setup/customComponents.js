@@ -43,7 +43,9 @@ export const SetupImg = observer(() => {
         <NameButton onClick={onUploadImage}>Accept</NameButton>
       </InputFlexWrap>
       <InfoText>
-        Upload a large image for your Character, portrait is the best choice.
+        {
+          "Upload a large image for your Character, portrait is the best choice, also .png`s can have a transparent background, GIMP is a good free option for removing an image`s background"
+        }
       </InfoText>
       <InputFlexWrap>
         icons

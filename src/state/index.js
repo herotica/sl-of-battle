@@ -81,7 +81,7 @@ export function createGlobalStore() {
     },
     throatSize: 2,
     adjThroatSize(newVal) {
-      this.throatSize = checkedVal(newVal, this.throatsSize, 0, this.maxVal);
+      this.throatSize = checkedVal(newVal, this.throatSize, 0, this.maxVal);
     },
 
     // Setup
@@ -192,7 +192,7 @@ export function createGlobalStore() {
       }
     },
     // Logic
-    currentRoom: Rooms.newGame,
+    currentRoom: Rooms.setup,
     setRoom(RoomString) {
       this.currentRoom = RoomString;
     }
