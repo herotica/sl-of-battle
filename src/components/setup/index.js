@@ -157,7 +157,8 @@ const Setup = () => {
         {
           name: "Buxom",
           img: Images.bodyShape.buxom,
-          details: "A plump rounded figure with generous breasts",
+          details:
+            "A plump rounded figure with generous breasts, and a thicc arse to match.",
           onSelect: () => {
             setBodyShape(bodyShape.buxom);
             adjBreastSize(3);
@@ -378,14 +379,21 @@ const Setup = () => {
         back={changePageBack}
         forward={changePageNext}
         page={page}
+        lastPage={SetupPages.length}
       />
     </Wrapper>
   );
 };
 
 const Selections = observer(
-  ({ title, component, selections, back, forward, page }) => {
+  ({ title, component, selections, back, forward, page, lastPage }) => {
     const { selectionArr, updateSelectionArr } = useGlobalDataStore();
+    const [newPage, setNewPage] = useState(true);
+    if (newPage && selections && selectionArr[page] === false) {
+      updateSelectionArr(page, 0);
+      selections[0].onSelect();
+      setNewPage(false);
+    }
 
     return (
       <>
@@ -423,7 +431,7 @@ const Selections = observer(
                       <SelectionImg alt="img" src={selection.img} />
                     )}
                     <h5>{selection.name}</h5>
-                    <span>{selection.details}</span>
+                    <SelectionText>{selection.details}</SelectionText>
                   </SelectBox>
                 );
               })}
@@ -431,8 +439,9 @@ const Selections = observer(
           )}
         </SelectionBox>
         <BtnWrapper>
-          <PageBtn onClick={back}>{"<"}</PageBtn>
-          <PageBtn onClick={forward}>{">"}</PageBtn>
+          {page !== 0 && <PageBtn onClick={back}>{"<"}</PageBtn>}
+          <div>.</div>
+          {page !== lastPage - 1 && <PageBtn onClick={forward}>{">"}</PageBtn>}
         </BtnWrapper>
       </>
     );
@@ -463,6 +472,9 @@ const SelectBox = styled.div`
 `;
 const SelectionImg = styled.img`
   height: 320px;
+`;
+const SelectionText = styled.div`
+  max-width: 220px;
 `;
 const BtnWrapper = styled.div`
   margin: 32px;

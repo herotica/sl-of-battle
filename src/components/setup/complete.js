@@ -5,17 +5,18 @@ import { observer } from "mobx-react-lite";
 import { Rooms } from "../../constants";
 
 const CompletedCharacter = observer(() => {
-  const { img, setRoom, normaliseVal, powerPoints } = useGlobalDataStore();
+  const { img, setRoom, normaliseVal, powerPoints, saveChar } = useGlobalDataStore();
   const FinishSetup = () => {
     normaliseVal();
     setRoom(Rooms.main);
+    saveChar();
   };
 
   return (
     <div>
       <Title>{"Are you happy with your character?"}</Title>
       {powerPoints > 0 && (
-        <InfoText>{`!You have ${powerPoints} remaining!`}</InfoText>
+        <InfoText>{`!You have ${powerPoints} Points left to spend!`}</InfoText>
       )}
       <InfoText>
         {

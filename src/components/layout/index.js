@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Character, { SideBarMain } from "../character";
-import Setup from "../setup";
 import { useGlobalDataStore } from "../../state";
 import { observer } from "mobx-react-lite";
 import { Rooms } from "../../constants";
+
+import Character, { SideBarMain } from "../character";
+import Setup from "../setup";
+import MainRoom from "../mainRoom";
 
 const Layout = () => {
   const [showSidebar, setSidebar] = useState(false);
@@ -36,7 +38,7 @@ const RoomManager = observer(() => {
     case Rooms.setup:
       return <Setup />;
     case Rooms.main:
-      return <div>Main page</div>;
+      return <MainRoom />;
     default:
       return (
         <div>

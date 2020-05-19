@@ -10,13 +10,13 @@
 
 - character builder
 
--- On setup complete, normalise values
--- move to mainMenu
--- preselect choice
--- hide setup btn start & end
--- save Char
--- new Char
+-- clear sexbased choices
+-- import/export character .json
+-- underground lg
 -- choice icons
+-- isekai lg
+-- week switcher, training/league
+-- code cleanup
 
 -- Display setup effects sidebar (hide bad numbers)
 
