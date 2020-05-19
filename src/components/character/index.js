@@ -11,6 +11,7 @@ const Character = observer(() => {
 export const SideBarMain = observer(() => {
   const {
     name,
+    icon,
     gender,
     race,
     height,
@@ -23,6 +24,8 @@ export const SideBarMain = observer(() => {
     vaginaSize,
     anusSize,
     throatSize,
+    powerPoints,
+    seductionProwess,
     grapplingProwess,
     tongueProwess,
     touchProwess,
@@ -42,6 +45,7 @@ export const SideBarMain = observer(() => {
       <div>:: {name}</div>
       <div>:: {gender}</div>
       <div>:: {race}</div>
+      <Icon src={icon} alt="No Icon" />
       <div>::height {height}</div>
       <div>::body {bodyShape}</div>
       <div>::eyecol {eyeColor}</div>
@@ -54,6 +58,7 @@ export const SideBarMain = observer(() => {
       <div>::anusSize {anusSize}</div>
       <div>::throatSize {throatSize}</div>
       <div>====Prowess</div>
+      <div>::Seduction {seductionProwess}</div>
       <div>::Grappling {grapplingProwess}</div>
       <div>::Tongue {tongueProwess}</div>
       <div>::Touch {touchProwess}</div>
@@ -69,12 +74,17 @@ export const SideBarMain = observer(() => {
       <div>::Anus {anusResistance}</div>
       <div>orgasmLimit: {orgasmLimit}</div>
       <div>====Items</div>
+      <div>Setup Points {powerPoints}</div>
     </MainWrapper>
   );
 });
 
 export const MainWrapper = styled.div`
   padding: 8px;
+`;
+export const Icon = styled.img`
+  width: 80px;
+  height: 80px;
 `;
 
 export default Character;

@@ -8,11 +8,19 @@ export function createGlobalStore() {
     setName(newName) {
       this.name = newName;
     },
+    icon: null,
+    setSmIcon(newImg) {
+      this.icon = newImg;
+    },
+    img: null,
+    setImage(newImg) {
+      this.img = newImg;
+    },
     isWoman: true,
     setIsWoman(valBool) {
       this.isWoman = valBool;
     },
-    gender: "Female",
+    gender: "female",
     setGender(newVal) {
       this.gender = newVal;
     },
@@ -73,18 +81,31 @@ export function createGlobalStore() {
     },
     throatSize: 2,
     adjThroatSize(newVal) {
-      this.throatSize = checkedVal(newVal, this.throatSize, 0, this.maxVal);
+      this.throatSize = checkedVal(newVal, this.throatsSize, 0, this.maxVal);
     },
 
     // Setup
-    powerPoints: 20, // spent at character setup
+    powerPoints: 30, // spent at character setup
     changePowerPoints(newVal) {
       this.powerPoints = checkedVal(newVal, this.powerPoints, 0, 100);
     },
-
+    choiceSelection: new Array(50).fill(false),
+    updateChoiceSelection(newArr) {
+      this.choiceSelection = newArr;
+    },
+    selectionArr: new Array(50).fill(false),
+    updateSelectionArr(index, newVal) {
+      const newArr = this.selectionArr.slice(0);
+      newArr[index] = newVal;
+      this.selectionArr = newArr;
+    },
     // Skills
 
     // -- prowess is the ability to pleasure with.. 1- 100
+    seductionProwess: 5,
+    changeSeductionProwess(newVal) {
+      this.seductionProwess = checkedVal(newVal, this.seductionProwess, 1, 100);
+    },
     grapplingProwess: 5,
     changeGrapplingProwess(newVal) {
       this.grapplingProwess = checkedVal(newVal, this.grapplingProwess, 1, 100);

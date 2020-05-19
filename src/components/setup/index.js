@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Images from "./choiceImages";
 import { useGlobalDataStore } from "../../state";
-import { SetName } from "./customComponents";
+import { observer } from "mobx-react-lite";
+import { SetName, SetupImg } from "./customComponents";
+import BuyComponent from "./buyComponent";
 import {
   gender,
   bodyShape,
@@ -11,7 +13,7 @@ import {
   skinColor
 } from "../../constants";
 
-// move between pages, trigegr events display choices, finish
+// move between pages, trigger events display choices, finish
 const Setup = () => {
   const [page, setPage] = useState(0);
   const changePageNext = () => {
@@ -38,6 +40,7 @@ const Setup = () => {
     adjVaginaSize,
     adjAnusSize,
     adjThroatSize,
+    changeSeductionProwess,
     changeGrapplingProwess,
     changeTongueProwess,
     changeTouchProwess,
@@ -117,6 +120,7 @@ const Setup = () => {
             adjVaginaSize(-1);
             adjAnusSize(-1);
             adjThroatSize(-2);
+            changeSeductionProwess(5);
           },
           onUnSel: () => {
             adjPenisSize(1);
@@ -124,6 +128,7 @@ const Setup = () => {
             adjVaginaSize(1);
             adjAnusSize(1);
             adjThroatSize(2);
+            changeSeductionProwess(-5);
           }
         },
         {
@@ -196,10 +201,10 @@ const Setup = () => {
           details: "A normal human, very varied.",
           onSelect: () => {
             setRace(raceType.human);
-            changePowerPoints(20);
+            changePowerPoints(30);
           },
           onUnSel: () => {
-            changePowerPoints(-20);
+            changePowerPoints(-30);
           }
         },
         {
@@ -251,6 +256,7 @@ const Setup = () => {
             changeMouthResistance(10);
             changeTongueProwess(5);
             changeBreastResistance(5);
+            changeSeductionProwess(5);
           },
           onUnSel: () => {
             setHeight(-1);
@@ -259,6 +265,7 @@ const Setup = () => {
             changeMouthResistance(-10);
             changeTongueProwess(-5);
             changeBreastResistance(-5);
+            changeSeductionProwess(-5);
           }
         },
         {
@@ -283,13 +290,13 @@ const Setup = () => {
           details: "Small but intelligent, good with their tongue.",
           onSelect: () => {
             setRace(raceType.gnome);
-            changePowerPoints(5);
+            changePowerPoints(20);
             setHeight(-2);
             changeTongueProwess(10);
             changeVaginaResistance(10);
           },
           onUnSel: () => {
-            changePowerPoints(-5);
+            changePowerPoints(-20);
             setHeight(2);
             changeTongueProwess(-10);
             changeVaginaResistance(-10);
@@ -303,11 +310,13 @@ const Setup = () => {
             changeTongueProwess(15);
             changeVaginaProwess(15);
             changeMouthResistance(5);
+            changeSeductionProwess(10);
           },
           onUnSel: () => {
             changeTongueProwess(-15);
             changeVaginaProwess(-15);
             changeMouthResistance(-5);
+            changeSeductionProwess(-10);
           }
         },
         {
@@ -319,12 +328,14 @@ const Setup = () => {
             changeAnusProwess(10);
             changeVaginaProwess(15);
             changeTongueProwess(5);
+            changeSeductionProwess(5);
           },
           onUnSel: () => {
             setHeight(2);
             changeAnusProwess(-10);
             changeVaginaProwess(-15);
             changeTongueProwess(-5);
+            changeSeductionProwess(-5);
           }
         }
       ]
@@ -349,7 +360,12 @@ const Setup = () => {
         name: col,
         onSelect: () => setSkinColor(col)
       }))
-    }
+    },
+    {
+      title: "Set Icon & Image",
+      component: <SetupImg />
+    },
+    { title: "Buy Skills", component: <BuyComponent /> }
   ];
 
   return (
@@ -359,66 +375,70 @@ const Setup = () => {
         {...SetupPages[page]}
         back={changePageBack}
         forward={changePageNext}
+        page={page}
       />
     </Wrapper>
   );
 };
 
-const Selections = ({ title, component, selections, back, forward }) => {
-  const [selectedIndex, setSelIndex] = useState(false);
-  const moveBack = () => {
-    setSelIndex(false);
-    back();
-  };
-  const moveForward = () => {
-    setSelIndex(false);
-    forward();
-  };
+const Selections = observer(
+  ({ title, component, selections, back, forward, page }) => {
+    const { selectionArr, updateSelectionArr } = useGlobalDataStore();
 
-  return (
-    <>
-      <SelectionBox>
-        <Title>{title}</Title>
-        {component}
-        <SelectionsWrapper>
-          {selections.map((selection, index) => {
-            const OnPress = () => {
-              if (index !== selectedIndex) {
-                selectedIndex !== false &&
-                  selections[selectedIndex].hasOwnProperty("onUnSel") &&
-                  selections[selectedIndex].onUnSel();
-                setSelIndex(index);
-                selection.onSelect();
-              } else {
-                selections[selectedIndex].onUnSel &&
-                  selections[selectedIndex].onUnSel();
+    return (
+      <>
+        <SelectionBox>
+          <Title>{title}</Title>
+          {component}
+          {selections && (
+            <SelectionsWrapper>
+              {selections.map((selection, index) => {
+                const selectedIndex = selectionArr[page];
 
-                setSelIndex(false);
-              }
-            };
+                const OnPress = () => {
+                  // option select logic
+                  if (index !== selectedIndex) {
+                    selectedIndex !== false &&
+                      selections[selectedIndex].hasOwnProperty("onUnSel") &&
+                      selections[selectedIndex].onUnSel();
 
-            return (
-              <SelectBox selected={index === selectedIndex} onClick={OnPress}>
-                {selection.img && (
-                  <SelectionImg alt="img" src={selection.img} />
-                )}
-                <h5>{selection.name}</h5>
-                <span>{selection.details}</span>
-              </SelectBox>
-            );
-          })}
-        </SelectionsWrapper>
-      </SelectionBox>
-      <BtnWrapper>
-        <PageBtn onClick={moveBack}>{"<"}</PageBtn>
-        <PageBtn onClick={moveForward}>{">"}</PageBtn>
-      </BtnWrapper>
-    </>
-  );
-};
+                    updateSelectionArr(page, index);
+                    selection.onSelect();
+                  } else {
+                    selections[selectedIndex].onUnSel &&
+                      selections[selectedIndex].onUnSel();
+
+                    updateSelectionArr(page, false);
+                  }
+                };
+
+                return (
+                  <SelectBox
+                    selected={index === selectedIndex}
+                    onClick={OnPress}
+                  >
+                    {selection.img && (
+                      <SelectionImg alt="img" src={selection.img} />
+                    )}
+                    <h5>{selection.name}</h5>
+                    <span>{selection.details}</span>
+                  </SelectBox>
+                );
+              })}
+            </SelectionsWrapper>
+          )}
+        </SelectionBox>
+        <BtnWrapper>
+          <PageBtn onClick={back}>{"<"}</PageBtn>
+          <PageBtn onClick={forward}>{">"}</PageBtn>
+        </BtnWrapper>
+      </>
+    );
+  }
+);
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: calc(100% - 64px);
   background: transparent;
   margin: 32px;
 `;
