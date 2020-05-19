@@ -10,14 +10,13 @@
 
 - character builder
 
--- clear sexbased choices
 -- import/export character .json
 -- underground lg
 -- choice icons
 -- isekai lg
 -- week switcher, training/league
 -- code cleanup
-
+- color choice, show color
 -- Display setup effects sidebar (hide bad numbers)
 
 -- Styling

@@ -5,6 +5,8 @@ import { observer } from "mobx-react-lite";
 
 const BuySkills = observer(() => {
   const {
+    isWoman,
+    gender,
     choiceSelection,
     updateChoiceSelection,
     powerPoints,
@@ -45,7 +47,7 @@ const BuySkills = observer(() => {
       unselect() {
         adjPenisSize(-1);
       },
-      isChoosable: penisSize < 5,
+      isChoosable: penisSize < 5 && !isWoman,
       cost: 5
     },
     {
@@ -57,7 +59,7 @@ const BuySkills = observer(() => {
       unselect() {
         adjPenisSize(-2);
       },
-      isChoosable: penisSize < 4,
+      isChoosable: penisSize < 4 && !isWoman,
       cost: 15
     },
     {
@@ -83,7 +85,7 @@ const BuySkills = observer(() => {
         adjVaginaSize(-1);
         adjAnusSize(-1);
       },
-      isChoosable: vaginaSize < 5 && anusSize < 5,
+      isChoosable: vaginaSize < 5 && anusSize < 5 && gender !== 'male',
       cost: 10
     },
     {
@@ -150,7 +152,7 @@ const BuySkills = observer(() => {
     },
     {
       name: "Cockmaster",
-      description: `Fluent in the ways of cockbending.`,
+      description: `Fluent in the ways of ${gender === 'female' ? 'Strapon fucking' : 'cockbending'}.`,
       select() {
         changeCockProwess(10);
       },
@@ -171,7 +173,7 @@ const BuySkills = observer(() => {
         changeVaginaProwess(-10);
         changeAnusProwess(-10);
       },
-      isChoosable: true,
+      isChoosable: isWoman,
       cost: 10
     },
     {
@@ -197,7 +199,7 @@ const BuySkills = observer(() => {
       unselect() {
         changeBreastResistance(-15);
       },
-      isChoosable: true,
+      isChoosable: isWoman,
       cost: 5
     },
     {
@@ -209,7 +211,7 @@ const BuySkills = observer(() => {
       unselect() {
         changeCockResistance(-5);
       },
-      isChoosable: true,
+      isChoosable: gender !== 'female',
       cost: 5
     },
     {
@@ -221,7 +223,7 @@ const BuySkills = observer(() => {
       unselect() {
         changeVaginaResistance(-10);
       },
-      isChoosable: true,
+      isChoosable: isWoman,
       cost: 5
     },
     {
