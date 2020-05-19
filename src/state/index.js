@@ -1,13 +1,14 @@
 import React from "react";
 import { useLocalStore } from "mobx-react-lite";
 import { Rooms, gender } from "../constants";
-import { GetFromStorage, StoreObj} from "../utils";
+import { GetFromStorage, StoreObj, createFileFromObj } from "../utils";
 
 const InitialValues = {
   name: "None",
   icon: null,
   img: null,
   gender: gender.female,
+  isWoman: true,
   race: "Human",
   bodyShape: false,
   eyeColor: false,
@@ -45,6 +46,7 @@ const InitialValues = {
   leaguePoints: 0, // Accrued accross leagues, spent on medals, sponsoring
   cash: 0, // Accrued accross leagues, spent on upgrades / training
   currentRoom: Rooms.setup,
+  gameVersion: 1
 };
 const valFromStorage = GetFromStorage() || InitialValues;
 
@@ -149,7 +151,7 @@ export function createGlobalStore() {
     },
 
     // -- resistance is ability to endure pleasure, 1 - 100
-    
+
     changeTouchResistance(newVal) {
       this.touchResistance = checkedVal(newVal, this.touchResistance, 1, 100);
     },
@@ -214,6 +216,19 @@ export function createGlobalStore() {
       // Saved data only overwritten if setup complete
     },
 
+    createSaveFile() {
+      ExportCharacter(this);
+    },
+
+    importSaveFile(importedObj) {
+      try {
+        Object.assign(this, importedObj);
+        window.alert("Character imported successfully");
+      } catch (e) {
+        window.alert("Failed character import", e);
+      }
+    },
+
     // Overwrite data with previously saved values
     ...valFromStorage
   };
@@ -247,13 +262,23 @@ export const useGlobalDataStore = () => {
   return store;
 };
 
-const SaveCharacter = cntxt => {
+const CreateSaveObj = cntxt => {
   const Obj = {};
   Object.keys(cntxt).forEach(key => {
     if (typeof cntxt[key] !== "function") {
       Obj[key] = cntxt[key];
     }
   });
+  return Obj;
+};
+
+const ExportCharacter = cntxt => {
+  const Obj = CreateSaveObj(cntxt);
+  createFileFromObj(Obj, Obj.name);
+};
+
+const SaveCharacter = cntxt => {
+  const Obj = CreateSaveObj(cntxt);
 
   StoreObj(Obj);
 };

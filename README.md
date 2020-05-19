@@ -10,7 +10,6 @@
 
 - character builder
 
--- import/export character .json
 -- underground lg
 -- choice icons
 -- isekai lg

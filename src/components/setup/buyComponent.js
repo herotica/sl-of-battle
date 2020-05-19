@@ -109,7 +109,7 @@ const BuySkills = observer(() => {
       unselect() {
         adjBreastSize(-2);
       },
-      isChoosable: breastSize < 4,
+      isChoosable: breastSize < 4 && isWoman,
       cost: 10
     },
     {

@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { GlobalContextProvider } from "./state"
+import "mobx-react-lite/batchingForReactDom";
 
 ReactDOM.render(
   <React.StrictMode>
