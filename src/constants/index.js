@@ -2,8 +2,12 @@ export const mobileBreakpoint = "800px";
 
 export const Rooms = {
   setup: "setup",
-  main: "main"
+  main: "main",
+  training: "training",
+  underground: "underground",
+  leagueA: "isekai-lg"
 };
+
 export const gender = {
   male: "male",
   female: "female",

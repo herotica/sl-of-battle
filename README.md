@@ -8,15 +8,17 @@
 
 ### To do
 
-- character builder
 
--- underground lg
--- choice icons
--- isekai lg
--- week switcher, training/league
--- code cleanup
+- fight screen
+- training room
+
 - color choice, show color
--- Display setup effects sidebar (hide bad numbers)
+- choice icons
+  -- isekai lg
+  -- settings modal
+  -- week switcher, training/league
+  -- code cleanup
+  -- Display setup effects sidebar (hide bad numbers)
 
 -- Styling
 

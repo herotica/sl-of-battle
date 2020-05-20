@@ -44,7 +44,7 @@ const InitialValues = {
   RenownLv: 0, // displays 13 as lv1 xp3, max 100
   leagueCredits: 0, // reset after leaving a league
   leaguePoints: 0, // Accrued accross leagues, spent on medals, sponsoring
-  cash: 0, // Accrued accross leagues, spent on upgrades / training
+  cash: 100, // Accrued accross leagues, spent on upgrades / training
   currentRoom: Rooms.setup,
   gameVersion: 1
 };
@@ -224,6 +224,7 @@ export function createGlobalStore() {
       try {
         Object.assign(this, importedObj);
         window.alert("Character imported successfully");
+        this.saveChar();
       } catch (e) {
         window.alert("Failed character import", e);
       }
