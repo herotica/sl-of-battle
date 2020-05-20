@@ -68,9 +68,9 @@ const LeagueSmPanel = ({
   colors,
   rookies
 }) => {
-  const { setRoom } = useGlobalDataStore();
+  const { setRoomSave } = useGlobalDataStore();
   const onPress = () => {
-    setRoom(room);
+    setRoomSave(room);
   };
 
   return (

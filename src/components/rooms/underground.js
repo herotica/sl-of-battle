@@ -3,6 +3,7 @@ import styled from "styled-components";
 // import { useGlobalDataStore } from "../../state";
 import GoBack from "../back";
 import { LgTitle, SmText } from "../text";
+import UndergroundBg from "../../assets/room/underground.jpg";
 
 const Strings = {
   title: "Underground Slut Fighting",
@@ -71,7 +72,7 @@ const FlexWrap = styled.div`
 `;
 const MainBox = styled.div`
   padding: 32px;
-  background: darkgrey;
+  background: ${UndergroundBg};
 `;
 const ExplainBox = styled.div`
   line-height: 1.6;

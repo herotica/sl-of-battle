@@ -10,6 +10,7 @@
 
 
 - fight screen
+- test ug to setup, move to fight, run cleanup
 - training room
 
 - color choice, show color

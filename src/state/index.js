@@ -205,6 +205,10 @@ export function createGlobalStore() {
     setRoom(RoomString) {
       this.currentRoom = RoomString;
     },
+    setRoomSave(RoomString) {
+      this.currentRoom = RoomString;
+      this.saveChar();
+    },
 
     saveChar() {
       SaveCharacter(this);

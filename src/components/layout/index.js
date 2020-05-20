@@ -14,6 +14,7 @@ const Layout = () => {
   const [showSidebar, setSidebar] = useState(false);
   const hideSidebar = () => setSidebar(false);
   const expandSidebar = () => setSidebar(true);
+
   return (
     <Wrapper>
       {showSidebar ? (

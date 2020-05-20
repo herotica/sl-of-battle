@@ -3,9 +3,14 @@ export const mobileBreakpoint = "800px";
 export const Rooms = {
   setup: "setup",
   main: "main",
+  fight: "fight",
   training: "training",
   underground: "underground",
   leagueA: "isekai-lg"
+};
+export const FightRooms = {
+  underground: "underground-pit",
+  leagueA: "isekai-ring"
 };
 
 export const gender = {
