@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-// import { useGlobalDataStore } from "../../state";
+import { useGlobalDataStore } from "../../state";
+import { useFightDataStore } from "../../state/fight";
+import { observer } from "mobx-react-lite";
+
 import GoBack from "../back";
 import { LgTitle, SmText } from "../text";
+import { FightRooms, Rooms } from "../../constants";
+import { keys, Underground } from "../../combatants";
 import UndergroundBg from "../../assets/room/underground.jpg";
 
 const Strings = {
@@ -16,19 +21,25 @@ const FightOptions = [
     name: "Rookie",
     bet: 20,
     reward: 40,
-    difficulty: 1
+    difficulty: 1,
+    mediumDiffChance: 10, // chance in a thousand
+    hardDiffChance: 2
   },
   {
     name: "Amatuer",
     bet: 50,
     reward: 120,
-    difficulty: 2
+    difficulty: 2,
+    mediumDiffChance: 400,
+    hardDiffChance: 30
   },
   {
     name: "Seasoned",
     bet: 150,
     reward: 400,
-    difficulty: 4
+    difficulty: 4,
+    mediumDiffChance: 1000,
+    hardDiffChance: 450
   }
 ];
 
@@ -44,21 +55,96 @@ const UndergroundArena = () => {
           <SmText>{Strings.explain}</SmText>
         </ExplainBox>
         <FightWrap>
-          {FightOptions.map(fight => {
-            return (
-              <FightOption>
-                <SmText>- {fight.name} -</SmText>
-                <SmText>
-                  Bet: {fight.bet} / Reward: {fight.reward}
-                </SmText>
-                <SmText>Difficulty Lvl::{fight.difficulty}</SmText>
-              </FightOption>
-            );
-          })}
+          {FightOptions.map(fight => (
+            <FightTierOption {...fight} />
+          ))}
         </FightWrap>
       </MainBox>
     </UWrap>
   );
+};
+
+const FightTierOption = observer(
+  ({ name, bet, reward, difficulty, mediumDiffChance, hardDiffChance }) => {
+    //remove cash, send data to fight state, move room
+    const {
+      cash,
+      setRoomSave,
+      setRoom,
+      saveChar,
+      changeCash
+    } = useGlobalDataStore();
+    const { readyNewFight } = useFightDataStore();
+    const onWin = () => {
+      changeCash(reward);
+      setRoomSave(Rooms.underground);
+    };
+    const onLose = () => {
+      setRoomSave(Rooms.underground);
+    };
+
+    const onSelect = () => {
+      if (bet <= cash) {
+        changeCash(-1 * bet);
+        saveChar();
+        // select comabatant
+        const diffLevel = SelectDifficulty(mediumDiffChance, hardDiffChance);
+        const comabatant = SelectCombatant(diffLevel);
+        readyNewFight(comabatant, FightRooms.underground, onWin, onLose);
+        setRoom(Rooms.fight);
+      } else {
+        window.alert("You can afford this.");
+      }
+    };
+
+    return (
+      <FightOption onClick={onSelect}>
+        <SmText>- {name} -</SmText>
+        <SmText>
+          Bet: {bet} / Reward: {reward}
+        </SmText>
+        <SmText>Difficulty Lvl::{difficulty}</SmText>
+      </FightOption>
+    );
+  }
+);
+
+const DifficultyLevels = ["basic", "medium", "hard"];
+const SelectDifficulty = (midChance, HardChance) => {
+  const RanNum = Math.floor(Math.random() * 1000);
+  console.log("rand", RanNum);
+  if (RanNum <= HardChance) {
+    return DifficultyLevels[2];
+  }
+  if (RanNum <= midChance) {
+    return DifficultyLevels[1];
+  } else {
+    return DifficultyLevels[0];
+  }
+};
+const SelectCombatant = difficultyLevel => {
+  let optionsAvailable = 0;
+  let RanNum = 0;
+
+  switch (difficultyLevel) {
+    case DifficultyLevels[0]:
+      optionsAvailable = keys.underground.tierBasic.length;
+      RanNum = Math.floor(Math.random() * optionsAvailable);
+      return Underground.tierBasic[keys.underground.tierBasic[RanNum]];
+
+    case DifficultyLevels[1]:
+      optionsAvailable = keys.underground.tierMedium.length;
+      RanNum = Math.floor(Math.random() * optionsAvailable);
+      return Underground.tierMedium[keys.underground.tierMedium[RanNum]];
+
+    case DifficultyLevels[2]:
+      optionsAvailable = keys.underground.tierHard.length;
+      RanNum = Math.floor(Math.random() * optionsAvailable);
+      return Underground.tierHard[keys.underground.tierHard[RanNum]];
+
+    default:
+      return false;
+  }
 };
 
 const UWrap = styled.div`
@@ -72,7 +158,7 @@ const FlexWrap = styled.div`
 `;
 const MainBox = styled.div`
   padding: 32px;
-  background: ${UndergroundBg};
+  background-image: url(${UndergroundBg});
 `;
 const ExplainBox = styled.div`
   line-height: 1.6;
@@ -80,6 +166,7 @@ const ExplainBox = styled.div`
   background: rgba(120, 120, 120, 0.7);
   padding: 16px;
   margin-bottom: 32px;
+  color: lightgrey;
 `;
 const FightWrap = styled.div`
   display: flex;
@@ -94,6 +181,11 @@ const FightOption = styled.div`
   border: 2px solid black;
   color: white;
   background: rgba(20, 20, 20, 0.8);
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid orange;
+  }
 `;
 
 export default UndergroundArena;

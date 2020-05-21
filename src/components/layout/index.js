@@ -8,6 +8,7 @@ import Character, { SideBarMain } from "../character";
 import { Rooms } from "../../constants";
 import Setup from "../setup";
 import MainRoom from "../mainRoom";
+import FightRoom from "../fightRoom";
 import Underground from "../rooms/underground";
 
 const Layout = () => {
@@ -44,6 +45,8 @@ const RoomManager = observer(() => {
       return <MainRoom />;
     case Rooms.underground:
       return <Underground />;
+    case Rooms.fight:
+      return <FightRoom />;
     default:
       return (
         <div>

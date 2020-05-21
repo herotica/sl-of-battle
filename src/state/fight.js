@@ -4,9 +4,9 @@ import { FightRooms } from "../constants";
 
 export function createFightStore() {
   return {
-    fightCombantantKey: null,
+    fightCombantantData: null,
     setCombatant(newCombatant) {
-      this.fightCombantantKey = newCombatant;
+      this.fightCombantantData = newCombatant;
     },
 
     fightRoom: FightRooms.underground,

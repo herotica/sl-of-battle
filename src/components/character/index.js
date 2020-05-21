@@ -38,7 +38,11 @@ export const SideBarMain = observer(() => {
     cockResistance,
     vaginaResistance,
     anusResistance,
-    orgasmLimit
+    orgasmLimit,
+    cash,
+    RenownLv,
+    leaguePoints,
+    leagueCredits
   } = useGlobalDataStore();
   return (
     <MainWrapper>
@@ -75,6 +79,10 @@ export const SideBarMain = observer(() => {
       <div>orgasmLimit: {orgasmLimit}</div>
       <div>====Items</div>
       <div>Setup Points {powerPoints}</div>
+      <div>£cash {cash}</div>
+      <div>RenownLv {RenownLv * 0.1}</div>
+      <div>leaguePoints {leaguePoints}</div>
+      <div>leagueCredits {leagueCredits}</div>
     </MainWrapper>
   );
 });

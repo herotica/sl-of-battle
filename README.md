@@ -8,7 +8,6 @@
 
 ### To do
 
-
 - fight screen
 - test ug to setup, move to fight, run cleanup
 - training room
@@ -22,6 +21,8 @@
   -- Display setup effects sidebar (hide bad numbers)
 
 -- Styling
+
+- window alert -> Toast
 
 - sidebar styling/design
 
