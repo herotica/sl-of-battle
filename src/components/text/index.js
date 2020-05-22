@@ -20,6 +20,11 @@ export const SmlrText = styled.div`
   font-size: calc(0.9rem + 0.15vw);
   margin-bottom: 8px;
 `;
+export const LogText = styled.div`
+  line-height: 1.2;
+  font-size: calc(0.8rem + 0.1vw);
+  margin-bottom: 2px;
+`;
 
 // Styling
 export const TextSpanLog = styled.span`

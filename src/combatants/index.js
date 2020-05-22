@@ -1,31 +1,18 @@
 //interface for getting data
-import Mei from "../assets/body-type/chubby.png";
-import Bunny from "../assets/body-type/petite.png";
-import Carmen from "../assets/body-type/muscular.png";
+import Overwatch from "./underground/overwatch";
+import Other from "./underground/other";
+import HentaiFoundry from "./underground/hentaiFoundry";
 
 export const Underground = {
   // Max 3 difficulty tiers, A is the lowest
   tierBasic: {
-    mei: {
-      name: "Mei",
-      description: "Mei overwatch",
-      img: Mei
-    }
+    mei: Overwatch.mei
   },
   tierMedium: {
-    bunnyGirl: {
-      name: "Bunny Girl",
-      description: "A sexy bunny girl",
-      img: Bunny
-    }
+    bunnyGirl: Other.bunnyGirl
   },
   tierHard: {
-    carmen: {
-      name: "Carmen",
-      description:
-        "the sexy and ruthless Carmen, a beautiful girl brought to us by Dmitrys",
-      img: Carmen
-    }
+    carmen: HentaiFoundry.carmen
   }
 };
 

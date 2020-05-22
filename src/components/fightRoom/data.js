@@ -1,5 +1,6 @@
 import { FightRooms } from "../../constants";
 import UndergroundBg from "../../assets/room/underground.jpg";
+import { isFightStatCompWin } from "../../utils/maths";
 
 export const Strings = {
   title: "SLUT FIGHT",
@@ -16,7 +17,7 @@ export const FightPhaseTypes = [
   ["incontrol", "seduced", "controlled"],
   ["pleasure", "dominate", "coy", "animal", "enjoy", "resist"],
   ["tongue", "touch", "cock", "vagina", "anus", "seducedopponent", "opponent"],
-  ["touch", "breasts", "mouth", "cock", "vagina", "anus", "opponent"],
+  ["touch", "breasts", "mouth", "cock", "vagina", "anus", "opponent"]
 ];
 
 const EndPhaseOption = {
@@ -30,8 +31,8 @@ const EndPhaseOption = {
           isSuccess: true,
           log: "The next round begins"
         };
-      },
-    //   nextPhaseTypeWin: FightPhaseTypes[5][0]
+      }
+      //   Round will now end
     }
   ]
 };
@@ -43,9 +44,15 @@ export const FightPhaseData = [
         {
           name: "Grapple",
           description: "Fight your opponent for physical control.",
-          onAction() {
-            console.log("grapple");
-            return { isSuccess: true, log: "grapple succeeds, take control" };
+          onAction(charData, fighter, phaseChoices) {
+            const result = isFightStatCompWin(
+              charData.grapplingProwess,
+              fighter.grapplingProwess
+            );
+            const logMsg = result
+              ? "Grapple succeeds, take control"
+              : `Grapple fails, ${fighter.name} take control`;
+            return { isSuccess: result, log: logMsg };
           },
           nextPhaseTypeWin: FightPhaseTypes[1][0],
           nextPhaseTypeFail: FightPhaseTypes[1][2]
@@ -53,9 +60,15 @@ export const FightPhaseData = [
         {
           name: "Seduce",
           description: "Seduce your opponent with your sexual allure.",
-          onAction() {
-            console.log("seduce");
-            return { isSuccess: true, log: "seduce succeeds, charm opponent" };
+          onAction(charData, fighter, phaseChoices) {
+            const result = isFightStatCompWin(
+              charData.seductionProwess,
+              fighter.seductionProwess
+            );
+            const logMsg = result
+              ? "Seduction succeeds, charm opponent"
+              : `Seduction fails, ${fighter.name} take control`;
+            return { isSuccess: result, log: logMsg };
           },
           nextPhaseTypeWin: FightPhaseTypes[1][1],
           nextPhaseTypeFail: FightPhaseTypes[1][2]
@@ -71,6 +84,7 @@ export const FightPhaseData = [
           name: "Tenderly",
           description: "Pleasure your opponent with your tender motions.",
           onAction() {
+            // avoids adding roughPlayLvl.
             return { isSuccess: true, log: "You move tenderly" };
           },
           nextPhaseTypeWin: FightPhaseTypes[2][0]
@@ -79,6 +93,7 @@ export const FightPhaseData = [
           name: "Roughly",
           description: "Unleash the sexual animal.",
           onAction() {
+            // checked later to see if add roughPlayLvl lvl.
             return { isSuccess: true, log: "You awake your animal passions" };
           },
           nextPhaseTypeWin: FightPhaseTypes[2][1]
@@ -92,6 +107,7 @@ export const FightPhaseData = [
           name: "Coyly",
           description: "Your tender loins yearn for a soft touch.",
           onAction() {
+            // avoids adding roughPlayLvl.
             return { isSuccess: true, log: "You tease coyly" };
           },
           nextPhaseTypeWin: FightPhaseTypes[2][2]
@@ -101,6 +117,7 @@ export const FightPhaseData = [
           description: "You command to be taken with animal passion.",
           onAction() {
             return {
+              // adds roughPlayLvl, bonus for player if high.
               isSuccess: true,
               log: "You scream for animalistic intensity"
             };
@@ -110,7 +127,7 @@ export const FightPhaseData = [
       ]
     },
     [FightPhaseTypes[1][2]]: {
-      name: "Your opponent takes control?",
+      name: "Your opponent takes control",
       options: [
         {
           name: "Enjoy",
@@ -118,6 +135,7 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
+              // avoids adding roughPlayLvl.
               log: "You moan at writhe at every touch."
             };
           },
@@ -126,6 +144,7 @@ export const FightPhaseData = [
         {
           name: "Resist",
           description: "You refuse to relinquish control.",
+          // adds roughPlayLvl to opponent, bonus for player if high.
           onAction() {
             return {
               isSuccess: true,
@@ -309,7 +328,7 @@ export const FightPhaseData = [
               log: "You continue your passionate embrace."
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][5]
+          nextPhaseTypeWin: FightPhaseTypes[3][6]
         }
       ]
     },
@@ -749,10 +768,5 @@ export const FightPhaseData = [
     [FightPhaseTypes[4][6]]: {
       ...EndPhaseOption
     }
-  },
-//   {
-//     [FightPhaseTypes[5][0]]: {
-//       ...EndPhaseOption
-//     }
-//   }
+  }
 ];

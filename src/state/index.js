@@ -9,6 +9,7 @@ const InitialValues = {
   img: null,
   gender: gender.female,
   isWoman: true,
+  hasCock: false,
   race: "Human",
   bodyShape: false,
   eyeColor: false,
@@ -64,6 +65,7 @@ export function createGlobalStore() {
     setGender(newVal) {
       this.gender = newVal;
       this.isWoman = newVal === gender.female || newVal === gender.futanari;
+      this.hasCock = newVal === gender.male || newVal === gender.futanari;
     },
     setRace(newVal) {
       this.race = newVal;

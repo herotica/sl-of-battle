@@ -4,7 +4,14 @@ import { useGlobalDataStore } from "../../state";
 import { useFightDataStore } from "../../state/fight";
 import { observer } from "mobx-react-lite";
 
-import { LgTitle, SmText, MdTitle, SmlrText, TextSpanLog } from "../text";
+import {
+  LgTitle,
+  SmText,
+  MdTitle,
+  SmlrText,
+  LogText,
+  TextSpanLog
+} from "../text";
 import { Strings, RoomImages, FightPhaseTypes, FightPhaseData } from "./data";
 
 const FightRoom = observer(() => {
@@ -24,7 +31,7 @@ const FightRoom = observer(() => {
       <FightersInfo room={fightRoom} fighter={fightCombantantData} />
       <FlexWrap>
         <FighterTextLog />
-        <FighterActions />
+        <FighterActions fighter={fightCombantantData} />
       </FlexWrap>
       <button onClick={onFightWin}>Win</button>
       <button onClick={onFightLose}>Lose</button>
@@ -54,35 +61,57 @@ const FightersInfo = observer(({ room, fighter }) => {
   );
 });
 
-const FighterActions = observer(fighter => {
+const FighterActions = observer(({ fighter }) => {
   const [fightPhase, setFightPhase] = useState(0);
   const [fightPhaseType, setFightPhaseType] = useState(FightPhaseTypes[0][0]);
-
+  const [phaseChoices, setPhaseChoices] = useState([]);
   const PhaseData = FightPhaseData[fightPhase];
 
-  const {} = useGlobalDataStore();
+  const charData = useGlobalDataStore();
   const { addToFightLog } = useFightDataStore();
 
   const OnActionRan = (btnAction, optionIndex) => {
-    const actionResp = btnAction();
-    addToFightLog(actionResp.log);
+    const actionResponse = btnAction(charData, fighter, phaseChoices);
+    addToFightLog(actionResponse.log);
 
     if (fightPhase >= FightPhaseData.length - 1) {
       setFightPhase(0);
+      setPhaseChoices([]);
       setFightPhaseType(FightPhaseTypes[0][0]);
     } else {
       setFightPhase(fightPhase + 1);
-      console.log("::" + fightPhaseType + "::", PhaseData);
+      const newChoiceList = phaseChoices.slice(0);
       const Options = PhaseData[fightPhaseType].options;
-      actionResp.isSuccess
-        ? setFightPhaseType(Options[optionIndex].nextPhaseTypeWin)
-        : setFightPhaseType(Options[optionIndex].nextPhaseTypeFail);
+
+      if (actionResponse.isSuccess) {
+        const WinPhase = Options[optionIndex].nextPhaseTypeWin;
+        newChoiceList.push(WinPhase);
+        setPhaseChoices(newChoiceList);
+        setFightPhaseType(WinPhase);
+      } else {
+        const LosePhase = Options[optionIndex].nextPhaseTypeFail;
+        newChoiceList.push(LosePhase);
+        setPhaseChoices(newChoiceList);
+        setFightPhaseType(LosePhase);
+      }
     }
   };
+
+  const BuildResolveStep = () => {
+    if (fightPhase < FightPhaseData.length - 1) {
+      return false;
+    } else {
+      console.log("phasechoice", phaseChoices);
+      const responseObj = { result: "yay" };
+      return responseObj;
+    }
+  };
+  const Resolved = BuildResolveStep();
 
   return (
     <ActionWrap>
       <MdTitle>{PhaseData[fightPhaseType].name}</MdTitle>
+      {Resolved && <SmText>{Resolved.result}</SmText>}
       {PhaseData[fightPhaseType].options.map((phase, index) => {
         const onPress = () => OnActionRan(phase.onAction, index);
 
@@ -104,10 +133,10 @@ const FighterTextLog = observer(() => {
   return (
     <FightLogWrap>
       {fightLog.map(entry => (
-        <SmlrText>
+        <LogText>
           {"> "}
           <TextSpanLog>{entry}</TextSpanLog>
-        </SmlrText>
+        </LogText>
       ))}
     </FightLogWrap>
   );
@@ -167,9 +196,11 @@ const ActionItem = styled.div`
 `;
 const FightLogWrap = styled.div`
   border: 1px solid black;
-  background: rgba(180, 180, 180 0.85);
+  background: rgba(180, 212, 180, 0.85);
   padding: 8px;
   flex: 1 0 35%;
+  overflow-y: auto;
+  max-height: 240px;
 `;
 
 export default FightRoom;
