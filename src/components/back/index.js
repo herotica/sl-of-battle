@@ -4,8 +4,8 @@ import { useGlobalDataStore } from "../../state";
 import { Rooms } from "../../constants";
 
 const BackToMainMenu = () => {
-  const { setRoom } = useGlobalDataStore();
-  const GoBack = () => setRoom(Rooms.main);
+  const { setRoomSave } = useGlobalDataStore();
+  const GoBack = () => setRoomSave(Rooms.main);
 
   return <BackBtn onClick={GoBack}>{"<- Back"}</BackBtn>;
 };

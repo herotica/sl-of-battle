@@ -3,14 +3,13 @@
 </p>
 
 <p align="center">
-  Play a game based on Tok's battle sluts (see src/assets/cyoa)
+  Play a game based on Tok's battle sluts, and kink's Ultimate Surrender (see src/assets/cyoa)
 </p>
 
 ### To do
 
-- fight screen
-- test ug to setup, move to fight, run cleanup
-- training room
+- fight logic
+- window alert -> Toast
 
 - color choice, show color
 - choice icons
@@ -19,12 +18,12 @@
   -- week switcher, training/league
   -- code cleanup
   -- Display setup effects sidebar (hide bad numbers)
+- training erotic event
+- training, buy equipment
 
 -- Styling
 
-- window alert -> Toast
-
-- sidebar styling/design
+* sidebar styling/design
 
 ### Dev info
 

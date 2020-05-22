@@ -8,6 +8,7 @@ import Character, { SideBarMain } from "../character";
 import { Rooms } from "../../constants";
 import Setup from "../setup";
 import MainRoom from "../mainRoom";
+import Training from "../rooms/training";
 import FightRoom from "../fightRoom";
 import Underground from "../rooms/underground";
 
@@ -47,6 +48,8 @@ const RoomManager = observer(() => {
       return <Underground />;
     case Rooms.fight:
       return <FightRoom />;
+    case Rooms.training:
+      return <Training />;
     default:
       return (
         <div>

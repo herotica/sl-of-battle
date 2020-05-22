@@ -15,3 +15,8 @@ export const SmText = styled.div`
   line-height: 1.6;
   font-size: calc(1.1rem + 0.2vw);
 `;
+export const SmlrText = styled.div`
+  line-height: 1.4;
+  font-size: calc(0.9rem + 0.15vw);
+  margin-bottom: 8px;
+`;

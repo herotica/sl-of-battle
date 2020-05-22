@@ -13,6 +13,7 @@ export const SideBarMain = observer(() => {
     name,
     icon,
     gender,
+    isWoman,
     race,
     height,
     bodyShape,
@@ -47,6 +48,7 @@ export const SideBarMain = observer(() => {
   return (
     <MainWrapper>
       <div>:: {name}</div>
+      <div>::isWOman {isWoman}</div>
       <div>:: {gender}</div>
       <div>:: {race}</div>
       <Icon src={icon} alt="No Icon" />
