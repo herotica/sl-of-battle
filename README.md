@@ -6,9 +6,23 @@
   Play a game based on Tok's battle sluts, and kink's Ultimate Surrender (see src/assets/cyoa)
 </p>
 
+## Fight scratch pad
+
+step1: control ; grapple, seduce/present
+step2: if control-dom; set pleasure/dom
+step3: if control; set organ->organ
+step2: if control-sed; set organ to pleasure
+step2: no control; try seduce;
+step3: no control; try
+step4: set arousal(dmg)(organ vs resistance, size diff), if high trigger orgasm
+
+step5: check Orgasm's left, 0 = lose
+draw?
+
 ### To do
 
 - fight logic
+- settings screen
 - window alert -> Toast
 
 - color choice, show color
@@ -23,7 +37,7 @@
 
 -- Styling
 
-* sidebar styling/design
+- sidebar styling/design
 
 ### Dev info
 

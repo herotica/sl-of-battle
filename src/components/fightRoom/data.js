@@ -1,0 +1,758 @@
+import { FightRooms } from "../../constants";
+import UndergroundBg from "../../assets/room/underground.jpg";
+
+export const Strings = {
+  title: "SLUT FIGHT",
+  explain: "Bring your opponent to orgasm, before they make you"
+};
+
+export const RoomImages = {
+  [FightRooms.underground]: UndergroundBg,
+  [FightRooms.leagueA]: UndergroundBg
+};
+
+export const FightPhaseTypes = [
+  ["start"],
+  ["incontrol", "seduced", "controlled"],
+  ["pleasure", "dominate", "coy", "animal", "enjoy", "resist"],
+  ["tongue", "touch", "cock", "vagina", "anus", "seducedopponent", "opponent"],
+  ["touch", "breasts", "mouth", "cock", "vagina", "anus", "opponent"],
+];
+
+const EndPhaseOption = {
+  name: "The Round moves to a close.",
+  options: [
+    {
+      name: "Next Round",
+      description: "Move to the next round.",
+      onAction() {
+        return {
+          isSuccess: true,
+          log: "The next round begins"
+        };
+      },
+    //   nextPhaseTypeWin: FightPhaseTypes[5][0]
+    }
+  ]
+};
+export const FightPhaseData = [
+  {
+    [FightPhaseTypes[0][0]]: {
+      name: "Fight for control",
+      options: [
+        {
+          name: "Grapple",
+          description: "Fight your opponent for physical control.",
+          onAction() {
+            console.log("grapple");
+            return { isSuccess: true, log: "grapple succeeds, take control" };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[1][0],
+          nextPhaseTypeFail: FightPhaseTypes[1][2]
+        },
+        {
+          name: "Seduce",
+          description: "Seduce your opponent with your sexual allure.",
+          onAction() {
+            console.log("seduce");
+            return { isSuccess: true, log: "seduce succeeds, charm opponent" };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[1][1],
+          nextPhaseTypeFail: FightPhaseTypes[1][2]
+        }
+      ]
+    }
+  },
+  {
+    [FightPhaseTypes[1][0]]: {
+      name: "You have control, how do you fuck?",
+      options: [
+        {
+          name: "Tenderly",
+          description: "Pleasure your opponent with your tender motions.",
+          onAction() {
+            return { isSuccess: true, log: "You move tenderly" };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[2][0]
+        },
+        {
+          name: "Roughly",
+          description: "Unleash the sexual animal.",
+          onAction() {
+            return { isSuccess: true, log: "You awake your animal passions" };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[2][1]
+        }
+      ]
+    },
+    [FightPhaseTypes[1][1]]: {
+      name: "You have Seduced you opponent how do you tease?",
+      options: [
+        {
+          name: "Coyly",
+          description: "Your tender loins yearn for a soft touch.",
+          onAction() {
+            return { isSuccess: true, log: "You tease coyly" };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[2][2]
+        },
+        {
+          name: "Animal",
+          description: "You command to be taken with animal passion.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You scream for animalistic intensity"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[2][3]
+        }
+      ]
+    },
+    [FightPhaseTypes[1][2]]: {
+      name: "Your opponent takes control?",
+      options: [
+        {
+          name: "Enjoy",
+          description: "Moan and writhe, your pleasure is enticing.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You moan at writhe at every touch."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[2][4]
+        },
+        {
+          name: "Resist",
+          description: "You refuse to relinquish control.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You fight and wriggle."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[2][5]
+        }
+      ]
+    }
+  },
+  // Pick sexual organ to use, (you or opponent)
+  {
+    [FightPhaseTypes[2][0]]: {
+      name: "Your passion swells, what will you use?",
+      options: [
+        {
+          name: "Use Tongue",
+          description: "You ready your tongue.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You lick your lips, wetting your tongue."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][0]
+        },
+        {
+          name: "Use Touch",
+          description: "You ready your body & hands.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You ready your body & hands."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][1]
+        },
+        {
+          name: "Use Cock",
+          reqCock: true,
+          description: "You ready your Cock.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You ready your cock."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][2]
+        },
+        {
+          name: "Use Pussy",
+          reqFemale: true,
+          description: "You ready your pussy.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You ready your pussy."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][3]
+        },
+        {
+          name: "Use Arse",
+          description: "You ready your arse.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You ready your arse."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][4]
+        }
+      ]
+    },
+    [FightPhaseTypes[2][1]]: {
+      name: "Your inner animal growls, what is your weapon?",
+      options: [
+        {
+          name: "Use Tongue",
+          description: "You ready your tongue.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You lick your lips, wetting your tongue."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][0]
+        },
+        {
+          name: "Use Touch",
+          description: "You ready your body & hands.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You ready your body & hands."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][1]
+        },
+        {
+          name: "Use Cock",
+          reqCock: true,
+          description: "You ready your Cock.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You ready your cock."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][2]
+        },
+        {
+          name: "Use Pussy",
+          reqFemale: true,
+          description: "You ready your pussy.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You ready your pussy."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][3]
+        },
+        {
+          name: "Use Arse",
+          description: "You ready your arse.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You ready your arse."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][4]
+        }
+      ]
+    },
+    // All below skip next step
+    [FightPhaseTypes[2][2]]: {
+      name: "You coyly present yourself for the taking.",
+      options: [
+        {
+          name: "Shyly Admire",
+          description: "You bashfully admire your opponent.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You bashfully admire your opponent"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][5]
+        }
+      ]
+    },
+    [FightPhaseTypes[2][3]]: {
+      name:
+        "Your animal passion drives your opponent wild, but they pick their tool.",
+      options: [
+        {
+          name: "Growl",
+          description: "You hurry your opponent.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You hurry your opponent."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][5]
+        }
+      ]
+    },
+    [FightPhaseTypes[2][4]]: {
+      name: "Your choose to take pleasure in being taken.",
+      options: [
+        {
+          name: "Moan",
+          description: "You moan at her touch.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You continue your passionate embrace."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][5]
+        }
+      ]
+    },
+    [FightPhaseTypes[2][5]]: {
+      name: "You try to fight your opponent, only burning both your energy.",
+      options: [
+        {
+          name: "Resist",
+          description: "You continue your resistance.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "You continue to resist"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[3][6]
+        }
+      ]
+    }
+  },
+  // Select what part of opponent to fuck/ seduced gets to set op's target
+  {
+    [FightPhaseTypes[3][0]]: {
+      name: "Your tongue hunts it's target.",
+      options: [
+        {
+          name: "Lick Body",
+          description: "Lick her body.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Lick her body."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][0]
+        },
+        {
+          name: "Lick Breasts",
+          description: "Savour her breast meat.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Savour her breast meat."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][1]
+        },
+        {
+          name: "Lick Tongues",
+          description: "Stuff your tongue into your opponent's mouth.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Taste her mouth."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][2]
+        },
+        {
+          name: "Suck Cock",
+          opHasCock: true,
+          description: "Try draining her balls.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Try draining her balls."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][3]
+        },
+        {
+          name: "Savour Pussy",
+          description: "Dig your tongue into her lower lips.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Dig your tongue into her lower lips."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][4]
+        },
+        {
+          name: "Rimjob",
+          description: "Dig your tongue into her anal passage.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Dig your tongue into her anal passage."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][5]
+        }
+      ]
+    },
+    [FightPhaseTypes[3][1]]: {
+      name: "Your touch hunts it's target.",
+      options: [
+        {
+          name: "Caress Body",
+          description: "Caress her body.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Caress her body"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][0]
+        },
+        {
+          name: "Grope Breasts",
+          description: "Fondle her breast meat.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Fondle her breast meat."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][1]
+        },
+        {
+          name: "Play With Mouth",
+          description: "Make her taste your fingers.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Make her taste your fingers."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][2]
+        },
+        {
+          name: "Handjob",
+          opHasCock: true,
+          description: "Pump the juice from her shaft.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Pump the juice from her shaft."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][3]
+        },
+        {
+          name: "Finger Pussy",
+          description: "Dig your fingers into her lower lips.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Dig your fingers into her lower lips."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][4]
+        },
+        {
+          name: "Fisting",
+          description: "Dig your fingers into her anal passage.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Dig your fingers into her anal passage."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][5]
+        }
+      ]
+    },
+    [FightPhaseTypes[3][2]]: {
+      name: "Your cock is ready for action.",
+      options: [
+        {
+          name: "Hump her Body",
+          description: "Rub your cock on her supple body.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--You rub your cock against her thighs."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][0]
+        },
+        {
+          name: "Titfuck",
+          description: "Fuck her breasts.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Fuck her breasts."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][1]
+        },
+        {
+          name: "Blowjob",
+          description: "Push your cock into her mouth.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Push your cock into her mouth."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][2]
+        },
+        {
+          name: "Sword Fight",
+          opHasCock: true,
+          description: "Rub your shaft against hers.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Rub your shaft against hers."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][3]
+        },
+        {
+          name: "Fuck Her Pussy",
+          description: "Drive deep into her pussy lips.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--You drive your meaty shaft deep into her pussy."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][4]
+        },
+        {
+          name: "Anal",
+          description: "Plunder her back passage.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--You plunder her back passage"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][5]
+        }
+      ]
+    },
+    [FightPhaseTypes[3][3]]: {
+      name: "Your pussy is wet and ready.",
+      options: [
+        {
+          name: "Ride her Body",
+          description: "Rub your pussy on her soft body.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--You rub your pussy against her thighs."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][0]
+        },
+        {
+          name: "Soak Tits",
+          description: "Rub your pussy on her  breasts.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--You rub your pussy on her breasts."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][1]
+        },
+        {
+          name: "Oral",
+          description: "Push your pussy onto her mouth.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--You ride her face."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][2]
+        },
+        {
+          name: "Ride Cock",
+          opHasCock: true,
+          description: "Ride her hard shaft.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--You ride her hard shaft"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][3]
+        },
+        {
+          name: "Tribasdism",
+          description: "Rub your pussy against hers.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--You rub your pussy against hers"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][4]
+        }
+      ]
+    },
+    [FightPhaseTypes[3][4]]: {
+      name: "Your arse is ready for use.",
+      options: [
+        {
+          name: "Rimjob",
+          description: "Push your arse over her mouth.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--Push your arse over her mouth"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][2]
+        },
+        {
+          name: "Anal",
+          opHasCock: true,
+          description: "Ride her dick.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--ride her dick"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][3]
+        }
+      ]
+    },
+    [FightPhaseTypes[3][5]]: {
+      name: "Your seduction suceeds, where do you lead your opponent?",
+      options: [
+        {
+          name: "Body",
+          description: "She will use your body.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--She uses your thighs"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][0]
+        },
+        {
+          name: "Breasts",
+          description: "Present your breasts.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--She fucks your breasts"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][1]
+        },
+        {
+          name: "Mouth",
+          description: "Open your mouth.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--She uses your mouth"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][2]
+        },
+        {
+          name: "Cock",
+          reqCock: true,
+          description: "Present your ready cock.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--She fucks your cock."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][3]
+        },
+        {
+          name: "Pussy",
+          description: "Open your wet pussy lips.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--She fucks your pussy"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][4]
+        },
+        {
+          name: "Anal Passage",
+          description: "Reveal your back passage.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--She fucks your arse"
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][5]
+        }
+      ]
+    },
+    [FightPhaseTypes[3][6]]: {
+      name: "At your Opponent's mercy, she pleasures you as best she can.",
+      options: [
+        {
+          name: "Ok",
+          description: "You remain at her mercy.",
+          onAction() {
+            return {
+              isSuccess: true,
+              log: "Vary--She owns you."
+            };
+          },
+          nextPhaseTypeWin: FightPhaseTypes[4][6]
+        }
+      ]
+    }
+  },
+  // final phase
+  {
+    [FightPhaseTypes[4][0]]: {
+      ...EndPhaseOption
+    },
+    [FightPhaseTypes[4][1]]: {
+      ...EndPhaseOption
+    },
+    [FightPhaseTypes[4][2]]: {
+      ...EndPhaseOption
+    },
+    [FightPhaseTypes[4][3]]: {
+      ...EndPhaseOption
+    },
+    [FightPhaseTypes[4][4]]: {
+      ...EndPhaseOption
+    },
+    [FightPhaseTypes[4][5]]: {
+      ...EndPhaseOption
+    },
+    [FightPhaseTypes[4][6]]: {
+      ...EndPhaseOption
+    }
+  },
+//   {
+//     [FightPhaseTypes[5][0]]: {
+//       ...EndPhaseOption
+//     }
+//   }
+];

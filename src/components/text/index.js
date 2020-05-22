@@ -20,3 +20,9 @@ export const SmlrText = styled.div`
   font-size: calc(0.9rem + 0.15vw);
   margin-bottom: 8px;
 `;
+
+// Styling
+export const TextSpanLog = styled.span`
+  font-style: italic;
+  font-weight: 300;
+`;

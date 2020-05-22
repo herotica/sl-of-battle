@@ -24,11 +24,17 @@ export function createFightStore() {
       this.onFightLose = loseFunc;
     },
 
+    fightLog: [],
+    addToFightLog(text) {
+      this.fightLog.push(text);
+    },
+
     readyNewFight(combatant, room, onWin, onLose) {
       this.setCombatant(combatant);
       this.setFightRoom(room);
       this.setOnWinFunc(onWin);
       this.setOnLoseFunc(onLose);
+      this.fightLog = [];
     }
   };
 }
