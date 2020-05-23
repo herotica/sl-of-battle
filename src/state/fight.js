@@ -29,11 +29,38 @@ export function createFightStore() {
       this.fightLog.push(text);
     },
 
+    fightArousalState: [0, 0],
+    setFightArousalState(arrayIn) {
+      // stops arousal breaching 100(orgasm trigger), resets to 20 + overflow;
+      const newArray = arrayIn.slice(0);
+      if (arrayIn[0] >= 100) {
+        newArray[0] = arrayIn[0] - 80;
+      }
+      if (arrayIn[1] >= 100) {
+        newArray[1] = arrayIn[1] - 80;
+      }
+      this.fightArousalState = newArray.slice(0, 2);
+    },
+
+    fightOrgasmState: [],
+    fightOrgasmStateOriginal: [],
+    setOrgasmState(playerLoss, fighterLoss) {
+      const initVal = this.fightOrgasmState.slice(0);
+      if (playerLoss) initVal[0] = initVal[0] - 1;
+      if (fighterLoss) initVal[1] = initVal[1] - 1;
+      if (playerLoss || fighterLoss) {
+        this.fightOrgasmState = initVal;
+      }
+    },
+
     readyNewFight(combatant, room, onWin, onLose) {
       this.setCombatant(combatant);
       this.setFightRoom(room);
       this.setOnWinFunc(onWin);
       this.setOnLoseFunc(onLose);
+      //Todo Undergroundcheck
+      this.fightOrgasmState = [2, 2];
+      this.fightOrgasmStateOriginal = [2, 2];
       this.fightLog = [];
     }
   };

@@ -1,6 +1,6 @@
 import { FightRooms } from "../../constants";
 import UndergroundBg from "../../assets/room/underground.jpg";
-import { isFightStatCompWin } from "../../utils/maths";
+import { isFightStatCompWin, fuckArousalCost } from "../../utils/maths";
 
 export const Strings = {
   title: "SLUT FIGHT",
@@ -63,7 +63,7 @@ export const FightPhaseData = [
           onAction(charData, fighter, phaseChoices) {
             const result = isFightStatCompWin(
               charData.seductionProwess,
-              fighter.seductionProwess
+              fighter.seductionResistance
             );
             const logMsg = result
               ? "Seduction succeeds, charm opponent"
@@ -770,3 +770,87 @@ export const FightPhaseData = [
     }
   }
 ];
+
+export const fightResolve = (
+  phaseChoices,
+  charData,
+  fighterData,
+  arousalData,
+  orgasmData
+) => {
+  console.log("phasechoices FR", phaseChoices);
+  const ResponseObj = {
+    player: 0,
+    playerOrgasm: false,
+    fighter: 15,
+    fighterOrgasm: false,
+    result: "" // text output, effect on player, effect on opponent
+  };
+  const isPlayerFucker = phaseChoices[0] === FightPhaseTypes[1][0];
+  let opponentAttack = false;
+  let opponentTarget = false;
+  const useRoughplayMod =
+    phaseChoices[1] === FightPhaseTypes[2][1] ||
+    phaseChoices[1] === FightPhaseTypes[2][3] ||
+    phaseChoices[1] === FightPhaseTypes[2][5];
+  if (isPlayerFucker) {
+    // player is attacker
+    ResponseObj.player = fuckerArousal(phaseChoices[2], charData, 0);
+    ResponseObj.result += `${charData.name} uses her ${phaseChoices[2]} on ${
+      fighterData.name
+    }'s ${phaseChoices[3]}, `;
+  } else {
+    // select Attacker's actions
+    const isOpSeduced = phaseChoices[2] === FightPhaseTypes[3][5];
+    const UsePrefAttack = Math.floor(Math.random() * 2);
+    if (UsePrefAttack) {
+      opponentAttack = fighterData.prefAttack;
+      opponentTarget = isOpSeduced ? phaseChoices[3] : fighterData.prefTarget;
+    } else {
+      opponentAttack = FightPhaseTypes[3][Math.floor(Math.random() * 5)];
+      opponentTarget = isOpSeduced
+        ? phaseChoices[3]
+        : FightPhaseTypes[4][Math.floor(Math.random() * 6)];
+    }
+    // set opponents arousal cost
+    // Todo RoughplayMod
+    const setRoughplayMod = useRoughplayMod ? fighterData.roughPlayLvl : 0;
+    ResponseObj.fighter = fuckerArousal(opponentAttack, fighterData, setRoughplayMod);
+    // reveal attackers choice in result text
+    if (UsePrefAttack && !isOpSeduced) {
+      ResponseObj.result += fighterData.uniqueAttackText + ", ";
+    } else {
+      ResponseObj.result += `${fighterData.name} uses her ${opponentAttack} on your ${opponentTarget}, `;
+    }
+  }
+  // set attack effect -> prowess * resis * roughplay
+
+  console.log("statecheck", arousalData[0]);
+  if (arousalData[0] + ResponseObj.player >= 100) {
+    ResponseObj.playerOrgasm = true;
+  }
+  if (arousalData[1] + ResponseObj.fighter >= 100) {
+    ResponseObj.fighterOrgasm = true;
+  }
+  console.log("respObj", ResponseObj);
+  return ResponseObj;
+};
+
+const fuckerArousal = (sexChoice, fuckerData, RoughplayMod) => {
+  // returns numerical cost of using sex organ on opponent
+  switch (sexChoice) {
+    case FightPhaseTypes[3][0]: // tongue
+      return fuckArousalCost(fuckerData.mouthResistance, RoughplayMod);
+    case FightPhaseTypes[3][1]: // touch
+      return fuckArousalCost(fuckerData.touchResistance, RoughplayMod);
+    case FightPhaseTypes[3][2]: // cock
+      return fuckArousalCost(fuckerData.cockResistance, RoughplayMod);
+    case FightPhaseTypes[3][3]: // vagina
+      return fuckArousalCost(fuckerData.vaginaResistance, RoughplayMod);
+    case FightPhaseTypes[3][4]: // anus
+      return fuckArousalCost(fuckerData.anusResistance, RoughplayMod);
+    default:
+      console.warn("err: choice not known", sexChoice);
+      return 10;
+  }
+};

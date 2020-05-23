@@ -6,6 +6,7 @@ import { observer } from "mobx-react-lite";
 const BuySkills = observer(() => {
   const {
     isWoman,
+    hasCock,
     gender,
     choiceSelection,
     updateChoiceSelection,
@@ -47,7 +48,7 @@ const BuySkills = observer(() => {
       unselect() {
         adjPenisSize(-1);
       },
-      isChoosable: penisSize < 5 && !isWoman,
+      isChoosable: penisSize < 5 && hasCock,
       cost: 5
     },
     {
@@ -59,7 +60,7 @@ const BuySkills = observer(() => {
       unselect() {
         adjPenisSize(-2);
       },
-      isChoosable: penisSize < 4 && !isWoman,
+      isChoosable: penisSize < 4 && hasCock,
       cost: 15
     },
     {

@@ -21,11 +21,12 @@ const Overwatch = {
     anusSize: 2,
     throatSize: 3,
     // Pref properties effect 'AI'
-    prefAttack: "touchProwess",
-    prefTarget: "mouthResistance",
-    roughPlayLvl: -2, // how responds to domination
+    prefAttack: "touch",
+    prefTarget: "mouth",
+    uniqueAttackText: "Mei's gentle fingers explore your tongue & mouth",
+    roughPlayLvl: -4, // how responds to domination either -hates or +likes
     // Prowess is capability
-    seductionProwess: 15,
+    seductionResistance: 15,
     grapplingProwess: 5,
     tongueProwess: 15,
     touchProwess: 25,

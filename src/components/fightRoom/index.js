@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import { useFightDataStore } from "../../state/fight";
 import { observer } from "mobx-react-lite";
+import OrgasmImg from "../../assets/logo/orgasm.png";
+import OrgasmLossImg from "../../assets/logo/orgasmLoss.png";
 
 import {
   LgTitle,
@@ -12,7 +14,13 @@ import {
   LogText,
   TextSpanLog
 } from "../text";
-import { Strings, RoomImages, FightPhaseTypes, FightPhaseData } from "./data";
+import {
+  Strings,
+  RoomImages,
+  FightPhaseTypes,
+  FightPhaseData,
+  fightResolve
+} from "./data";
 
 const FightRoom = observer(() => {
   const {
@@ -41,19 +49,51 @@ const FightRoom = observer(() => {
 
 const FightersInfo = observer(({ room, fighter }) => {
   const { name, img, race, bodyShape } = useGlobalDataStore();
+  const {
+    fightArousalState,
+    fightOrgasmState,
+    fightOrgasmStateOriginal
+  } = useFightDataStore();
+
+  const PlayerOrgasmIcons = [];
+  for (let i = 0; i < fightOrgasmStateOriginal[0]; i++) {
+    PlayerOrgasmIcons.push(
+      <OrgasmIcon
+        src={i >= fightOrgasmState[0] ? OrgasmLossImg : OrgasmImg}
+        alt="icon"
+      />
+    );
+  }
+  const FighterOrgasmIcons = [];
+  for (let i = 0; i < fightOrgasmStateOriginal[1]; i++) {
+    FighterOrgasmIcons.push(
+      <OrgasmIcon
+        src={i >= fightOrgasmState[1] ? OrgasmLossImg : OrgasmImg}
+        alt="icon"
+      />
+    );
+  }
 
   return (
     <MainWrap roomImg={RoomImages[room]}>
       <FighterImg src={img} alt="player" />
       <FighterData>
         <DataBox marginRight>
-          <MdTitle>{name}</MdTitle>
-          <SmText>{`${name} is a ${bodyShape} ${race} slut fighter and ready for action.`}</SmText>
+          <SmText>{name}</SmText>
+          <SmlrText>{`${name} is a ${bodyShape} ${race} slut fighter and ready for action.`}</SmlrText>
+          <FlexBetween>
+            <div>{PlayerOrgasmIcons}</div>
+            <SmlrText>Arousal::{fightArousalState[0]}</SmlrText>
+          </FlexBetween>
         </DataBox>
         <VSBox>VS</VSBox>
         <DataBox>
-          <MdTitle>{fighter.name}</MdTitle>
-          <SmText>{fighter.description}</SmText>
+          <SmText>{fighter.name}</SmText>
+          <SmlrText>{fighter.description}</SmlrText>
+          <FlexBetween>
+            <div>{FighterOrgasmIcons}</div>
+            <SmlrText>Arousal::{fightArousalState[1]}</SmlrText>
+          </FlexBetween>
         </DataBox>
       </FighterData>
       <FighterImg src={fighter.img} alt="opponent" />
@@ -65,10 +105,17 @@ const FighterActions = observer(({ fighter }) => {
   const [fightPhase, setFightPhase] = useState(0);
   const [fightPhaseType, setFightPhaseType] = useState(FightPhaseTypes[0][0]);
   const [phaseChoices, setPhaseChoices] = useState([]);
+  const [roundResult, setRoundResult] = useState(false);
   const PhaseData = FightPhaseData[fightPhase];
 
   const charData = useGlobalDataStore();
-  const { addToFightLog } = useFightDataStore();
+  const {
+    addToFightLog,
+    fightArousalState,
+    setFightArousalState,
+    fightOrgasmState,
+    setOrgasmState
+  } = useFightDataStore();
 
   const OnActionRan = (btnAction, optionIndex) => {
     const actionResponse = btnAction(charData, fighter, phaseChoices);
@@ -97,21 +144,43 @@ const FighterActions = observer(({ fighter }) => {
     }
   };
 
+  const isRoundEnd = fightPhase === FightPhaseData.length - 1;
   const BuildResolveStep = () => {
-    if (fightPhase < FightPhaseData.length - 1) {
-      return false;
+    // resolve damage to each
+    const responseObj = fightResolve(
+      phaseChoices,
+      charData,
+      fighter,
+      fightArousalState,
+      fightOrgasmState
+    );
+    setRoundResult(responseObj);
+    const newArousalData = [
+      fightArousalState[0] + responseObj.player,
+      fightArousalState[1] + responseObj.fighter
+    ];
+    setFightArousalState(newArousalData);
+    if (
+      (responseObj.playerOrgasm && fightArousalState[0] === 1) ||
+      (responseObj.fighterOrgasm && fightArousalState[1] === 1)
+    ) {
+      console.log("XXX round ends");
     } else {
-      console.log("phasechoice", phaseChoices);
-      const responseObj = { result: "yay" };
-      return responseObj;
+      setOrgasmState(responseObj.playerOrgasm, responseObj.fighterOrgasm);
     }
+    addToFightLog(responseObj.result);
   };
-  const Resolved = BuildResolveStep();
+  if (isRoundEnd && !roundResult) {
+    BuildResolveStep();
+  }
+  if (fightPhase === 0 && roundResult) {
+    setRoundResult(false);
+  }
 
   return (
     <ActionWrap>
       <MdTitle>{PhaseData[fightPhaseType].name}</MdTitle>
-      {Resolved && <SmText>{Resolved.result}</SmText>}
+      {isRoundEnd && <SmText>{roundResult.result}</SmText>}
       {PhaseData[fightPhaseType].options.map((phase, index) => {
         const onPress = () => OnActionRan(phase.onAction, index);
 
@@ -129,17 +198,18 @@ const FighterActions = observer(({ fighter }) => {
 // Fight Log
 const FighterTextLog = observer(() => {
   const { fightLog } = useFightDataStore();
+  const CompArray = [];
 
-  return (
-    <FightLogWrap>
-      {fightLog.map(entry => (
+  for (var i = 0, l = fightLog.length; i < l; i++) {
+    fightLog[l - i - 1].length > 1 &&
+      CompArray.push(
         <LogText>
           {"> "}
-          <TextSpanLog>{entry}</TextSpanLog>
+          <TextSpanLog>{fightLog[l - i - 1]}</TextSpanLog>
         </LogText>
-      ))}
-    </FightLogWrap>
-  );
+      );
+  }
+  return <FightLogWrap>{CompArray}</FightLogWrap>;
 });
 
 const Wrapper = styled.div`
@@ -165,7 +235,7 @@ const FighterData = styled.div`
   justify-content: space-around;
 `;
 const DataBox = styled.div`
-  margin-${({ marginRight }) => (marginRight ? `right` : `left`)}: 24px;
+  margin-${({ marginRight }) => (marginRight ? `right` : `left`)}: 25%;
   border: 1px solid black;
   background: rgba(78, 220, 220, 0.8);
   padding: 4px;
@@ -178,6 +248,11 @@ const VSBox = styled.div`
 `;
 const FlexWrap = styled.div`
   display: flex;
+`;
+const FlexBetween = styled(FlexWrap)`
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 16px;
 `;
 const ActionWrap = styled.div`
   border: 1px solid darkgreen;
@@ -201,6 +276,11 @@ const FightLogWrap = styled.div`
   flex: 1 0 35%;
   overflow-y: auto;
   max-height: 240px;
+`;
+const OrgasmIcon = styled.img`
+  width: 30px;
+  height: 30px;
+  margin: 4px;
 `;
 
 export default FightRoom;

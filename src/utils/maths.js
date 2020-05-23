@@ -20,3 +20,11 @@ export const isFightStatCompWin = (playerStat, fighterStat) => {
   console.log('rngJ', RngJesus);
   return playerStat > (fighterStat + RngJesus);
 };
+
+export const fuckArousalCost = (resistanceLvl, roughplayMod) => {
+  const A = Math.floor(Math.random() * 30);
+  const B = Math.floor(Math.random() * 30);
+  const resistanceMod = (100 - resistanceLvl) / 100
+  const RngJesus = Math.floor(((A + B) * resistanceMod) + 5) - roughplayMod;
+  return RngJesus > 0 ? RngJesus : 0;
+}
