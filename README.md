@@ -9,6 +9,7 @@
 ### To do
 
 - win logic
+- fight training skill gain
 - settings screen
 - window alert -> Toast
 - inteface + ran sex text output

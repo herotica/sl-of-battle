@@ -1,19 +1,11 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import { useFightDataStore } from "../../state/fight";
 import { observer } from "mobx-react-lite";
 import OrgasmImg from "../../assets/logo/orgasm.png";
 import OrgasmLossImg from "../../assets/logo/orgasmLoss.png";
 
-import {
-  LgTitle,
-  SmText,
-  MdTitle,
-  SmlrText,
-  LogText,
-  TextSpanLog
-} from "../text";
+import { SmText, MdTitle, SmlrText, LogText, TextSpanLog } from "../text";
 import {
   Strings,
   RoomImages,
@@ -21,24 +13,35 @@ import {
   FightPhaseData,
   fightResolve
 } from "./data";
+import {
+  FightRoomWrap,
+  ActBtn,
+  FightEnd,
+  MainWrap,
+  FighterImg,
+  FighterData,
+  DataBox,
+  VSBox,
+  FlexWrap,
+  FlexBetween,
+  ActionWrap,
+  FightLogWrap,
+  OrgasmIcon
+} from "./styled";
 
 const FightRoom = () => {
   const { onFightWin, onFightLose } = useFightDataStore();
 
   return (
-    <Wrapper>
-      <CenterTitle>
-        <LgTitle>{Strings.title}</LgTitle>
-        <SmText>{Strings.explain}</SmText>
-      </CenterTitle>
+    <FightRoomWrap title={Strings.title} subTitle={Strings.explain}>
       <FightersInfo />
       <FlexWrap>
         <FighterTextLog />
         <FighterActions />
       </FlexWrap>
-      <button onClick={onFightWin}>Win</button>
-      <button onClick={onFightLose}>Lose</button>
-    </Wrapper>
+      <button onClick={onFightWin}>Dev Win</button>
+      <button onClick={onFightLose}>Dev Lose</button>{" "}
+    </FightRoomWrap>
   );
 };
 
@@ -98,6 +101,7 @@ const FightersInfo = observer(() => {
   );
 });
 
+
 const FighterActions = observer(() => {
   const [fightPhase, setFightPhase] = useState(0);
   const [fightPhaseType, setFightPhaseType] = useState(FightPhaseTypes[0][0]);
@@ -114,10 +118,20 @@ const FighterActions = observer(() => {
     fightOrgasmState,
     setOrgasmState,
     fightRoundEnd,
-    setRoundEnd
+    setRoundEnd,
+    fightWinner,
+    setRoundWinner,
+    onFightWin,
+    onFightLose,
+    fightMatchWinnings
   } = useFightDataStore();
-
   const fighter = fightCombantantData;
+
+  const shouldHideOpt = phaseOpt =>
+    (phaseOpt.reqCock && !charData.hasCock) ||
+    (phaseOpt.reqFemale && !charData.isWoman) ||
+    (phaseOpt.opHasCock && !fighter.hasCock);
+
   const OnActionRan = (btnAction, optionIndex) => {
     const actionResponse = btnAction(charData, fighter, phaseChoices);
     addToFightLog(actionResponse.log);
@@ -161,14 +175,19 @@ const FighterActions = observer(() => {
       fightArousalState[1] + responseObj.fighter
     ];
     setFightArousalState(newArousalData);
-    if (
-      (responseObj.playerOrgasm && fightArousalState[0] === 1) ||
-      (responseObj.fighterOrgasm && fightArousalState[1] === 1)
-    ) {
-      console.log("XXX round ends");
-    } else {
-      setOrgasmState(responseObj.playerOrgasm, responseObj.fighterOrgasm);
+
+    // check for winner
+    if (responseObj.playerOrgasm && fightOrgasmState[0] === 1) {
+      if (responseObj.fighterOrgasm && fightOrgasmState[1] === 1) {
+        setRoundWinner("draw");
+      } else {
+        setRoundWinner("lose");
+      }
+    } else if (responseObj.fighterOrgasm && fightOrgasmState[1] === 1) {
+      setRoundWinner("win");
     }
+
+    setOrgasmState(responseObj.playerOrgasm, responseObj.fighterOrgasm);
     addToFightLog(responseObj.result);
   };
   if (isRoundEnd && !fightRoundEnd) {
@@ -183,23 +202,21 @@ const FighterActions = observer(() => {
     <ActionWrap>
       <MdTitle>{PhaseData[fightPhaseType].name}</MdTitle>
       {isRoundEnd && <SmText>{roundResult}</SmText>}
-      {PhaseData[fightPhaseType].options.map((phaseOpt, index) => {
-        const onPress = () => OnActionRan(phaseOpt.onAction, index);
+      {!fightWinner &&
+        PhaseData[fightPhaseType].options.map((phaseOpt, index) => {
+          const onPress = () => OnActionRan(phaseOpt.onAction, index);
+          const isHidden = shouldHideOpt(phaseOpt);
 
-        const isHidden =
-          (phaseOpt.reqCock && !charData.hasCock) ||
-          (phaseOpt.reqFemale && !charData.isWoman) ||
-          (phaseOpt.opHasCock && !fighter.hasCock);
-
-        return (
-          !isHidden && (
-            <ActionItem onClick={onPress}>
-              <SmText>{phaseOpt.name}</SmText>
-              <SmlrText>{phaseOpt.description}</SmlrText>
-            </ActionItem>
-          )
-        );
-      })}
+          return !isHidden && <ActBtn onPress={onPress} {...phaseOpt} />;
+        })}
+      {fightWinner && (
+        <FightEnd
+          winType={fightWinner}
+          onWin={onFightWin}
+          onLose={onFightLose}
+          winnings={fightMatchWinnings}
+        />
+      )}
     </ActionWrap>
   );
 });
@@ -220,76 +237,5 @@ const FighterTextLog = observer(() => {
   }
   return <FightLogWrap>{CompArray}</FightLogWrap>;
 });
-
-const Wrapper = styled.div`
-  margin: 8px 16px;
-`;
-const CenterTitle = styled.div`
-  text-align: center;
-  margin-bottom: 16px;
-`;
-const MainWrap = styled.div`
-  ${({ roomImg }) => roomImg && `background-image: url(${roomImg});`}
-  padding: 16px;
-  display: flex;
-  align-items: stretch;
-`;
-const FighterImg = styled.img`
-  height: 300px;
-`;
-const FighterData = styled.div`
-  flex: 0 3 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-`;
-const DataBox = styled.div`
-  margin-${({ marginRight }) => (marginRight ? `right` : `left`)}: 25%;
-  border: 1px solid black;
-  background: rgba(78, 220, 220, 0.8);
-  padding: 4px;
-`;
-const VSBox = styled.div`
-  color: white;
-  font-weight: bold;
-  font-size: 28px;
-  text-align: center;
-`;
-const FlexWrap = styled.div`
-  display: flex;
-`;
-const FlexBetween = styled(FlexWrap)`
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 16px;
-`;
-const ActionWrap = styled.div`
-  border: 1px solid darkgreen;
-  background: rgba(25, 146, 91, 0.85);
-  padding: 8px;
-  flex-grow: 4;
-`;
-const ActionItem = styled.div`
-  border: 1px solid black;
-  background: rgba(60, 60, 60, 0.8);
-  margin: 16px;
-  cursor: pointer;
-  padding: 8px;
-  max-width: 400px;
-  border-radius: 10px;
-`;
-const FightLogWrap = styled.div`
-  border: 1px solid black;
-  background: rgba(180, 212, 180, 0.85);
-  padding: 8px;
-  flex: 1 0 35%;
-  overflow-y: auto;
-  max-height: 240px;
-`;
-const OrgasmIcon = styled.img`
-  width: 30px;
-  height: 30px;
-  margin: 4px;
-`;
 
 export default FightRoom;

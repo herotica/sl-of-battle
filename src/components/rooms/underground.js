@@ -90,7 +90,7 @@ const FightTierOption = observer(
         // select comabatant
         const diffLevel = SelectDifficulty(mediumDiffChance, hardDiffChance);
         const comabatant = SelectCombatant(diffLevel);
-        readyNewFight(comabatant, FightRooms.underground, onWin, onLose);
+        readyNewFight(comabatant, FightRooms.underground, onWin, onLose, reward);
         setRoom(Rooms.fight);
       } else {
         window.alert("You can afford this.");
@@ -112,7 +112,6 @@ const FightTierOption = observer(
 const DifficultyLevels = ["basic", "medium", "hard"];
 const SelectDifficulty = (midChance, HardChance) => {
   const RanNum = Math.floor(Math.random() * 1000);
-  console.log("rand", RanNum);
   if (RanNum <= HardChance) {
     return DifficultyLevels[2];
   }

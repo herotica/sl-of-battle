@@ -61,20 +61,33 @@ export function createFightStore() {
       }
     },
 
+    // used to fix race error with useState
     fightRoundEnd: false,
     setRoundEnd(newBool) {
       this.fightRoundEnd = newBool;
     },
 
-    readyNewFight(combatant, room, onWin, onLose) {
+    // should be one of "draw","win","lose"
+    fightWinner: false,
+    setRoundWinner(newVal) {
+      this.fightWinner = newVal;
+    },
+
+    fightMatchWinnings: 0,
+
+    readyNewFight(combatant, room, onWin, onLose, winnings) {
       this.setCombatant(combatant);
       this.setFightRoom(room);
       this.setOnWinFunc(onWin);
       this.setOnLoseFunc(onLose);
       //Todo Undergroundcheck
+      this.fightArousalState = [0, 0];
       this.fightOrgasmState = [2, 2];
       this.fightOrgasmStateOriginal = [2, 2];
       this.fightLog = [];
+      this.fightRoundEnd = false;
+      this.fightWinner = false;
+      this.fightMatchWinnings = winnings;
     }
   };
 }
