@@ -3,8 +3,10 @@ import UndergroundBg from "../../assets/room/underground.jpg";
 import {
   isFightStatCompWin,
   fuckArousalCost,
-  receiverArousalGain
+  receiverArousalGain,
+  TestStatTrain
 } from "../../utils/maths";
+import { CharKeys } from "../../state";
 
 export const Strings = {
   title: "SLUT FIGHT",
@@ -786,6 +788,7 @@ export const fightResolve = (
     playerOrgasm: false,
     fighter: 0,
     fighterOrgasm: false,
+    skillGain: false,
     result: "" // text output, effect on player, effect on opponent
   };
 
@@ -852,6 +855,17 @@ export const fightResolve = (
   if (arousalData[1] + ResponseObj.fighter >= 100) {
     ResponseObj.fighterOrgasm = true;
   }
+
+  if (isPlayerFucker) {
+    ResponseObj.skillGain = checkSkillGain(
+      isPlayerFucker,
+      phaseChoices[2],
+      charData
+    );
+  } else {
+    ResponseObj.skillGain = checkSkillGain(false, opponentTarget, charData);
+  }
+
   console.log("respObj", ResponseObj);
   return ResponseObj;
 };
@@ -940,4 +954,30 @@ const sizeDiffCalc = (fuckerOrganSize, recieverOrganSize) => {
   // returns from 15(fucker bigger) -> 5
   const diff = fuckerOrganSize - recieverOrganSize + 10;
   return diff / 10;
+};
+
+const checkSkillGain = (isPlayerFucker, organ, charData) => {
+  let returnTxt = false;
+
+  if (isPlayerFucker) {
+    returnTxt = checkAndIncrease(
+      organ,
+      charData,
+      CharKeys.prowess[organ],
+      CharKeys.prowessUpd[organ]
+    );
+  } else {
+    returnTxt = checkAndIncrease(
+      organ,
+      charData,
+      CharKeys.resist[organ],
+      CharKeys.resistUpd[organ]
+    );
+  }
+  return returnTxt;
+};
+const checkAndIncrease = (name, CharData, skill, skillUp) => {
+  const skillLvled = TestStatTrain(CharData[skill], 2);
+  skillLvled && CharData[skillUp](1);
+  return skillLvled && `Increased ${name} skill`;
 };

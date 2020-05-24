@@ -3,6 +3,43 @@ import { useLocalStore } from "mobx-react-lite";
 import { Rooms, gender } from "../constants";
 import { GetFromStorage, StoreObj, createFileFromObj } from "../utils";
 
+export const CharKeys = {
+  prowess: {
+    seduction: "seductionProwess",
+    grappling: "grapplingProwess",
+    tongue: "tongueProwess",
+    touch: "touchProwess",
+    cock: "cockProwess",
+    vagina: "vaginaProwess",
+    anus: "anusProwess"
+  },
+  prowessUpd: {
+    seduction: "changeSeductionProwess",
+    grappling: "changeGrapplingProwess",
+    tongue: "changeTongueProwess",
+    touch: "changeTouchProwess",
+    cock: "changeCockProwess",
+    vagina: "changeVaginaProwess",
+    anus: "changeAnusProwess"
+  },
+  resist: {
+    touch: "touchResistance",
+    breasts: "breastResistance",
+    mouth: "mouthResistance",
+    cock: "cockResistance",
+    vagina: "vaginaResistance",
+    anus: "anusResistance"
+  },
+  resistUpd: {
+    touch: "changeTouchResistance",
+    breasts: "changeBreastResistance",
+    mouth: "changeMouthResistance",
+    cock: "changeCockResistance",
+    vagina: "changeVaginaResistance",
+    anus: "changeAnusResistance"
+  }
+};
+
 const InitialValues = {
   name: "None",
   icon: null,

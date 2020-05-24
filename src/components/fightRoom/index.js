@@ -189,6 +189,7 @@ const FighterActions = observer(() => {
 
     setOrgasmState(responseObj.playerOrgasm, responseObj.fighterOrgasm);
     addToFightLog(responseObj.result);
+    responseObj.skillGain && addToFightLog(responseObj.skillGain);
   };
   if (isRoundEnd && !fightRoundEnd) {
     setRoundEnd(true);
