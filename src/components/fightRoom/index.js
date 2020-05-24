@@ -181,13 +181,18 @@ const FighterActions = observer(({ fighter }) => {
     <ActionWrap>
       <MdTitle>{PhaseData[fightPhaseType].name}</MdTitle>
       {isRoundEnd && <SmText>{roundResult.result}</SmText>}
-      {PhaseData[fightPhaseType].options.map((phase, index) => {
-        const onPress = () => OnActionRan(phase.onAction, index);
+      {PhaseData[fightPhaseType].options.map((phaseOpt, index) => {
+        const onPress = () => OnActionRan(phaseOpt.onAction, index);
+
+        const isHidden =
+          (phaseOpt.reqCock && !charData.hasCock) ||
+          (phaseOpt.reqFemale && !charData.isWoman) ||
+          (phaseOpt.opHasCock && !fighter.hasCock);
 
         return (
-          <ActionItem onClick={onPress}>
-            <SmText>{phase.name}</SmText>
-            <SmlrText>{phase.description}</SmlrText>
+          !isHidden && <ActionItem onClick={onPress}>
+            <SmText>{phaseOpt.name}</SmText>
+            <SmlrText>{phaseOpt.description}</SmlrText>
           </ActionItem>
         );
       })}

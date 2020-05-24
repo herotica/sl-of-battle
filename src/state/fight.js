@@ -31,13 +31,21 @@ export function createFightStore() {
 
     fightArousalState: [0, 0],
     setFightArousalState(arrayIn) {
-      // stops arousal breaching 100(orgasm trigger), resets to 20 + overflow;
+      // stops arousal breaching 100(orgasm trigger), resets to 10 + overflow;
       const newArray = arrayIn.slice(0);
       if (arrayIn[0] >= 100) {
-        newArray[0] = arrayIn[0] - 80;
+        if(arrayIn[0] - 90 >= 100) {
+          newArray[0] = 99;
+        } else {
+          newArray[0] = arrayIn[0] - 90;
+        }
       }
       if (arrayIn[1] >= 100) {
-        newArray[1] = arrayIn[1] - 80;
+        if(arrayIn[1] - 90 >= 100) {
+          newArray[1] = 99;
+        } else {
+          newArray[1] = arrayIn[1] - 90;
+        }
       }
       this.fightArousalState = newArray.slice(0, 2);
     },

@@ -18,6 +18,7 @@ const InitialValues = {
   maxVal: 20,
   minVal: -100,
   height: 2,
+  // Size runs from 0-5
   penisSize: 2,
   breastSize: 2,
   vaginaSize: 2,

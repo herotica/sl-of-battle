@@ -8,11 +8,10 @@
 
 ### To do
 
-- player win res logic
-- opponent win res logic
+- win logic
 - settings screen
 - window alert -> Toast
-
+- inteface + ran sex text output
 - color choice, show color
 - choice icons
   -- isekai lg

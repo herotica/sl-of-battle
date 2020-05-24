@@ -17,7 +17,6 @@ export const isFightStatCompWin = (playerStat, fighterStat) => {
   const C = Math.floor(Math.random() * 10);
   const D = Math.floor(Math.random() * 30);
   const RngJesus = A + B + C + D - 32;
-  console.log('rngJ', RngJesus);
   return playerStat > (fighterStat + RngJesus);
 };
 
@@ -27,4 +26,17 @@ export const fuckArousalCost = (resistanceLvl, roughplayMod) => {
   const resistanceMod = (100 - resistanceLvl) / 100
   const RngJesus = Math.floor(((A + B) * resistanceMod) + 5) - roughplayMod;
   return RngJesus > 0 ? RngJesus : 0;
+}
+
+export const receiverArousalGain = (fuckerProwess, receiverResistance, tightnessMod, roughplayMod) => {
+  const A = Math.floor(Math.random() * 10);
+  const B = Math.floor(Math.random() * 20);
+  const C = Math.floor(Math.random() * 20);
+  // output 3-80
+  let diff = fuckerProwess - receiverResistance + 50;
+  if (diff < 50) diff = 0;
+  if (diff > 150) diff = 100;
+  const arousalGain = (A + B + C + diff + roughplayMod) * tightnessMod;
+  return arousalGain;
+  // output 20-120
 }

@@ -1,6 +1,10 @@
 import { FightRooms } from "../../constants";
 import UndergroundBg from "../../assets/room/underground.jpg";
-import { isFightStatCompWin, fuckArousalCost } from "../../utils/maths";
+import {
+  isFightStatCompWin,
+  fuckArousalCost,
+  receiverArousalGain
+} from "../../utils/maths";
 
 export const Strings = {
   title: "SLUT FIGHT",
@@ -775,27 +779,31 @@ export const fightResolve = (
   phaseChoices,
   charData,
   fighterData,
-  arousalData,
-  orgasmData
+  arousalData
 ) => {
-  console.log("phasechoices FR", phaseChoices);
   const ResponseObj = {
     player: 0,
     playerOrgasm: false,
-    fighter: 15,
+    fighter: 0,
     fighterOrgasm: false,
     result: "" // text output, effect on player, effect on opponent
   };
+
+  // setup who is control/fucker and constants
   const isPlayerFucker = phaseChoices[0] === FightPhaseTypes[1][0];
   let opponentAttack = false;
   let opponentTarget = false;
-  const useRoughplayMod =
-    phaseChoices[1] === FightPhaseTypes[2][1] ||
-    phaseChoices[1] === FightPhaseTypes[2][3] ||
-    phaseChoices[1] === FightPhaseTypes[2][5];
+
+  // player is attacker
   if (isPlayerFucker) {
-    // player is attacker
     ResponseObj.player = fuckerArousal(phaseChoices[2], charData, 0);
+    ResponseObj.fighter = recieverArousal(
+      phaseChoices[2],
+      charData,
+      phaseChoices[3],
+      fighterData,
+      0
+    );
     ResponseObj.result += `${charData.name} uses her ${phaseChoices[2]} on ${
       fighterData.name
     }'s ${phaseChoices[3]}, `;
@@ -812,10 +820,24 @@ export const fightResolve = (
         ? phaseChoices[3]
         : FightPhaseTypes[4][Math.floor(Math.random() * 6)];
     }
-    // set opponents arousal cost
-    // Todo RoughplayMod
+
+    const useRoughplayMod =
+      phaseChoices[1] === FightPhaseTypes[2][1] ||
+      phaseChoices[1] === FightPhaseTypes[2][3] ||
+      phaseChoices[1] === FightPhaseTypes[2][5];
     const setRoughplayMod = useRoughplayMod ? fighterData.roughPlayLvl : 0;
-    ResponseObj.fighter = fuckerArousal(opponentAttack, fighterData, setRoughplayMod);
+    ResponseObj.fighter = fuckerArousal(
+      opponentAttack,
+      fighterData,
+      setRoughplayMod
+    );
+    ResponseObj.player = recieverArousal(
+      opponentAttack,
+      fighterData,
+      opponentTarget,
+      charData,
+      setRoughplayMod
+    );
     // reveal attackers choice in result text
     if (UsePrefAttack && !isOpSeduced) {
       ResponseObj.result += fighterData.uniqueAttackText + ", ";
@@ -823,9 +845,7 @@ export const fightResolve = (
       ResponseObj.result += `${fighterData.name} uses her ${opponentAttack} on your ${opponentTarget}, `;
     }
   }
-  // set attack effect -> prowess * resis * roughplay
 
-  console.log("statecheck", arousalData[0]);
   if (arousalData[0] + ResponseObj.player >= 100) {
     ResponseObj.playerOrgasm = true;
   }
@@ -853,4 +873,71 @@ const fuckerArousal = (sexChoice, fuckerData, RoughplayMod) => {
       console.warn("err: choice not known", sexChoice);
       return 10;
   }
+};
+
+const recieverArousal = (
+  fuckerOrgan,
+  fuckerData,
+  receiverTarget,
+  receiverData,
+  RoughplayMod
+) => {
+  // sets attack effect on reciever -> prowess , resistance , tightness , roughplay
+  let tightnessMod = SizeDiffMod(fuckerOrgan, receiverTarget);
+
+  return receiverArousalGain(
+    fuckerData[prowessKey[fuckerOrgan]],
+    receiverData[resistanceKey[receiverTarget]],
+    tightnessMod,
+    RoughplayMod
+  );
+};
+const prowessKey = {
+  tongue: "tongueProwess",
+  touch: "touchProwess",
+  cock: "cockProwess",
+  vagina: "vaginaProwess",
+  anus: "anusProwess"
+};
+const resistanceKey = {
+  touch: "touchResistance",
+  breasts: "breastResistance",
+  mouth: "mouthResistance",
+  cock: "cockResistance",
+  vagina: "vaginaResistance",
+  anus: "anusResistance"
+};
+
+const SizeDiffMod = (fuckerOrgan, fuckerData, recieverTarget, recieverData) => {
+  if (fuckerOrgan === "cock") {
+    switch (recieverTarget) {
+      case "mouth":
+        return sizeDiffCalc(fuckerData.penisSize, recieverData.throatSize);
+      case "vagina":
+        return sizeDiffCalc(fuckerData.penisSize, recieverData.vaginaSize);
+      case "anus":
+        return sizeDiffCalc(fuckerData.penisSize, recieverData.anusSize);
+      default:
+        return 1;
+    }
+  } else if (recieverTarget === "cock") {
+    switch (fuckerOrgan) {
+      case "tongue":
+        return sizeDiffCalc(fuckerData.throatSize, recieverData.penisSize);
+      case "vagina":
+        return sizeDiffCalc(fuckerData.vaginaSize, recieverData.penisSize);
+      case "anus":
+        return sizeDiffCalc(fuckerData.anusSize, recieverData.penisSize);
+      default:
+        return 1;
+    }
+  } else {
+    return 1;
+  }
+  // return high num if tight, low if loose
+};
+const sizeDiffCalc = (fuckerOrganSize, recieverOrganSize) => {
+  // returns from 15(fucker bigger) -> 5
+  const diff = fuckerOrganSize - recieverOrganSize + 10;
+  return diff / 10;
 };
