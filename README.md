@@ -8,10 +8,9 @@
 
 ### To do
 
-- fight training skill gain
-- settings screen
-- window alert -> Toast
 - inteface + ran sex text output
+
+- window alert -> Toast
 - color choice, show color
 - choice icons
   -- isekai lg
