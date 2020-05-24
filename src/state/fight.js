@@ -34,14 +34,14 @@ export function createFightStore() {
       // stops arousal breaching 100(orgasm trigger), resets to 10 + overflow;
       const newArray = arrayIn.slice(0);
       if (arrayIn[0] >= 100) {
-        if(arrayIn[0] - 90 >= 100) {
+        if (arrayIn[0] - 90 >= 100) {
           newArray[0] = 99;
         } else {
           newArray[0] = arrayIn[0] - 90;
         }
       }
       if (arrayIn[1] >= 100) {
-        if(arrayIn[1] - 90 >= 100) {
+        if (arrayIn[1] - 90 >= 100) {
           newArray[1] = 99;
         } else {
           newArray[1] = arrayIn[1] - 90;
@@ -59,6 +59,11 @@ export function createFightStore() {
       if (playerLoss || fighterLoss) {
         this.fightOrgasmState = initVal;
       }
+    },
+
+    fightRoundEnd: false,
+    setRoundEnd(newBool) {
+      this.fightRoundEnd = newBool;
     },
 
     readyNewFight(combatant, room, onWin, onLose) {

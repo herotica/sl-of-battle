@@ -22,13 +22,8 @@ import {
   fightResolve
 } from "./data";
 
-const FightRoom = observer(() => {
-  const {
-    fightCombantantData,
-    fightRoom,
-    onFightWin,
-    onFightLose
-  } = useFightDataStore();
+const FightRoom = () => {
+  const { onFightWin, onFightLose } = useFightDataStore();
 
   return (
     <Wrapper>
@@ -36,20 +31,22 @@ const FightRoom = observer(() => {
         <LgTitle>{Strings.title}</LgTitle>
         <SmText>{Strings.explain}</SmText>
       </CenterTitle>
-      <FightersInfo room={fightRoom} fighter={fightCombantantData} />
+      <FightersInfo />
       <FlexWrap>
         <FighterTextLog />
-        <FighterActions fighter={fightCombantantData} />
+        <FighterActions />
       </FlexWrap>
       <button onClick={onFightWin}>Win</button>
       <button onClick={onFightLose}>Lose</button>
     </Wrapper>
   );
-});
+};
 
-const FightersInfo = observer(({ room, fighter }) => {
+const FightersInfo = observer(() => {
   const { name, img, race, bodyShape } = useGlobalDataStore();
   const {
+    fightCombantantData,
+    fightRoom,
     fightArousalState,
     fightOrgasmState,
     fightOrgasmStateOriginal
@@ -75,7 +72,7 @@ const FightersInfo = observer(({ room, fighter }) => {
   }
 
   return (
-    <MainWrap roomImg={RoomImages[room]}>
+    <MainWrap roomImg={RoomImages[fightRoom]}>
       <FighterImg src={img} alt="player" />
       <FighterData>
         <DataBox marginRight>
@@ -88,20 +85,20 @@ const FightersInfo = observer(({ room, fighter }) => {
         </DataBox>
         <VSBox>VS</VSBox>
         <DataBox>
-          <SmText>{fighter.name}</SmText>
-          <SmlrText>{fighter.description}</SmlrText>
+          <SmText>{fightCombantantData.name}</SmText>
+          <SmlrText>{fightCombantantData.description}</SmlrText>
           <FlexBetween>
             <div>{FighterOrgasmIcons}</div>
             <SmlrText>Arousal::{fightArousalState[1]}</SmlrText>
           </FlexBetween>
         </DataBox>
       </FighterData>
-      <FighterImg src={fighter.img} alt="opponent" />
+      <FighterImg src={fightCombantantData.img} alt="opponent" />
     </MainWrap>
   );
 });
 
-const FighterActions = observer(({ fighter }) => {
+const FighterActions = observer(() => {
   const [fightPhase, setFightPhase] = useState(0);
   const [fightPhaseType, setFightPhaseType] = useState(FightPhaseTypes[0][0]);
   const [phaseChoices, setPhaseChoices] = useState([]);
@@ -110,13 +107,17 @@ const FighterActions = observer(({ fighter }) => {
 
   const charData = useGlobalDataStore();
   const {
+    fightCombantantData,
     addToFightLog,
     fightArousalState,
     setFightArousalState,
     fightOrgasmState,
-    setOrgasmState
+    setOrgasmState,
+    fightRoundEnd,
+    setRoundEnd
   } = useFightDataStore();
 
+  const fighter = fightCombantantData;
   const OnActionRan = (btnAction, optionIndex) => {
     const actionResponse = btnAction(charData, fighter, phaseChoices);
     addToFightLog(actionResponse.log);
@@ -154,7 +155,7 @@ const FighterActions = observer(({ fighter }) => {
       fightArousalState,
       fightOrgasmState
     );
-    setRoundResult(responseObj);
+    setRoundResult(responseObj.result);
     const newArousalData = [
       fightArousalState[0] + responseObj.player,
       fightArousalState[1] + responseObj.fighter
@@ -170,17 +171,18 @@ const FighterActions = observer(({ fighter }) => {
     }
     addToFightLog(responseObj.result);
   };
-  if (isRoundEnd && !roundResult) {
+  if (isRoundEnd && !fightRoundEnd) {
+    setRoundEnd(true);
     BuildResolveStep();
   }
-  if (fightPhase === 0 && roundResult) {
-    setRoundResult(false);
+  if (fightPhase === 0 && fightRoundEnd) {
+    setRoundEnd(false);
   }
 
   return (
     <ActionWrap>
       <MdTitle>{PhaseData[fightPhaseType].name}</MdTitle>
-      {isRoundEnd && <SmText>{roundResult.result}</SmText>}
+      {isRoundEnd && <SmText>{roundResult}</SmText>}
       {PhaseData[fightPhaseType].options.map((phaseOpt, index) => {
         const onPress = () => OnActionRan(phaseOpt.onAction, index);
 
@@ -190,10 +192,12 @@ const FighterActions = observer(({ fighter }) => {
           (phaseOpt.opHasCock && !fighter.hasCock);
 
         return (
-          !isHidden && <ActionItem onClick={onPress}>
-            <SmText>{phaseOpt.name}</SmText>
-            <SmlrText>{phaseOpt.description}</SmlrText>
-          </ActionItem>
+          !isHidden && (
+            <ActionItem onClick={onPress}>
+              <SmText>{phaseOpt.name}</SmText>
+              <SmlrText>{phaseOpt.description}</SmlrText>
+            </ActionItem>
+          )
         );
       })}
     </ActionWrap>
