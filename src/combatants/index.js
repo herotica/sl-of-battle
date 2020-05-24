@@ -12,7 +12,8 @@ export const Underground = {
     bunnyGirl: Other.bunnyGirl
   },
   tierHard: {
-    carmen: HentaiFoundry.carmen
+    carmen: HentaiFoundry.carmen,
+    meryl: HentaiFoundry.meryl
   }
 };
 

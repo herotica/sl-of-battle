@@ -3,10 +3,7 @@ import styled from "styled-components";
 import {
   LgTitle,
   SmText,
-  MdTitle,
   SmlrText,
-  LogText,
-  TextSpanLog
 } from "../text";
 
 export const FightRoomWrap = ({ title, subTitle, children }) => (
