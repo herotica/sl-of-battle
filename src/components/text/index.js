@@ -11,9 +11,12 @@ export const MdTitle = styled.div`
   font-size: calc(1.4rem + 0.3vw);
 `;
 
+export const SmTextCSS = `
+  font-size: calc(1.1rem + 0.2vw);
+`;
 export const SmText = styled.div`
   line-height: 1.6;
-  font-size: calc(1.1rem + 0.2vw);
+  ${SmTextCSS}
 `;
 export const SmlrText = styled.div`
   line-height: 1.4;

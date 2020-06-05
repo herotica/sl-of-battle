@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-// import styled from "styled-components";
+import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import ImportCharacter from "../importChar";
 import Modal from "../modal";
+import { LgTitle } from "../text";
+import Button from "../button";
 
 import Leagues from "../leagues";
 
@@ -14,19 +16,27 @@ const Main = () => {
 
   return (
     <div>
-      Main Rooms
-      {showSettings && (
-        <Modal title="Settings" onHide={hideSettings}>
-          <button onClick={startNewGame}>New Game</button>
-          <button onClick={createSaveFile}>Export Character</button>
+      <FlexSeperateWrap>
+        <LgTitle>Lobby</LgTitle>
+        {showSettings && (
+          <Modal title="Settings" onHide={hideSettings}>
+            <Button onClick={startNewGame}>New Game</Button>
+            <Button onClick={createSaveFile}>Export Character</Button>
 
-          <ImportCharacter />
-        </Modal>
-      )}
-      <button onClick={openSettings}>Settings</button>
+            <ImportCharacter />
+          </Modal>
+        )}
+        <Button onClick={openSettings}>Settings</Button>
+      </FlexSeperateWrap>
+
       <Leagues />
     </div>
   );
 };
+
+const FlexSeperateWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export default Main;

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Palette from "../../constants/palette";
 import { useGlobalDataStore } from "../../state";
 import { observer } from "mobx-react-lite";
-import Character, { SideBarMain } from "../character";
+import Sidebar from "../sidebar";
 
 // Rooms
 import { Rooms } from "../../constants";
@@ -14,21 +15,11 @@ import Underground from "../rooms/underground";
 
 const Layout = () => {
   const [showSidebar, setSidebar] = useState(false);
-  const hideSidebar = () => setSidebar(false);
-  const expandSidebar = () => setSidebar(true);
+  const switchSidebarSize = () => setSidebar(!showSidebar);
 
   return (
     <Wrapper>
-      {showSidebar ? (
-        <WideSidebar onClick={hideSidebar}>
-          <SideBarMain />
-        </WideSidebar>
-      ) : (
-        <SmSidebar onClick={expandSidebar}>
-          Small
-          <Character />
-        </SmSidebar>
-      )}
+      <Sidebar isCollapsed={!showSidebar} onSwitch={switchSidebarSize} />
       <Main>
         <RoomManager />
       </Main>
@@ -66,19 +57,11 @@ const Wrapper = styled.div`
   background: black;
   display: flex;
 `;
-const WideSidebar = styled.div`
-  flex: 0 0 300px;
-  background: darkgrey;
-  overflow-y: auto;
-`;
-const SmSidebar = styled.div`
-  width: 80px;
-  background: darkblue;
-`;
 const Main = styled.div`
-  background: lightgrey;
+  background: ${Palette.light};
   flex-grow: 1;
   overflow-y: auto;
+  padding: calc(2rem + 0.4vw);
 `;
 
 export default Layout;
