@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MdTitle } from "../text";
+import Palette from "../../constants/palette";
 
 const Modal = ({ children, title, onHide }) => {
   const stopBubbling = evt => {
@@ -25,22 +26,22 @@ const BgWrapper = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  min-height: 200px;
+  min-height: 280px;
   padding: calc(0.5rem + 1.5vw);
   background: rgba(182, 182, 182, 0.4);
   text-align: centre;
   z-index: 100;
 `;
 const ModalBox = styled.div`
-  border: 2px solid darkgrey;
+  border: 2px solid ${Palette.darker};
   margin: calc(1rem + 2vw) auto 0;
   background: linear-gradient(
     to bottom,
-    rgba(60, 60, 60, 0.9),
-    rgba(180, 180, 1280, 0.9)
+    ${Palette.midTransparent},
+    ${Palette.lightTransparent}
   );
   padding: calc(1rem + 1.5vw);
-  max-width: 460px;
+  max-width: 560px;
   border-radius: 12px;
 `;
 
@@ -48,7 +49,7 @@ const HeaderText = styled(MdTitle)`
   margin-bottom: calc(1rem + 1.5vw);
 `;
 const Delineator = styled.div`
-  background: grey;
+  background: ${Palette.dark};
   height: 1px;
   margin: calc(0.5rem + 0.6vw) 0;
 `;

@@ -20,8 +20,10 @@ const Main = () => {
         <LgTitle>Lobby</LgTitle>
         {showSettings && (
           <Modal title="Settings" onHide={hideSettings}>
-            <Button onClick={startNewGame}>New Game</Button>
-            <Button onClick={createSaveFile}>Export Character</Button>
+            <FlexSeperateWrap>
+              <Button onClick={startNewGame}>New Game</Button>
+              <Button onClick={createSaveFile}>Export Character</Button>
+            </FlexSeperateWrap>
 
             <ImportCharacter />
           </Modal>

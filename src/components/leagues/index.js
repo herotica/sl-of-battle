@@ -95,14 +95,23 @@ const ListWrapper = styled.div`
 `;
 const ListBox = styled.div`
   padding: 16px;
+  background-size: 1px 200px;
   background: linear-gradient(
     10deg,
     ${({ colors }) => `${colors.bgA} ,${colors.bgB} ,${colors.bgA} `}
   );
   border: 3px solid ${({ colors }) => colors.border};
+  border-radius: 3px;
   display: flex;
   margin: 16px 20px;
   cursor: pointer;
+  background-size: 150% 150%;
+  transition: background 0.2s ease-in-out;
+
+  &:hover {
+    background-position-y: -40px;
+    background-position-x: -40px;
+  }
 `;
 const FlexWrap = styled.div`
   display: flex;

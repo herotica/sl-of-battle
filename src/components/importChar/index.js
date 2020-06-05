@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import { createObjFromUpload } from "../../utils";
+import Button from "../button";
 
 const InputId = "importcharacterid";
 
@@ -18,7 +19,7 @@ const ImportCharacter = () => {
     <Wrap>
       <Label>Import Character</Label>
       <StyledInput type="file" id={InputId} />
-      <ImportBtn onClick={importBackup}>Import Character</ImportBtn>
+      <Button onClick={importBackup}>Import Character</Button>
     </Wrap>
   );
 };
@@ -27,17 +28,13 @@ const Wrap = styled.div`
   padding: 8px;
   display: flex;
   align-items: center;
+  margin-top: 16px;
 `;
 const Label = styled.label`
   margin-right: 16px;
 `;
 const StyledInput = styled.input`
   margin: 0 8px;
-`;
-const ImportBtn = styled.button`
-  background: transparent;
-  border: 1px solid black;
-  border-radius: 4px;
 `;
 
 export default ImportCharacter;
