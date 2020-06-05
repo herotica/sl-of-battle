@@ -8,7 +8,7 @@
 
 ### To do
 
-- inteface + ran sex text output
+- interface + ran sex text output
 
 - window alert -> Toast
 - color choice, show color
@@ -22,7 +22,8 @@
 - training, buy equipment
 
 -- Styling
-
+- buttons
+- main page
 - sidebar styling/design
 
 ### Dev info

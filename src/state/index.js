@@ -4,6 +4,15 @@ import { Rooms, gender } from "../constants";
 import { GetFromStorage, StoreObj, createFileFromObj } from "../utils";
 
 export const CharKeys = {
+  prowessTypes: {
+    seduction: "seduction",
+    grappling: "grappling",
+    tongue: "tongue",
+    touch: "touch",
+    cock: "cock",
+    vagina: "vagina",
+    anus: "anus"
+  },
   prowess: {
     seduction: "seductionProwess",
     grappling: "grapplingProwess",
@@ -21,6 +30,14 @@ export const CharKeys = {
     cock: "changeCockProwess",
     vagina: "changeVaginaProwess",
     anus: "changeAnusProwess"
+  },
+  resistTypes: {
+    touch: "touch",
+    breasts: "breasts",
+    mouth: "mouth",
+    cock: "cock",
+    vagina: "vagina",
+    anus: "anus"
   },
   resist: {
     touch: "touchResistance",
