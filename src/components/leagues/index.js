@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import { Rooms } from "../../constants";
 
+import Isekai from "./isekai-league";
+
 export const LeaguesData = {
   training: {
     name: "The Training Centre",
@@ -33,19 +35,7 @@ export const LeaguesData = {
     room: Rooms.underground,
     league: false
   },
-  isekai: {
-    name: "League 1; The Isekai League",
-    description: "The hottest girls from virtual worlds fight for glory.",
-    renownRequired: 0,
-    icon: null,
-    colors: {
-      bgA: "yellow",
-      bgB: "darkgoldenrod",
-      border: "yellow"
-    },
-    rookies: null, // list of icons for rookies
-    room: Rooms.leagueA
-  }
+  isekai: Isekai
 };
 export const LeagueKeys = Object.keys(LeaguesData);
 
@@ -75,15 +65,23 @@ const LeagueSmPanel = ({
 
   return (
     <ListBox colors={colors} onClick={onPress}>
-      <div>
-        <FlexWrap>
-          <Title>{name}</Title>
-          <Text>Renown Lv :: {renownRequired}</Text>
-        </FlexWrap>
-        <Text>{description}</Text>
-        {rookies && <div>rookies</div>}
-      </div>
-      {icon && <Logo src={icon} alt="logo" />}
+      <FlexWrap>
+        <div>
+          <FlexWrap>
+            <Title>{name}</Title>
+            <Text>Renown Lv :: {renownRequired}</Text>
+          </FlexWrap>
+          <Text>{description}</Text>
+        </div>
+        {icon && <Logo src={icon} alt="logo" />}
+      </FlexWrap>
+      <Text>Rookies:</Text>
+      <RookieWrap>
+        {rookies &&
+          Object.keys(rookies).map(rookieKey => (
+            <RookieIcon src={rookies[rookieKey].icon} alt={rookieKey} />
+          ))}
+      </RookieWrap>
     </ListBox>
   );
 };
@@ -103,6 +101,7 @@ const ListBox = styled.div`
   border: 3px solid ${({ colors }) => colors.border};
   border-radius: 3px;
   display: flex;
+  flex-direction: column;
   margin: 16px 20px;
   cursor: pointer;
   background-size: 150% 150%;
@@ -126,7 +125,13 @@ const Text = styled.div`
   line-height: 1.4;
 `;
 const Logo = styled.img`
-  max-width: 40px;
-  max-height: 40px;
+  max-height: 72px;
+`;
+const RookieWrap = styled.div`
+  display: flex;
+`;
+const RookieIcon = styled.img`
+  margin-right: 16px;
+  max-width: 80px;
 `;
 export default LeagueList;
