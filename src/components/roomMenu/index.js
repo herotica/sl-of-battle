@@ -44,7 +44,7 @@ const LeagueList = () => {
 };
 
 const LeagueWrapper = ({ room, league }) => {
-  const { name, description, renownRequired, icon, colors, rookies } = league;
+  const { name, description, renownRequired, icon, colors, ranks } = league;
   const { setRoomSave, setLeague } = useGlobalDataStore();
   const onPress = () => {
     setLeague(league);
@@ -65,10 +65,9 @@ const LeagueWrapper = ({ room, league }) => {
       </FlexWrap>
       <Text>Rookies:</Text>
       <RookieWrap>
-        {rookies &&
-          rookies.combatants.map(rookie => (
-            <RookieIcon src={rookie.icon} alt={rookie.name} />
-          ))}
+        {ranks[0].combatants.map(rookie => (
+          <RookieIcon src={rookie.icon} alt={rookie.name} />
+        ))}
       </RookieWrap>
     </ListBox>
   );

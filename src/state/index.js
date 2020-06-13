@@ -102,10 +102,17 @@ const InitialValues = {
   leaguePoints: 0, // Accrued accross leagues, spent on medals, sponsoring
   cash: 100, // Accrued accross leagues, spent on upgrades / training
   currentRoom: Rooms.setup,
+  currentLeagueProgress: {
+    credits: 0,
+    wins: {}
+  },
   currentLeague: null,
   gameVersion: 1
 };
-const valFromStorage = GetFromStorage() || InitialValues;
+const saveAvailable = GetFromStorage();
+const valFromStorage = saveAvailable
+  ? { ...InitialValues, ...saveAvailable }
+  : InitialValues;
 
 export function createGlobalStore() {
   return {
@@ -269,6 +276,9 @@ export function createGlobalStore() {
     },
     setLeague(LeagueObj) {
       this.currentLeague = LeagueObj;
+    },
+    setCurrentLeagueProgress(progressObj) {
+      this.currentLeagueProgress = progressObj;
     },
 
     saveChar() {

@@ -15,5 +15,5 @@ export default {
   },
   icon,
   rookies,
-  ranks
+  ranks: [rookies, ...ranks]
 };

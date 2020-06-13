@@ -1,4 +1,4 @@
-import Rookies from "../combatants/isekai-league/rookies";
+import rookies from "../combatants/isekai-league/rookies";
 import icon from "../assets/logo/isekai.png";
 
 export default {
@@ -14,5 +14,5 @@ export default {
     border: "#65daaa"
   },
   icon,
-  rookies: Rookies
+  ranks: [rookies, rookies]
 };
