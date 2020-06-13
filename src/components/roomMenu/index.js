@@ -3,63 +3,54 @@ import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import { Rooms } from "../../constants";
 
-import Isekai from "./isekai-league";
+import Isekai from "../../leagueData/isekai-league";
 
-export const LeaguesData = {
+export const RoomsData = {
   training: {
     name: "The Training Centre",
     description: "Build up your skills at the training centre.",
-    renownRequired: 0,
-    icon: null,
     colors: {
       bgA: "grey",
       bgB: "darkgrey",
       border: "black"
     },
-    rookies: null, // list of icons for rookies
-    room: Rooms.training,
-    league: false
+    room: Rooms.training
   },
   underground: {
     name: "Underground Sluts Arena",
     description:
       "Sluts battle for cash and training, no refunds, and no fun times with the losers neither",
-    renownRequired: 0,
-    icon: null,
     colors: {
       bgA: "grey",
       bgB: "darkgrey",
       border: "black"
     },
-    rookies: null, // list of icons for rookies
-    room: Rooms.underground,
-    league: false
-  },
-  isekai: Isekai
+    room: Rooms.underground
+  }
+};
+
+export const LeaguesData = {
+  isekai: { room: Rooms.league, league: Isekai }
 };
 export const LeagueKeys = Object.keys(LeaguesData);
 
 const LeagueList = () => {
   return (
     <ListWrapper>
+      <RoomsWrapper {...RoomsData.training} />
+      <RoomsWrapper {...RoomsData.underground} />
       {LeagueKeys.map(key => (
-        <LeagueSmPanel {...LeaguesData[key]} />
+        <LeagueWrapper {...LeaguesData[key]} />
       ))}
     </ListWrapper>
   );
 };
 
-const LeagueSmPanel = ({
-  name,
-  description,
-  renownRequired,
-  icon,
-  room,
-  colors,
-  rookies
-}) => {
-  const { setRoomSave } = useGlobalDataStore();
+const LeagueWrapper = ({ room, league }) => {
+  const { name, description, renownRequired, icon, colors, rookies } = league;
+  const { setRoomSave, setLeague } = useGlobalDataStore();
   const onPress = () => {
+    setLeague(league);
     setRoomSave(room);
   };
 
@@ -82,6 +73,26 @@ const LeagueSmPanel = ({
             <RookieIcon src={rookies[rookieKey].icon} alt={rookieKey} />
           ))}
       </RookieWrap>
+    </ListBox>
+  );
+};
+const RoomsWrapper = props => {
+  const { name, description, room, colors } = props;
+  const { setRoomSave } = useGlobalDataStore();
+  const onPress = () => {
+    setRoomSave(room);
+  };
+
+  return (
+    <ListBox colors={colors} onClick={onPress}>
+      <FlexWrap>
+        <div>
+          <FlexWrap>
+            <Title>{name}</Title>
+          </FlexWrap>
+          <Text>{description}</Text>
+        </div>
+      </FlexWrap>
     </ListBox>
   );
 };

@@ -102,6 +102,7 @@ const InitialValues = {
   leaguePoints: 0, // Accrued accross leagues, spent on medals, sponsoring
   cash: 100, // Accrued accross leagues, spent on upgrades / training
   currentRoom: Rooms.setup,
+  currentLeague: null,
   gameVersion: 1
 };
 const valFromStorage = GetFromStorage() || InitialValues;
@@ -265,6 +266,9 @@ export function createGlobalStore() {
     setRoomSave(RoomString) {
       this.currentRoom = RoomString;
       this.saveChar();
+    },
+    setLeague(LeagueObj) {
+      this.currentLeague = LeagueObj;
     },
 
     saveChar() {

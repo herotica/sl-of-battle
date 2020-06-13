@@ -1,6 +1,6 @@
-import Rookies from "../../combatants/isekai-league/rookies";
-import { Rooms } from "../../constants";
-import icon from "../../assets/logo/isekai.png";
+import Rookies from "../combatants/isekai-league/rookies";
+import { Rooms } from "../constants";
+import icon from "../assets/logo/isekai.png";
 
 export default {
   name: "League 1; The Isekai League",

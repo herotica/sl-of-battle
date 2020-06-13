@@ -6,6 +6,7 @@ export const Rooms = {
   fight: "fight",
   training: "training",
   underground: "underground",
+  league: 'league',
   leagueA: "isekai-lg"
 };
 export const FightRooms = {

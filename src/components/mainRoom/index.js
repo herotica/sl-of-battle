@@ -6,7 +6,7 @@ import Modal from "../modal";
 import { LgTitle } from "../text";
 import Button from "../button";
 
-import Leagues from "../leagues";
+import RoomMenu from "../roomMenu";
 
 const Main = () => {
   const { startNewGame, createSaveFile } = useGlobalDataStore();
@@ -31,7 +31,7 @@ const Main = () => {
         <Button onClick={openSettings}>Settings</Button>
       </FlexSeperateWrap>
 
-      <Leagues />
+      <RoomMenu />
     </div>
   );
 };
