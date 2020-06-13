@@ -1,18 +1,19 @@
-import Rookies from "../combatants/isekai-league/rookies";
-import { Rooms } from "../constants";
+import rookies from "../combatants/isekai-league/rookies";
+import ranks from "../combatants/isekai-league/ranks";
 import icon from "../assets/logo/isekai.png";
 
 export default {
+  id: "isekai",
   name: "League 1; The Isekai League",
   description: "The hottest girls from virtual worlds fight for glory.",
+  initialPoints: 20,
   renownRequired: 0,
-  icon: null,
   colors: {
     bgA: "yellow",
     bgB: "darkgoldenrod",
     border: "yellow"
   },
   icon,
-  rookies: Rookies,
-  room: Rooms.leagueA
+  rookies,
+  ranks
 };

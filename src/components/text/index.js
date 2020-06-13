@@ -10,6 +10,9 @@ export const MdTitle = styled.div`
   font-weight: bold;
   font-size: calc(1.4rem + 0.3vw);
 `;
+export const MdTitleMiddle = styled(MdTitle)`
+  text-align: center;
+`;
 
 export const SmTextCSS = `
   font-size: calc(1.1rem + 0.2vw);

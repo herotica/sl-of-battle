@@ -10,21 +10,19 @@
 
 - interface + ran sex text output
 
+- tutorial modal
 - window alert -> Toast
-- color choice, show color
+- color choice, show color?
 - choice icons
   -- isekai lg
-  -- settings modal
-  -- week switcher, training/league
+  -- day process, week switcher, training/league
   -- code cleanup
   -- Display setup effects sidebar (hide bad numbers)
 - training erotic event
 - training, buy equipment
 
 -- Styling
-- buttons
 - main page
-- sidebar styling/design
 
 ### Dev info
 

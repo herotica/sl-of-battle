@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import { Rooms } from "../../constants";
+import { MdTitleMiddle } from "../text";
 
-import Isekai from "../../leagueData/isekai-league";
+import LeaguesData from "../../leagueData";
 
 export const RoomsData = {
   training: {
@@ -29,18 +30,14 @@ export const RoomsData = {
   }
 };
 
-export const LeaguesData = {
-  isekai: { room: Rooms.league, league: Isekai }
-};
-export const LeagueKeys = Object.keys(LeaguesData);
-
 const LeagueList = () => {
   return (
     <ListWrapper>
       <RoomsWrapper {...RoomsData.training} />
       <RoomsWrapper {...RoomsData.underground} />
-      {LeagueKeys.map(key => (
-        <LeagueWrapper {...LeaguesData[key]} />
+      <MdTitleMiddle>Leagues</MdTitleMiddle>
+      {LeaguesData.map(Data => (
+        <LeagueWrapper {...Data} />
       ))}
     </ListWrapper>
   );
@@ -69,8 +66,8 @@ const LeagueWrapper = ({ room, league }) => {
       <Text>Rookies:</Text>
       <RookieWrap>
         {rookies &&
-          Object.keys(rookies).map(rookieKey => (
-            <RookieIcon src={rookies[rookieKey].icon} alt={rookieKey} />
+          rookies.combatants.map(rookie => (
+            <RookieIcon src={rookie.icon} alt={rookie.name} />
           ))}
       </RookieWrap>
     </ListBox>
@@ -140,6 +137,7 @@ const Logo = styled.img`
 `;
 const RookieWrap = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 const RookieIcon = styled.img`
   margin-right: 16px;
