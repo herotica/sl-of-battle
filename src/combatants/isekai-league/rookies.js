@@ -1,7 +1,12 @@
 import Megumin from "../../assets/combatants/isekai-league/megumin.png";
 import MeguminIcon from "../../assets/combatants/isekai-league/megumin-icon.png";
+import MeguminWin from "../../assets/combatants/isekai-league/megumin-win.png";
+import MeguminLose from "../../assets/combatants/isekai-league/megumin-lose.png";
+
 import kirigayaSuguha from "../../assets/combatants/isekai-league/kirigaya-suguha.png";
 import kirigayaSuguhaIcon from "../../assets/combatants/isekai-league/kirigaya-suguha-icon.png";
+import kirigayaSuguhaWin from "../../assets/combatants/isekai-league/kirigaya-suguha-win.png";
+import kirigayaSuguhaLose from "../../assets/combatants/isekai-league/kirigaya-suguha-lose.png";
 
 export default {
   name: "Rookies",
@@ -13,8 +18,8 @@ export default {
       description: "A cute young Arch Wizard of the Crimson Demon Clan.",
       img: Megumin,
       icon: MeguminIcon,
-      win: Megumin,
-      lose: Megumin,
+      winImg: MeguminWin,
+      loseImg: MeguminLose,
       gender: "female",
       isWoman: true,
       hasCock: false,
@@ -58,8 +63,8 @@ export default {
         "An accomplished kendo practitioner, fighter, and seasoned ALO player.",
       img: kirigayaSuguha,
       icon: kirigayaSuguhaIcon,
-      win: kirigayaSuguha,
-      lose: kirigayaSuguha,
+      winImg: kirigayaSuguhaWin,
+      loseImg: kirigayaSuguhaLose,
       gender: "female",
       isWoman: true,
       hasCock: false,

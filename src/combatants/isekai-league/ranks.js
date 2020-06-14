@@ -1,5 +1,7 @@
-import kirigayaSuguha from "../../assets/combatants/isekai-league/kirigaya-suguha.png";
-import kirigayaSuguhaIcon from "../../assets/combatants/isekai-league/kirigaya-suguha-icon.png";
+import Aqua from "../../assets/combatants/isekai-league/aqua.png";
+import AquaIcon from "../../assets/combatants/isekai-league/aqua-icon.png";
+import AquaWin from "../../assets/combatants/isekai-league/aqua-win.png";
+import AquaLose from "../../assets/combatants/isekai-league/aqua-lose.png";
 
 export default [
   {
@@ -9,45 +11,45 @@ export default [
     reqWins: 2,
     combatants: [
       {
-        name: "Kirigaya Suguha",
+        name: "Aqua",
         description:
-          "An accomplished kendo practitioner, fighter, and seasoned ALO player.",
-        img: kirigayaSuguha,
-        icon: kirigayaSuguhaIcon,
-        win: kirigayaSuguha,
-        lose: kirigayaSuguha,
+          "An ex-goddess of water who used to guide humans to the afterlife.",
+        img: Aqua,
+        icon: AquaIcon,
+        winImg: AquaWin,
+        loseImg: AquaLose,
         gender: "female",
         isWoman: true,
         hasCock: false,
         race: "Human",
         bodyShape: "curvy",
-        eyeColor: "dark grey",
-        hairColor: "black",
+        eyeColor: "blue",
+        hairColor: "blue",
         skinColor: "fair",
         height: 2,
         penisSize: 0,
         breastSize: 3,
         vaginaSize: 2,
-        anusSize: 1,
-        throatSize: 3,
-        prefAttack: "mouth",
+        anusSize: 3,
+        throatSize: 2,
+        prefAttack: "touch",
         prefTarget: "breasts",
         uniqueAttackText:
-          "Suguha hungrily slathers ++++'s breasts with her tongue, eagerly sucking her nipples and savouring their sweet, sweaty taste.",
-        roughPlayLvl: 20,
-        seductionResistance: 10,
-        grapplingProwess: 30,
+          "Aqua rubs her supple tits eagerly against ++++'s, tickling her nipples against her opponent's.",
+        roughPlayLvl: 15,
+        seductionResistance: 20,
+        grapplingProwess: 20,
         tongueProwess: 25,
-        touchProwess: 25,
+        touchProwess: 30,
         cockProwess: 15,
         vaginaProwess: 25,
-        anusProwess: 10,
+        anusProwess: 15,
         touchResistance: 15,
         breastResistance: 25,
         mouthResistance: 20,
-        cockResistance: 5,
+        cockResistance: 15,
         vaginaResistance: 25,
-        anusResistance: 15,
+        anusResistance: 25,
         orgasmLimit: 3
       }
     ]
@@ -62,10 +64,10 @@ export default [
         name: "Kirigaya Suguha",
         description:
           "An accomplished kendo practitioner, fighter, and seasoned ALO player.",
-        img: kirigayaSuguha,
-        icon: kirigayaSuguhaIcon,
-        win: kirigayaSuguha,
-        lose: kirigayaSuguha,
+        img: Aqua,
+        icon: AquaIcon,
+        winImg: AquaWin,
+        loseImg: AquaLose,
         gender: "female",
         isWoman: true,
         hasCock: false,
