@@ -12,6 +12,7 @@ const RankAlphabet = ["A", "B", "C", "D", "E", "F"];
 const LeagueRoom = observer(() => {
   const [showExit, setShowExit] = useState(false);
   const {
+    currentLgWinNum,
     currentLeague,
     currentLeagueProgress,
     setCurrentLeagueProgress
@@ -39,29 +40,44 @@ const LeagueRoom = observer(() => {
       <MainBox>
         {ranks.map((rank, index) => (
           <LeagueRankBox
+            key={RankAlphabet[index]}
             name={RankAlphabet[index]}
             group={rank}
             groupID={index}
             isFinal={index + 1 === ranks.length}
+            currentLgWinNum={currentLgWinNum}
           />
         ))}
         <MdTitleMiddle>Credit Shop</MdTitleMiddle>
-        <LeagueShop currentLeagueProgress={currentLeagueProgress} currentLeague={currentLeague}/>
+        <LeagueShop
+          currentLeagueProgress={currentLeagueProgress}
+          currentLeague={currentLeague}
+        />
       </MainBox>
     </UWrap>
   );
 });
 
-const LeagueRankBox = ({ name, group, groupID, isFinal }) => {
+const LeagueRankBox = ({ name, group, groupID, isFinal, currentLgWinNum }) => {
+  const requiresWins = group.reqWins && groupID > 0;
+  const isLocked = requiresWins && currentLgWinNum[groupID - 1] < group.reqWins;
+
   return (
     <Flex>
       <LgTitle>{name}</LgTitle>
       <RankBox borderCol={isFinal && "gold"}>
+        {isLocked && (
+          <LockedOverlay>
+            Locked - Requires {group.reqWins} wins in prior Rank
+          </LockedOverlay>
+        )}
         <FlexWrap>
           {group.combatants.map((combatant, index) => (
             <CombatantBox
+              key={`${groupID}-${index}`}
               combatant={combatant}
               combatantVal={`${groupID}-${index}`}
+              groupID={groupID}
             />
           ))}
         </FlexWrap>
@@ -74,8 +90,9 @@ const LeagueRankBox = ({ name, group, groupID, isFinal }) => {
   );
 };
 
-const CombatantBox = ({ combatant, combatantVal }) => {
+const CombatantBox = ({ combatant, combatantVal, groupID }) => {
   const {
+    setCurrentLgWinNum,
     currentLeagueProgress,
     setCurrentLeagueProgress
   } = useGlobalDataStore();
@@ -89,6 +106,7 @@ const CombatantBox = ({ combatant, combatantVal }) => {
           [combatantVal]: true
         }
       };
+      setCurrentLgWinNum(groupID);
       setCurrentLeagueProgress(newProgObj);
     }
   };
@@ -109,7 +127,7 @@ const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => (
         const combatant = parseInt(losersVal.substr(2, losersVal.length));
         const loser = currentLeague.ranks[rank].combatants[combatant];
         return (
-          <CombatantButton>
+          <CombatantButton key={losersVal}>
             Fuck {loser.name} 5 Credits
           </CombatantButton>
         );
@@ -146,6 +164,7 @@ const RankBox = styled.div`
   border: 2px solid ${p => p.borderCol || "black"};
   padding: 8px;
   flex-grow: 1;
+  position: relative;
 `;
 
 const CombatantButton = styled.div`
@@ -177,6 +196,17 @@ const NameText = styled(SmlrText)`
 `;
 const LeagueBottomText = styled(SmlrText)`
   margin: 16px 8px;
+`;
+const LockedOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(80, 80, 80, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default LeagueRoom;

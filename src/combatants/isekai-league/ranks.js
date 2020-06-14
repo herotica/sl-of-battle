@@ -6,6 +6,7 @@ export default [
     name: "Amateurs",
     creditsWin: 10,
     pointsWin: 10,
+    reqWins: 2,
     combatants: [
       {
         name: "Kirigaya Suguha",
@@ -55,6 +56,7 @@ export default [
     name: "Pro",
     creditsWin: 20,
     pointsWin: 20,
+    reqWins: 1,
     combatants: [
       {
         name: "Kirigaya Suguha",

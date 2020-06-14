@@ -106,6 +106,7 @@ const InitialValues = {
     credits: 0,
     wins: {}
   },
+  currentLgWinNum: new Array(50).fill(0), // if in a league, number of wins/rank
   currentLeague: null,
   gameVersion: 1
 };
@@ -279,6 +280,11 @@ export function createGlobalStore() {
     },
     setCurrentLeagueProgress(progressObj) {
       this.currentLeagueProgress = progressObj;
+    },
+    setCurrentLgWinNum(rankIndxToIncrease) {
+      const tempArr = this.currentLgWinNum.slice();
+      tempArr[rankIndxToIncrease] = tempArr[rankIndxToIncrease] + 1;
+      this.currentLgWinNum = tempArr;
     },
 
     saveChar() {
