@@ -42,7 +42,7 @@ const SmCharDetails = props => (
   <DetailsWrap>
     <SmTitle>INV</SmTitle>
     <SmCap>£{props.cash}</SmCap>
-    <SmCap>Renown Lvl: {props.RenownLv * 0.1}</SmCap>
+    <SmCap>Renown Lvl: {props.RenownLv}</SmCap>
     <SmCap>LG Points: {props.leaguePoints}</SmCap>
     <SmCap>LG Credits: {props.leagueCredits}</SmCap>
 
@@ -95,7 +95,7 @@ const ExpandedDetails = props => (
   <DetailsWrap>
     <SmTitle>INV</SmTitle>
     <SmText>£{props.cash}</SmText>
-    <SmText>Renown Lvl: {props.RenownLv * 0.1}</SmText>
+    <SmText>Renown Lvl: {props.RenownLv}</SmText>
     <SmText>LG Points: {props.leaguePoints}</SmText>
     <SmText>LG Credits: {props.leagueCredits}</SmText>
 

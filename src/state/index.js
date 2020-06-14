@@ -57,7 +57,7 @@ export const CharKeys = {
   }
 };
 
-const InitialValues = {
+export const InitialValues = {
   name: "None",
   icon: null,
   img: null,
@@ -285,6 +285,9 @@ export function createGlobalStore() {
       const tempArr = this.currentLgWinNum.slice();
       tempArr[rankIndxToIncrease] = tempArr[rankIndxToIncrease] + 1;
       this.currentLgWinNum = tempArr;
+    },
+    resetCurrentLgWinNum(){
+      this.currentLgWinNum = InitialValues.currentLgWinNum;
     },
 
     saveChar() {

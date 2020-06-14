@@ -6,8 +6,10 @@ import { LgTitle, SmText, SmlrText, MdTitleMiddle } from "../text";
 import Button from "../button";
 import GoBack from "../back";
 import Modal from "../modal";
+import { InitialValues } from "../../state";
+import { Rooms } from "../../constants";
 
-const RankAlphabet = ["A", "B", "C", "D", "E", "F"];
+const RankAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 const LeagueRoom = observer(() => {
   const [showExit, setShowExit] = useState(false);
@@ -15,9 +17,27 @@ const LeagueRoom = observer(() => {
     currentLgWinNum,
     currentLeague,
     currentLeagueProgress,
-    setCurrentLeagueProgress
+    resetCurrentLgWinNum,
+    setCurrentLeagueProgress,
+    setLeague,
+    setRoomSave,
+    ChangeRenown,
+    saveChar
   } = useGlobalDataStore();
   const { ranks } = currentLeague;
+
+  const resetOnLeave = () => {
+    setRoomSave(Rooms.main);
+    setCurrentLeagueProgress(InitialValues.currentLeagueProgress);
+    resetCurrentLgWinNum();
+    setLeague(InitialValues.currentLeague);
+    saveChar();
+  };
+  const isComplete = currentLgWinNum[ranks.length - 1] > 0;
+  const OnComplete = () => {
+    ChangeRenown(1); // TODO req check if first completion
+    resetOnLeave();
+  };
 
   return (
     <UWrap>
@@ -28,13 +48,17 @@ const LeagueRoom = observer(() => {
               Are you sure you want to leave the league, doing so will lose your
               current progress & move you to the next training week
             </SmText>
-            <GoBack />
+            <Button onClick={resetOnLeave}>Quit League</Button>
           </UWrap>
         </Modal>
       )}
       <FlexSpaced>
         <LgTitle>{currentLeague.name}</LgTitle>
-        <Button onClick={() => setShowExit(true)}>Leave League</Button>
+        {isComplete ? (
+          <Button onClick={OnComplete}>Return To Training</Button>
+        ) : (
+          <Button onClick={() => setShowExit(true)}>Quit League</Button>
+        )}
       </FlexSpaced>
       <LeagueBottomText>{currentLeague.description}</LeagueBottomText>
       <MainBox>
