@@ -30,7 +30,7 @@ export default {
       anusSize: 2,
       throatSize: 1,
       // Pref properties effect 'AI'
-      prefAttack: "mouth",
+      prefAttack: "tongue",
       prefTarget: "mouth",
       uniqueAttackText:
         "Mei's soft little tongue slips it's squishy way into ++++'s mouth, exploring ==== mouth passionately, and tasting all over ==== tongue.",
@@ -74,23 +74,23 @@ export default {
       vaginaSize: 2,
       anusSize: 1,
       throatSize: 3,
-      prefAttack: "mouth",
+      prefAttack: "tongue",
       prefTarget: "breasts",
       uniqueAttackText:
         "Suguha hungrily slathers ++++'s breasts with her tongue, eagerly sucking her nipples and savouring their sweet, sweaty taste.",
       roughPlayLvl: 20,
       seductionResistance: 10,
-      grapplingProwess: 30,
+      grapplingProwess: 25,
       tongueProwess: 25,
-      touchProwess: 25,
+      touchProwess: 2,
       cockProwess: 15,
       vaginaProwess: 25,
       anusProwess: 10,
       touchResistance: 15,
-      breastResistance: 25,
+      breastResistance: 20,
       mouthResistance: 20,
       cockResistance: 5,
-      vaginaResistance: 25,
+      vaginaResistance: 20,
       anusResistance: 15,
       orgasmLimit: 3
     }

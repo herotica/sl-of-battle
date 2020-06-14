@@ -14,7 +14,6 @@
 - League
   -- events 
   -- fight + win logic
-  -- league win
 - window alert -> Toast
 - color choice, show color?
 - choice icons

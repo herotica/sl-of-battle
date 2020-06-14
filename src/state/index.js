@@ -104,6 +104,7 @@ export const InitialValues = {
   currentRoom: Rooms.setup,
   currentLeagueProgress: {
     credits: 0,
+    hasLost: false,
     wins: {}
   },
   currentLgWinNum: new Array(50).fill(0), // if in a league, number of wins/rank
@@ -286,7 +287,7 @@ export function createGlobalStore() {
       tempArr[rankIndxToIncrease] = tempArr[rankIndxToIncrease] + 1;
       this.currentLgWinNum = tempArr;
     },
-    resetCurrentLgWinNum(){
+    resetCurrentLgWinNum() {
       this.currentLgWinNum = InitialValues.currentLgWinNum;
     },
 

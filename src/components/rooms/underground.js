@@ -87,10 +87,10 @@ const FightTierOption = observer(
       if (bet <= cash) {
         changeCash(-1 * bet);
         saveChar();
-        // select comabatant
+        // select combatant
         const diffLevel = SelectDifficulty(mediumDiffChance, hardDiffChance);
-        const comabatant = SelectCombatant(diffLevel);
-        readyNewFight(comabatant, FightRooms.underground, onWin, onLose, reward);
+        const combatant = SelectCombatant(diffLevel);
+        readyNewFight(combatant, FightRooms.underground, onWin, onLose, reward);
         setRoom(Rooms.fight);
       } else {
         window.alert("You can afford this.");

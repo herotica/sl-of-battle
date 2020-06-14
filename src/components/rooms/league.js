@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
+import { useFightDataStore } from "../../state/fight";
+
 import { observer } from "mobx-react-lite";
 import { LgTitle, SmText, SmlrText, MdTitleMiddle } from "../text";
 import Button from "../button";
-import GoBack from "../back";
 import Modal from "../modal";
 import { InitialValues } from "../../state";
-import { Rooms } from "../../constants";
+import { FightRooms, Rooms } from "../../constants";
 
 const RankAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
@@ -49,6 +50,16 @@ const LeagueRoom = observer(() => {
               current progress & move you to the next training week
             </SmText>
             <Button onClick={resetOnLeave}>Quit League</Button>
+          </UWrap>
+        </Modal>
+      )}
+      {currentLeagueProgress.hasLost && (
+        <Modal title="Loser" onHide={() => {}}>
+          <UWrap>
+            <SmText>
+              Sadly having lost you fail your league attempt, try again soon!
+            </SmText>
+            <Button onClick={resetOnLeave}>Leave</Button>
           </UWrap>
         </Modal>
       )}
@@ -118,21 +129,36 @@ const CombatantBox = ({ combatant, combatantVal, groupID }) => {
   const {
     setCurrentLgWinNum,
     currentLeagueProgress,
-    setCurrentLeagueProgress
+    setCurrentLeagueProgress,
+    setRoomSave,
+    setRoom
   } = useGlobalDataStore();
+  const { readyNewFight } = useFightDataStore();
   const isbeaten = currentLeagueProgress.wins[combatantVal];
+  const onWin = () => {
+    setRoomSave(Rooms.league);
+    const newProgObj = {
+      ...currentLeagueProgress,
+      wins: {
+        ...currentLeagueProgress.wins,
+        [combatantVal]: true
+      }
+    };
+    setCurrentLgWinNum(groupID);
+    setCurrentLeagueProgress(newProgObj);
+  };
+  const onLose = () => {
+    setRoom(Rooms.league);
+    const newProgObj = {
+      ...currentLeagueProgress,
+      hasLost: true
+    };
+    setCurrentLeagueProgress(newProgObj);
+  };
+
   const onClick = () => {
-    if (!isbeaten) {
-      const newProgObj = {
-        ...currentLeagueProgress,
-        wins: {
-          ...currentLeagueProgress.wins,
-          [combatantVal]: true
-        }
-      };
-      setCurrentLgWinNum(groupID);
-      setCurrentLeagueProgress(newProgObj);
-    }
+    readyNewFight(combatant, FightRooms.leagueA, onWin, onLose, 0);
+    setRoom(Rooms.fight);
   };
   return (
     <CombatantButton onClick={onClick} isbeaten={isbeaten}>
