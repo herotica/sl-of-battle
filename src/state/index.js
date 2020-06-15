@@ -2,6 +2,7 @@ import React from "react";
 import { useLocalStore } from "mobx-react-lite";
 import { Rooms, gender } from "../constants";
 import { GetFromStorage, StoreObj, createFileFromObj } from "../utils";
+import { LeagueInit } from "../leagueData";
 
 export const CharKeys = {
   prowessTypes: {
@@ -109,6 +110,7 @@ export const InitialValues = {
   },
   currentLgWinNum: new Array(50).fill(0), // if in a league, number of wins/rank
   currentLeague: null,
+  leagueProgress: LeagueInit,
   gameVersion: 1
 };
 const saveAvailable = GetFromStorage();
@@ -289,6 +291,14 @@ export function createGlobalStore() {
     },
     resetCurrentLgWinNum() {
       this.currentLgWinNum = InitialValues.currentLgWinNum;
+    },
+    setLeagueProgress(leagueID, completeLeague, decreasePointsAvailable) {
+      const newLeaguePoints =
+        this.leagueProgress[leagueID].pointsAvailable - decreasePointsAvailable;
+      this.leagueProgress[leagueID] = {
+        isComplete: completeLeague || this.leagueProgress[leagueID].isComplete,
+        pointsAvailable: newLeaguePoints < 0 ? 0 : newLeaguePoints
+      };
     },
 
     saveChar() {

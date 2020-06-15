@@ -6,7 +6,7 @@ export default {
   id: "isekai",
   name: "League 1; The Isekai League",
   description: "The hottest girls from virtual worlds fight for glory.",
-  initialPoints: 20,
+  initialPoints: 50,
   renownRequired: 0,
   colors: {
     bgA: "yellow",

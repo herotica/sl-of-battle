@@ -23,9 +23,11 @@ const LeagueRoom = observer(() => {
     setLeague,
     setRoomSave,
     ChangeRenown,
-    saveChar
+    saveChar,
+    leagueProgress,
   } = useGlobalDataStore();
-  const { ranks } = currentLeague;
+  const { ranks, id } = currentLeague;
+  console.log('leagueProgress', Object.keys(leagueProgress).toString())
 
   const resetOnLeave = () => {
     setRoomSave(Rooms.main);
@@ -34,7 +36,7 @@ const LeagueRoom = observer(() => {
     setLeague(InitialValues.currentLeague);
     saveChar();
   };
-  const isComplete = currentLgWinNum[ranks.length - 1] > 0;
+  const isComplete = leagueProgress[id].isComplete;
   const OnComplete = () => {
     ChangeRenown(1); // TODO req check if first completion
     resetOnLeave();
@@ -49,7 +51,7 @@ const LeagueRoom = observer(() => {
   };
 
   return (
-    <UWrap>
+    <UWrap isComplete={isComplete}>
       {showExit && (
         <Modal title="Leave?" onHide={() => setShowExit(false)}>
           <UWrap>
@@ -103,7 +105,14 @@ const LeagueRoom = observer(() => {
           <Button onClick={() => setShowExit(true)}>Quit League</Button>
         )}
       </FlexSpaced>
-      <LeagueBottomText>{currentLeague.description}</LeagueBottomText>
+      <LeagueBottomText>
+        {isComplete
+          ? `CONGRATULATIONS!!, you've beaten this League, maybe your ready for the next one?`
+          : currentLeague.description}
+      </LeagueBottomText>
+      <LeagueBottomText>
+        League Points Left to Gain : {leagueProgress[id].pointsAvailable}
+      </LeagueBottomText>
       <MainBox>
         {ranks.map((rank, index) => (
           <LeagueRankBox
@@ -145,6 +154,7 @@ const LeagueRankBox = ({ name, group, groupID, isFinal, currentLgWinNum }) => {
               combatant={combatant}
               combatantVal={`${groupID}-${index}`}
               groupID={groupID}
+              isFinal={isFinal}
             />
           ))}
         </FlexWrap>
@@ -157,14 +167,17 @@ const LeagueRankBox = ({ name, group, groupID, isFinal, currentLgWinNum }) => {
   );
 };
 
-const CombatantBox = ({ combatant, combatantVal, groupID }) => {
+const CombatantBox = ({ combatant, combatantVal, groupID, isFinal }) => {
   const {
+    currentLeague,
     setCurrentLgWinNum,
     currentLeagueProgress,
     setCurrentLeagueProgress,
     setRoomSave,
-    setRoom
+    setRoom,
+    setLeagueProgress
   } = useGlobalDataStore();
+  const { id, ranks } = currentLeague;
   const { readyNewFight } = useFightDataStore();
   const isbeaten = currentLeagueProgress.wins[combatantVal];
 
@@ -177,6 +190,7 @@ const CombatantBox = ({ combatant, combatantVal, groupID }) => {
       },
       fightPic: combatant.opLoseImg
     };
+    setLeagueProgress(id, isFinal, ranks[groupID].creditsWin);
     setCurrentLeagueProgress(newProgObj);
     setCurrentLgWinNum(groupID);
     setRoomSave(Rooms.league);
@@ -224,6 +238,7 @@ const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => (
 const UWrap = styled.div`
   margin: 32px;
   overflow-y: auto;
+  ${p => p.isComplete && `border: 2px solid gold`}
 `;
 const FlexSpaced = styled.div`
   display: flex;

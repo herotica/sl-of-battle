@@ -6,7 +6,7 @@ export default {
   name: "League 2; The Superhero League",
   description:
     "The sexiest and most powerful girls from superhero anime, thankfully their powers have been dulled, as per rules for league entry.",
-  initialPoints: 30,
+  initialPoints: 50,
   renownRequired: 1,
   colors: {
     bgA: "#65daaa",
