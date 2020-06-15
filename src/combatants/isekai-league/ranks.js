@@ -3,6 +3,16 @@ import AquaIcon from "../../assets/combatants/isekai-league/aqua-icon.png";
 import AquaWin from "../../assets/combatants/isekai-league/aqua-win.png";
 import AquaLose from "../../assets/combatants/isekai-league/aqua-lose.png";
 
+import RemGalleu from "../../assets/combatants/isekai-league/rem-galleu.png";
+import RemGalleuIcon from "../../assets/combatants/isekai-league/rem-galleu-icon.png";
+import RemGalleuWin from "../../assets/combatants/isekai-league/rem-galleu-win.png";
+import RemGalleuLose from "../../assets/combatants/isekai-league/rem-galleu-lose.png";
+
+import KonnoYuuki from "../../assets/combatants/isekai-league/konno-yuuki.png";
+import KonnoYuukiIcon from "../../assets/combatants/isekai-league/konno-yuuki-icon.png";
+import KonnoYuukiWin from "../../assets/combatants/isekai-league/konno-yuuki-win.png";
+import KonnoYuukiLose from "../../assets/combatants/isekai-league/konno-yuuki-lose.png";
+
 import Darkness from "../../assets/combatants/isekai-league/darkness.png";
 import DarknessIcon from "../../assets/combatants/isekai-league/darkness-icon.png";
 import DarknessWin from "../../assets/combatants/isekai-league/darkness-win.png";
@@ -60,6 +70,88 @@ export default [
         cockResistance: 15,
         vaginaResistance: 25,
         anusResistance: 25,
+        orgasmLimit: 3
+      },{
+        name: "Rem galleu",
+        description:
+          "A small Pantherian who became an invoker and had no choice but to become an adventurer and continue to demonstrate her strength, one day hoping to exterminate the Demon King Krebskrem. ",
+        img: RemGalleu,
+        icon: RemGalleuIcon,
+        opWinImg: RemGalleuWin,
+        opLoseImg: RemGalleuLose,
+        gender: "female",
+        isWoman: true,
+        hasCock: false,
+        race: "Human",
+        bodyShape: "small",
+        eyeColor: "green",
+        hairColor: "black",
+        skinColor: "fair",
+        height: 1,
+        penisSize: 0,
+        breastSize: 1,
+        vaginaSize: 1,
+        anusSize: 1,
+        throatSize: 1,
+        prefAttack: "vagina",
+        prefTarget: "cock",
+        uniqueAttackText:
+          "Like a hungry semen demon, Rem rides your cock shuddering as it enters her tight pussy.",
+        roughPlayLvl: 20,
+        seductionResistance: 25,
+        grapplingProwess: 15,
+        tongueProwess: 25,
+        touchProwess: 20,
+        cockProwess: 15,
+        vaginaProwess: 30,
+        anusProwess: 20,
+        touchResistance: 25,
+        breastResistance: 25,
+        mouthResistance: 40,
+        cockResistance: 15,
+        vaginaResistance: 35,
+        anusResistance: 20,
+        orgasmLimit: 3
+      },{
+        name: "Konno Yuuki",
+        description:
+          "Known as the absolute sword, She was the younger sister of Konno Aiko and one of the three founders and the 2nd leader of the Sleeping Knights guild,",
+        img: KonnoYuuki,
+        icon: KonnoYuukiIcon,
+        opWinImg: KonnoYuukiWin,
+        opLoseImg: KonnoYuukiLose,
+        gender: "female",
+        isWoman: true,
+        hasCock: false,
+        race: "Imp",
+        bodyShape: "petite",
+        eyeColor: "red",
+        hairColor: "dark purple",
+        skinColor: "fair",
+        height: 1,
+        penisSize: 0,
+        breastSize: 1,
+        vaginaSize: 2,
+        anusSize: 1,
+        throatSize: 1,
+        prefAttack: "tongue",
+        prefTarget: "cock",
+        uniqueAttackText:
+          "Greedily Yuuki gobbles up xxxx's cock, sucking on it as hard as she can, hoping to draw every last drop of semen into her throat.",
+        roughPlayLvl: 5,
+        seductionResistance: 25,
+        grapplingProwess: 25,
+        tongueProwess: 25,
+        touchProwess: 20,
+        cockProwess: 15,
+        vaginaProwess: 10,
+        anusProwess: 20,
+        touchResistance: 15,
+        breastResistance: 15,
+        mouthResistance: 35,
+        cockResistance: 15,
+        vaginaResistance: 45,
+        anusResistance: 10,
         orgasmLimit: 3
       }
     ]
