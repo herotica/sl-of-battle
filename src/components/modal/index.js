@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { MdTitle } from "../text";
 import Palette from "../../constants/palette";
 
-const Modal = ({ children, title, onHide }) => {
+const Modal = ({ children, title, onHide, wide }) => {
   const stopBubbling = evt => {
     evt.stopPropagation();
     evt.cancelBubble = true;
@@ -11,7 +11,7 @@ const Modal = ({ children, title, onHide }) => {
 
   return (
     <BgWrapper onClick={onHide}>
-      <ModalBox onClick={stopBubbling}>
+      <ModalBox onClick={stopBubbling} wide={wide}>
         <HeaderText>{title}</HeaderText>
         <Delineator />
         {children}
@@ -41,7 +41,7 @@ const ModalBox = styled.div`
     ${Palette.lightTransparent}
   );
   padding: calc(1rem + 1.5vw);
-  max-width: 560px;
+  max-width: ${p => p.wide ? '760px' : '560px'};
   border-radius: 12px;
 `;
 

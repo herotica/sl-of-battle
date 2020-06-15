@@ -39,6 +39,14 @@ const LeagueRoom = observer(() => {
     ChangeRenown(1); // TODO req check if first completion
     resetOnLeave();
   };
+  const closeWinBox = () => {
+    const newProgObj = {
+      ...currentLeagueProgress,
+      fightPic: false
+    };
+    setCurrentLeagueProgress(newProgObj);
+    saveChar();
+  };
 
   return (
     <UWrap>
@@ -53,16 +61,40 @@ const LeagueRoom = observer(() => {
           </UWrap>
         </Modal>
       )}
-      {currentLeagueProgress.hasLost && (
-        <Modal title="Loser" onHide={() => {}}>
-          <UWrap>
-            <SmText>
-              Sadly having lost you fail your league attempt, try again soon!
-            </SmText>
-            <Button onClick={resetOnLeave}>Leave</Button>
-          </UWrap>
-        </Modal>
-      )}
+      {currentLeagueProgress.fightPic &&
+        (currentLeagueProgress.hasLost ? (
+          <Modal title="Fight Over" onHide={() => {}} wide>
+            <UWrap>
+              <FlexCol>
+                <FightEndImg
+                  src={currentLeagueProgress.fightPic}
+                  alt="lose-img"
+                />
+                <SmlrText>
+                  Oh No!!, you were bested, and that means you've failed to
+                  complete the League, try again after you've trained some more.
+                </SmlrText>
+              </FlexCol>
+              <Button onClick={resetOnLeave}>Leave</Button>
+            </UWrap>
+          </Modal>
+        ) : (
+          <Modal title="Fight Over" wide>
+            <UWrap>
+              <FlexCol>
+                <FightEndImg
+                  src={currentLeagueProgress.fightPic}
+                  alt="win-img"
+                />
+                <SmlrText>
+                  You bested your opponent, and fucked them into submission,
+                  congratulations!
+                </SmlrText>
+              </FlexCol>
+              <Button onClick={closeWinBox}>Close</Button>
+            </UWrap>
+          </Modal>
+        ))}
       <FlexSpaced>
         <LgTitle>{currentLeague.name}</LgTitle>
         {isComplete ? (
@@ -135,23 +167,26 @@ const CombatantBox = ({ combatant, combatantVal, groupID }) => {
   } = useGlobalDataStore();
   const { readyNewFight } = useFightDataStore();
   const isbeaten = currentLeagueProgress.wins[combatantVal];
+
   const onWin = () => {
-    setRoomSave(Rooms.league);
     const newProgObj = {
       ...currentLeagueProgress,
       wins: {
         ...currentLeagueProgress.wins,
         [combatantVal]: true
-      }
+      },
+      fightPic: combatant.opLoseImg
     };
-    setCurrentLgWinNum(groupID);
     setCurrentLeagueProgress(newProgObj);
+    setCurrentLgWinNum(groupID);
+    setRoomSave(Rooms.league);
   };
   const onLose = () => {
-    setRoom(Rooms.league);
+    setRoomSave(Rooms.league);
     const newProgObj = {
       ...currentLeagueProgress,
-      hasLost: true
+      hasLost: true,
+      fightPic: combatant.opWinImg
     };
     setCurrentLeagueProgress(newProgObj);
   };
@@ -161,7 +196,7 @@ const CombatantBox = ({ combatant, combatantVal, groupID }) => {
     setRoom(Rooms.fight);
   };
   return (
-    <CombatantButton onClick={onClick} isbeaten={isbeaten}>
+    <CombatantButton onClick={isbeaten ? null : onClick} isbeaten={isbeaten}>
       <CombatantIcon src={combatant.icon} alt={combatant.name} />
       <NameText>{combatant.name}</NameText>
     </CombatantButton>
@@ -194,6 +229,10 @@ const FlexSpaced = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+`;
+const FlexCol = styled(FlexSpaced)`
+  align-items: center;
+  margin: 0 20px;
 `;
 const FlexWrap = styled.div`
   display: flex;
@@ -257,6 +296,12 @@ const LockedOverlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const FightEndImg = styled.img`
+  max-height: 380px;
+  margin-right: 24px;
+  margin-top: -12px;
 `;
 
 export default LeagueRoom;
