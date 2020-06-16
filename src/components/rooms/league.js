@@ -25,16 +25,16 @@ const LeagueRoom = observer(() => {
     ChangeRenown,
     saveChar,
     leagueProgress,
+    resetLeagueCredits
   } = useGlobalDataStore();
   const { ranks, id } = currentLeague;
-  console.log('leagueProgress', Object.keys(leagueProgress).toString())
 
   const resetOnLeave = () => {
-    setRoomSave(Rooms.main);
     setCurrentLeagueProgress(InitialValues.currentLeagueProgress);
     resetCurrentLgWinNum();
     setLeague(InitialValues.currentLeague);
-    saveChar();
+    resetLeagueCredits();
+    setRoomSave(Rooms.main);
   };
   const isComplete = leagueProgress[id].isComplete;
   const OnComplete = () => {
@@ -155,6 +155,7 @@ const LeagueRankBox = ({ name, group, groupID, isFinal, currentLgWinNum }) => {
               combatantVal={`${groupID}-${index}`}
               groupID={groupID}
               isFinal={isFinal}
+              isLocked={isLocked}
             />
           ))}
         </FlexWrap>
@@ -167,7 +168,13 @@ const LeagueRankBox = ({ name, group, groupID, isFinal, currentLgWinNum }) => {
   );
 };
 
-const CombatantBox = ({ combatant, combatantVal, groupID, isFinal }) => {
+const CombatantBox = ({
+  combatant,
+  combatantVal,
+  groupID,
+  isFinal,
+  isLocked
+}) => {
   const {
     currentLeague,
     setCurrentLgWinNum,
@@ -175,7 +182,9 @@ const CombatantBox = ({ combatant, combatantVal, groupID, isFinal }) => {
     setCurrentLeagueProgress,
     setRoomSave,
     setRoom,
-    setLeagueProgress
+    setLeagueProgress,
+    changeLeagueCredits,
+    changeLeaguePoints,
   } = useGlobalDataStore();
   const { id, ranks } = currentLeague;
   const { readyNewFight } = useFightDataStore();
@@ -190,9 +199,11 @@ const CombatantBox = ({ combatant, combatantVal, groupID, isFinal }) => {
       },
       fightPic: combatant.opLoseImg
     };
-    setLeagueProgress(id, isFinal, ranks[groupID].creditsWin);
+    setLeagueProgress(id, isFinal, ranks[groupID].pointsWin);
     setCurrentLeagueProgress(newProgObj);
     setCurrentLgWinNum(groupID);
+    changeLeagueCredits(ranks[groupID].creditsWin);
+    changeLeaguePoints(ranks[groupID].pointsWin);
     setRoomSave(Rooms.league);
   };
   const onLose = () => {
@@ -210,7 +221,10 @@ const CombatantBox = ({ combatant, combatantVal, groupID, isFinal }) => {
     setRoom(Rooms.fight);
   };
   return (
-    <CombatantButton onClick={isbeaten ? null : onClick} isbeaten={isbeaten}>
+    <CombatantButton
+      onClick={isbeaten || isLocked ? null : onClick}
+      isbeaten={isbeaten}
+    >
       <CombatantIcon src={combatant.icon} alt={combatant.name} />
       <NameText>{combatant.name}</NameText>
     </CombatantButton>
@@ -223,11 +237,17 @@ const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => (
     <FlexWrap>
       {Object.keys(currentLeagueProgress.wins).map(losersVal => {
         const rank = parseInt(losersVal.substr(0, 1));
-        const combatant = parseInt(losersVal.substr(2, losersVal.length));
-        const loser = currentLeague.ranks[rank].combatants[combatant];
+        const combatantId = parseInt(losersVal.substr(2, losersVal.length));
+        const combatant = currentLeague.ranks[rank].combatants[combatantId];
         return (
           <CombatantButton key={losersVal}>
-            Fuck {loser.name} 5 Credits
+            <OverlayText>
+              <SmText>Fuck {combatant.name}</SmText>
+              <SmText>
+                {">"} {10 + 5 * rank} Credits
+              </SmText>
+            </OverlayText>
+            <LoserIcon src={combatant.icon} alt={combatant.name} />
           </CombatantButton>
         );
       })}
@@ -272,6 +292,7 @@ const RankBox = styled.div`
 `;
 
 const CombatantButton = styled.div`
+  position: relative;
   border: 1px solid ${p => p.borderCol || "darkgrey"};
   border-radius: 5px;
   padding: 4px;
@@ -298,6 +319,23 @@ const CombatantIcon = styled.img`
 const NameText = styled(SmlrText)`
   text-align: center;
 `;
+const LoserIcon = styled(CombatantIcon)`
+  max-width: 120px;
+  height: auto;
+  opacity: 0.3;
+`;
+const OverlayText = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
 const LeagueBottomText = styled(SmlrText)`
   margin: 16px 8px;
 `;
@@ -305,9 +343,10 @@ const LockedOverlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   height: 100%;
   width: 100%;
-  background: rgba(80, 80, 80, 0.6);
+  background: rgba(180,150,180,0.75);
   display: flex;
   align-items: center;
   justify-content: center;

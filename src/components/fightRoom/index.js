@@ -232,7 +232,7 @@ const FighterTextLog = observer(() => {
       CompArray.push(
         <LogText>
           {"> "}
-          <TextSpanLog>{fightLog[l - i - 1]}</TextSpanLog>
+          <TextSpanLog bold={i === 0}>{fightLog[l - i - 1]}</TextSpanLog>
         </LogText>
       );
   }

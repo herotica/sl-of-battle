@@ -35,5 +35,5 @@ export const LogText = styled.div`
 // Styling
 export const TextSpanLog = styled.span`
   font-style: italic;
-  font-weight: 300;
+  font-weight: ${p => (p.bold ? "700" : "300")};
 `;

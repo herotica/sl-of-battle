@@ -256,6 +256,9 @@ export function createGlobalStore() {
         this.leagueCredits = this.leagueCredits + changeVal;
       }
     },
+    resetLeagueCredits() {
+      this.leagueCredits = 0;
+    },
     changeLeaguePoints(changeVal) {
       if (this.leaguePoints + changeVal < 0) {
         this.leaguePoints = 0;
