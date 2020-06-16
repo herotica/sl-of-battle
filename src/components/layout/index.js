@@ -13,6 +13,7 @@ import Training from "../rooms/training";
 import FightRoom from "../fightRoom";
 import Underground from "../rooms/underground";
 import LeagueRoom from "../rooms/league";
+import FuckRoom from "../rooms/fuckRoom";
 
 const Layout = () => {
   const [showSidebar, setSidebar] = useState(false);
@@ -44,6 +45,8 @@ const RoomManager = observer(() => {
       return <Training />;
     case Rooms.league:
       return <LeagueRoom />;
+    case Rooms.fuckRoom:
+      return <FuckRoom />;
     default:
       return (
         <div>

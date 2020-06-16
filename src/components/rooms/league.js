@@ -184,7 +184,7 @@ const CombatantBox = ({
     setRoom,
     setLeagueProgress,
     changeLeagueCredits,
-    changeLeaguePoints,
+    changeLeaguePoints
   } = useGlobalDataStore();
   const { id, ranks } = currentLeague;
   const { readyNewFight } = useFightDataStore();
@@ -231,29 +231,41 @@ const CombatantBox = ({
   );
 };
 
-const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => (
-  <RankBox borderCol={"#00ffb8"}>
-    <NameText>League Shop{events}</NameText>
-    <FlexWrap>
-      {Object.keys(currentLeagueProgress.wins).map(losersVal => {
-        const rank = parseInt(losersVal.substr(0, 1));
-        const combatantId = parseInt(losersVal.substr(2, losersVal.length));
-        const combatant = currentLeague.ranks[rank].combatants[combatantId];
-        return (
-          <CombatantButton key={losersVal}>
-            <OverlayText>
-              <SmText>Fuck {combatant.name}</SmText>
-              <SmText>
-                {">"} {10 + 5 * rank} Credits
-              </SmText>
-            </OverlayText>
-            <LoserIcon src={combatant.icon} alt={combatant.name} />
-          </CombatantButton>
-        );
-      })}
-    </FlexWrap>
-  </RankBox>
-);
+const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => {
+  const { setRoom, setFuckRoomCombatant } = useGlobalDataStore();
+  const onSelectLoserToFuck = combatant => {
+    setFuckRoomCombatant(combatant);
+    setRoom(Rooms.fuckRoom);
+  };
+
+  return (
+    <RankBox borderCol={"#00ffb8"}>
+      <NameText>League Shop{events}</NameText>
+      <FlexWrap>
+        {Object.keys(currentLeagueProgress.wins).map(losersVal => {
+          const rank = parseInt(losersVal.substr(0, 1));
+          const combatantId = parseInt(losersVal.substr(2, losersVal.length));
+          const combatant = currentLeague.ranks[rank].combatants[combatantId];
+
+          return (
+            <CombatantButton
+              key={losersVal}
+              onClick={() => onSelectLoserToFuck(combatant)}
+            >
+              <OverlayText>
+                <SmText>Fuck {combatant.name}</SmText>
+                <SmText>
+                  {">"} {10 + 5 * rank} Credits
+                </SmText>
+              </OverlayText>
+              <LoserIcon src={combatant.icon} alt={combatant.name} />
+            </CombatantButton>
+          );
+        })}
+      </FlexWrap>
+    </RankBox>
+  );
+};
 
 const UWrap = styled.div`
   margin: 32px;
@@ -346,7 +358,7 @@ const LockedOverlay = styled.div`
   z-index: 10;
   height: 100%;
   width: 100%;
-  background: rgba(180,150,180,0.75);
+  background: rgba(180, 150, 180, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;

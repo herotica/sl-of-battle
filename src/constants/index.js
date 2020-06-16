@@ -6,8 +6,8 @@ export const Rooms = {
   fight: "fight",
   training: "training",
   underground: "underground",
-  league: 'league',
-  leagueA: "isekai-lg"
+  league: "league",
+  fuckRoom: "fuckroom"
 };
 export const FightRooms = {
   underground: "underground-pit",
