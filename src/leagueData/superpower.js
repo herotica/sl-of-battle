@@ -1,8 +1,8 @@
-import rookies from "../combatants/isekai-league/rookies";
+import rookies from "../combatants/superpower-league/rookies";
 import icon from "../assets/logo/isekai.png";
 
 export default {
-  id: "superhero",
+  id: "superpower",
   name: "League 2; The Superhero League",
   description:
     "The sexiest and most powerful girls from superhero anime, thankfully their powers have been dulled, as per rules for league entry.",
