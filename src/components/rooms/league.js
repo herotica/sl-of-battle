@@ -18,16 +18,22 @@ const LeagueRoom = observer(() => {
     currentLgWinNum,
     currentLeague,
     currentLeagueProgress,
+    leagueProgress,
     resetCurrentLgWinNum,
     setCurrentLeagueProgress,
     setLeague,
     setRoomSave,
     ChangeRenown,
     saveChar,
-    leagueProgress,
+    addNewLeague,
     resetLeagueCredits
   } = useGlobalDataStore();
-  const { ranks, id } = currentLeague;
+  const { ranks, id, initialPoints } = currentLeague;
+  const missingLeagueData = !leagueProgress[id];
+  if (missingLeagueData) {
+    addNewLeague(id, initialPoints);
+    saveChar();
+  }
 
   const resetOnLeave = () => {
     setCurrentLeagueProgress(InitialValues.currentLeagueProgress);
@@ -36,7 +42,7 @@ const LeagueRoom = observer(() => {
     resetLeagueCredits();
     setRoomSave(Rooms.main);
   };
-  const isComplete = leagueProgress[id].isComplete;
+  const isComplete = leagueProgress[id] && leagueProgress[id].isComplete;
   const OnComplete = () => {
     ChangeRenown(1); // TODO req check if first completion
     resetOnLeave();
@@ -111,7 +117,8 @@ const LeagueRoom = observer(() => {
           : currentLeague.description}
       </LeagueBottomText>
       <LeagueBottomText>
-        League Points Left to Gain : {leagueProgress[id].pointsAvailable}
+        League Points Left to Gain :{" "}
+        {leagueProgress[id] && leagueProgress[id].pointsAvailable}
       </LeagueBottomText>
       <MainBox>
         {ranks.map((rank, index) => (

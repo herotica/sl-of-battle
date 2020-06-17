@@ -1,9 +1,9 @@
 import React from 'react';
-import Layout from "./layout"
+import PageController from "./PageController"
 
 function App() {
   return (
-    <Layout />
+    <PageController />
   );
 }
 

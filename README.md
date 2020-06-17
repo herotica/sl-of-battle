@@ -11,6 +11,7 @@
 - interface + ran sex text output
 
 - tutorial modal
+- move fuckroom comb to fightstore
 - League
   -- events 
   -- fight + win logic

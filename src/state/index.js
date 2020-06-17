@@ -304,6 +304,12 @@ export function createGlobalStore() {
         pointsAvailable: newLeaguePoints < 0 ? 0 : newLeaguePoints
       };
     },
+    addNewLeague(leagueID, pointsAvailable) {
+      this.leagueProgress[leagueID] = {
+        isComplete: false,
+        pointsAvailable: pointsAvailable
+      };
+    },
     setFuckRoomCombatant(combatant) {
       this.fuckRoomCombatant = combatant;
     },
