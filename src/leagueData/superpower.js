@@ -1,5 +1,5 @@
 import rookies from "../combatants/superpower-league/rookies";
-import icon from "../assets/logo/isekai.png";
+import icon from "../assets/logo/superhero.png";
 
 export default {
   id: "superpower",

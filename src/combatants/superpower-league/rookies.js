@@ -1,7 +1,7 @@
-import Megumin from "../../assets/combatants/isekai-league/megumin.png";
-import MeguminIcon from "../../assets/combatants/isekai-league/megumin-icon.png";
-import MeguminWin from "../../assets/combatants/isekai-league/megumin-win.png";
-import MeguminLose from "../../assets/combatants/isekai-league/megumin-lose.png";
+import NicoRobin from "../../assets/combatants/superpower/nico-robin.png";
+import NicoRobinIcon from "../../assets/combatants/superpower/nico-robin-icon.png";
+import NicoRobinWin from "../../assets/combatants/superpower/nico-robin-win.png";
+import NicoRobinLose from "../../assets/combatants/superpower/nico-robin-lose.png";
 
 export default {
   name: "Rookies",
@@ -9,46 +9,46 @@ export default {
   pointsWin: 5,
   combatants: [
     {
-      name: "Megumin",
-      description: "A cute young Arch Wizard of the Crimson Demon Clan.",
-      img: Megumin,
-      icon: MeguminIcon,
-      opWinImg: MeguminWin,
-      opLoseImg: MeguminLose,
+      name: "Nico Robin",
+      description: "Also known by her epithet 'Devil Child' and the 'Light of the Revolution', she is the archaeologist of the Straw Hat Pirates. She is the sole survivor of the destroyed island of Ohara.",
+      img: NicoRobin,
+      icon: NicoRobinIcon,
+      opWinImg: NicoRobinWin,
+      opLoseImg: NicoRobinLose,
       gender: "female",
       isWoman: true,
       hasCock: false,
       race: "Human",
-      bodyShape: "petite",
-      eyeColor: "red",
+      bodyShape: "buxom",
+      eyeColor: "blue",
       hairColor: "black",
       skinColor: "fair",
-      height: 1,
+      height: 3,
       penisSize: 0,
-      breastSize: 1,
-      vaginaSize: 1,
-      anusSize: 2,
+      breastSize: 4,
+      vaginaSize: 2,
+      anusSize: 3,
       throatSize: 1,
       // Pref properties effect 'AI'
-      prefAttack: "tongue",
+      prefAttack: "touch",
       prefTarget: "mouth",
       uniqueAttackText:
-        "Mei's soft little tongue slips it's squishy way into ++++'s mouth, exploring ==== mouth passionately, and tasting all over ==== tongue.",
-      roughPlayLvl: -12, // how responds to domination either -hates or +likes
+        "Nico pushes her heavy bust into ++++'s mouth, forcing her to taste her delicious breasts.",
+      roughPlayLvl: -2, // how responds to domination either -hates or +likes
       // Prowess is capability
-      seductionResistance: 15,
-      grapplingProwess: 5,
-      tongueProwess: 30,
+      seductionResistance: 25,
+      grapplingProwess: 15,
+      tongueProwess: 10,
       touchProwess: 25,
       cockProwess: 15,
       vaginaProwess: 20,
       anusProwess: 15,
       // -- resistance is ability to endure pleasure, 1 - 100
-      touchResistance: 15,
-      breastResistance: 20,
+      touchResistance: 25,
+      breastResistance: 10,
       mouthResistance: 32,
-      cockResistance: 5,
-      vaginaResistance: 15,
+      cockResistance: 25,
+      vaginaResistance: 35,
       anusResistance: 25,
       orgasmLimit: 3
     }
