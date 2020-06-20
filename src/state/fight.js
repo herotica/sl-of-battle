@@ -88,7 +88,12 @@ export function createFightStore() {
       this.fightRoundEnd = false;
       this.fightWinner = false;
       this.fightMatchWinnings = winnings;
-    }
+    },
+
+    fuckRoomCombatant: null,
+    setFuckRoomCombatant(combatant) {
+      this.fuckRoomCombatant = combatant;
+    },
   };
 }
 

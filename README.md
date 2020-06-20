@@ -10,8 +10,8 @@
 
 - interface + ran sex text output
 
-- tutorial modal
-- move fuckroom comb to fightstore
+- tutorial modal?
+- make fuckroom text func + template literals
 - League
   -- events 
   -- fight + win logic

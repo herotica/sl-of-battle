@@ -239,7 +239,8 @@ const CombatantBox = ({
 };
 
 const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => {
-  const { setRoom, setFuckRoomCombatant } = useGlobalDataStore();
+  const { setRoom,  } = useGlobalDataStore();
+  const { setFuckRoomCombatant } = useFightDataStore();
   const onSelectLoserToFuck = combatant => {
     setFuckRoomCombatant(combatant);
     setRoom(Rooms.fuckRoom);

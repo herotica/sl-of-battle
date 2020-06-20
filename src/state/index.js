@@ -111,7 +111,6 @@ export const InitialValues = {
   currentLgWinNum: new Array(50).fill(0), // if in a league, number of wins/rank
   currentLeague: null,
   leagueProgress: LeagueInit,
-  fuckRoomCombatant: null,
   gameVersion: 1
 };
 const saveAvailable = GetFromStorage();
@@ -309,9 +308,6 @@ export function createGlobalStore() {
         isComplete: false,
         pointsAvailable: pointsAvailable
       };
-    },
-    setFuckRoomCombatant(combatant) {
-      this.fuckRoomCombatant = combatant;
     },
 
     saveChar() {

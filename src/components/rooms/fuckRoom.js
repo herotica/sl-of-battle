@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
+import { useFightDataStore } from "../../state/fight";
 import { observer } from "mobx-react-lite";
 import RoomHeader from "../roomHeader";
 import Button from "../button";
@@ -17,12 +18,11 @@ const FuckRoom = observer(() => {
   const [fuckChoice, setFuckChoice] = useState(false);
   const [fuckEndChoice, setFuckEndChoice] = useState(false);
   const {
-    fuckRoomCombatant,
-    name,
     hasCock,
     isWoman,
     setRoomSave
   } = useGlobalDataStore();
+  const { fuckRoomCombatant } = useFightDataStore();
 
   const LeaveRoom = () => {
     setRoomSave(Rooms.league);
