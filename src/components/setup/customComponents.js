@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import { observer } from "mobx-react-lite";
+import ImportCharacter from "../importChar";
 
 export const SetName = () => {
   const [nameInput, setInput] = useState("");
-  const changeName = evt => setInput(evt.target.value);
+  const changeName = (evt) => setInput(evt.target.value);
   const { setName } = useGlobalDataStore();
   const updateName = () => {
     setName(nameInput);
@@ -13,11 +14,14 @@ export const SetName = () => {
   };
 
   return (
-    <FlexWrapper>
-      <StyledLabel>Name:</StyledLabel>
-      <StyledInput onChange={changeName} />
-      <NameButton onClick={updateName}>Accept</NameButton>
-    </FlexWrapper>
+    <>
+      <ImportCharacter />
+      <FlexWrapper>
+        <StyledLabel>Name:</StyledLabel>
+        <StyledInput onChange={changeName} />
+        <NameButton onClick={updateName}>Accept</NameButton>
+      </FlexWrapper>
+    </>
   );
 };
 
@@ -81,7 +85,7 @@ export const getFile = (importElementID, onFileLoad) => {
 
   var fr = new FileReader();
 
-  fr.onload = function(e) {
+  fr.onload = function (e) {
     onFileLoad(e.target.result);
   };
 
