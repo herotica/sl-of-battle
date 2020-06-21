@@ -13,9 +13,9 @@ export const RoomsData = {
     colors: {
       bgA: "grey",
       bgB: "darkgrey",
-      border: "black"
+      border: "black",
     },
-    room: Rooms.training
+    room: Rooms.training,
   },
   underground: {
     name: "Underground Sluts Arena",
@@ -24,10 +24,10 @@ export const RoomsData = {
     colors: {
       bgA: "grey",
       bgB: "darkgrey",
-      border: "black"
+      border: "black",
     },
-    room: Rooms.underground
-  }
+    room: Rooms.underground,
+  },
 };
 
 const LeagueList = () => {
@@ -36,7 +36,7 @@ const LeagueList = () => {
       <RoomsWrapper {...RoomsData.training} />
       <RoomsWrapper {...RoomsData.underground} />
       <MdTitleMiddle>Leagues</MdTitleMiddle>
-      {LeaguesData.map(Data => (
+      {LeaguesData.map((Data) => (
         <LeagueWrapper {...Data} />
       ))}
     </ListWrapper>
@@ -45,34 +45,39 @@ const LeagueList = () => {
 
 const LeagueWrapper = ({ room, league }) => {
   const { name, description, renownRequired, icon, colors, ranks } = league;
-  const { setRoomSave, setLeague } = useGlobalDataStore();
+  const { setRoomSave, setLeague, RenownLv } = useGlobalDataStore();
   const onPress = () => {
     setLeague(league);
     setRoomSave(room);
   };
+  const isLocked = RenownLv < renownRequired;
 
   return (
-    <ListBox colors={colors} onClick={onPress}>
+    <ListBox
+      colors={colors}
+      onClick={isLocked || onPress}
+      locked={isLocked}
+    >
       <FlexWrap>
-        <div>
+        <TitleWrap>
           <FlexWrap>
             <Title>{name}</Title>
             <Text>Renown Lv :: {renownRequired}</Text>
           </FlexWrap>
           <Text>{description}</Text>
-        </div>
+        </TitleWrap>
         {icon && <Logo src={icon} alt="logo" />}
       </FlexWrap>
       <Text>Rookies:</Text>
       <RookieWrap>
-        {ranks[0].combatants.map(rookie => (
+        {ranks[0].combatants.map((rookie) => (
           <RookieIcon src={rookie.icon} alt={rookie.name} />
         ))}
       </RookieWrap>
     </ListBox>
   );
 };
-const RoomsWrapper = props => {
+const RoomsWrapper = (props) => {
   const { name, description, room, colors } = props;
   const { setRoomSave } = useGlobalDataStore();
   const onPress = () => {
@@ -82,12 +87,12 @@ const RoomsWrapper = props => {
   return (
     <ListBox colors={colors} onClick={onPress}>
       <FlexWrap>
-        <div>
+        <TitleWrap>
           <FlexWrap>
             <Title>{name}</Title>
           </FlexWrap>
           <Text>{description}</Text>
-        </div>
+        </TitleWrap>
       </FlexWrap>
     </ListBox>
   );
@@ -113,6 +118,7 @@ const ListBox = styled.div`
   cursor: pointer;
   background-size: 150% 150%;
   transition: background 0.2s ease-in-out;
+  ${(p) => p.locked && "opacity: 0.4;"}
 
   &:hover {
     background-position-y: -40px;
@@ -123,6 +129,10 @@ const FlexWrap = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+`;
+const TitleWrap = styled.div`
+  width: 75%;
+  max-width: 82%;
 `;
 const Title = styled.h4`
   text-decoration: none;

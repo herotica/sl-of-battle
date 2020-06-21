@@ -7,7 +7,7 @@ export default {
   description:
     "The sexiest and most powerful girls from superhero anime, thankfully their powers have been dulled, as per rules for league entry.",
   initialPoints: 50,
-  renownRequired: 1,
+  renownRequired: 0,
   colors: {
     bgA: "#65daaa",
     bgB: "#5c70a9",
