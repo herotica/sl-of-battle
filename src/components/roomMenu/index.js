@@ -6,18 +6,19 @@ import { MdTitleMiddle } from "../text";
 
 import LeaguesData from "../../leagueData";
 
-export const RoomsData = {
-  training: {
+export const RoomsData = [
+  {
     name: "The Training Centre",
     description: "Build up your skills at the training centre.",
     colors: {
       bgA: "grey",
       bgB: "darkgrey",
       border: "black",
+      borderHover: "#802b43",
     },
     room: Rooms.training,
   },
-  underground: {
+  {
     name: "Underground Sluts Arena",
     description:
       "Sluts battle for cash and training, no refunds, and no fun times with the losers neither",
@@ -25,16 +26,29 @@ export const RoomsData = {
       bgA: "grey",
       bgB: "darkgrey",
       border: "black",
+      borderHover: "#802b43",
     },
     room: Rooms.underground,
   },
-};
+  {
+    name: "League Point Shop",
+    description: "Purchase permanent bonus with League Points",
+    colors: {
+      bgA: "grey",
+      bgB: "darkgrey",
+      border: "black",
+      borderHover: "#802b43",
+    },
+    room: Rooms.leaguePShop,
+  },
+];
 
 const LeagueList = () => {
   return (
     <ListWrapper>
-      <RoomsWrapper {...RoomsData.training} />
-      <RoomsWrapper {...RoomsData.underground} />
+      {RoomsData.map((roomData) => (
+        <RoomsWrapper {...roomData} key={roomData.name} />
+      ))}
       <MdTitleMiddle>Leagues</MdTitleMiddle>
       {LeaguesData.map((Data) => (
         <LeagueWrapper {...Data} />
@@ -53,11 +67,7 @@ const LeagueWrapper = ({ room, league }) => {
   const isLocked = RenownLv < renownRequired;
 
   return (
-    <ListBox
-      colors={colors}
-      onClick={isLocked || onPress}
-      locked={isLocked}
-    >
+    <ListBox colors={colors} onClick={isLocked || onPress} locked={isLocked}>
       <FlexWrap>
         <TitleWrap>
           <FlexWrap>
@@ -87,12 +97,9 @@ const RoomsWrapper = (props) => {
   return (
     <ListBox colors={colors} onClick={onPress}>
       <FlexWrap>
-        <TitleWrap>
-          <FlexWrap>
-            <Title>{name}</Title>
-          </FlexWrap>
-          <Text>{description}</Text>
-        </TitleWrap>
+        <Title style={{ flex: "0 0 180px" }}>{name}</Title>
+
+        <Text style={{ flex: "1 0 320px" }}>{description}</Text>
       </FlexWrap>
     </ListBox>
   );
@@ -117,12 +124,14 @@ const ListBox = styled.div`
   margin: 16px 20px;
   cursor: pointer;
   background-size: 150% 150%;
-  transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out;
   ${(p) => p.locked && "opacity: 0.4;"}
 
   &:hover {
     background-position-y: -40px;
     background-position-x: -40px;
+    ${({ colors }) =>
+      colors.borderHover && "border-color: " + colors.borderHover};
   }
 `;
 const FlexWrap = styled.div`

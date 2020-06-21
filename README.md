@@ -8,23 +8,20 @@
 
 ### To do
 
-- interface + ran sex text output
-
 - tutorial modal?
+- interface + ran sex text output
+- Week Switching
+
 - League
   -- events
 - window alert -> Toast
 - color choice, show color?
 - choice icons
-  -- isekai lg
   -- day process, week switcher, training/league
   -- code cleanup
-  -- Display setup effects sidebar (hide bad numbers)
 - training erotic event
 - training, buy equipment
 
--- Styling
-- main page
 
 ### Dev info
 

@@ -1,6 +1,4 @@
 import React from "react";
-import Button from "../button";
-import { Rooms } from "../../constants";
 
 class ErrorHandler extends React.Component {
   constructor(props) {

@@ -102,6 +102,7 @@ export const InitialValues = {
   leagueCredits: 0, // reset after leaving a league
   leaguePoints: 0, // Accrued accross leagues, spent on medals, sponsoring
   cash: 100, // Accrued accross leagues, spent on upgrades / training
+  boughtItems: [], // Array of item id's, mostly bought from League shop
   currentRoom: Rooms.setup,
   currentLeagueProgress: {
     credits: 0,
@@ -287,6 +288,11 @@ export function createGlobalStore() {
       } else {
         this.cash = this.cash + changeVal;
       }
+    },
+    addBoughtItem(idString) {
+      const newArr = this.boughtItems.slice();
+      newArr.push(idString);
+      this.boughtItems = newArr;
     },
     // Logic
     setRoom(RoomString) {

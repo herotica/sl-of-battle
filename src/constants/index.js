@@ -7,17 +7,18 @@ export const Rooms = {
   training: "training",
   underground: "underground",
   league: "league",
-  fuckRoom: "fuckroom"
+  fuckRoom: "fuckroom",
+  leaguePShop: "leaguepointshop",
 };
 export const FightRooms = {
   underground: "underground-pit",
-  leagueA: "isekai-ring"
+  leagueA: "isekai-ring",
 };
 
 export const gender = {
   male: "male",
   female: "female",
-  futanari: "futa"
+  futanari: "futa",
 };
 export const humanHeight = [
   "petite",
@@ -25,7 +26,7 @@ export const humanHeight = [
   "medium",
   "big",
   "tall",
-  "giant"
+  "giant",
 ];
 export const bodyShape = {
   petite: "petite",
@@ -33,7 +34,7 @@ export const bodyShape = {
   medium: "medium",
   chubby: "chubby",
   buxom: "buxom",
-  muscular: "muscular"
+  muscular: "muscular",
 };
 export const raceType = {
   human: "human",
@@ -43,7 +44,7 @@ export const raceType = {
   darkelf: "dark elf",
   gnome: "gnome",
   succubus: "succubus",
-  fairy: "fairy"
+  fairy: "fairy",
 };
 export const colors = [
   "black",
@@ -55,7 +56,7 @@ export const colors = [
   "blue",
   "green",
   "grey",
-  "hazel"
+  "hazel",
 ];
 export const skinColor = [
   "pale",
@@ -64,7 +65,7 @@ export const skinColor = [
   "olive",
   "dark",
   "ebony",
-  "green"
+  "green",
 ];
 // All sexual organ sizes are from 0-5 (6 in total)
 export const PenisSize = ["tiny", "small", "normal", "big", "huge", "massive"];
@@ -74,7 +75,7 @@ export const BreastSize = [
   "plump",
   "busty",
   "double d",
-  "massive"
+  "massive",
 ];
 export const holeSize = [
   "tight",
@@ -82,5 +83,5 @@ export const holeSize = [
   "snug",
   "stretchy",
   "open",
-  "gaping"
+  "gaping",
 ];
