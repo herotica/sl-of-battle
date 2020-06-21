@@ -1,12 +1,27 @@
-import Aqua from "../../assets/combatants/isekai-league/aqua.png";
-import AquaIcon from "../../assets/combatants/isekai-league/aqua-icon.png";
-import AquaWin from "../../assets/combatants/isekai-league/aqua-win.png";
-import AquaLose from "../../assets/combatants/isekai-league/aqua-lose.png";
+import BoaHancock from "../../assets/combatants/superpower/boa-hancock.png";
+import BoaHancockIcon from "../../assets/combatants/superpower/boa-hancock-icon.png";
+import BoaHancockWin from "../../assets/combatants/superpower/boa-hancock-win.png";
+import BoaHancockLose from "../../assets/combatants/superpower/boa-hancock-lose.png";
 
-import AsuiTsuyu from "../../assets/combatants/superhero/asui-tsuyu.png";
-import AsuiTsuyuIcon from "../../assets/combatants/superhero/asui-tsuyu-icon.png";
-import AsuiTsuyuWin from "../../assets/combatants/superhero/asui-tsuyu-win.png";
-import AsuiTsuyuLose from "../../assets/combatants/superhero/asui-tsuyu-lose.png";
+import MomoYaoyorozu from "../../assets/combatants/superpower/momo-yaoyorozu.png";
+import MomoYaoyorozuIcon from "../../assets/combatants/superpower/momo-yaoyorozu-icon.png";
+import MomoYaoyorozuWin from "../../assets/combatants/superpower/momo-yaoyorozu-win.png";
+import MomoYaoyorozuLose from "../../assets/combatants/superpower/momo-yaoyorozu-lose.png";
+
+import UtsushimiCamie from "../../assets/combatants/superpower/utsushimi-camie.png";
+import UtsushimiCamieIcon from "../../assets/combatants/superpower/utsushimi-camie-icon.png";
+import UtsushimiCamieWin from "../../assets/combatants/superpower/utsushimi-camie-win.png";
+import UtsushimiCamieLose from "../../assets/combatants/superpower/utsushimi-camie-lose.png";
+
+import Nami from "../../assets/combatants/superpower/nami.png";
+import NamiIcon from "../../assets/combatants/superpower/nami-icon.png";
+import NamiWin from "../../assets/combatants/superpower/nami-win.png";
+import NamiLose from "../../assets/combatants/superpower/nami-lose.png";
+
+import AsuiTsuyu from "../../assets/combatants/superpower/asui-tsuyu.png";
+import AsuiTsuyuIcon from "../../assets/combatants/superpower/asui-tsuyu-icon.png";
+import AsuiTsuyuWin from "../../assets/combatants/superpower/asui-tsuyu-win.png";
+import AsuiTsuyuLose from "../../assets/combatants/superpower/asui-tsuyu-lose.png";
 
 export default [
   {
@@ -16,48 +31,132 @@ export default [
     reqWins: 2,
     combatants: [
       {
-        name: "Aqua",
+        name: "Boa Hancock",
         description:
-          "An ex-goddess of water who used to guide humans to the afterlife.",
-        img: Aqua,
-        icon: AquaIcon,
-        opWinImg: AquaWin,
-        opLoseImg: AquaLose,
+          "She is the current empress, known as the 'Snake Princess', of Amazon Lily and rules over the Kuja tribe.",
+        img: BoaHancock,
+        icon: BoaHancockIcon,
+        opWinImg: BoaHancockWin,
+        opLoseImg: BoaHancockLose,
         gender: "female",
         isWoman: true,
         hasCock: false,
         race: "Human",
-        bodyShape: "curvy",
-        eyeColor: "blue",
-        hairColor: "blue",
-        skinColor: "fair",
-        height: 2,
+        bodyShape: "Buxom",
+        eyeColor: "black",
+        hairColor: "black",
+        skinColor: "pale",
+        height: 4,
         penisSize: 0,
-        breastSize: 3,
+        breastSize: 4,
         vaginaSize: 2,
         anusSize: 3,
         throatSize: 2,
         prefAttack: "touch",
-        prefTarget: "breasts",
+        prefTarget: "touch",
         uniqueAttackText:
-          "Aqua rubs her supple tits eagerly against ++++'s, tickling her nipples against her opponent's.",
-        roughPlayLvl: 15,
-        seductionResistance: 20,
-        grapplingProwess: 20,
+          "Hancock smothers her opponent with her shapely and tender breasts, tickled xxxx with her hard nipples.",
+        roughPlayLvl: -15,
+        seductionResistance: 25,
+        grapplingProwess: 30,
         tongueProwess: 25,
         touchProwess: 30,
         cockProwess: 15,
         vaginaProwess: 25,
-        anusProwess: 15,
+        anusProwess: 25,
         touchResistance: 15,
         breastResistance: 25,
-        mouthResistance: 20,
+        mouthResistance: 5,
         cockResistance: 15,
         vaginaResistance: 25,
+        anusResistance: 15,
+        orgasmLimit: 3,
+      },
+      {
+        name: "Momo Yaoyorozu",
+        description:
+          "Momo is a very prudent, dedicated person who acts as a natural leader. her power is the ability to create thigns from her skin.",
+        img: MomoYaoyorozu,
+        icon: MomoYaoyorozuIcon,
+        opWinImg: MomoYaoyorozuWin,
+        opLoseImg: MomoYaoyorozuLose,
+        gender: "female",
+        isWoman: true,
+        hasCock: false,
+        race: "Human",
+        bodyShape: "Busty",
+        eyeColor: "black",
+        hairColor: "black",
+        skinColor: "pale",
+        height: 4,
+        penisSize: 0,
+        breastSize: 4,
+        vaginaSize: 1,
+        anusSize: 3,
+        throatSize: 2,
+        prefAttack: "touch",
+        prefTarget: "anus",
+        uniqueAttackText:
+          "Momo secretly summons a large dildo and uses it on xxxx's arse, digging deep and roughly.",
+        roughPlayLvl: 10,
+        seductionResistance: 20,
+        grapplingProwess: 25,
+        tongueProwess: 15,
+        touchProwess: 35,
+        cockProwess: 15,
+        vaginaProwess: 25,
+        anusProwess: 15,
+        touchResistance: 15,
+        breastResistance: 5,
+        mouthResistance: 15,
+        cockResistance: 15,
+        vaginaResistance: 20,
         anusResistance: 25,
-        orgasmLimit: 3
-      }
-    ]
+        orgasmLimit: 3,
+      },
+      {
+        name: "Utsushimi Camie",
+        description:
+          "She is very laid back, straightforward, and tends to be quite talkative. Can create illusion producing smoke.",
+        img: UtsushimiCamie,
+        icon: UtsushimiCamieIcon,
+        opWinImg: UtsushimiCamieWin,
+        opLoseImg: UtsushimiCamieLose,
+        gender: "female",
+        isWoman: true,
+        hasCock: false,
+        race: "Human",
+        bodyShape: "curvaceous",
+        eyeColor: "dark brown",
+        hairColor: "fawn",
+        skinColor: "pale",
+        height: 2,
+        penisSize: 0,
+        breastSize: 4,
+        vaginaSize: 2,
+        anusSize: 3,
+        throatSize: 3,
+        prefAttack: "mouth",
+        prefTarget: "breasts",
+        uniqueAttackText:
+          "Camie lovingly licks xxxx's tits, before suddenly biting her nipples animalistically.",
+        roughPlayLvl: 25,
+        seductionResistance: 20,
+        grapplingProwess: 25,
+        tongueProwess: 25,
+        touchProwess: 15,
+        cockProwess: 15,
+        vaginaProwess: 25,
+        anusProwess: 25,
+        touchResistance: 15,
+        breastResistance: 25,
+        mouthResistance: 5,
+        cockResistance: 15,
+        vaginaResistance: 20,
+        anusResistance: 25,
+        orgasmLimit: 3,
+      },
+    ],
   },
   {
     name: "Pro",
@@ -77,9 +176,9 @@ export default [
         isWoman: true,
         hasCock: false,
         race: "Human",
-        bodyShape: "Slender",
+        bodyShape: "slender",
         eyeColor: "black",
-        hairColor: "Dark Green",
+        hairColor: "dark green",
         skinColor: "pale",
         height: 1,
         penisSize: 0,
@@ -105,8 +204,49 @@ export default [
         cockResistance: 15,
         vaginaResistance: 45,
         anusResistance: 25,
-        orgasmLimit: 3
-      }
-    ]
-  }
+        orgasmLimit: 3,
+      },{
+        name: "Nami",
+        description:
+          "'Cat Burglar' Nami is the navigator of the Straw Hat Pirates. She is a capable thief, with tremenedous physical prowess.",
+        img: Nami,
+        icon: NamiIcon,
+        opWinImg: NamiWin,
+        opLoseImg: NamiLose,
+        gender: "female",
+        isWoman: true,
+        hasCock: false,
+        race: "Human",
+        bodyShape: "busty",
+        eyeColor: "brown",
+        hairColor: "orange",
+        skinColor: "fair",
+        height: 2,
+        penisSize: 0,
+        breastSize: 4,
+        vaginaSize: 2,
+        anusSize: 2,
+        throatSize: 1,
+        prefAttack: "tongue",
+        prefTarget: "cock",
+        uniqueAttackText:
+          "Nami impales herself on xxxx's cock, pushing it roughly into her throat, ignoring her gag reflex she deepthroats like a professional.",
+        roughPlayLvl: 12,
+        seductionResistance: 25,
+        grapplingProwess: 30,
+        tongueProwess: 40,
+        touchProwess: 20,
+        cockProwess: 15,
+        vaginaProwess: 15,
+        anusProwess: 25,
+        touchResistance: 35,
+        breastResistance: 25,
+        mouthResistance: 35,
+        cockResistance: 15,
+        vaginaResistance: 10,
+        anusResistance: 25,
+        orgasmLimit: 3,
+      },
+    ],
+  },
 ];

@@ -10,6 +10,7 @@
 
 - interface + ran sex text output
 - Week Switching
+- equipment effects
 
 - League
   -- events
@@ -18,7 +19,6 @@
 - choice icons
   -- day process, week switcher, training/league
   -- code cleanup
-- training erotic event
 - training, buy equipment
 
 

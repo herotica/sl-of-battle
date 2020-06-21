@@ -1,4 +1,5 @@
 import rookies from "../combatants/superpower-league/rookies";
+import rank from  "../combatants/superpower-league/ranks";
 import icon from "../assets/logo/superhero.png";
 
 export default {
@@ -14,5 +15,5 @@ export default {
     border: "#65daaa"
   },
   icon,
-  ranks: [rookies, rookies]
+  ranks: [rookies, ...rank]
 };

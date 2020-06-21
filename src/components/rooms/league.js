@@ -152,7 +152,7 @@ const LeagueRankBox = ({ name, group, groupID, isFinal, currentLgWinNum }) => {
           </LockedOverlay>
         )}
         <FlexWrap>
-          {group.combatants.map((combatant, index) => (
+          {group.combatants && group.combatants.map((combatant, index) => (
             <CombatantBox
               key={`${groupID}-${index}`}
               combatant={combatant}

@@ -14,6 +14,5 @@ export default {
     border: "yellow"
   },
   icon,
-  rookies,
   ranks: [rookies, ...ranks]
 };
