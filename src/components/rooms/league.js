@@ -23,13 +23,15 @@ const LeagueRoom = observer(() => {
     setCurrentLeagueProgress,
     setLeague,
     setRoomSave,
-    ChangeRenown,
     saveChar,
     addNewLeague,
-    resetLeagueCredits
+    resetLeagueCredits,
   } = useGlobalDataStore();
+
   const { ranks, id, initialPoints } = currentLeague;
   const missingLeagueData = !leagueProgress[id];
+  const isComplete = leagueProgress[id] && leagueProgress[id].isComplete;
+
   if (missingLeagueData) {
     addNewLeague(id, initialPoints);
     saveChar();
@@ -42,15 +44,10 @@ const LeagueRoom = observer(() => {
     resetLeagueCredits();
     setRoomSave(Rooms.main);
   };
-  const isComplete = leagueProgress[id] && leagueProgress[id].isComplete;
-  const OnComplete = () => {
-    ChangeRenown(1); // TODO req check if first completion
-    resetOnLeave();
-  };
   const closeWinBox = () => {
     const newProgObj = {
       ...currentLeagueProgress,
-      fightPic: false
+      fightPic: false,
     };
     setCurrentLeagueProgress(newProgObj);
     saveChar();
@@ -106,7 +103,7 @@ const LeagueRoom = observer(() => {
       <FlexSpaced>
         <LgTitle>{currentLeague.name}</LgTitle>
         {isComplete ? (
-          <Button onClick={OnComplete}>Return To Training</Button>
+          <Button onClick={resetOnLeave}>Return To Training</Button>
         ) : (
           <Button onClick={() => setShowExit(true)}>Quit League</Button>
         )}
@@ -180,18 +177,20 @@ const CombatantBox = ({
   combatantVal,
   groupID,
   isFinal,
-  isLocked
+  isLocked,
 }) => {
   const {
     currentLeague,
     setCurrentLgWinNum,
     currentLeagueProgress,
+    leagueProgress,
     setCurrentLeagueProgress,
     setRoomSave,
     setRoom,
     setLeagueProgress,
     changeLeagueCredits,
-    changeLeaguePoints
+    gainLeaguePoints,
+    ChangeRenown,
   } = useGlobalDataStore();
   const { id, ranks } = currentLeague;
   const { readyNewFight } = useFightDataStore();
@@ -202,15 +201,18 @@ const CombatantBox = ({
       ...currentLeagueProgress,
       wins: {
         ...currentLeagueProgress.wins,
-        [combatantVal]: true
+        [combatantVal]: true,
       },
-      fightPic: combatant.opLoseImg
+      fightPic: combatant.opLoseImg,
     };
-    setLeagueProgress(id, isFinal, ranks[groupID].pointsWin);
     setCurrentLeagueProgress(newProgObj);
     setCurrentLgWinNum(groupID);
     changeLeagueCredits(ranks[groupID].creditsWin);
-    changeLeaguePoints(ranks[groupID].pointsWin);
+    gainLeaguePoints(ranks[groupID].pointsWin, currentLeague.id);
+    if (isFinal & !leagueProgress[currentLeague.id].isComplete) {
+      ChangeRenown(1);
+    }
+    setLeagueProgress(id, isFinal, ranks[groupID].pointsWin);
     setRoomSave(Rooms.league);
   };
   const onLose = () => {
@@ -218,7 +220,7 @@ const CombatantBox = ({
     const newProgObj = {
       ...currentLeagueProgress,
       hasLost: true,
-      fightPic: combatant.opWinImg
+      fightPic: combatant.opWinImg,
     };
     setCurrentLeagueProgress(newProgObj);
   };
@@ -239,31 +241,40 @@ const CombatantBox = ({
 };
 
 const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => {
-  const { setRoom,  } = useGlobalDataStore();
+  const { setRoom, leagueCredits, changeLeagueCredits } = useGlobalDataStore();
   const { setFuckRoomCombatant } = useFightDataStore();
-  const onSelectLoserToFuck = combatant => {
-    setFuckRoomCombatant(combatant);
-    setRoom(Rooms.fuckRoom);
+
+  const onSelectLoserToFuck = (combatant, cost) => {
+    if (cost <= leagueCredits) {
+      changeLeagueCredits(cost * -1);
+      setFuckRoomCombatant(combatant);
+      setRoom(Rooms.fuckRoom);
+    }
   };
 
   return (
     <RankBox borderCol={"#00ffb8"}>
-      <NameText>League Shop{events}</NameText>
+      <NameText>
+        League Shop{events} :: You have {leagueCredits} league Credits
+        remaining, they will be lost upon leaving the league
+      </NameText>
       <FlexWrap>
-        {Object.keys(currentLeagueProgress.wins).map(losersVal => {
+        {Object.keys(currentLeagueProgress.wins).map((losersVal) => {
           const rank = parseInt(losersVal.substr(0, 1));
           const combatantId = parseInt(losersVal.substr(2, losersVal.length));
           const combatant = currentLeague.ranks[rank].combatants[combatantId];
+          const cost = 10 + 5 * rank;
 
           return (
             <CombatantButton
               key={losersVal}
-              onClick={() => onSelectLoserToFuck(combatant)}
+              onClick={() => onSelectLoserToFuck(combatant, cost)}
             >
               <OverlayText>
                 <SmText>Fuck {combatant.name}</SmText>
                 <SmText>
-                  {">"} {10 + 5 * rank} Credits
+                  [<CostText isRed={cost > leagueCredits}>{cost}</CostText>{" "}
+                  Credits]
                 </SmText>
               </OverlayText>
               <LoserIcon src={combatant.icon} alt={combatant.name} />
@@ -278,7 +289,7 @@ const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => {
 const UWrap = styled.div`
   margin: 32px;
   overflow-y: auto;
-  ${p => p.isComplete && `border: 2px solid gold`}
+  ${(p) => p.isComplete && `border: 2px solid gold`}
 `;
 const FlexSpaced = styled.div`
   display: flex;
@@ -305,7 +316,7 @@ const Flex = styled.div`
 `;
 const RankBox = styled.div`
   margin-left: 16px;
-  border: 2px solid ${p => p.borderCol || "black"};
+  border: 2px solid ${(p) => p.borderCol || "black"};
   padding: 8px;
   flex-grow: 1;
   position: relative;
@@ -313,10 +324,10 @@ const RankBox = styled.div`
 
 const CombatantButton = styled.div`
   position: relative;
-  border: 1px solid ${p => p.borderCol || "darkgrey"};
+  border: 1px solid ${(p) => p.borderCol || "darkgrey"};
   border-radius: 5px;
   padding: 4px;
-  cursor: ${p => (p.isbeaten ? "not-allowed" : "pointer")};
+  cursor: ${(p) => (p.isbeaten ? "not-allowed" : "pointer")};
   margin: 0 4px;
   width: 140px;
   height: 140px;
@@ -325,7 +336,7 @@ const CombatantButton = styled.div`
   align-items: center;
   justify-content: space-around;
   transition: background 0.3s ease-in-out;
-  ${p => p.isbeaten && "opacity: 0.4"};
+  ${(p) => p.isbeaten && "opacity: 0.4"};
 
   &:hover {
     background: rgba(80, 80, 80, 0.2);
@@ -376,6 +387,9 @@ const FightEndImg = styled.img`
   max-height: 380px;
   margin-right: 24px;
   margin-top: -12px;
+`;
+const CostText = styled.span`
+  ${(p) => p.isRed && "color: darkred;"}
 `;
 
 export default LeagueRoom;

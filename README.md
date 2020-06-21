@@ -12,8 +12,7 @@
 
 - tutorial modal?
 - League
-  -- events 
-  -- fight + win logic
+  -- events
 - window alert -> Toast
 - color choice, show color?
 - choice icons

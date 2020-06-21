@@ -12,7 +12,7 @@ export const CharKeys = {
     touch: "touch",
     cock: "cock",
     vagina: "vagina",
-    anus: "anus"
+    anus: "anus",
   },
   prowess: {
     seduction: "seductionProwess",
@@ -21,7 +21,7 @@ export const CharKeys = {
     touch: "touchProwess",
     cock: "cockProwess",
     vagina: "vaginaProwess",
-    anus: "anusProwess"
+    anus: "anusProwess",
   },
   prowessUpd: {
     seduction: "changeSeductionProwess",
@@ -30,7 +30,7 @@ export const CharKeys = {
     touch: "changeTouchProwess",
     cock: "changeCockProwess",
     vagina: "changeVaginaProwess",
-    anus: "changeAnusProwess"
+    anus: "changeAnusProwess",
   },
   resistTypes: {
     touch: "touch",
@@ -38,7 +38,7 @@ export const CharKeys = {
     mouth: "mouth",
     cock: "cock",
     vagina: "vagina",
-    anus: "anus"
+    anus: "anus",
   },
   resist: {
     touch: "touchResistance",
@@ -46,7 +46,7 @@ export const CharKeys = {
     mouth: "mouthResistance",
     cock: "cockResistance",
     vagina: "vaginaResistance",
-    anus: "anusResistance"
+    anus: "anusResistance",
   },
   resistUpd: {
     touch: "changeTouchResistance",
@@ -54,8 +54,8 @@ export const CharKeys = {
     mouth: "changeMouthResistance",
     cock: "changeCockResistance",
     vagina: "changeVaginaResistance",
-    anus: "changeAnusResistance"
-  }
+    anus: "changeAnusResistance",
+  },
 };
 
 export const InitialValues = {
@@ -106,12 +106,12 @@ export const InitialValues = {
   currentLeagueProgress: {
     credits: 0,
     hasLost: false,
-    wins: {}
+    wins: {},
   },
   currentLgWinNum: new Array(50).fill(0), // if in a league, number of wins/rank
   currentLeague: null,
   leagueProgress: LeagueInit,
-  gameVersion: 1
+  gameVersion: 1,
 };
 const saveAvailable = GetFromStorage();
 const valFromStorage = saveAvailable
@@ -266,6 +266,21 @@ export function createGlobalStore() {
         this.leaguePoints = this.leaguePoints + changeVal;
       }
     },
+    gainLeaguePoints(changeVal, leagueID) {
+      let newLeaguePoints = 0;
+      const pointsLeft = this.leagueProgress[leagueID].pointsAvailable;
+      if (pointsLeft >= changeVal) {
+        newLeaguePoints = pointsLeft - changeVal;
+        this.leaguePoints = this.leaguePoints + changeVal;
+      } else {
+        this.leaguePoints = this.leaguePoints + pointsLeft;
+        newLeaguePoints = 0;
+      }
+      this.leagueProgress[leagueID] = {
+        ...this.leagueProgress[leagueID],
+        pointsAvailable: newLeaguePoints,
+      };
+    },
     changeCash(changeVal) {
       if (this.cash + changeVal < 0) {
         this.cash = 0;
@@ -296,17 +311,15 @@ export function createGlobalStore() {
       this.currentLgWinNum = InitialValues.currentLgWinNum;
     },
     setLeagueProgress(leagueID, completeLeague, decreasePointsAvailable) {
-      const newLeaguePoints =
-        this.leagueProgress[leagueID].pointsAvailable - decreasePointsAvailable;
       this.leagueProgress[leagueID] = {
+        ...this.leagueProgress[leagueID],
         isComplete: completeLeague || this.leagueProgress[leagueID].isComplete,
-        pointsAvailable: newLeaguePoints < 0 ? 0 : newLeaguePoints
       };
     },
     addNewLeague(leagueID, pointsAvailable) {
       this.leagueProgress[leagueID] = {
         isComplete: false,
-        pointsAvailable: pointsAvailable
+        pointsAvailable: pointsAvailable,
       };
     },
 
@@ -335,7 +348,7 @@ export function createGlobalStore() {
     },
 
     // Overwrite data with previously saved values
-    ...valFromStorage
+    ...valFromStorage,
   };
 }
 
@@ -367,9 +380,9 @@ export const useGlobalDataStore = () => {
   return store;
 };
 
-const CreateSaveObj = cntxt => {
+const CreateSaveObj = (cntxt) => {
   const Obj = {};
-  Object.keys(cntxt).forEach(key => {
+  Object.keys(cntxt).forEach((key) => {
     if (typeof cntxt[key] !== "function") {
       Obj[key] = cntxt[key];
     }
@@ -377,12 +390,12 @@ const CreateSaveObj = cntxt => {
   return Obj;
 };
 
-const ExportCharacter = cntxt => {
+const ExportCharacter = (cntxt) => {
   const Obj = CreateSaveObj(cntxt);
   createFileFromObj(Obj, Obj.name);
 };
 
-const SaveCharacter = cntxt => {
+const SaveCharacter = (cntxt) => {
   const Obj = CreateSaveObj(cntxt);
 
   StoreObj(Obj);
