@@ -11,7 +11,6 @@
 - interface + ran sex text output
 
 - tutorial modal?
-- make fuckroom text func + template literals
 - League
   -- events 
   -- fight + win logic

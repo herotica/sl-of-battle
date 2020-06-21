@@ -10,32 +10,29 @@ import FuckRoomText from "../../eventText/fuckRoomText";
 
 const FuckTypes = {
   dom: "dominate",
-  please: "pleasure"
+  please: "pleasure",
 };
 
 const FuckRoom = observer(() => {
   const [fuckType, setFuckType] = useState(false);
   const [fuckChoice, setFuckChoice] = useState(false);
   const [fuckEndChoice, setFuckEndChoice] = useState(false);
-  const {
-    hasCock,
-    isWoman,
-    setRoomSave
-  } = useGlobalDataStore();
+  const playerCharStore = useGlobalDataStore();
+  const { hasCock, isWoman, setRoomSave } = playerCharStore;
   const { fuckRoomCombatant } = useFightDataStore();
 
   const LeaveRoom = () => {
     setRoomSave(Rooms.league);
   };
-  const getRndJesus = textOptArr =>
+  const getRndJesus = (textOptArr) =>
     Math.floor(Math.random() * textOptArr.length);
-  const SetFuckChoiceText = textOptArr => {
+  const SetFuckChoiceText = (textOptArr) => {
     const RNJesus = getRndJesus(textOptArr);
-    setFuckChoice(textOptArr[RNJesus]);
+    setFuckChoice(textOptArr[RNJesus](playerCharStore, fuckRoomCombatant));
   };
-  const SetFuckEndChoiceText = textOptArr => {
+  const SetFuckEndChoiceText = (textOptArr) => {
     const RNJesus = getRndJesus(textOptArr);
-    setFuckEndChoice(textOptArr[RNJesus]);
+    setFuckEndChoice(textOptArr[RNJesus](playerCharStore, fuckRoomCombatant));
   };
 
   return (
@@ -64,7 +61,7 @@ const FuckRoom = observer(() => {
               <FlexWrap>
                 {" "}
                 {hasCock &&
-                  FuckRoomText[fuckType].hasCock.map(option => (
+                  FuckRoomText[fuckType].hasCock.map((option) => (
                     <UpperCase
                       onClick={() => SetFuckChoiceText(option.textOptions)}
                     >
@@ -73,7 +70,7 @@ const FuckRoom = observer(() => {
                   ))}
                 {hasCock &&
                   fuckType === FuckTypes.dom &&
-                  FuckRoomText[fuckType].cockBdsm.map(option => (
+                  FuckRoomText[fuckType].cockBdsm.map((option) => (
                     <UpperCase
                       onClick={() => SetFuckChoiceText(option.textOptions)}
                     >
@@ -81,7 +78,7 @@ const FuckRoom = observer(() => {
                     </UpperCase>
                   ))}
                 {isWoman &&
-                  FuckRoomText[fuckType].isWoman.map(option => (
+                  FuckRoomText[fuckType].isWoman.map((option) => (
                     <UpperCase
                       onClick={() => SetFuckChoiceText(option.textOptions)}
                     >
@@ -96,7 +93,7 @@ const FuckRoom = observer(() => {
               <div>{fuckChoice}</div>
               {hasCock &&
                 !fuckEndChoice &&
-                FuckRoomText.finishCock.map(option => (
+                FuckRoomText.finishCock.map((option) => (
                   <UpperCase
                     onClick={() => SetFuckEndChoiceText(option.textOptions)}
                   >
