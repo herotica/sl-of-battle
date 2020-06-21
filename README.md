@@ -8,7 +8,6 @@
 
 ### To do
 
-- tutorial modal?
 - interface + ran sex text output
 - Week Switching
 

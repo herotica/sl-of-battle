@@ -98,6 +98,7 @@ export const InitialValues = {
   anusResistance: 5,
   orgasmLimit: 3,
   // Items / spending
+  tutorialClosed: false,
   RenownLv: 0, // displays 13 as lv1 xp3, max 100
   leagueCredits: 0, // reset after leaving a league
   leaguePoints: 0, // Accrued accross leagues, spent on medals, sponsoring
@@ -246,6 +247,9 @@ export function createGlobalStore() {
       this.orgasmLimit = checkedVal(newVal, this.orgasmLimit, 1, 100);
     },
 
+    CloseTutorial() {
+      this.tutorialClosed = true;
+    },
     // Items
     ChangeRenown(changeVal) {
       this.RenownLv = checkedVal(changeVal, this.RenownLv, 0, 100);
