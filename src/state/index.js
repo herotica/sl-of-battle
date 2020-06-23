@@ -57,6 +57,18 @@ export const CharKeys = {
     anus: "changeAnusResistance",
   },
 };
+const Pronouns = {
+  she: "she",
+  self: "her",
+  her: "her",
+  hers: "hers",
+};
+const MalePronouns = {
+  she: "he",
+  self: "him",
+  her: "his",
+  hers: "his",
+};
 
 export const InitialValues = {
   name: "None",
@@ -65,6 +77,7 @@ export const InitialValues = {
   gender: gender.female,
   isWoman: true,
   hasCock: false,
+  pn: Pronouns,
   race: "Human",
   bodyShape: false,
   eyeColor: false,
@@ -135,6 +148,9 @@ export function createGlobalStore() {
       this.gender = newVal;
       this.isWoman = newVal === gender.female || newVal === gender.futanari;
       this.hasCock = newVal === gender.male || newVal === gender.futanari;
+      if (newVal === gender.male) {
+        this.pn = MalePronouns;
+      }
     },
     setRace(newVal) {
       this.race = newVal;

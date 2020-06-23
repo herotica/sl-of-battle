@@ -8,6 +8,7 @@
 
 ### To do
 
+- pronouns
 - interface + ran sex text output
 - Week Switching
 - equipment effects
