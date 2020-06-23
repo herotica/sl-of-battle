@@ -62,12 +62,20 @@ const Pronouns = {
   self: "her",
   her: "her",
   hers: "hers",
+  Cshe: "She",
+  Cself: "Her",
+  Cher: "Her",
+  Chers: "Hers",
 };
 const MalePronouns = {
   she: "he",
   self: "him",
   her: "his",
   hers: "his",
+  Cshe: "He",
+  Cself: "Him",
+  Cher: "His",
+  Chers: "His",
 };
 
 export const InitialValues = {

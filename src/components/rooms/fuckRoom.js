@@ -128,6 +128,7 @@ const ImageWrap = styled.div`
 `;
 const TextWrap = styled.div`
   margin: 12px;
+  white-space: pre-line;
 `;
 const Image = styled.img`
   max-width: 320px;
