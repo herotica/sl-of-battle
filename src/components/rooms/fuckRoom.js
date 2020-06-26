@@ -60,31 +60,18 @@ const FuckRoom = observer(() => {
             <>
               <FlexWrap>
                 {" "}
-                {hasCock &&
-                  FuckRoomText[fuckType].hasCock.map((option) => (
-                    <UpperCase
-                      onClick={() => SetFuckChoiceText(option.textOptions)}
-                    >
-                      {option.displayText}
-                    </UpperCase>
-                  ))}
-                {hasCock &&
-                  fuckType === FuckTypes.dom &&
-                  FuckRoomText[fuckType].cockBdsm.map((option) => (
-                    <UpperCase
-                      onClick={() => SetFuckChoiceText(option.textOptions)}
-                    >
-                      {option.displayText}
-                    </UpperCase>
-                  ))}
-                {isWoman &&
-                  FuckRoomText[fuckType].isWoman.map((option) => (
-                    <UpperCase
-                      onClick={() => SetFuckChoiceText(option.textOptions)}
-                    >
-                      {option.displayText}
-                    </UpperCase>
-                  ))}
+                {FuckRoomText[fuckType].map((fuckGroupings) => {
+                  const Show = fuckGroupings.check(playerCharStore);
+                  if (Show) {
+                    return fuckGroupings.options.map((option) => (
+                      <UpperCase
+                        onClick={() => SetFuckChoiceText(option.textOptions)}
+                      >
+                        {option.displayText}
+                      </UpperCase>
+                    ))
+                  }
+                })}
               </FlexWrap>
             </>
           )}

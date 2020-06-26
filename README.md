@@ -8,7 +8,7 @@
 
 ### To do
 
-- pronouns
+- fuckroom checks
 - interface + ran sex text output
 - Week Switching
 - equipment effects

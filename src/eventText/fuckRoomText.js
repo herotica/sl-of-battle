@@ -7,14 +7,29 @@ import finishCock from "./fuckroom/finishCock";
 
 export default {
   // p: playerstore, c: combatant
-  dominate: {
-    hasCock: domCock,
-    cockBdsm: cockBdsm,
-    isWoman: domWoman,
-  },
-  pleasure: {
-    hasCock: pleasureCock,
-    isWoman: pleasureWoman,
-  },
+  dominate: [
+    {
+      check: p => p.hasCock,
+      options: domCock,
+    },
+    {
+      check: p => p.hasCock,
+      options: cockBdsm,
+    },
+    {
+      check: p => p.isWoman,
+      options: domWoman,
+    },
+  ],
+  pleasure: [
+    {
+      check: p => p.hasCock,
+      options: pleasureCock,
+    },
+    {
+      check: p => p.isWoman,
+      options: pleasureWoman,
+    },
+  ],
   finishCock,
 };
