@@ -18,12 +18,22 @@ const Strings = {
 
 const FightOptions = [
   {
+    name: "Exhibition",
+    bet: -10,
+    reward: 100,
+    difficulty: 5,
+    mediumDiffChance: 1000, // chance in a thousand
+    hardDiffChance: 900,
+    desc: `Let the pros abuse you for the crowd's entertainment.`
+  },
+  {
     name: "Rookie",
     bet: 20,
-    reward: 40,
+    reward: 50,
     difficulty: 1,
     mediumDiffChance: 10, // chance in a thousand
-    hardDiffChance: 2
+    hardDiffChance: 2,
+    desc: `Fight some inexperienced but hungry rookies.`
   },
   {
     name: "Amatuer",
@@ -31,7 +41,8 @@ const FightOptions = [
     reward: 120,
     difficulty: 2,
     mediumDiffChance: 400,
-    hardDiffChance: 30
+    hardDiffChance: 30,
+    desc: `Risk it and fight some more experienced fighters.`
   },
   {
     name: "Seasoned",
@@ -39,7 +50,8 @@ const FightOptions = [
     reward: 400,
     difficulty: 4,
     mediumDiffChance: 1000,
-    hardDiffChance: 450
+    hardDiffChance: 450,
+    desc: `Think your ready for the big leagues?`
   }
 ];
 
@@ -65,7 +77,7 @@ const UndergroundArena = () => {
 };
 
 const FightTierOption = observer(
-  ({ name, bet, reward, difficulty, mediumDiffChance, hardDiffChance }) => {
+  ({ name, bet, reward, difficulty, mediumDiffChance, hardDiffChance, desc }) => {
     //remove cash, send data to fight state, move room
     const {
       cash,
@@ -104,6 +116,8 @@ const FightTierOption = observer(
           Bet: {bet} / Reward: {reward}
         </SmText>
         <SmText>Difficulty Lvl::{difficulty}</SmText>
+        <SmText>--</SmText>
+        <SmText>{desc}</SmText>
       </FightOption>
     );
   }

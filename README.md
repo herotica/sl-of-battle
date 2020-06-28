@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  Play a game based on Tok's battle sluts, and kink's Ultimate Surrender (see src/assets/cyoa)
+  Play a game based on Tokhar's battle sluts, and kink's Ultimate Surrender (see src/assets/cyoa)
 </p>
 
 ### To do
 
+- exhibition
 - interface + ran sex text output
-- Week Switching
 - equipment effects
 
 - League
