@@ -1,5 +1,5 @@
-import rookies from "../combatants/isekai-league/rookies";
-import ranks from "../combatants/isekai-league/ranks";
+import rookies from "../combatants/jrpg/rookies";
+import ranks from "../combatants/jrpg/ranks";
 import icon from "../assets/logo/jrpg.png";
 
 export default {

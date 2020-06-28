@@ -8,7 +8,6 @@
 
 ### To do
 
-- fuckroom checks
 - interface + ran sex text output
 - Week Switching
 - equipment effects
@@ -21,8 +20,14 @@
   -- day process, week switcher, training/league
   -- code cleanup
 - training, buy equipment
+- fuckroom writing guide ,male, switch 
 
+### Maths
 
+ranks 1 -> 8
+values 
+low: -5 + rank * 10
+high: 5 + rank * 10
 ### Dev info
 
 <div class="center">

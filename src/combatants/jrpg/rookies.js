@@ -1,0 +1,100 @@
+import Corrin from "../../assets/combatants/jrpg/fireemblem/corrin.png";
+import CorrinIcon from "../../assets/combatants/jrpg/fireemblem/corrin-icon.png";
+import CorrinWin from "../../assets/combatants/jrpg/fireemblem/corrin-win.png";
+import CorrinLose from "../../assets/combatants/jrpg/fireemblem/corrin-lose.png";
+
+import Lucina from "../../assets/combatants/jrpg/fireemblem/lucina.png";
+import LucinaIcon from "../../assets/combatants/jrpg/fireemblem/lucina-icon.png";
+import LucinaWin from "../../assets/combatants/jrpg/fireemblem/lucina-win.png";
+import LucinaLose from "../../assets/combatants/jrpg/fireemblem/lucina-lose.png";
+
+export default {
+  name: "Rookies",
+  creditsWin: 5,
+  pointsWin: 5,
+  combatants: [
+    {
+      name: "Corrin",
+      description: "Corrin is member of Nohr and Hoshido royalty, she is a kind person who cares deeply for the people she loves.",
+      img: Corrin,
+      icon: CorrinIcon,
+      opWinImg: CorrinWin,
+      opLoseImg: CorrinLose,
+      gender: "female",
+      isWoman: true,
+      hasCock: false,
+      race: "Human-dragoon",
+      bodyShape: "petite",
+      eyeColor: "red",
+      hairColor: "white",
+      skinColor: "pale",
+      height: 2,
+      penisSize: 0,
+      breastSize: 1,
+      vaginaSize: 1,
+      anusSize: 1,
+      throatSize: 2,
+      // Pref properties effect 'AI'
+      prefAttack: "vagina",
+      prefTarget: "vagina",
+      uniqueAttackText: "Corrin scissors xxxx with animal passion, sending waves of pleasure through her.",
+      roughPlayLvl: -15, // how responds to domination either -hates or +likes
+      // Prowess is capability
+      seductionResistance: 20,
+      grapplingProwess: 25,
+      tongueProwess: 15,
+      touchProwess: 25,
+      cockProwess: 15,
+      vaginaProwess: 25,
+      anusProwess: 15,
+      // -- resistance is ability to endure pleasure, 1 - 100
+      touchResistance: 30,
+      breastResistance: 20,
+      mouthResistance: 32,
+      cockResistance: 15,
+      vaginaResistance: 15,
+      anusResistance: 25,
+      orgasmLimit: 3,
+    },
+    {
+      name: "Lucina",
+      description: "The daughter of Chrom and gifted with the mark of Naga, known as the Brand of the Exalt, on her left eye.",
+      img: Lucina,
+      icon: LucinaIcon,
+      opWinImg: LucinaWin,
+      opLoseImg: LucinaLose,
+      gender: "female",
+      isWoman: true,
+      hasCock: false,
+      race: "human",
+      bodyShape: "youthful",
+      eyeColor: "blue",
+      hairColor: "blue",
+      skinColor: "fair",
+      height: 2,
+      penisSize: 0,
+      breastSize: 1,
+      vaginaSize: 2,
+      anusSize: 2,
+      throatSize: 1,
+      prefAttack: "touch",
+      prefTarget: "breasts",
+      uniqueAttackText: "Lucina tenderly fondles xxxx's breasts, teasing her nipples playfully.",
+      roughPlayLvl: 10,
+      seductionResistance: 25,
+      grapplingProwess: 25,
+      tongueProwess: 15,
+      touchProwess: 25,
+      cockProwess: 15,
+      vaginaProwess: 15,
+      anusProwess: 10,
+      touchResistance: 15,
+      breastResistance: 25,
+      mouthResistance: 20,
+      cockResistance: 5,
+      vaginaResistance: 5,
+      anusResistance: 10,
+      orgasmLimit: 3,
+    },
+  ],
+};
