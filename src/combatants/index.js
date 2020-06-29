@@ -1,12 +1,12 @@
 //interface for getting data
-import Overwatch from "./underground/overwatch";
 import { OtherMid } from "./underground/others";
+import OtherBasic from "./underground/otherBasic";
 import HentaiFoundry from "./underground/hentaiFoundry";
 
 export const Underground = {
   // Max 3 difficulty tiers, A is the lowest
   tierBasic: {
-    mei: Overwatch.mei,
+    ...OtherBasic,
   },
   tierMedium: {
     ...OtherMid,

@@ -8,16 +8,10 @@
 
 ### To do
 
-- exhibition
 - interface + ran sex text output
 - equipment effects
-
 - League
   -- events
-- window alert -> Toast
-- color choice, show color?
-- choice icons
-  -- day process, week switcher, training/league
   -- code cleanup
 - training, buy equipment
 - fuckroom writing guide ,male, switch 

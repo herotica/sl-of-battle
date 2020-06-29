@@ -70,7 +70,7 @@ export const MainWrap = styled.div`
   align-items: stretch;
 `;
 export const FighterImg = styled.img`
-  height: 300px;
+  height: 420px;
 `;
 export const FighterData = styled.div`
   flex: 0 3 80%;
