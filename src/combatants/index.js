@@ -1,6 +1,7 @@
 //interface for getting data
 import { OtherMid } from "./underground/othersMid";
 import OtherBasic from "./underground/otherBasic";
+import othersHard from "./underground/othersHard";
 import HentaiFoundry from "./underground/hentaiFoundry";
 
 export const Underground = {
@@ -14,6 +15,7 @@ export const Underground = {
   tierHard: {
     carmen: HentaiFoundry.carmen,
     meryl: HentaiFoundry.meryl,
+    ...othersHard,
   },
 };
 
