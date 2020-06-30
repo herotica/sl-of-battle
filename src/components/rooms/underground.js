@@ -40,7 +40,7 @@ const FightOptions = [
     bet: 50,
     reward: 120,
     difficulty: 2,
-    mediumDiffChance: 400,
+    mediumDiffChance: 620,
     hardDiffChance: 30,
     desc: `Risk it and fight some more experienced fighters.`
   },

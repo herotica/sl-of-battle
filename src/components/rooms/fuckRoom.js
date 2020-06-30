@@ -18,7 +18,7 @@ const FuckRoom = observer(() => {
   const [fuckChoice, setFuckChoice] = useState(false);
   const [fuckEndChoice, setFuckEndChoice] = useState(false);
   const playerCharStore = useGlobalDataStore();
-  const { hasCock, isWoman, setRoomSave } = playerCharStore;
+  const { hasCock, setRoomSave } = playerCharStore;
   const { fuckRoomCombatant } = useFightDataStore();
 
   const LeaveRoom = () => {
@@ -69,8 +69,9 @@ const FuckRoom = observer(() => {
                       >
                         {option.displayText}
                       </UpperCase>
-                    ))
+                    ));
                   }
+                  return null;
                 })}
               </FlexWrap>
             </>

@@ -1,5 +1,5 @@
 //interface for getting data
-import { OtherMid } from "./underground/others";
+import { OtherMid } from "./underground/othersMid";
 import OtherBasic from "./underground/otherBasic";
 import HentaiFoundry from "./underground/hentaiFoundry";
 
