@@ -59,7 +59,7 @@ const Dominate = {
         sizeX: [
           `++++ sucks xxxx's clit with ==== mouth`,
           `++++ rubs xxxx's pussy with the tip of ==== tongue`,
-          `++++ pushes her tongue deep into xxxx's pussy, exploring it's depths.`,
+          `++++ pushes her tongue deep into xxxx's pussy, exploring it's depths`,
         ],
       },
       [CharKeys.resistTypes.anus]: {
@@ -85,7 +85,7 @@ const Dominate = {
         sizeOpt: 3,
         sizeS: [
           `++++ squeezes xxxx's little tits, gently kneading her small breast meat`,
-          `++++ violently slaps xxxx's tits, and pinches her nipples.`,
+          `++++ violently slaps xxxx's tits, and pinches her nipples`,
         ],
         sizeM: [
           `++++ roughly gropes xxxx's tits, and squeezes her nipples`,
@@ -101,7 +101,7 @@ const Dominate = {
         sizeX: [
           `++++ pushes === hand into xxxx's throat, releasing her saliva, and triggering her gag reflex`,
           `++++ tugs roughly on her lips, demeaning her for being a little slut`,
-          `++++ slaps her face around, tells her to call ==== master from now on.`,
+          `++++ slaps her face around, tells her to call ==== master from now on`,
         ],
       },
       [CharKeys.resistTypes.cock]: {
@@ -124,7 +124,7 @@ const Dominate = {
         sizeX: [
           `++++ sucks xxxx's clit with ==== mouth`,
           `++++ rubs xxxx's pussy with the tip of ==== tongue`,
-          `++++ pushes her tongue deep into xxxx's pussy, exploring it's depths.`,
+          `++++ pushes her tongue deep into xxxx's pussy, exploring it's depths`,
         ],
       },
       [CharKeys.resistTypes.anus]: {

@@ -27,8 +27,8 @@ export const FightTxtInterface = (
 ) => {
   const DataObj = isDominate ? Data.fight.dominate : Data.fight.pleasure;
 
-  console.log('fsize', fuckerData[fuckerOrgan + "Size"]);
-  console.log('rsize', recieverData[fuckerOrgan + "Size"]);
+  console.log("fsize", fuckerData[fuckerOrgan + "Size"]);
+  console.log("rsize", recieverData[fuckerOrgan + "Size"]);
   const FuckerOpts = DataObj[fuckerOrgan];
   let RecieverOpts = null;
   if (FuckerOpts.sizeOpt) {

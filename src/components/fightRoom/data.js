@@ -716,7 +716,15 @@ export const fightResolve = (
       );
       ResponseObj.result += `${uniqueAtktext}, causing ${charData.name}'s arousal to increase by ${dealArousal} & ${fighterData.name}'s to grow ${arousalCost}`;
     } else {
-      ResponseObj.result += `${fighterData.name} uses her ${opponentAttack} on your ${opponentTarget}, `;
+      const useRough = fighterData.roughPlayLvl > 0;
+      const ranTextEvent = FightTxtInterface(
+        useRough,
+        opponentAttack,
+        opponentTarget,
+        fighterData,
+        charData
+      );
+      ResponseObj.result += `${ranTextEvent}, causing ${charData.name}'s arousal to increase by ${dealArousal} & ${fighterData.name}'s to grow ${arousalCost}`;
     }
   }
 
