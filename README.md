@@ -14,7 +14,22 @@
   -- events
   -- code cleanup
 - training, buy equipment
-- fuckroom writing guide ,male, switch 
+- fuckroom writing guide ,male, switch
+- money spend
+
+### Leagues
+
+- futa
+- fight - tekken, doa
+- pokemon
+- battleship
+- harem
+- adventure - goblin slayer
+- marvel
+- dc
+- morning cartoon - kim poss, totally spies
+- idolmaster
+- disney
 
 ### Maths
 

@@ -11,7 +11,7 @@ import {
   RoomImages,
   FightPhaseTypes,
   FightPhaseData,
-  fightResolve
+  fightResolve,
 } from "./data";
 import {
   FightRoomWrap,
@@ -26,7 +26,7 @@ import {
   FlexBetween,
   ActionWrap,
   FightLogWrap,
-  OrgasmIcon
+  OrgasmIcon,
 } from "./styled";
 
 const FightRoom = () => {
@@ -52,7 +52,7 @@ const FightersInfo = observer(() => {
     fightRoom,
     fightArousalState,
     fightOrgasmState,
-    fightOrgasmStateOriginal
+    fightOrgasmStateOriginal,
   } = useFightDataStore();
 
   const PlayerOrgasmIcons = [];
@@ -101,7 +101,6 @@ const FightersInfo = observer(() => {
   );
 });
 
-
 const FighterActions = observer(() => {
   const [fightPhase, setFightPhase] = useState(0);
   const [fightPhaseType, setFightPhaseType] = useState(FightPhaseTypes[0][0]);
@@ -123,18 +122,21 @@ const FighterActions = observer(() => {
     setRoundWinner,
     onFightWin,
     onFightLose,
-    fightMatchWinnings
+    fightMatchWinnings,
   } = useFightDataStore();
   const fighter = fightCombantantData;
 
-  const shouldHideOpt = phaseOpt =>
+  const shouldHideOpt = (phaseOpt) =>
     (phaseOpt.reqCock && !charData.hasCock) ||
     (phaseOpt.reqFemale && !charData.isWoman) ||
     (phaseOpt.opHasCock && !fighter.hasCock);
 
   const OnActionRan = (btnAction, optionIndex) => {
-    const actionResponse = btnAction(charData, fighter, phaseChoices);
-    addToFightLog(actionResponse.log);
+    let actionResponse = { isSuccess: true, log: "" };
+    if (btnAction) {
+      actionResponse = btnAction(charData, fighter, phaseChoices);
+      addToFightLog(actionResponse.log);
+    }
 
     if (fightPhase >= FightPhaseData.length - 1) {
       setFightPhase(0);
@@ -172,7 +174,7 @@ const FighterActions = observer(() => {
     setRoundResult(responseObj.result);
     const newArousalData = [
       fightArousalState[0] + responseObj.player,
-      fightArousalState[1] + responseObj.fighter
+      fightArousalState[1] + responseObj.fighter,
     ];
     setFightArousalState(newArousalData);
 
@@ -188,8 +190,8 @@ const FighterActions = observer(() => {
     }
 
     setOrgasmState(responseObj.playerOrgasm, responseObj.fighterOrgasm);
-    addToFightLog(responseObj.result);
-    responseObj.skillGain && addToFightLog(responseObj.skillGain);
+    const SkillGained = responseObj.skillGain || "";
+    addToFightLog(responseObj.result + ". " + SkillGained);
   };
   if (isRoundEnd && !fightRoundEnd) {
     setRoundEnd(true);

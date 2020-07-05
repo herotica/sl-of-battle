@@ -4,18 +4,20 @@ import {
   isFightStatCompWin,
   fuckArousalCost,
   receiverArousalGain,
-  TestStatTrain
+  TestStatTrain,
 } from "../../utils/maths";
 import { CharKeys } from "../../state";
+import { FightTxtInterface } from "../../eventText/fightText";
+import { replacer } from "../../eventText/replacers";
 
 export const Strings = {
   title: "SLUT FIGHT",
-  explain: "Bring your opponent to orgasm, before they make you"
+  explain: "Bring your opponent to orgasm, before they make you",
 };
 
 export const RoomImages = {
   [FightRooms.underground]: UndergroundBg,
-  [FightRooms.leagueA]: UndergroundBg
+  [FightRooms.leagueA]: UndergroundBg,
 };
 
 export const FightPhaseTypes = [
@@ -23,7 +25,7 @@ export const FightPhaseTypes = [
   ["incontrol", "seduced", "controlled"],
   ["pleasure", "dominate", "coy", "animal", "enjoy", "resist"],
   ["tongue", "touch", "cock", "vagina", "anus", "seducedopponent", "opponent"],
-  ["touch", "breasts", "mouth", "cock", "vagina", "anus", "opponent"]
+  ["touch", "breasts", "mouth", "cock", "vagina", "anus", "opponent"],
 ];
 
 const EndPhaseOption = {
@@ -35,13 +37,18 @@ const EndPhaseOption = {
       onAction() {
         return {
           isSuccess: true,
-          log: "The next round begins"
+          log: "The next round begins",
         };
-      }
+      },
       //   Round will now end
-    }
-  ]
+    },
+  ],
 };
+
+const isDom = (FightPhaseData) => {
+  return FightPhaseData[1] === FightPhaseTypes[2][1];
+};
+
 export const FightPhaseData = [
   {
     [FightPhaseTypes[0][0]]: {
@@ -61,7 +68,7 @@ export const FightPhaseData = [
             return { isSuccess: result, log: logMsg };
           },
           nextPhaseTypeWin: FightPhaseTypes[1][0],
-          nextPhaseTypeFail: FightPhaseTypes[1][2]
+          nextPhaseTypeFail: FightPhaseTypes[1][2],
         },
         {
           name: "Seduce",
@@ -77,10 +84,10 @@ export const FightPhaseData = [
             return { isSuccess: result, log: logMsg };
           },
           nextPhaseTypeWin: FightPhaseTypes[1][1],
-          nextPhaseTypeFail: FightPhaseTypes[1][2]
-        }
-      ]
-    }
+          nextPhaseTypeFail: FightPhaseTypes[1][2],
+        },
+      ],
+    },
   },
   {
     [FightPhaseTypes[1][0]]: {
@@ -93,7 +100,7 @@ export const FightPhaseData = [
             // avoids adding roughPlayLvl.
             return { isSuccess: true, log: "You move tenderly" };
           },
-          nextPhaseTypeWin: FightPhaseTypes[2][0]
+          nextPhaseTypeWin: FightPhaseTypes[2][0],
         },
         {
           name: "Roughly",
@@ -102,9 +109,9 @@ export const FightPhaseData = [
             // checked later to see if add roughPlayLvl lvl.
             return { isSuccess: true, log: "You awake your animal passions" };
           },
-          nextPhaseTypeWin: FightPhaseTypes[2][1]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[2][1],
+        },
+      ],
     },
     [FightPhaseTypes[1][1]]: {
       name: "You have Seduced you opponent how do you tease?",
@@ -116,7 +123,7 @@ export const FightPhaseData = [
             // avoids adding roughPlayLvl.
             return { isSuccess: true, log: "You tease coyly" };
           },
-          nextPhaseTypeWin: FightPhaseTypes[2][2]
+          nextPhaseTypeWin: FightPhaseTypes[2][2],
         },
         {
           name: "Animal",
@@ -125,12 +132,12 @@ export const FightPhaseData = [
             return {
               // adds roughPlayLvl, bonus for player if high.
               isSuccess: true,
-              log: "You scream for animalistic intensity"
+              log: "You scream for animalistic intensity",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[2][3]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[2][3],
+        },
+      ],
     },
     [FightPhaseTypes[1][2]]: {
       name: "Your opponent takes control",
@@ -142,10 +149,10 @@ export const FightPhaseData = [
             return {
               isSuccess: true,
               // avoids adding roughPlayLvl.
-              log: "You moan at writhe at every touch."
+              log: "You moan at writhe at every touch.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[2][4]
+          nextPhaseTypeWin: FightPhaseTypes[2][4],
         },
         {
           name: "Resist",
@@ -154,13 +161,13 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You fight and wriggle."
+              log: "You fight and wriggle.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[2][5]
-        }
-      ]
-    }
+          nextPhaseTypeWin: FightPhaseTypes[2][5],
+        },
+      ],
+    },
   },
   // Pick sexual organ to use, (you or opponent)
   {
@@ -173,10 +180,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You lick your lips, wetting your tongue."
+              log: "You wet your lips.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][0]
+          nextPhaseTypeWin: FightPhaseTypes[3][0],
         },
         {
           name: "Use Touch",
@@ -184,10 +191,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You ready your body & hands."
+              log: "You ready your body & hands.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][1]
+          nextPhaseTypeWin: FightPhaseTypes[3][1],
         },
         {
           name: "Use Cock",
@@ -196,10 +203,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You ready your cock."
+              log: "You ready your cock.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][2]
+          nextPhaseTypeWin: FightPhaseTypes[3][2],
         },
         {
           name: "Use Pussy",
@@ -208,10 +215,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You ready your pussy."
+              log: "You ready your pussy.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][3]
+          nextPhaseTypeWin: FightPhaseTypes[3][3],
         },
         {
           name: "Use Arse",
@@ -219,12 +226,12 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You ready your arse."
+              log: "You ready your arse.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][4]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[3][4],
+        },
+      ],
     },
     [FightPhaseTypes[2][1]]: {
       name: "Your inner animal growls, what is your weapon?",
@@ -235,10 +242,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You lick your lips, wetting your tongue."
+              log: "You lick your lips, wetting your tongue.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][0]
+          nextPhaseTypeWin: FightPhaseTypes[3][0],
         },
         {
           name: "Use Touch",
@@ -246,10 +253,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You ready your body & hands."
+              log: "You ready your body & hands.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][1]
+          nextPhaseTypeWin: FightPhaseTypes[3][1],
         },
         {
           name: "Use Cock",
@@ -258,10 +265,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You ready your cock."
+              log: "You ready your cock.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][2]
+          nextPhaseTypeWin: FightPhaseTypes[3][2],
         },
         {
           name: "Use Pussy",
@@ -270,10 +277,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You ready your pussy."
+              log: "You ready your pussy.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][3]
+          nextPhaseTypeWin: FightPhaseTypes[3][3],
         },
         {
           name: "Use Arse",
@@ -281,12 +288,12 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You ready your arse."
+              log: "You ready your arse.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][4]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[3][4],
+        },
+      ],
     },
     // All below skip next step
     [FightPhaseTypes[2][2]]: {
@@ -298,12 +305,12 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You bashfully admire your opponent"
+              log: "You bashfully admire your opponent",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][5]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[3][5],
+        },
+      ],
     },
     [FightPhaseTypes[2][3]]: {
       name:
@@ -315,12 +322,12 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You hurry your opponent."
+              log: "You hurry your opponent.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][5]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[3][5],
+        },
+      ],
     },
     [FightPhaseTypes[2][4]]: {
       name: "Your choose to take pleasure in being taken.",
@@ -331,12 +338,12 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You continue your passionate embrace."
+              log: "You continue your passionate embrace.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][6]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[3][6],
+        },
+      ],
     },
     [FightPhaseTypes[2][5]]: {
       name: "You try to fight your opponent, only burning both your energy.",
@@ -347,13 +354,13 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "You continue to resist"
+              log: "You continue to resist",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[3][6]
-        }
-      ]
-    }
+          nextPhaseTypeWin: FightPhaseTypes[3][6],
+        },
+      ],
+    },
   },
   // Select what part of opponent to fuck/ seduced gets to set op's target
   {
@@ -363,71 +370,35 @@ export const FightPhaseData = [
         {
           name: "Lick Body",
           description: "Lick her body.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Lick her body."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][0]
+          nextPhaseTypeWin: FightPhaseTypes[4][0],
         },
         {
           name: "Lick Breasts",
-          description: "Savour her breast meat.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Savour her breast meat."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][1]
+          description: "Taste her breasts.",
+          nextPhaseTypeWin: FightPhaseTypes[4][1],
         },
         {
           name: "Lick Tongues",
           description: "Stuff your tongue into your opponent's mouth.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Taste her mouth."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][2]
+          nextPhaseTypeWin: FightPhaseTypes[4][2],
         },
         {
           name: "Suck Cock",
           opHasCock: true,
           description: "Try draining her balls.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Try draining her balls."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][3]
+          nextPhaseTypeWin: FightPhaseTypes[4][3],
         },
         {
           name: "Savour Pussy",
           description: "Dig your tongue into her lower lips.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Dig your tongue into her lower lips."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][4]
+          nextPhaseTypeWin: FightPhaseTypes[4][4],
         },
         {
           name: "Rimjob",
           description: "Dig your tongue into her anal passage.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Dig your tongue into her anal passage."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][5]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[4][5],
+        },
+      ],
     },
     [FightPhaseTypes[3][1]]: {
       name: "Your touch hunts it's target.",
@@ -435,71 +406,35 @@ export const FightPhaseData = [
         {
           name: "Caress Body",
           description: "Caress her body.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Caress her body"
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][0]
+          nextPhaseTypeWin: FightPhaseTypes[4][0],
         },
         {
           name: "Grope Breasts",
           description: "Fondle her breast meat.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Fondle her breast meat."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][1]
+          nextPhaseTypeWin: FightPhaseTypes[4][1],
         },
         {
           name: "Play With Mouth",
           description: "Make her taste your fingers.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Make her taste your fingers."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][2]
+          nextPhaseTypeWin: FightPhaseTypes[4][2],
         },
         {
           name: "Handjob",
           opHasCock: true,
-          description: "Pump the juice from her shaft.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Pump the juice from her shaft."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][3]
+          description: "Pump the juice from their shaft.",
+          nextPhaseTypeWin: FightPhaseTypes[4][3],
         },
         {
           name: "Finger Pussy",
           description: "Dig your fingers into her lower lips.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Dig your fingers into her lower lips."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][4]
+          nextPhaseTypeWin: FightPhaseTypes[4][4],
         },
         {
           name: "Fisting",
           description: "Dig your fingers into her anal passage.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Dig your fingers into her anal passage."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][5]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[4][5],
+        },
+      ],
     },
     [FightPhaseTypes[3][2]]: {
       name: "Your cock is ready for action.",
@@ -507,71 +442,35 @@ export const FightPhaseData = [
         {
           name: "Hump her Body",
           description: "Rub your cock on her supple body.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--You rub your cock against her thighs."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][0]
+          nextPhaseTypeWin: FightPhaseTypes[4][0],
         },
         {
           name: "Titfuck",
           description: "Fuck her breasts.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Fuck her breasts."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][1]
+          nextPhaseTypeWin: FightPhaseTypes[4][1],
         },
         {
           name: "Blowjob",
           description: "Push your cock into her mouth.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Push your cock into her mouth."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][2]
+          nextPhaseTypeWin: FightPhaseTypes[4][2],
         },
         {
           name: "Sword Fight",
           opHasCock: true,
           description: "Rub your shaft against hers.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Rub your shaft against hers."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][3]
+          nextPhaseTypeWin: FightPhaseTypes[4][3],
         },
         {
           name: "Fuck Her Pussy",
           description: "Drive deep into her pussy lips.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--You drive your meaty shaft deep into her pussy."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][4]
+          nextPhaseTypeWin: FightPhaseTypes[4][4],
         },
         {
           name: "Anal",
           description: "Plunder her back passage.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--You plunder her back passage"
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][5]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[4][5],
+        },
+      ],
     },
     [FightPhaseTypes[3][3]]: {
       name: "Your pussy is wet and ready.",
@@ -579,60 +478,30 @@ export const FightPhaseData = [
         {
           name: "Ride her Body",
           description: "Rub your pussy on her soft body.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--You rub your pussy against her thighs."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][0]
+          nextPhaseTypeWin: FightPhaseTypes[4][0],
         },
         {
           name: "Soak Tits",
           description: "Rub your pussy on her  breasts.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--You rub your pussy on her breasts."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][1]
+          nextPhaseTypeWin: FightPhaseTypes[4][1],
         },
         {
           name: "Oral",
           description: "Push your pussy onto her mouth.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--You ride her face."
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][2]
+          nextPhaseTypeWin: FightPhaseTypes[4][2],
         },
         {
           name: "Ride Cock",
           opHasCock: true,
           description: "Ride her hard shaft.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--You ride her hard shaft"
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][3]
+          nextPhaseTypeWin: FightPhaseTypes[4][3],
         },
         {
           name: "Tribasdism",
           description: "Rub your pussy against hers.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--You rub your pussy against hers"
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][4]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[4][4],
+        },
+      ],
     },
     [FightPhaseTypes[3][4]]: {
       name: "Your arse is ready for use.",
@@ -640,27 +509,15 @@ export const FightPhaseData = [
         {
           name: "Rimjob",
           description: "Push your arse over her mouth.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--Push your arse over her mouth"
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][2]
+          nextPhaseTypeWin: FightPhaseTypes[4][2],
         },
         {
           name: "Anal",
           opHasCock: true,
-          description: "Ride her dick.",
-          onAction() {
-            return {
-              isSuccess: true,
-              log: "Vary--ride her dick"
-            };
-          },
-          nextPhaseTypeWin: FightPhaseTypes[4][3]
-        }
-      ]
+          description: "Ride her dick with your arse.",
+          nextPhaseTypeWin: FightPhaseTypes[4][3],
+        },
+      ],
     },
     [FightPhaseTypes[3][5]]: {
       name: "Your seduction suceeds, where do you lead your opponent?",
@@ -671,10 +528,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She uses your thighs"
+              log: "Vary--She uses your thighs",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[4][0]
+          nextPhaseTypeWin: FightPhaseTypes[4][0],
         },
         {
           name: "Breasts",
@@ -682,10 +539,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She fucks your breasts"
+              log: "Vary--She fucks your breasts",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[4][1]
+          nextPhaseTypeWin: FightPhaseTypes[4][1],
         },
         {
           name: "Mouth",
@@ -693,10 +550,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She uses your mouth"
+              log: "Vary--She uses your mouth",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[4][2]
+          nextPhaseTypeWin: FightPhaseTypes[4][2],
         },
         {
           name: "Cock",
@@ -705,10 +562,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She fucks your cock."
+              log: "Vary--She fucks your cock.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[4][3]
+          nextPhaseTypeWin: FightPhaseTypes[4][3],
         },
         {
           name: "Pussy",
@@ -716,10 +573,10 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She fucks your pussy"
+              log: "Vary--She fucks your pussy",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[4][4]
+          nextPhaseTypeWin: FightPhaseTypes[4][4],
         },
         {
           name: "Anal Passage",
@@ -727,12 +584,12 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She fucks your arse"
+              log: "Vary--She fucks your arse",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[4][5]
-        }
-      ]
+          nextPhaseTypeWin: FightPhaseTypes[4][5],
+        },
+      ],
     },
     [FightPhaseTypes[3][6]]: {
       name: "At your Opponent's mercy, she pleasures you as best she can.",
@@ -743,38 +600,38 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She owns you."
+              log: "Vary--She owns you.",
             };
           },
-          nextPhaseTypeWin: FightPhaseTypes[4][6]
-        }
-      ]
-    }
+          nextPhaseTypeWin: FightPhaseTypes[4][6],
+        },
+      ],
+    },
   },
   // final phase
   {
     [FightPhaseTypes[4][0]]: {
-      ...EndPhaseOption
+      ...EndPhaseOption,
     },
     [FightPhaseTypes[4][1]]: {
-      ...EndPhaseOption
+      ...EndPhaseOption,
     },
     [FightPhaseTypes[4][2]]: {
-      ...EndPhaseOption
+      ...EndPhaseOption,
     },
     [FightPhaseTypes[4][3]]: {
-      ...EndPhaseOption
+      ...EndPhaseOption,
     },
     [FightPhaseTypes[4][4]]: {
-      ...EndPhaseOption
+      ...EndPhaseOption,
     },
     [FightPhaseTypes[4][5]]: {
-      ...EndPhaseOption
+      ...EndPhaseOption,
     },
     [FightPhaseTypes[4][6]]: {
-      ...EndPhaseOption
-    }
-  }
+      ...EndPhaseOption,
+    },
+  },
 ];
 
 export const fightResolve = (
@@ -789,7 +646,7 @@ export const fightResolve = (
     fighter: 0,
     fighterOrgasm: false,
     skillGain: false,
-    result: "" // text output, effect on player, effect on opponent
+    result: "", // text output, effect on player, effect on opponent
   };
 
   // setup who is control/fucker and constants
@@ -799,17 +656,24 @@ export const fightResolve = (
 
   // player is attacker
   if (isPlayerFucker) {
-    ResponseObj.player = fuckerArousal(phaseChoices[2], charData, 0);
-    ResponseObj.fighter = recieverArousal(
+    const arousalCost = fuckerArousal(phaseChoices[2], charData, 0);
+    const dealArousal = recieverArousal(
       phaseChoices[2],
       charData,
       phaseChoices[3],
       fighterData,
       0
     );
-    ResponseObj.result += `${charData.name} uses her ${phaseChoices[2]} on ${
-      fighterData.name
-    }'s ${phaseChoices[3]}, `;
+    ResponseObj.player = arousalCost;
+    ResponseObj.fighter = dealArousal;
+    const ranTextEvent = FightTxtInterface(
+      isDom(phaseChoices),
+      phaseChoices[2],
+      phaseChoices[3],
+      charData,
+      fighterData
+    );
+    ResponseObj.result += `${ranTextEvent}, causing ${fighterData.name}'s arousal to increase by ${dealArousal} & ${charData.name}'s to grow ${arousalCost}`;
   } else {
     // select Attacker's actions
     const isOpSeduced = phaseChoices[2] === FightPhaseTypes[3][5];
@@ -829,21 +693,28 @@ export const fightResolve = (
       phaseChoices[1] === FightPhaseTypes[2][3] ||
       phaseChoices[1] === FightPhaseTypes[2][5];
     const setRoughplayMod = useRoughplayMod ? fighterData.roughPlayLvl : 0;
-    ResponseObj.fighter = fuckerArousal(
+    const arousalCost = fuckerArousal(
       opponentAttack,
       fighterData,
       setRoughplayMod
     );
-    ResponseObj.player = recieverArousal(
+    const dealArousal = recieverArousal(
       opponentAttack,
       fighterData,
       opponentTarget,
       charData,
       setRoughplayMod
     );
+    ResponseObj.player = dealArousal;
+    ResponseObj.fighter = arousalCost;
     // reveal attackers choice in result text
     if (UsePrefAttack && !isOpSeduced) {
-      ResponseObj.result += fighterData.uniqueAttackText + ", ";
+      const uniqueAtktext = replacer(
+        fighterData,
+        charData,
+        fighterData.uniqueAttackText
+      );
+      ResponseObj.result += `${uniqueAtktext}, causing ${charData.name}'s arousal to increase by ${dealArousal} & ${fighterData.name}'s to grow ${arousalCost}`;
     } else {
       ResponseObj.result += `${fighterData.name} uses her ${opponentAttack} on your ${opponentTarget}, `;
     }
@@ -911,7 +782,7 @@ const prowessKey = {
   touch: "touchProwess",
   cock: "cockProwess",
   vagina: "vaginaProwess",
-  anus: "anusProwess"
+  anus: "anusProwess",
 };
 const resistanceKey = {
   touch: "touchResistance",
@@ -919,7 +790,7 @@ const resistanceKey = {
   mouth: "mouthResistance",
   cock: "cockResistance",
   vagina: "vaginaResistance",
-  anus: "anusResistance"
+  anus: "anusResistance",
 };
 
 const SizeDiffMod = (fuckerOrgan, fuckerData, recieverTarget, recieverData) => {
@@ -979,5 +850,5 @@ const checkSkillGain = (isPlayerFucker, organ, charData) => {
 const checkAndIncrease = (name, CharData, skill, skillUp) => {
   const skillLvled = TestStatTrain(CharData[skill], 2);
   skillLvled && CharData[skillUp](1);
-  return skillLvled && `Increased ${name} skill`;
+  return skillLvled && `${name} skill increased.`;
 };
