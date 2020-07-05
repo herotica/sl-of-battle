@@ -8,7 +8,7 @@
 
 ### To do
 
-- interface + ran sex text output
+
 - equipment effects
 - League
   -- events
@@ -16,6 +16,8 @@
 - training, buy equipment
 - fuckroom writing guide ,male, switch
 - money spend
+- balance fight maths
+- cleanup pleasure text
 
 ### Leagues
 

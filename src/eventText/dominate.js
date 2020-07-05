@@ -10,13 +10,13 @@ const Dominate = {
         sizeOpt: false,
         sizeX: [
           `++++ rubs ==== wet tongue over xxxx's face`,
-          `++++ licks xxxx's soft thighs, biting her hungrily`,
+          `++++ licks xxxx's soft thighs, biting #### hungrily`,
         ],
       },
       [CharKeys.resistTypes.breasts]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ licks xxxx's little tits, gently nipping her breast meat`,
+          `++++ licks xxxx's little tits, roughly nipping her breast meat`,
           `++++ violently slaps xxxx's tits and proceeds to slather her nipples with spit`,
         ],
         sizeM: [
@@ -24,18 +24,18 @@ const Dominate = {
           `++++ spits over xxxx's lovely nipples, then sucks it off hungrily`,
         ],
         sizeL: [
-          `++++'s face is buried as she roughly motorboats her face, before nipping those big breasts`,
+          `++++'s face is buried as she roughly motorboats #### face, before nipping those big breasts`,
           `++++ nips xxxx's solid nipples, before batting them with ==== tongue`,
         ],
       },
       [CharKeys.resistTypes.mouth]: {
         sizeOpt: false,
         sizeX: [
-          `++++ spits into xxxx's little throat, then pushes her tongue in`,
+          `++++ spits into xxxx's little throat, then pushes #### tongue in`,
           `++++ slaps ==== wet tongue on xxxx's tongue, fighting for control of her mouth`,
           `++++ jams ==== fat tongue between xxxx's lips`,
           `++++ dribbles ==== saliva into xxxx's mouth`,
-          `++++ runs her explorative tongue eagerly around xxxx's mouth`,
+          `++++ runs #### explorative tongue eagerly around xxxx's mouth`,
           `++++ pushes ==== tongue into xxxx's mouth`,
         ],
       },
@@ -46,12 +46,12 @@ const Dominate = {
           `++++ slaps xxxx's cute cock with ==== tongue, running it around her glans`,
         ],
         sizeM: [
-          `++++ rubs her tongue dominantly against xxxx's beefy cock`,
-          `++++ slaps xxxx's big cock with ==== tongue, before pushing it into her mouth`,
+          `++++ rubs #### tongue dominantly against xxxx's beefy cock`,
+          `++++ slaps xxxx's big cock with ==== tongue, before pushing it into #### mouth`,
         ],
         sizeL: [
           `++++ hungrily gags herself on the massive member, while pumping it roughly`,
-          `++++ slaps xxxx's cock around, before pumping it steadily, wetting the galns with her tip`,
+          `++++ slaps xxxx's cock around, before pumping it steadily, wetting the glans with #### tongue`,
         ],
       },
       [CharKeys.resistTypes.vagina]: {
@@ -59,7 +59,7 @@ const Dominate = {
         sizeX: [
           `++++ sucks xxxx's clit with ==== mouth`,
           `++++ rubs xxxx's pussy with the tip of ==== tongue`,
-          `++++ pushes her tongue deep into xxxx's pussy, exploring it's depths`,
+          `++++ pushes #### tongue deep into xxxx's pussy, exploring it's depths`,
         ],
       },
       [CharKeys.resistTypes.anus]: {
@@ -77,14 +77,14 @@ const Dominate = {
       [CharKeys.resistTypes.touch]: {
         sizeOpt: false,
         sizeX: [
-          `++++ rubs ==== hands over xxxx's neck, slowly tightening her grip`,
-          `++++ rubs xxxx's body roughly, pushing her into the floor`,
+          `++++ rubs ==== hands over xxxx's neck, slowly tightening #### grip`,
+          `++++ rubs against xxxx's body roughly, pushing her into the floor`,
         ],
       },
       [CharKeys.resistTypes.breasts]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ squeezes xxxx's little tits, gently kneading her small breast meat`,
+          `++++ squeezes xxxx's little tits, roughly kneading her small breast meat`,
           `++++ violently slaps xxxx's tits, and pinches her nipples`,
         ],
         sizeM: [
@@ -124,7 +124,7 @@ const Dominate = {
         sizeX: [
           `++++ sucks xxxx's clit with ==== mouth`,
           `++++ rubs xxxx's pussy with the tip of ==== tongue`,
-          `++++ pushes her tongue deep into xxxx's pussy, exploring it's depths`,
+          `++++ pushes #### tongue deep into xxxx's pussy, exploring it's depths`,
         ],
       },
       [CharKeys.resistTypes.anus]: {
@@ -292,8 +292,8 @@ const Dominate = {
         sizeS: [
           `++++ fucks xxxx's clit with #### ready cock`,
           `++++ batters xxxx's pussy with #### swollen cock`,
-          `++++ pushes her way roughly into xxxx's tight cunt`,
-          `++++ forces her fat cock between xxxx's tight pussy lips`,
+          `++++ pushes #### way roughly into xxxx's tight cunt`,
+          `++++ forces #### fat cock between xxxx's tight pussy lips`,
         ],
         sizeM: [
           `++++ rubs xxxx's clit dominantly`,
@@ -303,7 +303,7 @@ const Dominate = {
         sizeL: [
           `++++'s little cock is rubbed around xxxx's pussy`,
           `++++ pushes ==== cock into xxxx's pussy, rubbing it around`,
-          `++++ pushes her way roughly into xxxx's juicy cunt`,
+          `++++ pushes #### way roughly into xxxx's juicy cunt`,
         ],
       },
       [CharKeys.resistTypes.anus]: {
@@ -311,20 +311,20 @@ const Dominate = {
         sizeS: [
           `++++ fucks xxxx's backdoor`,
           `++++ batters xxxx's arse with #### hungry cock`,
-          `++++ pushes her way roughly into xxxx's tight arse`,
-          `++++ grabs xxxx's arse cheeks and forces her fat cock into xxxx's tight back passage`,
+          `++++ pushes #### way roughly into xxxx's tight arse`,
+          `++++ grabs xxxx's arse cheeks and forces #### fat cock into xxxx's tight back passage`,
         ],
         sizeM: [
           `++++ rubs ====self dominantly between xxxx's arsecheeks`,
           `++++ slaps xxxx's second cunt with #### cock`,
-          `++++ pushes her way roughly into xxxx's warm arse`,
-          `++++ grabs xxxx's arse cheeks and forces her fat cock into xxxx's fresh back passage`,
+          `++++ pushes #### way roughly into xxxx's warm arse`,
+          `++++ grabs xxxx's arse cheeks and forces #### fat cock into xxxx's fresh back passage`,
         ],
         sizeL: [
           `'s little cock is rubbed around xxxx's arse entrance`,
           `++++ pushes ==== cock into xxxx's arse, degrading ==== for ==== gaping hole`,
-          `++++ pushes her way roughly into xxxx's loose arse`,
-          `++++ grabs xxxx's arse cheeks and pushes her fat cock into xxxx's open back passage`,
+          `++++ pushes #### way roughly into xxxx's loose arse`,
+          `++++ grabs xxxx's arse cheeks and pushes #### fat cock into xxxx's open back passage`,
         ],
       },
     },
@@ -355,7 +355,7 @@ const Dominate = {
       [CharKeys.resistTypes.mouth]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ jams #### giant cock into xxxx's tight throat, trying to force her fat member in`,
+          `++++ jams #### giant cock into xxxx's tight throat, trying to force #### fat member in`,
           `++++ slaps #### fearinducingly big dick on xxxx's tongue`,
           `++++ holds xxxx's head while stuffing #### giant cock into ==== tiny mouth`,
           `Grabbing xxxx by the hair, ++++ fucks ==== tight little mouth roughly`,
@@ -397,8 +397,8 @@ const Dominate = {
         sizeS: [
           `++++ fucks xxxx's clit with #### enourmous, ready cock`,
           `++++ batters xxxx's tight pussy with #### swollen cock`,
-          `++++ pushes her gaint meatstick roughly into xxxx's tight cunt`,
-          `++++ forces her enourmous cock between xxxx's tight pussy lips`,
+          `++++ pushes #### gaint meatstick roughly into xxxx's tight cunt`,
+          `++++ forces #### enourmous cock between xxxx's tight pussy lips`,
         ],
         sizeM: [
           `++++ rubs xxxx's clit dominantly`,
@@ -408,7 +408,7 @@ const Dominate = {
         sizeL: [
           `++++'s enourmous cock is rubbed around xxxx's pussy`,
           `++++ pushes ==== enourmous cock into xxxx's pussy, rubbing it around`,
-          `++++ pushes her way roughly into xxxx's juicy cunt`,
+          `++++ pushes #### way roughly into xxxx's juicy cunt`,
         ],
       },
       [CharKeys.resistTypes.anus]: {
@@ -416,35 +416,290 @@ const Dominate = {
         sizeS: [
           `++++ fucks xxxx's backdoor`,
           `++++ batters xxxx's arse with #### hungry, giant cock`,
-          `++++ pushes her enourmous cock roughly into xxxx's tight arse`,
-          `++++ grabs xxxx's arse cheeks and forces her enourmous cock into xxxx's tight back passage`,
+          `++++ pushes #### enourmous cock roughly into xxxx's tight arse`,
+          `++++ grabs xxxx's arse cheeks and forces #### enourmous cock into xxxx's tight back passage`,
         ],
         sizeM: [
           `++++ rubs ====self dominantly between xxxx's arsecheeks`,
           `++++ slaps xxxx's second cunt with #### giant cock`,
-          `++++ pushes her way roughly into xxxx's warm arse`,
-          `++++ grabs xxxx's arse cheeks and forces her enourmous cock into xxxx's fresh back passage`,
+          `++++ pushes #### way roughly into xxxx's warm arse`,
+          `++++ grabs xxxx's arse cheeks and forces #### enourmous cock into xxxx's fresh back passage`,
         ],
         sizeL: [
           `++++'s enourmous cock is rubbed around xxxx's arse entrance`,
           `++++ pushes ==== cock into xxxx's arse, degrading ==== for ==== gaping hole`,
-          `++++ pushes her way roughly into xxxx's loose arse`,
-          `++++ grabs xxxx's arse cheeks and pushes her fat cock into xxxx's open back passage`,
+          `++++ pushes #### way roughly into xxxx's loose arse`,
+          `++++ grabs xxxx's arse cheeks and pushes #### fat cock into xxxx's open back passage`,
         ],
       },
     },
   },
   [CharKeys.prowessTypes.vagina]: {
     sizeOpt: 3,
-    sizeS: {},
-    sizeM: {},
-    sizeL: {},
+    sizeS: {
+      [CharKeys.resistTypes.touch]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's thigh`,
+          `++++ rubs #### sticky lady cavern over xxxx's arms`,
+          `++++ runs #### beautiful pussy over xxxx's soft torso`,
+        ],
+      },
+      [CharKeys.resistTypes.breasts]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rubs #### pussy lips over xxxx's tiny tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+        sizeM: [
+          `++++ rubs #### pussy lips over xxxx's full tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+        sizeL: [
+          `++++ rubs #### pussy lips over xxxx's heavy tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+      },
+      [CharKeys.resistTypes.mouth]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's mouth`,
+          `++++ rubs #### sticky lady cavern over xxxx's face`,
+          `++++ slides #### beautiful pussy over xxxx's soft tongue`,
+        ],
+      },
+      [CharKeys.resistTypes.cock]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rides xxxx's tiny cock`,
+          `++++ presses #### cunt against xxxx's cute, hard shaft`,
+          `++++ slowly slides xxxx's tiny cock into #### slippery, tight pussy`,
+        ],
+        sizeM: [
+          `++++ rides xxxx's hard cock`,
+          `++++ presses #### cunt against xxxx's hard shaft, rubbing herself along it`,
+          `++++ slowly slides xxxx's hard cock into #### slippery, tight pussy`,
+        ],
+        sizeL: [
+          `++++ rides the tip xxxx's enormous cock`,
+          `++++ presses #### cunt against xxxx's long, hard shaft, rubbing herself along it's sizable length`,
+          `++++ slowly pushes the glans of xxxx's giant cock into #### slippery, tight pussy`,
+        ],
+      },
+      [CharKeys.resistTypes.vagina]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's`,
+          `++++ grinds against xxxx's sopping wet pussy`,
+          `++++ roughly brushes #### clit against xxxx's`,
+        ],
+      },
+    },
+    sizeM: {
+      [CharKeys.resistTypes.touch]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's thigh`,
+          `++++ rubs #### sticky lady cavern over xxxx's arms`,
+          `++++ pushes #### beautiful pussy over xxxx's soft torso`,
+        ],
+      },
+      [CharKeys.resistTypes.breasts]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rubs #### pussy lips over xxxx's tiny tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+        sizeM: [
+          `++++ rubs #### pussy lips over xxxx's full tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+        sizeL: [
+          `++++ rubs #### pussy lips over xxxx's heavy tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+      },
+      [CharKeys.resistTypes.mouth]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's mouth`,
+          `++++ rubs #### sticky lady cavern over xxxx's face`,
+          `++++ opens #### beautiful pussy over xxxx's soft tongue`,
+        ],
+      },
+      [CharKeys.resistTypes.cock]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rides xxxx's tiny cock`,
+          `++++ presses #### cunt against xxxx's cute, hard shaft`,
+          `++++ slowly slides xxxx's tiny cock into #### slippery, wet pussy`,
+        ],
+        sizeM: [
+          `++++ rides xxxx's hard cock`,
+          `++++ presses #### cunt against xxxx's hard shaft, rubbing herself along it`,
+          `++++ slowly slides xxxx's hard cock into #### slippery, enveloping pussy`,
+        ],
+        sizeL: [
+          `++++ rides the top xxxx's enormous cock`,
+          `++++ presses #### cunt against xxxx's long, hard shaft, rubbing herself along it's sizable length`,
+          `++++ slowly pushes the top of xxxx's giant cock into #### slippery wet pussy`,
+        ],
+      },
+      [CharKeys.resistTypes.vagina]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's`,
+          `++++ grinds against xxxx's sopping wet pussy`,
+          `++++ roughly brushes #### clit against xxxx's`,
+        ],
+      },
+    },
+    sizeL: {
+      [CharKeys.resistTypes.touch]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's thigh`,
+          `++++ rubs #### sticky lady cavern over xxxx's arms`,
+          `++++ pushes #### beautiful pussy over xxxx's soft torso`,
+        ],
+      },
+      [CharKeys.resistTypes.breasts]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rubs #### pussy lips over xxxx's tiny tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+        sizeM: [
+          `++++ rubs #### pussy lips over xxxx's full tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+        sizeL: [
+          `++++ rubs #### pussy lips over xxxx's heavy tits`,
+          `++++ envelopes xxxx's nipples with #### pussy flaps`,
+        ],
+      },
+      [CharKeys.resistTypes.mouth]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's mouth`,
+          `++++ rubs #### sticky lady cavern over xxxx's face`,
+          `++++ pushes #### beautiful pussy over xxxx's soft tongue`,
+        ],
+      },
+      [CharKeys.resistTypes.cock]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rides xxxx's tiny cock`,
+          `++++ presses #### cunt against xxxx's cute, hard shaft`,
+          `++++ easily slides xxxx's tiny cock into #### slippery, warm pussy`,
+        ],
+        sizeM: [
+          `++++ rides xxxx's hard cock`,
+          `++++ presses #### cunt against xxxx's hard shaft, rubbing herself along it`,
+          `++++ easily slides xxxx's hard cock into #### slippery, tight pussy`,
+        ],
+        sizeL: [
+          `++++ rides xxxx's enormous cock`,
+          `++++ presses #### cunt against xxxx's long, hard shaft, rubbing herself along it's sizable length`,
+          `++++ slides ####self over xxxx's giant cock, taking the giant shaft entirely into #### pussy`,
+        ],
+      },
+      [CharKeys.resistTypes.vagina]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's`,
+          `++++ grinds against xxxx's sopping wet pussy`,
+          `++++ roughly brushes #### clit against xxxx's`,
+        ],
+      },
+    },
   },
   [CharKeys.prowessTypes.anus]: {
     sizeOpt: 3,
-    sizeS: {},
-    sizeM: {},
-    sizeL: {},
+    sizeS: {
+      [CharKeys.resistTypes.mouth]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### arsecheeks over xxxx's mouth`,
+          `++++ rubs #### arsecheeks over xxxx's face`,
+          `++++ pushes #### beautiful backdoor over xxxx's soft tongue`,
+        ],
+      },
+      [CharKeys.resistTypes.cock]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rides xxxx's tiny cock, with #### tight anal passage`,
+          `++++ presses #### arsecheeks against xxxx's cute, hard shaft`,
+          `++++ slowly slides xxxx's tiny cock into #### slippery, tight arse`,
+        ],
+        sizeM: [
+          `++++ rides the top of xxxx's hard cock, with #### tight anal passage`,
+          `++++ presses #### arsecheeks against xxxx's hard shaft, rubbing #### cheeks along it`,
+          `++++ slowly slides xxxx's hard cock into #### slippery, tight arse`,
+        ],
+        sizeL: [
+          `++++ rides the tip xxxx's enormous cock, with #### tight anal passage`,
+          `++++ presses #### arsecheeks against xxxx's long, hard shaft, rubbing ####self along it's sizable length`,
+          `++++ slowly pushes the glans of xxxx's giant cock into #### slippery, tight arsehole`,
+        ],
+      },
+    },
+    sizeM: {
+      [CharKeys.resistTypes.mouth]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### arsecheeks over xxxx's mouth`,
+          `++++ rubs #### arsecheeks over xxxx's face`,
+          `++++ pushes #### beautiful backdoor over xxxx's soft tongue`,
+        ],
+      },
+      [CharKeys.resistTypes.cock]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rides xxxx's tiny cock, with #### hungry anal passage`,
+          `++++ presses #### arsecheeks against xxxx's cute, hard shaft`,
+          `++++ easily slides xxxx's tiny cock into #### slippery, hungry arse`,
+        ],
+        sizeM: [
+          `++++ rides the top of xxxx's hard cock, with #### hungry anal passage`,
+          `++++ presses #### arsecheeks against xxxx's hard shaft, rubbing #### cheeks along it`,
+          `++++ snugly slides xxxx's hard cock into #### slippery, hungry arse`,
+        ],
+        sizeL: [
+          `++++ rides the tip xxxx's enormous cock, with #### tight anal passage`,
+          `++++ presses #### arsecheeks against xxxx's long, hard shaft, rubbing ####self along it's sizable length`,
+          `++++ slowly pushes the top of xxxx's giant cock into #### slippery, tight arsehole`,
+        ],
+      },
+    },
+    sizeL: {
+      [CharKeys.resistTypes.mouth]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### arsecheeks over xxxx's mouth`,
+          `++++ rubs #### arsecheeks over xxxx's face`,
+          `++++ pushes #### beautiful backdoor over xxxx's soft tongue`,
+        ],
+      },
+      [CharKeys.resistTypes.cock]: {
+        sizeOpt: 3,
+        sizeS: [
+          `++++ rides xxxx's tiny cock, with #### hungry anal passage`,
+          `++++ presses #### arsecheeks against xxxx's cute, hard shaft`,
+          `++++ easily slides xxxx's tiny cock into #### slippery, hungry arse`,
+        ],
+        sizeM: [
+          `++++ rides the top of xxxx's hard cock, with #### hungry anal passage`,
+          `++++ presses #### arsecheeks against xxxx's hard shaft, rubbing #### cheeks along it`,
+          `++++ easily slides xxxx's hard cock into #### slippery, hungry arse`,
+        ],
+        sizeL: [
+          `++++ rides the tip xxxx's enormous cock, with #### snug anal passage`,
+          `++++ presses #### arsecheeks against xxxx's long, hard shaft, rubbing ####self along it's sizable length`,
+          `++++ slides ####self over xxxx's giant cock, taking the giant shaft entirely into #### arsehole`,
+        ],
+      },
+    },
   },
 };
 export default Dominate;
