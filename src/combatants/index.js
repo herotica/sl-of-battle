@@ -27,4 +27,9 @@ export const keys = {
   },
 };
 
+// const leagueDB = {};
+
+// export const leagueGirlsAccessor = (seriesId, id) => {};
+// export const leagueFranchiseAccessor = (seriesId) => {};
+
 export default Underground;

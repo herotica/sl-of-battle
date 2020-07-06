@@ -8,7 +8,7 @@
 
 ### To do
 
-
+- ranks, loser pen
 - equipment effects
 - League
   -- events
@@ -21,10 +21,10 @@
 
 ### Leagues
 
+- battleship
 - futa
 - fight - tekken, doa
 - pokemon
-- battleship
 - harem
 - adventure - goblin slayer
 - marvel
