@@ -152,16 +152,17 @@ const LeagueRankBox = ({ name, group, groupID, isFinal, currentLgWinNum }) => {
           </LockedOverlay>
         )}
         <FlexWrap>
-          {group.combatants && group.combatants.map((combatant, index) => (
-            <CombatantBox
-              key={`${groupID}-${index}`}
-              combatant={combatant}
-              combatantVal={`${groupID}-${index}`}
-              groupID={groupID}
-              isFinal={isFinal}
-              isLocked={isLocked}
-            />
-          ))}
+          {group.combatants &&
+            group.combatants.map((combatant, index) => (
+              <CombatantBox
+                key={`${groupID}-${index}`}
+                combatant={combatant}
+                combatantVal={`${groupID}-${index}`}
+                groupID={groupID}
+                isFinal={isFinal}
+                isLocked={isLocked}
+              />
+            ))}
         </FlexWrap>
         <LeagueBottomText>
           {group.name}; Credits/Win: {group.creditsWin}, Point/Win:{" "}
@@ -241,7 +242,16 @@ const CombatantBox = ({
 };
 
 const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => {
-  const { setRoom, leagueCredits, changeLeagueCredits } = useGlobalDataStore();
+  const {
+    setRoom,
+    leagueCredits,
+    changeLeagueCredits,
+    boughtItems,
+    cash,
+    changeCash,
+    addLoserToListSlaves,
+    losersBought,
+  } = useGlobalDataStore();
   const { setFuckRoomCombatant } = useFightDataStore();
 
   const onSelectLoserToFuck = (combatant, cost) => {
@@ -251,6 +261,21 @@ const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => {
       setRoom(Rooms.fuckRoom);
     }
   };
+  const onSelectLoserEnslave = (combatant, creditCost, cashCost) => {
+    console.log("c", combatant.seriesId);
+    console.log("c", combatant.id);
+    if (creditCost <= leagueCredits && cashCost <= cash) {
+      changeLeagueCredits(creditCost * -1);
+      changeCash(cashCost * -1);
+      addLoserToListSlaves(combatant.id, combatant.seriesId);
+    }
+  };
+  let baseCreditCost = 35;
+  if (boughtItems.includes("licenceA")) baseCreditCost -= 10;
+  if (boughtItems.includes("licenceB")) baseCreditCost -= 10;
+  if (boughtItems.includes("licenceC")) baseCreditCost -= 10;
+
+  const hasPro = boughtItems.includes("licencePro");
 
   return (
     <RankBox borderCol={"#00ffb8"}>
@@ -263,7 +288,7 @@ const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => {
           const rank = parseInt(losersVal.substr(0, 1));
           const combatantId = parseInt(losersVal.substr(2, losersVal.length));
           const combatant = currentLeague.ranks[rank].combatants[combatantId];
-          const cost = 10 + 5 * rank;
+          const cost = baseCreditCost + 5 * rank;
 
           return (
             <CombatantButton
@@ -282,9 +307,64 @@ const LeagueShop = ({ events, currentLeagueProgress, currentLeague }) => {
           );
         })}
       </FlexWrap>
+      {hasPro && (
+        <>
+          <NameText>
+            As a Pro you can purchase girls you've beaten to keep!
+          </NameText>
+          {console.log(losersBought)}
+          <FlexWrap>
+            {Object.keys(currentLeagueProgress.wins).map((losersVal) => {
+              const rank = parseInt(losersVal.substr(0, 1));
+              const combatantId = parseInt(
+                losersVal.substr(2, losersVal.length)
+              );
+              const combatant =
+                currentLeague.ranks[rank].combatants[combatantId];
+              const cost = 10 + 5 * rank;
+              const cashCost = 100 + 50 * rank;
+              const ownedSeries = Object.keys(losersBought);
+              const ownSlaveSeries = ownedSeries.includes(combatant.seriesId);
+              let ownSlave = false;
+              if (
+                ownSlaveSeries &&
+                losersBought[combatant.seriesId].includes(combatant.id)
+              ) {
+                ownSlave = true;
+              }
+              return (
+                !ownSlave && (
+                  <CombatantButton
+                    key={losersVal}
+                    onClick={() =>
+                      onSelectLoserEnslave(combatant, cost, cashCost)
+                    }
+                  >
+                    <OverlayText>
+                      <SmText>Fuck {combatant.name}</SmText>
+                      <SmText>
+                        [
+                        <CostText isRed={cost > leagueCredits}>{cost}</CostText>{" "}
+                        Credits][
+                        <CostText isRed={cost > cash}>
+                          ${cashCost}
+                        </CostText>{" "}
+                        Cash]
+                      </SmText>
+                    </OverlayText>
+                    <LoserIcon src={combatant.icon} alt={combatant.name} />
+                  </CombatantButton>
+                )
+              );
+            })}
+          </FlexWrap>
+        </>
+      )}
     </RankBox>
   );
 };
+
+const LoserEnslaveShop = observer(() => {});
 
 const UWrap = styled.div`
   margin: 32px;

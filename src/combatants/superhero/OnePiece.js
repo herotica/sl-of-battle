@@ -22,6 +22,8 @@ export const seriesId = "One Piece";
 
 export default {
   nicoRobin: {
+    seriesId,
+    id: "nicoRobin",
     name: "Nico Robin",
     description:
       "Also known by her epithet 'Devil Child' and the 'Light of the Revolution', she is the archaeologist of the Straw Hat Pirates. She is the sole survivor of the destroyed island of Ohara.",
@@ -67,6 +69,8 @@ export default {
     orgasmLimit: 3,
   },
   vinsmokeReiju: {
+    seriesId,
+    id: "vinsmokeReiju",
     name: "Vinsmoke Reiju",
     description:
       "Also known as 'Poison Pink', is the eldest child and only daughter of the Vinsmoke Family. She is a princess of the Germa Kingdom and a commander in its military arm.",
@@ -109,6 +113,8 @@ export default {
     orgasmLimit: 3,
   },
   boaHancock: {
+    seriesId,
+    id: "boaHancock",
     name: "Boa Hancock",
     description:
       "She is the current empress, known as the 'Snake Princess', of Amazon Lily and rules over the Kuja tribe.",
@@ -151,6 +157,8 @@ export default {
     orgasmLimit: 3,
   },
   nami: {
+    seriesId,
+    id: "nami",
     name: "Nami",
     description:
       "'Cat Burglar' Nami is the navigator of the Straw Hat Pirates. She is a capable thief, with tremenedous physical prowess.",

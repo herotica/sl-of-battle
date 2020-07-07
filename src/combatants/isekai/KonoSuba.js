@@ -18,6 +18,7 @@ export const seriesId = "KonoSuba";
 export default {
   megumin: {
     seriesId,
+    id: "megumin",
     name: "Megumin",
     description: "A cute young Arch Wizard of the Crimson Demon Clan.",
     img: Megumin,
@@ -63,6 +64,7 @@ export default {
   },
   aqua: {
     seriesId,
+    id: "aqua",
     name: "Aqua",
     description:
       "An ex-goddess of water who used to guide humans to the afterlife.",
@@ -106,6 +108,7 @@ export default {
   },
   darkness: {
     seriesId,
+    id: "darkness",
     name: "Darkness",
     description: "A noble & serious Crusader, and also a masochist.",
     img: Darkness,

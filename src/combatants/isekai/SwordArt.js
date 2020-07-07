@@ -28,6 +28,7 @@ export const seriesId = "Sword Art Online";
 export default {
   leafa: {
     seriesId,
+    id: "leafa",
     name: "Leafa",
     description: "She is Kirigaya Suguha's alter ego in ALO.",
     img: leafa,
@@ -70,6 +71,7 @@ export default {
   },
   kirigayaSuguha: {
     seriesId,
+    id: "kirigayaSuguha",
     name: "Kirigaya Suguha",
     description:
       "An accomplished kendo practitioner, fighter, and seasoned ALO player.",
@@ -113,6 +115,7 @@ export default {
   },
   sinon: {
     seriesId,
+    id: "sinon",
     name: "Sinon",
     description: "She is Asada Shino's alter ego in ALO.",
     img: sinon,
@@ -155,6 +158,7 @@ export default {
   },
   konnoYuuki: {
     seriesId,
+    id: "konnoYuuki",
     name: "Konno Yuuki",
     description:
       "Known as the absolute sword, She was the younger sister of Konno Aiko and one of the three founders and the 2nd leader of the Sleeping Knights guild,",
@@ -198,6 +202,7 @@ export default {
   },
   yuukaAsuna: {
     seriesId,
+    id: "yuukaAsuna",
     name: "Yuuka Asuna",
     description:
       "Sub-leader of the Knights of the Blood guild & is a kind and helpful young woman who, cannot abandon another in trouble.",

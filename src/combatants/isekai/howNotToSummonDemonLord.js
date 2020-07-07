@@ -8,6 +8,7 @@ export const seriesId = "How NOT to Summon a Demon Lord";
 export default {
   remGalleu: {
     seriesId,
+    id: 'remGalleu',
     name: "Rem Galleu",
     description:
       "A small Pantherian who became an invoker and had no choice but to become an adventurer and continue to demonstrate her strength, one day hoping to exterminate the Demon King Krebskrem. ",

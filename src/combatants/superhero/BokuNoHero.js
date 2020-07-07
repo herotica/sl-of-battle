@@ -24,8 +24,11 @@ import AsuiTsuyuWin from "../../assets/combatants/superpower/asui-tsuyu-win.png"
 import AsuiTsuyuLose from "../../assets/combatants/superpower/asui-tsuyu-lose.png";
 
 export const seriesId = "Boku No Hero Academia";
+
 export default {
   jirouKyouka: {
+    seriesId,
+    id: "jirouKyouka",
     name: "Jirou Kyouka",
     description:
       "She has a pragmatic, unenthusiastic, and teasing personality that is mostly shown to those she finds irritating. Kyoka can channel the sound of her heartbeat into it in the form of a violent vibration attack.",
@@ -68,6 +71,8 @@ export default {
     orgasmLimit: 3,
   },
   ochacoUraraka: {
+    seriesId,
+    id: "ochacoUraraka",
     name: "Ochaco Uraraka",
     description:
       "Uraraka is warm and easily amused. Her power is able to remove gravity from anything she touches.",
@@ -110,6 +115,8 @@ export default {
     orgasmLimit: 3,
   },
   momoYaoyorozu: {
+    seriesId,
+    id: "momoYaoyorozu",
     name: "Momo Yaoyorozu",
     description:
       "Momo is a very prudent, dedicated person who acts as a natural leader. her power is the ability to create thigns from her skin.",
@@ -152,6 +159,8 @@ export default {
     orgasmLimit: 3,
   },
   utsushimiCamie: {
+    seriesId,
+    id: "utsushimiCamie",
     name: "Utsushimi Camie",
     description:
       "She is very laid back, straightforward, and tends to be quite talkative. Can create illusion producing smoke.",
@@ -194,6 +203,8 @@ export default {
     orgasmLimit: 3,
   },
   asuiTsuyu: {
+    seriesId,
+    id: "asuiTsuyu",
     name: "Asui Tsuyu",
     description:
       "Also known as Froppy, she is a straightforward and laid-back individual who always speaks directly from her mind.",

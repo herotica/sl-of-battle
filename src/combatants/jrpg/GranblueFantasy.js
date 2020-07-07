@@ -27,6 +27,8 @@ export const seriesId = "Fire Emblem";
 
 export default {
   vikala: {
+    seriesId,
+    id: "vikala",
     name: "Vikala",
     description:
       "One of the Twelve Divine Generals and guardian of the north. Her 'yang' side is determined to bring hope, dreams, and wonderment to the world.",
@@ -72,6 +74,8 @@ export default {
     orgasmLimit: 3,
   },
   silva: {
+    seriesId,
+    id: "silva",
     name: "Silva",
     description:
       "A istinguished sniper possesses a rare talent, but she never forgets to polish her technique.",
@@ -114,6 +118,8 @@ export default {
     orgasmLimit: 3,
   },
   djeeta: {
+    seriesId,
+    id: "djeeta",
     name: "Djeeta",
     description:
       "Djeeta travels the skies with her flying lizard-like buddy, Vyrn, and the mysterious blue-haired girl who saved her life by linking it with her own, Lyria.",
@@ -156,6 +162,8 @@ export default {
     orgasmLimit: 3,
   },
   ferry: {
+    seriesId,
+    id: "ferry",
     name: "Ferry",
     description:
       "Given a mission from the verdant nature, this young girl sets out on a journey where she crosses paths with an evil spirit.",
@@ -198,6 +206,8 @@ export default {
     orgasmLimit: 3,
   },
   cagliostro: {
+    seriesId,
+    id: "cagliostro",
     name: "Cagliostro",
     description:
       "This supreme genius and pioneer of alchemy transcended time by making herself into an immaterial being.",

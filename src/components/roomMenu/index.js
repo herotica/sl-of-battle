@@ -43,15 +43,32 @@ export const RoomsData = [
   },
 ];
 
+const loserSlavePen = {
+  name: "Loser Slave Pen",
+  description: "Check in on your owned sex slaves",
+  colors: {
+    bgA: "grey",
+    bgB: "darkgrey",
+    border: "black",
+    borderHover: "#802b43",
+  },
+  room: Rooms.loserSlaveRoom,
+};
+
 const LeagueList = () => {
+  const { boughtItems } = useGlobalDataStore();
+
   return (
     <ListWrapper>
       {RoomsData.map((roomData) => (
         <RoomsWrapper {...roomData} key={roomData.name} />
       ))}
+      {boughtItems.includes("licencePro") && (
+        <RoomsWrapper {...loserSlavePen} key={"loserSlave"} />
+      )}
       <MdTitleMiddle>Leagues</MdTitleMiddle>
       {LeaguesData.map((Data) => (
-        <LeagueWrapper {...Data} />
+        <LeagueWrapper {...Data} key={Data.league.id} />
       ))}
     </ListWrapper>
   );
@@ -81,7 +98,7 @@ const LeagueWrapper = ({ room, league }) => {
       <Text>Rookies:</Text>
       <RookieWrap>
         {ranks[0].combatants.map((rookie) => (
-          <RookieIcon src={rookie.icon} alt={rookie.name} />
+          <RookieIcon src={rookie.icon} alt={rookie.name} key={rookie.name} />
         ))}
       </RookieWrap>
     </ListBox>

@@ -134,6 +134,7 @@ export const InitialValues = {
   currentLgWinNum: new Array(50).fill(0), // if in a league, number of wins/rank
   currentLeague: null,
   leagueProgress: LeagueInit,
+  losersBought: {},
   gameVersion: 1,
 };
 const saveAvailable = GetFromStorage();
@@ -355,6 +356,14 @@ export function createGlobalStore() {
         isComplete: false,
         pointsAvailable: pointsAvailable,
       };
+    },
+    addLoserToListSlaves(loserId, seriesId) {
+      const currentSeriesIdArr = Object.keys(this.losersBought);
+      console.log("seriesIdArr", currentSeriesIdArr);
+      if (!currentSeriesIdArr.includes(seriesId)) {
+        this.losersBought[seriesId] = [];
+      }
+      this.losersBought[seriesId].push(loserId);
     },
 
     saveChar() {

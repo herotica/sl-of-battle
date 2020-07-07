@@ -15,6 +15,7 @@ import Underground from "../rooms/underground";
 import LeagueRoom from "../rooms/league";
 import FuckRoom from "../rooms/fuckRoom";
 import LeaguePointsShop from "../rooms/leaguePointsShop";
+import LoserSlaveRoom from "../rooms/loserSlaveRoom";
 
 const Layout = () => {
   const [showSidebar, setSidebar] = useState(false);
@@ -50,6 +51,8 @@ const RoomManager = observer(() => {
       return <FuckRoom />;
     case Rooms.leaguePShop:
       return <LeaguePointsShop />;
+    case Rooms.loserSlaveRoom:
+      return <LoserSlaveRoom />;
     default:
       return (
         <div>

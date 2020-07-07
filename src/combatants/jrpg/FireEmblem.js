@@ -27,6 +27,8 @@ export const seriesId = "Fire Emblem";
 
 export default {
   corrin: {
+    seriesId,
+    id: "corrin",
     name: "Corrin",
     description:
       "Corrin is member of Nohr and Hoshido royalty, she is a kind person who cares deeply for the people she loves.",
@@ -72,6 +74,8 @@ export default {
     orgasmLimit: 3,
   },
   lucina: {
+    seriesId,
+    id: "lucina",
     name: "Lucina",
     description:
       "The daughter of Chrom and gifted with the mark of Naga, known as the Brand of the Exalt, on her left eye.",
@@ -114,6 +118,8 @@ export default {
     orgasmLimit: 3,
   },
   lyn: {
+    seriesId,
+    id: "lyn",
     name: "Lyn",
     description:
       "Lyndis, commonly known as Lyn, is named after her maternal grandmother. She is daughter of Hassar, chieftain of the Lorca tribe.",
@@ -156,6 +162,8 @@ export default {
     orgasmLimit: 3,
   },
   lysithea: {
+    seriesId,
+    id: "lysithea",
     name: "Lysithea",
     description:
       "Lysithea is the eldest daughter and heir to House Ordelia. She is a magical prodigy whose talents developed at an early age.",
@@ -198,6 +206,8 @@ export default {
     orgasmLimit: 3,
   },
   edelgard: {
+    seriesId,
+    id: "edelgard",
     name: "Edelgard",
     description:
       "Edelgard is the ninth child of Emperor Ionius IX, the princess and heir to the Adrestian Empire, and a student at the Officers Academy in Garreg Mach Monastery. She is also the house leader of the Black Eagles.",
