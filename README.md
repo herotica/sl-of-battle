@@ -8,8 +8,8 @@
 
 ### To do
 
-- ranks, loser pen
-- equipment effects
+- equipment effects, upgrades
+- modal fix
 - League
   -- events
   -- code cleanup

@@ -33,7 +33,7 @@ export default {
     prefAttack: "vagina",
     prefTarget: "cock",
     uniqueAttackText:
-      "Like a hungry semen demon, Rem rides your cock shuddering as it enters her tight pussy.",
+      "Like a hungry semen demon, Rem rides xxxx's cock shuddering as it enters her tight pussy.",
     roughPlayLvl: 20,
     seductionResistance: 25,
     grapplingProwess: 15,
