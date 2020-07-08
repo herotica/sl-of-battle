@@ -22,14 +22,17 @@
 ### Leagues
 
 - battleship
+
+### Get Image
+- morning cartoon - kim poss, totally spies
+- marvel
+
 - futa
 - fight - tekken, doa
 - pokemon
 - harem
 - adventure - goblin slayer
-- marvel
 - dc
-- morning cartoon - kim poss, totally spies
 - idolmaster
 - disney
 

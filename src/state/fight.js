@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocalStore } from "mobx-react-lite";
 import { FightRooms } from "../constants";
+import { Rooms } from "../constants";
 
 export function createFightStore() {
   return {
@@ -90,9 +91,11 @@ export function createFightStore() {
       this.fightMatchWinnings = winnings;
     },
 
+    onBackRoom: Rooms.league,
     fuckRoomCombatant: null,
-    setFuckRoomCombatant(combatant) {
+    setFuckRoomCombatant(combatant, onBackRoom = Rooms.league) {
       this.fuckRoomCombatant = combatant;
+      this.onBackRoom = onBackRoom;
     },
   };
 }

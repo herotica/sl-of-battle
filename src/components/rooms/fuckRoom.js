@@ -5,7 +5,6 @@ import { useFightDataStore } from "../../state/fight";
 import { observer } from "mobx-react-lite";
 import RoomHeader from "../roomHeader";
 import Button from "../button";
-import { Rooms } from "../../constants";
 import FuckRoomText from "../../eventText/fuckRoomText";
 
 const FuckTypes = {
@@ -19,10 +18,10 @@ const FuckRoom = observer(() => {
   const [fuckEndChoice, setFuckEndChoice] = useState(false);
   const playerCharStore = useGlobalDataStore();
   const { hasCock, setRoomSave } = playerCharStore;
-  const { fuckRoomCombatant } = useFightDataStore();
+  const { fuckRoomCombatant, onBackRoom } = useFightDataStore();
 
   const LeaveRoom = () => {
-    setRoomSave(Rooms.league);
+    setRoomSave(onBackRoom);
   };
   const getRndJesus = (textOptArr) =>
     Math.floor(Math.random() * textOptArr.length);
