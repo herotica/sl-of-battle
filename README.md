@@ -21,10 +21,11 @@
 
 ### Leagues
 
-- battleship
+### Clean
+- battleship -Azur Lane
+- morning cartoon - kim poss, totally spies
 
 ### Get Image
-- morning cartoon - kim poss, totally spies
 - marvel
 
 - futa
