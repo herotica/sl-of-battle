@@ -1,4 +1,5 @@
 import KantaiCollection from "../combatants/battleship/KantaiCollection";
+import AzurLane from "../combatants/battleship/AzurLane";
 import icon from "../assets/logo/battleship.svg";
 
 export default {
@@ -22,6 +23,8 @@ export default {
         KantaiCollection.hibiki,
         KantaiCollection.maxSchultz,
         KantaiCollection.akagi,
+        AzurLane.belfast,
+        AzurLane.leMalin,
       ],
     },
     {
@@ -29,14 +32,18 @@ export default {
       creditsWin: 10,
       pointsWin: 10,
       reqWins: 2,
-      combatants: [KantaiCollection.kaga, KantaiCollection.zuikaku],
+      combatants: [
+        KantaiCollection.kaga,
+        KantaiCollection.zuikaku,
+        AzurLane.PrinzEugen,
+      ],
     },
     {
       name: "Pro",
       creditsWin: 20,
       pointsWin: 20,
       reqWins: 1,
-      combatants: [KantaiCollection.shimakaze],
+      combatants: [KantaiCollection.shimakaze, AzurLane.atago],
     },
   ],
 };

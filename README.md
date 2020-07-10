@@ -21,6 +21,18 @@
 
 ### Leagues
 
+0>5-20
+1>12-30
+2>20-35
+3>28-42
+4>35-50
+5>42-60
+6>50-68
+7>60-76
+8>75-85
+9>80-95
+10>88-100
+
 ### Clean
 - battleship -Azur Lane
 - morning cartoon - kim poss, totally spies

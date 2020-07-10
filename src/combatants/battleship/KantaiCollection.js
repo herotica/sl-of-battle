@@ -1,32 +1,32 @@
-import Akagi from "../../assets/combatants/battleship/akagi.png";
-import AkagiIcon from "../../assets/combatants/battleship/akagi-icon.png";
-import AkagiWin from "../../assets/combatants/battleship/akagi-win.png";
-import AkagiLose from "../../assets/combatants/battleship/akagi-lose.png";
+import Akagi from "../../assets/combatants/battleship/kantai/akagi.png";
+import AkagiIcon from "../../assets/combatants/battleship/kantai/akagi-icon.png";
+import AkagiWin from "../../assets/combatants/battleship/kantai/akagi-win.png";
+import AkagiLose from "../../assets/combatants/battleship/kantai/akagi-lose.png";
 
-import Hibiki from "../../assets/combatants/battleship/hibiki.png";
-import HibikiIcon from "../../assets/combatants/battleship/hibiki-icon.png";
-import HibikiWin from "../../assets/combatants/battleship/hibiki-win.png";
-import HibikiLose from "../../assets/combatants/battleship/hibiki-lose.png";
+import Hibiki from "../../assets/combatants/battleship/kantai/hibiki.png";
+import HibikiIcon from "../../assets/combatants/battleship/kantai/hibiki-icon.png";
+import HibikiWin from "../../assets/combatants/battleship/kantai/hibiki-win.png";
+import HibikiLose from "../../assets/combatants/battleship/kantai/hibiki-lose.png";
 
-import Kaga from "../../assets/combatants/battleship/kaga.png";
-import KagaIcon from "../../assets/combatants/battleship/kaga-icon.png";
-import KagaWin from "../../assets/combatants/battleship/kaga-win.png";
-import KagaLose from "../../assets/combatants/battleship/kaga-lose.png";
+import Kaga from "../../assets/combatants/battleship/kantai/kaga.png";
+import KagaIcon from "../../assets/combatants/battleship/kantai/kaga-icon.png";
+import KagaWin from "../../assets/combatants/battleship/kantai/kaga-win.png";
+import KagaLose from "../../assets/combatants/battleship/kantai/kaga-lose.png";
 
-import maxSchultz from "../../assets/combatants/battleship/max-schultz.png";
-import maxSchultzIcon from "../../assets/combatants/battleship/max-schultz-icon.png";
-import maxSchultzWin from "../../assets/combatants/battleship/max-schultz-win.png";
-import maxSchultzLose from "../../assets/combatants/battleship/max-schultz-lose.png";
+import maxSchultz from "../../assets/combatants/battleship/kantai/max-schultz.png";
+import maxSchultzIcon from "../../assets/combatants/battleship/kantai/max-schultz-icon.png";
+import maxSchultzWin from "../../assets/combatants/battleship/kantai/max-schultz-win.png";
+import maxSchultzLose from "../../assets/combatants/battleship/kantai/max-schultz-lose.png";
 
-import Shimakaze from "../../assets/combatants/battleship/shimakaze.png";
-import ShimakazeIcon from "../../assets/combatants/battleship/shimakaze-icon.png";
-import ShimakazeWin from "../../assets/combatants/battleship/shimakaze-win.png";
-import ShimakazeLose from "../../assets/combatants/battleship/shimakaze-lose.png";
+import Shimakaze from "../../assets/combatants/battleship/kantai/shimakaze.png";
+import ShimakazeIcon from "../../assets/combatants/battleship/kantai/shimakaze-icon.png";
+import ShimakazeWin from "../../assets/combatants/battleship/kantai/shimakaze-win.png";
+import ShimakazeLose from "../../assets/combatants/battleship/kantai/shimakaze-lose.png";
 
-import Zuikaku from "../../assets/combatants/battleship/zuikaku.png";
-import ZuikakuIcon from "../../assets/combatants/battleship/zuikaku-icon.png";
-import ZuikakuWin from "../../assets/combatants/battleship/zuikaku-win.png";
-import ZuikakuLose from "../../assets/combatants/battleship/zuikaku-lose.png";
+import Zuikaku from "../../assets/combatants/battleship/kantai/zuikaku.png";
+import ZuikakuIcon from "../../assets/combatants/battleship/kantai/zuikaku-icon.png";
+import ZuikakuWin from "../../assets/combatants/battleship/kantai/zuikaku-win.png";
+import ZuikakuLose from "../../assets/combatants/battleship/kantai/zuikaku-lose.png";
 
 export const seriesId = "Kantai Collection";
 
