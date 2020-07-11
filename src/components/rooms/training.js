@@ -14,7 +14,7 @@ const Strings = {
   title: "Slut Training",
   explain:
     "Players work their muscles and sex organs here to prepare themselves for battle.",
-  modalTitle: "Training Complete"
+  modalTitle: "Training Complete",
 };
 
 const TrainingGym = () => {
@@ -57,10 +57,10 @@ const TrainingGym = () => {
           <SmText>{Strings.explain}</SmText>
         </ExplainBox>
         <TrainingOptWrap>
-          {TrainingOptions.map(option => (
+          {TrainingOptions.map((option) => (
             <TrainingActionItem {...option} onTry={OnTry} />
           ))}
-          {ResistanceTraining.map(resOption => (
+          {ResistanceTraining.map((resOption) => (
             <TrainingActionItem {...resOption} onTry={OnTry} resistance />
           ))}
         </TrainingOptWrap>
@@ -84,7 +84,9 @@ const TrainingActionItem = observer(
     reqFemale,
     reqCock,
     onTry,
-    resistance
+    resistance,
+    upgrade,
+    upgradePower,
   }) => {
     const {
       isWoman,
@@ -92,14 +94,17 @@ const TrainingActionItem = observer(
       cash,
       changeCash,
       saveChar,
+      boughtItems,
       ...CharData
     } = useGlobalDataStore();
 
+    const upgraded = boughtItems.includes(upgrade);
     const onSelect = () => {
       if (cost <= cash) {
         changeCash(-1 * cost);
         //check training
-        const trainResult = TestStatTrain(CharData[skill], power);
+        const effectPower = upgraded ? upgradePower : power;
+        const trainResult = TestStatTrain(CharData[skill], effectPower);
         trainResult && CharData[onSkillUp](1);
         onTry(trainResult, name);
         saveChar();
@@ -118,7 +123,10 @@ const TrainingActionItem = observer(
         <TrainingOpt onClick={onSelect} resistance={resistance}>
           <SmText>- {name} -</SmText>
           <SmlrText>{description}</SmlrText>
-          <SmText>Power Lvl :: {power}</SmText>
+          <SmText>
+            Power Lvl :: {upgraded ? upgradePower : power}
+            {upgraded && " - Upg"}
+          </SmText>
           <SmText>Training Cost ${cost}</SmText>
         </TrainingOpt>
       )
@@ -154,9 +162,9 @@ const TrainingOptWrap = styled.div`
   justify-content: space-evenly;
 `;
 const TrainingOpt = styled.div`
-  flex: 0 0 260px;
-  margin: 8px 32px;
-  padding: 16px;
+  flex: 0 0 240px;
+  margin: 8px 12px;
+  padding: 12px;
   border-radius: 8px;
   border: 2px solid black;
   color: white;

@@ -5,7 +5,9 @@ const TrainingOptions = [
     skill: "seductionProwess",
     onSkillUp: "changeSeductionProwess",
     cost: 10,
-    power: 2
+    power: 2,
+    upgrade: "seductionWardrobe",
+    upgradePower: 10,
   },
   {
     name: "Seduction+",
@@ -13,7 +15,9 @@ const TrainingOptions = [
     skill: "seductionProwess",
     onSkillUp: "changeSeductionProwess",
     cost: 40,
-    power: 15
+    power: 15,
+    upgrade: "seductionWardrobe",
+    upgradePower: 20,
   },
   {
     name: "Grappling",
@@ -21,7 +25,9 @@ const TrainingOptions = [
     skill: "grapplingProwess",
     onSkillUp: "changeGrapplingProwess",
     cost: 5,
-    power: 1
+    power: 1,
+    upgrade: "grapplingmatt",
+    upgradePower: 10,
   },
   {
     name: "Grappling+",
@@ -29,7 +35,9 @@ const TrainingOptions = [
     skill: "grapplingProwess",
     onSkillUp: "changeGrapplingProwess",
     cost: 50,
-    power: 12
+    power: 12,
+    upgrade: "grapplingmatt",
+    upgradePower: 20,
   },
   {
     name: "Tongue Skills",
@@ -37,7 +45,9 @@ const TrainingOptions = [
     skill: "tongueProwess",
     onSkillUp: "changeTongueProwess",
     cost: 15,
-    power: 5
+    power: 5,
+    upgrade: "bookOfTongues",
+    upgradePower: 12,
   },
   {
     name: "Tongue Skills+",
@@ -46,7 +56,9 @@ const TrainingOptions = [
     skill: "tongueProwess",
     onSkillUp: "changeTongueProwess",
     cost: 80,
-    power: 15
+    power: 15,
+    upgrade: "bookOfTongues",
+    upgradePower: 20,
   },
   {
     name: "Touch Skills",
@@ -54,7 +66,9 @@ const TrainingOptions = [
     skill: "touchProwess",
     onSkillUp: "changeTouchProwess",
     cost: 2,
-    power: 1
+    power: 1,
+    upgrade: "bookOfSensualTouch",
+    upgradePower: 8,
   },
   {
     name: "Touch Skills+",
@@ -63,7 +77,9 @@ const TrainingOptions = [
     skill: "touchProwess",
     onSkillUp: "changeTouchProwess",
     cost: 30,
-    power: 6
+    power: 6,
+    upgrade: "bookOfSensualTouch",
+    upgradePower: 18,
   },
   {
     name: "Cock/Strapon Skills",
@@ -71,7 +87,9 @@ const TrainingOptions = [
     skill: "cockProwess",
     onSkillUp: "changeCockProwess",
     cost: 10,
-    power: 2
+    power: 2,
+    upgrade: "onaholetrainer",
+    upgradePower: 10,
   },
   {
     name: "Cock/Strapon Skills+",
@@ -79,7 +97,9 @@ const TrainingOptions = [
     skill: "cockProwess",
     onSkillUp: "changeCockProwess",
     cost: 30,
-    power: 6
+    power: 6,
+    upgrade: "onaholetrainer",
+    upgradePower: 18,
   },
   {
     name: "Pussy Skills",
@@ -88,7 +108,9 @@ const TrainingOptions = [
     onSkillUp: "changeVaginaProwess",
     cost: 20,
     power: 4,
-    reqFemale: true
+    reqFemale: true,
+    upgrade: "symbian",
+    upgradePower: 12,
   },
   {
     name: "Pussy Skills+",
@@ -97,7 +119,9 @@ const TrainingOptions = [
     onSkillUp: "changeVaginaProwess",
     cost: 40,
     power: 12,
-    reqFemale: true
+    reqFemale: true,
+    upgrade: "symbian",
+    upgradePower: 20,
   },
   {
     name: "Arse Skills",
@@ -105,7 +129,9 @@ const TrainingOptions = [
     skill: "anusProwess",
     onSkillUp: "changeAnusProwess",
     cost: 5,
-    power: 2
+    power: 2,
+    upgrade: "buttplug",
+    upgradePower: 8,
   },
   {
     name: "Arse Skills+",
@@ -113,8 +139,10 @@ const TrainingOptions = [
     skill: "anusProwess",
     onSkillUp: "changeAnusProwess",
     cost: 40,
-    power: 10
-  }
+    power: 10,
+    upgrade: "buttplug",
+    upgradePower: 20,
+  },
 ];
 
 export const ResistanceTraining = [
@@ -125,7 +153,9 @@ export const ResistanceTraining = [
     skill: "touchResistance",
     onSkillUp: "changeTouchResistance",
     cost: 30,
-    power: 5
+    power: 5,
+    upgrade: "skinMassager",
+    upgradePower: 15,
   },
   {
     name: "Breast Endurance",
@@ -134,7 +164,9 @@ export const ResistanceTraining = [
     onSkillUp: "changeBreastResistance",
     cost: 50,
     power: 8,
-    reqFemale: true
+    reqFemale: true,
+    upgrade: "autoGroper",
+    upgradePower: 18,
   },
   {
     name: "Mouth Endurance",
@@ -142,7 +174,9 @@ export const ResistanceTraining = [
     skill: "mouthResistance",
     onSkillUp: "changeMouthResistance",
     cost: 40,
-    power: 6
+    power: 6,
+    upgrade: "mouthPleaser",
+    upgradePower: 16,
   },
   {
     name: "Cock Endurance",
@@ -151,16 +185,20 @@ export const ResistanceTraining = [
     onSkillUp: "changeCockResistance",
     cost: 40,
     power: 4,
-    reqCock: true
+    reqCock: true,
+    upgrade: "digitalPussy",
+    upgradePower: 17,
   },
   {
     name: "Pussy Endurance",
     description: "Get someone to stroke your lady orchid.",
     skill: "vaginaResistance",
     onSkillUp: "changeVaginaResistance",
-    cost: 90,
+    cost: 70,
     power: 10,
-    reqFemale: true
+    reqFemale: true,
+    upgrade: "megaDildo",
+    upgradePower: 20,
   },
   {
     name: "Arse Endurance",
@@ -168,8 +206,10 @@ export const ResistanceTraining = [
     skill: "anusResistance",
     onSkillUp: "changeAnusResistance",
     cost: 50,
-    power: 5
-  }
+    power: 5,
+    upgrade: "arsePleaser",
+    upgradePower: 17,
+  },
 ];
 
 export default TrainingOptions;

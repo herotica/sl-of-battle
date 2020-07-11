@@ -8,8 +8,7 @@
 
 ### To do
 
-- equipment effects, upgrades
-- modal fix
+- fuck page, show win img
 - League
   -- events
   -- code cleanup
@@ -40,13 +39,14 @@
 - marvel
 
 - futa
-- fight - tekken, doa
 - pokemon
+- league of legends
+- disney
+- fight - tekken, doa
 - harem
 - adventure - goblin slayer
 - dc
 - idolmaster
-- disney
 
 ### Maths
 

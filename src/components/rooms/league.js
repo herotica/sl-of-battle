@@ -366,7 +366,7 @@ const LoserEnslaveShop = observer(() => {
 });
 
 const UWrap = styled.div`
-  margin: 32px;
+  margin: 16px 0;
   overflow-y: auto;
   ${(p) => p.isComplete && `border: 2px solid gold`}
 `;
@@ -377,7 +377,7 @@ const FlexSpaced = styled.div`
 `;
 const FlexCol = styled(FlexSpaced)`
   align-items: center;
-  margin: 0 20px;
+  margin-bottom: 20px;
 `;
 const FlexWrap = styled.div`
   display: flex;

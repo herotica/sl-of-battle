@@ -6,42 +6,7 @@ import GoBack from "../back";
 import { useGlobalDataStore } from "../../state";
 import { observer } from "mobx-react-lite";
 import { MdTitleMiddle, SmlrText } from "../text";
-
-export const ShopOptions = {
-  onaholetrainer: {
-    title: "Onahole Trainer",
-    description: "Improves Cock training at Training Centre",
-    cost: 80,
-  },
-  grapplingmatt: {
-    title: "Grappling Map",
-    description: "Improves Grappling training at Training Centre",
-    cost: 50,
-  },
-  licenceA: {
-    title: "Licence A",
-    description: "Decreases price of fucking Losers",
-    cost: 30,
-  },
-  licenceB: {
-    title: "Licence B",
-    reqItems: ["licenceA"],
-    description: "Further decreases price of fucking Losers",
-    cost: 60,
-  },
-  licenceC: {
-    title: "Licence C",
-    reqItems: ["licenceB"],
-    description: "Even further decreases price of fucking Losers",
-    cost: 90,
-  },
-  licencePro: {
-    title: "Licence Pro",
-    reqItems: ["licenceC"],
-    description: "Allows losers to be bought as a sex slave",
-    cost: 120,
-  },
-};
+import ShopOptions from "./data/leagueShop";
 
 export const ShopOptionsKeys = Object.keys(ShopOptions);
 
