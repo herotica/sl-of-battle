@@ -157,8 +157,12 @@ export function createGlobalStore() {
       this.gender = newVal;
       this.isWoman = newVal === gender.female || newVal === gender.futanari;
       this.hasCock = newVal === gender.male || newVal === gender.futanari;
+      console.log('hc', this.hasCock);
+      console.log('newVal', newVal);
       if (newVal === gender.male) {
         this.pn = MalePronouns;
+      } else {
+        this.pn = Pronouns;
       }
     },
     setRace(newVal) {
