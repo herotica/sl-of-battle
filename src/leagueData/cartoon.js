@@ -8,6 +8,7 @@ export default {
   description: "The hottest toons from north america, are ready for action.",
   initialPoints: 60,
   renownRequired: 3,
+  entryCost: 200,
   colors: {
     bgA: "#2f7117",
     bgB: "#28ce44",

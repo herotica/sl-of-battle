@@ -8,6 +8,7 @@ export default {
   description: "The most beautiful RPG maiden's are fighting for glory.",
   initialPoints: 50,
   renownRequired: 1,
+  entryCost: 100,
   colors: {
     bgA: "darkred",
     bgB: "red",

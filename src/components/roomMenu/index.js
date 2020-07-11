@@ -75,11 +75,31 @@ const LeagueList = () => {
 };
 
 const LeagueWrapper = ({ room, league }) => {
-  const { name, description, renownRequired, icon, colors, ranks } = league;
-  const { setRoomSave, setLeague, RenownLv } = useGlobalDataStore();
+  const {
+    name,
+    description,
+    renownRequired,
+    icon,
+    colors,
+    ranks,
+    entryCost,
+  } = league;
+  const {
+    setRoomSave,
+    setLeague,
+    RenownLv,
+    cash,
+    changeCash,
+  } = useGlobalDataStore();
+  const canAfford = entryCost <= cash;
   const onPress = () => {
-    setLeague(league);
-    setRoomSave(room);
+    if (canAfford) {
+      setLeague(league);
+      setRoomSave(room);
+      changeCash(-1 * entryCost);
+    } else {
+      window.alert("You can afford this.");
+    }
   };
   const isLocked = RenownLv < renownRequired;
 
@@ -89,7 +109,9 @@ const LeagueWrapper = ({ room, league }) => {
         <TitleWrap>
           <FlexWrap>
             <Title>{name}</Title>
-            <Text>Renown Lv :: {renownRequired}</Text>
+            <Text>
+              Renown Lv :: {renownRequired} | Entry cost £{entryCost}
+            </Text>
           </FlexWrap>
           <Text>{description}</Text>
         </TitleWrap>

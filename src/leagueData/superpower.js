@@ -9,6 +9,7 @@ export default {
     "The sexiest and most powerful girls from superhero anime, thankfully their powers have been dulled, as per rules for league entry.",
   initialPoints: 50,
   renownRequired: 0,
+  entryCost: 50,
   colors: {
     bgA: "#65daaa",
     bgB: "#5c70a9",

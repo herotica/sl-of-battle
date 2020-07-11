@@ -9,6 +9,7 @@ export default {
   description: "The hottest girls from virtual worlds fight for glory.",
   initialPoints: 50,
   renownRequired: 0,
+  entryCost: 50,
   colors: {
     bgA: "yellow",
     bgB: "darkgoldenrod",

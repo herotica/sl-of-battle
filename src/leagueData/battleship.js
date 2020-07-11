@@ -8,6 +8,7 @@ export default {
   description: "The prettiest battleship mascots duke it out.",
   initialPoints: 50,
   renownRequired: 2,
+  entryCost: 150,
   colors: {
     bgA: "#8fcfc7",
     bgB: "#378291",

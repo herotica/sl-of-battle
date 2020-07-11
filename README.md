@@ -8,11 +8,8 @@
 
 ### To do
 
-- League
-  -- code cleanup
-- training, buy equipment
 - fuckroom writing guide ,male, switch
-- money spend
+- fuck text
 - balance fight maths
 - cleanup pleasure text
 - slave 
