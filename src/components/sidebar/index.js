@@ -166,8 +166,7 @@ const DetailsWrap = styled.div`
   margin-bottom: 20px;
 `;
 const Img = styled.img`
-  width: calc(240px + 0.5vw);
-  max-height: 280px;
+  max-height: 360px;
   object-fit: contain;
 `;
 const Icon = styled.img`

@@ -43,6 +43,8 @@ const FuckRoom = observer(() => {
         <ImageWrap>
           <Image src={fuckRoomCombatant.img} alt="loser" />
           <Image src={fuckRoomCombatant.opLoseImg} alt="loser" />
+          -- Win Image --
+          <Image src={fuckRoomCombatant.opWinImg} alt="loser" />
         </ImageWrap>
         <TextWrap>
           {!fuckType && (
@@ -89,7 +91,12 @@ const FuckRoom = observer(() => {
                 ))}
             </>
           )}
-          {fuckEndChoice && <div>{fuckEndChoice}</div>}
+          {fuckEndChoice && (
+            <div>
+              {hasCock && <Seperator>----</Seperator>}
+              {fuckEndChoice}
+            </div>
+          )}
         </TextWrap>
       </RoomWrap>
 
@@ -99,7 +106,7 @@ const FuckRoom = observer(() => {
 });
 
 const UWrap = styled.div`
-  margin: 32px;
+  margin: 32px 0;
   overflow-y: auto;
 `;
 const RoomWrap = styled.div`
@@ -108,14 +115,19 @@ const RoomWrap = styled.div`
 const ImageWrap = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 12px;
+  margin: 0 16px 16px 0;
   padding-right: 12px;
   border-right: 1px solid grey;
   text-align: center;
+  min-width: 360px;
+  max-height: 80vh;
+  overflow-y: auto;
 `;
 const TextWrap = styled.div`
   margin: 12px;
   white-space: pre-line;
+  max-height: 80vh;
+  overflow-y: auto;
 `;
 const Image = styled.img`
   max-width: 320px;
@@ -131,6 +143,10 @@ const UpperCase = styled(Button)`
   &:first-letter {
     text-transform: uppercase;
   }
+`;
+const Seperator = styled.div`
+  margin: 16px 0;
+  text-align: center;
 `;
 
 export default FuckRoom;

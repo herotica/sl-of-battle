@@ -8,15 +8,15 @@
 
 ### To do
 
-- fuck page, show win img
 - League
-  -- events
   -- code cleanup
 - training, buy equipment
 - fuckroom writing guide ,male, switch
 - money spend
 - balance fight maths
 - cleanup pleasure text
+- slave 
+  -- events
 
 ### Leagues
 
