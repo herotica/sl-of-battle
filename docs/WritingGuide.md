@@ -1,0 +1,2 @@
+- fucker -> male
+- reciever -> female

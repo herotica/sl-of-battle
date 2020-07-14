@@ -14,6 +14,7 @@
 - cleanup pleasure text
 - slave 
   -- events
+- collapse league
 
 ### Leagues
 
@@ -21,29 +22,19 @@
 1>12-30 - jrpg
 2>20-35 - battleship
 3>28-42 - cartoon
-4>35-50
-5>42-60
-6>50-68
-7>60-76
-8>75-85
-9>80-95
-10>88-100
+4>35-50 - marvel 
+5>42-60 - pokemon
+6>50-68 - lol
+7>60-80 - 
 
 ### Clean
-- morning cartoon - kim poss, totally spies
+- marvel
+- pokemon
 
 ### Get Image
-- marvel
 
-- futa
-- pokemon
 - league of legends
 - disney
-- fight - tekken, doa
-- harem
-- adventure - goblin slayer
-- dc
-- idolmaster
 
 ### Maths
 
