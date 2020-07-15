@@ -1,5 +1,5 @@
 import Marvel from "../combatants/marvel/marvel";
-import icon from "../assets/logo/isekai.png";
+import icon from "../assets/logo/marvel.png";
 
 export default {
   id: "marvel",
@@ -9,8 +9,8 @@ export default {
   renownRequired: 4,
   entryCost: 250,
   colors: {
-    bgA: "#d60000",
-    bgB: "#9a2525",
+    bgA: "#ff9151",
+    bgB: "#ffb4a8",
     border: "#d60000",
   },
   icon,

@@ -4,7 +4,7 @@ import icon from "../assets/logo/jrpg.png";
 
 export default {
   id: "jrpga",
-  name: "League 3; The JRPG League",
+  name: "The JRPG League",
   description: "The most beautiful RPG maiden's are fighting for glory.",
   initialPoints: 50,
   renownRequired: 1,

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Button from "../button";
 import { useGlobalDataStore } from "../../state";
 import { Rooms } from "../../constants";
 import { MdTitleMiddle } from "../text";
@@ -56,7 +57,11 @@ const loserSlavePen = {
 };
 
 const LeagueList = () => {
-  const { boughtItems } = useGlobalDataStore();
+  const [collapseComplete, setCollapseComplete] = useState(false);
+  const switchCollapseComplete = () => {
+    setCollapseComplete(!collapseComplete);
+  };
+  const { boughtItems, leagueProgress } = useGlobalDataStore();
 
   return (
     <ListWrapper>
@@ -66,15 +71,31 @@ const LeagueList = () => {
       {boughtItems.includes("licencePro") && (
         <RoomsWrapper {...loserSlavePen} key={"loserSlave"} />
       )}
-      <MdTitleMiddle>Leagues</MdTitleMiddle>
-      {LeaguesData.map((Data) => (
-        <LeagueWrapper {...Data} key={Data.league.id} />
-      ))}
+      <TitleFlexWrap>
+        <MdTitleMiddle>Leagues</MdTitleMiddle>
+        <Button onClick={switchCollapseComplete}>
+          {collapseComplete ? "Reveal" : "Collapse"} Complete
+        </Button>
+      </TitleFlexWrap>
+      {LeaguesData.map((Data) => {
+        const isComplete =
+          (leagueProgress[Data.league.id] &&
+            leagueProgress[Data.league.id].isComplete) ||
+          false;
+        return (
+          <LeagueWrapper
+            {...Data}
+            key={Data.league.id}
+            isComplete={isComplete}
+            collapseComplete={collapseComplete}
+          />
+        );
+      })}
     </ListWrapper>
   );
 };
 
-const LeagueWrapper = ({ room, league }) => {
+const LeagueWrapper = ({ room, league, isComplete, collapseComplete }) => {
   const {
     name,
     description,
@@ -91,6 +112,7 @@ const LeagueWrapper = ({ room, league }) => {
     cash,
     changeCash,
   } = useGlobalDataStore();
+
   const canAfford = entryCost <= cash;
   const onPress = () => {
     if (canAfford) {
@@ -102,27 +124,50 @@ const LeagueWrapper = ({ room, league }) => {
     }
   };
   const isLocked = RenownLv < renownRequired;
+  const hide = collapseComplete && isComplete;
 
   return (
-    <ListBox colors={colors} onClick={isLocked || onPress} locked={isLocked}>
-      <FlexWrap>
+    <ListBox
+      colors={colors}
+      onClick={isLocked || onPress}
+      padLess={hide}
+      locked={isLocked}
+    >
+      <FlexWrap marginHide={hide}>
         <TitleWrap>
           <FlexWrap>
             <Title>{name}</Title>
             <Text>
-              Renown Lv :: {renownRequired} | Entry cost £{entryCost}
+              {isComplete ? "League Complete" : "Renown Lv ::" + renownRequired}{" "}
+              | Entry cost £{entryCost}
             </Text>
           </FlexWrap>
-          <Text>{description}</Text>
+          {!hide && <Text>{description}</Text>}
         </TitleWrap>
-        {icon && <Logo src={icon} alt="logo" />}
+        {icon && (
+          <Logo
+            src={icon}
+            alt="logo"
+            isComplete={isComplete}
+            colors={colors}
+            hide={hide}
+          />
+        )}
       </FlexWrap>
-      <Text>Rookies:</Text>
-      <RookieWrap>
-        {ranks[0].combatants.map((rookie) => (
-          <RookieIcon src={rookie.icon} alt={rookie.name} key={rookie.name} />
-        ))}
-      </RookieWrap>
+      {!hide && (
+        <>
+          <Text>Rookies:</Text>
+          <RookieWrap>
+            {ranks[0].combatants.map((rookie) => (
+              <RookieIcon
+                src={rookie.icon}
+                alt={rookie.name}
+                key={rookie.name}
+              />
+            ))}
+          </RookieWrap>
+        </>
+      )}
     </ListBox>
   );
 };
@@ -136,9 +181,9 @@ const RoomsWrapper = (props) => {
   return (
     <ListBox colors={colors} onClick={onPress}>
       <FlexWrap>
-        <Title style={{ flex: "0 0 180px" }}>{name}</Title>
+        <TextBoxLeft>{name}</TextBoxLeft>
 
-        <Text style={{ flex: "1 0 320px" }}>{description}</Text>
+        <TextBoxRight>{description}</TextBoxRight>
       </FlexWrap>
     </ListBox>
   );
@@ -150,7 +195,7 @@ const ListWrapper = styled.div`
   margin: 12px;
 `;
 const ListBox = styled.div`
-  padding: 16px;
+  padding: ${(p) => (p.padLess ? "8px 16px" : "16px")};
   background-size: 1px 200px;
   background: linear-gradient(
     10deg,
@@ -176,7 +221,10 @@ const ListBox = styled.div`
 const FlexWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: ${(p) => (p.marginHide ? "0px" : "8px")};
+`;
+const TitleFlexWrap = styled(FlexWrap)`
+  padding: 10px 20px 0;
 `;
 const TitleWrap = styled.div`
   width: 75%;
@@ -189,15 +237,27 @@ const Title = styled.h4`
 const Text = styled.div`
   line-height: 1.4;
 `;
+const TextBoxLeft = styled(Title)`
+  flex: 1 1 180px;
+`;
+const TextBoxRight = styled(Text)`
+  flex: 1 1 320px;
+`;
 const Logo = styled.img`
-  max-height: 72px;
+  max-height: ${(p) => (p.hide ? "42px" : "72px")};
+  opacity: ${(p) => (p.isComplete ? "1" : "0.2")};
+  ${(p) => p.isComplete && `border: 1px solid ${p.colors.border};`};
+  border-radius: 5px;
 `;
 const RookieWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-top: -16px;
 `;
 const RookieIcon = styled.img`
-  margin-right: 16px;
   max-width: 80px;
+  margin-right: 16px;
+  margin-top: 16px;
+  border-radius: 5px;
 `;
 export default LeagueList;

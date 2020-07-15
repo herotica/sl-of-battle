@@ -4,7 +4,7 @@ import icon from "../assets/logo/superhero.png";
 
 export default {
   id: "superpower",
-  name: "League 2; The Superhero League",
+  name: "The Superhero League",
   description:
     "The sexiest and most powerful girls from superhero anime, thankfully their powers have been dulled, as per rules for league entry.",
   initialPoints: 50,

@@ -4,7 +4,7 @@ import icon from "../assets/logo/battleship.svg";
 
 export default {
   id: "battleship",
-  name: "League 4; The Battleship League",
+  name: "The Battleship League",
   description: "The prettiest battleship mascots duke it out.",
   initialPoints: 50,
   renownRequired: 2,

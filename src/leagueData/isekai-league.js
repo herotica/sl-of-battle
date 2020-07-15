@@ -5,7 +5,7 @@ import icon from "../assets/logo/isekai.png";
 
 export default {
   id: "isekai",
-  name: "League 1; The Isekai League",
+  name: "The Isekai League",
   description: "The hottest girls from virtual worlds fight for glory.",
   initialPoints: 50,
   renownRequired: 0,

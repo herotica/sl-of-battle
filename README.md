@@ -6,15 +6,28 @@
   Play a game based on Tokhar's battle sluts, and kink's Ultimate Surrender (see src/assets/cyoa)
 </p>
 
+### Like the game
+
+Donations Appreciated!
+paypal.me/herotica
+
+### Requests
+
+[requests](docs/requests.md)
+
+### Contribution Guide
+
+[Writing Guide](docs/WritingGuide.md)
+
 ### To do
 
-- fuckroom writing guide ,male, switch
-- fuck text
-- balance fight maths
-- cleanup pleasure text
-- slave 
-  -- events
-- collapse league
+- fuckroom writing guide ,male, switch   
+- fuck text   
+- balance fight maths   
+- cleanup pleasure text   
+- slave    
+  -- events   
+- collapse league   
 
 ### Leagues
 
