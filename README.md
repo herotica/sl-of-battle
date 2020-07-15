@@ -41,7 +41,8 @@ paypal.me/herotica
 4>35-50 - marvel 
 5>42-60 - pokemon
 6>50-68 - lol
-7>60-80 - 
+7>60-75 - disney
+8>70-85 - fighter
 
 ### Clean
 - pokemon

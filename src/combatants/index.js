@@ -26,6 +26,8 @@ import Marvel, { seriesId as MarvelId } from "./marvel/marvel";
 //na-toons
 import Toons, { seriesId as ToonsId } from "./na-toons/toons";
 import KimPossible, { seriesId as KimPossibleId } from "./na-toons/KimPossible";
+// Pokemon
+import Pokemon, { seriesId as PokemonId } from "./pokemon";
 //superhero
 import BokuNoHero, { seriesId as BokuNoHeroId } from "./superhero/BokuNoHero";
 import OnePiece, { seriesId as OnePieceId } from "./superhero/OnePiece";
@@ -63,6 +65,7 @@ const seriesDb = {
   [GranblueFantasyId]: GranblueFantasy,
   [MarvelId]: Marvel,
   [ToonsId]: Toons,
+  [PokemonId]: Pokemon,
   [KimPossibleId]: KimPossible,
   [BokuNoHeroId]: BokuNoHero,
   [OnePieceId]: OnePiece,
