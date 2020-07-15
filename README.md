@@ -21,13 +21,16 @@ paypal.me/herotica
 
 ### To do
 
-- fuckroom writing guide ,male, switch   
+- [doc] contribution:  character league /guide , fuckroom writing guide ,male, switch   
 - fuck text   
 - balance fight maths   
 - cleanup pleasure text   
 - slave    
-  -- events   
-- collapse league   
+  -- events    
+- training, higher success chance
+
+### bugs
+
 
 ### Leagues
 
@@ -41,7 +44,6 @@ paypal.me/herotica
 7>60-80 - 
 
 ### Clean
-- marvel
 - pokemon
 
 ### Get Image
