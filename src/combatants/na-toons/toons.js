@@ -151,7 +151,7 @@ export default {
     throatSize: 2,
     prefAttack: "touch",
     prefTarget: "vagina",
-    uniqueAttackText: "April rubs her soft fingers over ++++'s sopping cunt.",
+    uniqueAttackText: "April rubs her soft fingers over xxxx's sopping cunt.",
     roughPlayLvl: 5,
     seductionResistance: 28,
     grapplingProwess: 42,

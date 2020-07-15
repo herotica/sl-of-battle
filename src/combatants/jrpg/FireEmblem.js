@@ -144,7 +144,7 @@ export default {
     prefAttack: "touch",
     prefTarget: "breasts",
     uniqueAttackText:
-      "Lyn rubs her supple tits eagerly against ++++'s cock, smothering it with her soft tit meat.",
+      "Lyn rubs her supple tits eagerly against xxxx's cock, smothering it with her soft tit meat.",
     roughPlayLvl: 5,
     seductionResistance: 20,
     grapplingProwess: 25,

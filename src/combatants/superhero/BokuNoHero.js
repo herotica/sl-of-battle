@@ -229,7 +229,7 @@ export default {
     prefAttack: "tongue",
     prefTarget: "vagina",
     uniqueAttackText:
-      "Tsuyu's incredibly long tongue explores the depths of ++++'s pussy, teasing and tasting areas never before teased.",
+      "Tsuyu's incredibly long tongue explores the depths of xxxx's pussy, teasing and tasting areas never before teased.",
     roughPlayLvl: -10,
     seductionResistance: 20,
     grapplingProwess: 25,

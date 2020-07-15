@@ -49,7 +49,7 @@ export default {
     prefAttack: "touch",
     prefTarget: "mouth",
     uniqueAttackText:
-      "Nico pushes her heavy bust into ++++'s mouth, forcing her to taste her delicious breasts.",
+      "Nico pushes her heavy bust into xxxx's mouth, forcing her to taste her delicious breasts.",
     roughPlayLvl: -2, // how responds to domination either -hates or +likes
     // Prowess is capability
     seductionResistance: 25,

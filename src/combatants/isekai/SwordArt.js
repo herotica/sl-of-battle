@@ -96,7 +96,7 @@ export default {
     prefAttack: "tongue",
     prefTarget: "breasts",
     uniqueAttackText:
-      "Suguha hungrily slathers ++++'s breasts with her tongue, eagerly sucking her nipples and savouring their sweet, sweaty taste.",
+      "Suguha hungrily slathers xxxx's breasts with her tongue, eagerly sucking her nipples and savouring their sweet, sweaty taste.",
     roughPlayLvl: 20,
     seductionResistance: 10,
     grapplingProwess: 25,

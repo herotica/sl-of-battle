@@ -43,7 +43,7 @@ export default {
     prefAttack: "tongue",
     prefTarget: "mouth",
     uniqueAttackText:
-      "Mei's soft little tongue slips it's squishy way into ++++'s mouth, exploring ==== mouth passionately, and tasting all over ==== tongue.",
+      "Mei's soft little tongue slips it's squishy way into xxxx's mouth, exploring ==== mouth passionately, and tasting all over ==== tongue.",
     roughPlayLvl: -12, // how responds to domination either -hates or +likes
     // Prowess is capability
     seductionResistance: 15,
@@ -89,7 +89,7 @@ export default {
     prefAttack: "touch",
     prefTarget: "breasts",
     uniqueAttackText:
-      "Aqua rubs her supple tits eagerly against ++++'s, tickling her nipples against her opponent's.",
+      "Aqua rubs her supple tits eagerly against xxxx's, tickling her nipples against her opponent's.",
     roughPlayLvl: 15,
     seductionResistance: 20,
     grapplingProwess: 20,
