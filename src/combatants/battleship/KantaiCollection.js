@@ -185,7 +185,7 @@ export default {
     anusSize: 1,
     throatSize: 2,
     prefAttack: "vagina",
-    prefTarget: "tough",
+    prefTarget: "touch",
     uniqueAttackText: "Mac grinds get lithe body over xxxx's chest.",
     roughPlayLvl: 10,
     seductionResistance: 42,
