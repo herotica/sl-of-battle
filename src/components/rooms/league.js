@@ -324,7 +324,6 @@ const LoserEnslaveShop = observer(() => {
       <NameText>
         As a Pro you can purchase girls you've beaten to keep!
       </NameText>
-      {console.log(losersBought)}
       <FlexWrap>
         {Object.keys(currentLeagueProgress.wins).map((losersVal) => {
           const rank = parseInt(losersVal.substr(0, 1));

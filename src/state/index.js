@@ -157,8 +157,6 @@ export function createGlobalStore() {
       this.gender = newVal;
       this.isWoman = newVal === gender.female || newVal === gender.futanari;
       this.hasCock = newVal === gender.male || newVal === gender.futanari;
-      console.log('hc', this.hasCock);
-      console.log('newVal', newVal);
       if (newVal === gender.male) {
         this.pn = MalePronouns;
       } else {
@@ -363,7 +361,6 @@ export function createGlobalStore() {
     },
     addLoserToListSlaves(loserId, seriesId) {
       const currentSeriesIdArr = Object.keys(this.losersBought);
-      console.log("seriesIdArr", currentSeriesIdArr);
       if (!currentSeriesIdArr.includes(seriesId)) {
         this.losersBought[seriesId] = [];
       }

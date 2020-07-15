@@ -21,7 +21,6 @@ const LeaguePointsShop = observer(() => {
         <GoBack />
       </RoomHeader>
       <MdTitleMiddle>Enjoy the fruits of your success!</MdTitleMiddle>
-      {console.log(openSeries)}
       <MdTitleMiddleMarginTop>
         You have Series, {Object.keys(losersBought)}
       </MdTitleMiddleMarginTop>
