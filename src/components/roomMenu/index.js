@@ -255,7 +255,9 @@ const RookieWrap = styled.div`
   margin-top: -16px;
 `;
 const RookieIcon = styled.img`
-  max-width: 80px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
   margin-right: 16px;
   margin-top: 16px;
   border-radius: 5px;
