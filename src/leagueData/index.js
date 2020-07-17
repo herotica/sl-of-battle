@@ -6,6 +6,7 @@ import Battleship from "./battleship";
 import Cartoon from "./cartoon";
 import Marvel from "./marvel";
 import Pokemon from "./pokemon";
+import LeagueOfLegends from "./leagueOfLegends";
 
 const leagues = [
   { room: Rooms.league, league: Isekai },
@@ -15,6 +16,7 @@ const leagues = [
   { room: Rooms.league, league: Cartoon },
   { room: Rooms.league, league: Marvel },
   { room: Rooms.league, league: Pokemon },
+  { room: Rooms.league, league: LeagueOfLegends },
 ];
 
 export const leagueIDs = leagues.map((lg) => lg.league.id);
