@@ -1,12 +1,17 @@
 <p align="center">
-    <h3 align="center">Sluts of Battle, a HTML web game<br></h3>
+    <h2 align="center">Sluts of Battle, a HTML web game<br></h2>
 </p>
 
 <p align="center">
-  Play a game based on Tokhar's battle sluts, and kink's Ultimate Surrender (see src/assets/cyoa)
-</p>
+  Play a game based on Tokhar's battle sluts, and kink's Ultimate Surrender.
 
-### Like the game
+## Play
+
+Online -> https://sluts-of-battle.onrender.com
+
+Localy - see [Releases](https://github.com/herotica/sl-of-battle/releases)
+
+### Like the game?
 
 Donations Appreciated!
 paypal.me/herotica
@@ -29,7 +34,7 @@ paypal.me/herotica
   -- events    
 - training, higher success chance
 - test deploy (https://render.com/)
-- get executables - test local build
+- exec - test Windows
 
 ### bugs
 
@@ -37,31 +42,17 @@ paypal.me/herotica
 
 ### Leagues
 
-0>5-20
-1>12-30 - jrpg
-2>20-35 - battleship
-3>28-42 - cartoon
-4>35-50 - marvel 
-5>42-60 - pokemon - data
-6>50-68 - lol - add img, data
-7>60-75 - disney - clean img, add imd, data
-8>70-85 - fighter - get img, clean img, add imd, data
+0>5-20   
+1>12-30 - jrpg   
+2>20-35 - battleship   
+3>28-42 - cartoon   
+4>35-50 - marvel    
+5>42-60 - pokemon   
+6>50-68 - lol - add img, data   
+7>60-75 - disney - clean img, add imd, data   
+8>70-85 - fighter - get img, clean img, add imd, data   
 
-### Clean
-- pokemon
-
-### Get Image
-
-- league of legends
-- disney
-
-### Maths
-
-ranks 1 -> 8
-values 
-low: -5 + rank * 10
-high: 5 + rank * 10
-### Dev info
+### Development info
 
 <div class="center">
   [![Dependency Status](https://img.shields.io/david/ReactJSResources/react-webpack-babel.svg)](https://david-dm.org/dylang/npm-check)
@@ -82,7 +73,7 @@ git clone https://github.com/ReactJSResources/react-webpack-babel.git
 - Then install the dependencies:
 
 ```
-npm install
+yarn install
 ```
 
 - Run development server:
@@ -98,6 +89,13 @@ Open the web browser to `http://localhost:8080/`
 ```
 yarn build
 ```
+
+### Building for Win/Linux
+
+- See https://tauri.studio/
+
+- OSX? - Dont' have a Mac, if you do any help woul dbe appreciated with building the app, see https://tauri.studio/docs/getting-started/setup-macos
+
 
 ### Linting
 
