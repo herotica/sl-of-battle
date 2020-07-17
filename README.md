@@ -28,9 +28,12 @@ paypal.me/herotica
 - slave    
   -- events    
 - training, higher success chance
+- test deploy (https://render.com/)
+- get executables - test local build
 
 ### bugs
 
+- normal fight orgasm number
 
 ### Leagues
 
@@ -39,10 +42,10 @@ paypal.me/herotica
 2>20-35 - battleship
 3>28-42 - cartoon
 4>35-50 - marvel 
-5>42-60 - pokemon
-6>50-68 - lol
-7>60-75 - disney
-8>70-85 - fighter
+5>42-60 - pokemon - data
+6>50-68 - lol - add img, data
+7>60-75 - disney - clean img, add imd, data
+8>70-85 - fighter - get img, clean img, add imd, data
 
 ### Clean
 - pokemon
