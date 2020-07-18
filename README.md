@@ -56,7 +56,7 @@ paypal.me/herotica
 4>35-50 - marvel    
 5>42-60 - pokemon   
 6>50-68 - lol  
-7>60-75 - disney - clean img, add imd, data   
+7>60-75 - disney - data   
 8>70-85 - fighter - get img, clean img, add imd, data   
 
 ### Development info

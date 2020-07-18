@@ -35,6 +35,8 @@ import OnePiece, { seriesId as OnePieceId } from "./superhero/OnePiece";
 import leagueOfLegends, {
   seriesId as leagueOfLegendsId,
 } from "./league-of-legends";
+// league-of-legends
+import disney, { seriesId as disneyId } from "./disney";
 
 export const Underground = {
   // Max 3 difficulty tiers, A is the lowest
@@ -74,6 +76,7 @@ const seriesDb = {
   [BokuNoHeroId]: BokuNoHero,
   [OnePieceId]: OnePiece,
   [leagueOfLegendsId]: leagueOfLegends,
+  [disneyId]: disney,
 };
 
 export const leagueGirlsAccessor = (seriesId, charId) => {

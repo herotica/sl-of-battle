@@ -1,6 +1,5 @@
 import leagueoflegends from "../combatants/league-of-legends";
 import icon from "../assets/logo/league-of-legends.png";
-import leagueOfLegends from "../combatants/league-of-legends";
 
 export default {
   id: "leagueoflegends",
@@ -44,7 +43,7 @@ export default {
       creditsWin: 20,
       pointsWin: 20,
       reqWins: 1,
-      combatants: [leagueoflegends.katarina, leagueOfLegends.riven],
+      combatants: [leagueoflegends.katarina, leagueoflegends.riven],
     },
   ],
 };

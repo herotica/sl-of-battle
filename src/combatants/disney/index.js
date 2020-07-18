@@ -1,61 +1,61 @@
-import Ahri from "../../assets/combatants/league-of-legends/ahri.png";
-import AhriIcon from "../../assets/combatants/league-of-legends/ahri-icon.png";
-import AhriWin from "../../assets/combatants/league-of-legends/ahri-win.png";
-import AhriLose from "../../assets/combatants/league-of-legends/ahri-lose.png";
+import Anna from "../../assets/combatants/disney/anna.png";
+import AnnaIcon from "../../assets/combatants/disney/anna-icon.png";
+import AnnaWin from "../../assets/combatants/disney/anna-win.png";
+import AnnaLose from "../../assets/combatants/disney/anna-lose.png";
 
-import Akali from "../../assets/combatants/league-of-legends/akali.png";
-import AkaliIcon from "../../assets/combatants/league-of-legends/akali-icon.png";
-import AkaliWin from "../../assets/combatants/league-of-legends/akali-win.png";
-import AkaliLose from "../../assets/combatants/league-of-legends/akali-lose.png";
+import Ariel from "../../assets/combatants/disney/ariel.png";
+import ArielIcon from "../../assets/combatants/disney/ariel-icon.png";
+import ArielWin from "../../assets/combatants/disney/ariel-win.png";
+import ArielLose from "../../assets/combatants/disney/ariel-lose.png";
 
-import Jinx from "../../assets/combatants/league-of-legends/jinx.png";
-import JinxIcon from "../../assets/combatants/league-of-legends/jinx-icon.png";
-import JinxWin from "../../assets/combatants/league-of-legends/jinx-win.png";
-import JinxLose from "../../assets/combatants/league-of-legends/jinx-lose.png";
+import Aurora from "../../assets/combatants/disney/aurora.png";
+import AuroraIcon from "../../assets/combatants/disney/aurora-icon.png";
+import AuroraWin from "../../assets/combatants/disney/aurora-win.png";
+import AuroraLose from "../../assets/combatants/disney/aurora-lose.png";
 
-import Katarina from "../../assets/combatants/league-of-legends/katarina.png";
-import KatarinaIcon from "../../assets/combatants/league-of-legends/katarina-icon.png";
-import KatarinaWin from "../../assets/combatants/league-of-legends/katarina-win.png";
-import KatarinaLose from "../../assets/combatants/league-of-legends/katarina-lose.png";
+import Belle from "../../assets/combatants/disney/belle.png";
+import BelleIcon from "../../assets/combatants/disney/belle-icon.png";
+import BelleWin from "../../assets/combatants/disney/belle-win.png";
+import BelleLose from "../../assets/combatants/disney/belle-lose.png";
 
-import Luxanna from "../../assets/combatants/league-of-legends/luxanna.png";
-import LuxannaIcon from "../../assets/combatants/league-of-legends/luxanna-icon.png";
-import LuxannaWin from "../../assets/combatants/league-of-legends/luxanna-win.png";
-import LuxannaLose from "../../assets/combatants/league-of-legends/luxanna-lose.png";
+import Elsa from "../../assets/combatants/disney/elsa.png";
+import ElsaIcon from "../../assets/combatants/disney/elsa-icon.png";
+import ElsaWin from "../../assets/combatants/disney/elsa-win.png";
+import ElsaLose from "../../assets/combatants/disney/elsa-lose.png";
 
-import Nidalee from "../../assets/combatants/league-of-legends/nidalee.png";
-import NidaleeIcon from "../../assets/combatants/league-of-legends/nidalee-icon.png";
-import NidaleeWin from "../../assets/combatants/league-of-legends/nidalee-win.png";
-import NidaleeLose from "../../assets/combatants/league-of-legends/nidalee-lose.png";
+import Jasmine from "../../assets/combatants/disney/jasmine.png";
+import JasmineIcon from "../../assets/combatants/disney/jasmine-icon.png";
+import JasmineWin from "../../assets/combatants/disney/jasmine-win.png";
+import JasmineLose from "../../assets/combatants/disney/jasmine-lose.png";
 
-import Riven from "../../assets/combatants/league-of-legends/riven.png";
-import RivenIcon from "../../assets/combatants/league-of-legends/riven-icon.png";
-import RivenWin from "../../assets/combatants/league-of-legends/riven-win.png";
-import RivenLose from "../../assets/combatants/league-of-legends/riven-lose.png";
+import Megara from "../../assets/combatants/disney/megara.png";
+import MegaraIcon from "../../assets/combatants/disney/megara-icon.png";
+import MegaraWin from "../../assets/combatants/disney/megara-win.png";
+import MegaraLose from "../../assets/combatants/disney/megara-lose.png";
 
-import Sarah from "../../assets/combatants/league-of-legends/sarah.png";
-import SarahIcon from "../../assets/combatants/league-of-legends/sarah-icon.png";
-import SarahWin from "../../assets/combatants/league-of-legends/sarah-win.png";
-import SarahLose from "../../assets/combatants/league-of-legends/sarah-lose.png";
+import Mulan from "../../assets/combatants/disney/mulan.png";
+import MulanIcon from "../../assets/combatants/disney/mulan-icon.png";
+import MulanWin from "../../assets/combatants/disney/mulan-win.png";
+import MulanLose from "../../assets/combatants/disney/mulan-lose.png";
 
-import SonaBuvelle from "../../assets/combatants/league-of-legends/sona-buvelle.png";
-import SonaBuvelleIcon from "../../assets/combatants/league-of-legends/sona-buvelle-icon.png";
-import SonaBuvelleWin from "../../assets/combatants/league-of-legends/sona-buvelle-win.png";
-import SonaBuvelleLose from "../../assets/combatants/league-of-legends/sona-buvelle-lose.png";
+import Rapunzel from "../../assets/combatants/disney/rapunzel.png";
+import RapunzelIcon from "../../assets/combatants/disney/rapunzel-icon.png";
+import RapunzelWin from "../../assets/combatants/disney/rapunzel-win.png";
+import RapunzelLose from "../../assets/combatants/disney/rapunzel-lose.png";
 
 export const seriesId = "League of Legends";
 
 export default {
-  ahri: {
+  anna: {
     seriesId,
-    id: "ahri",
-    name: "Ahri",
+    id: "anna",
+    name: "Anna",
     description:
-      "Innately connected to the latent power of Runeterra, Ahri is a vastaya who can reshape magic into Orb of Deception orbs of raw energy.",
-    img: Ahri,
-    icon: AhriIcon,
-    opWinImg: AhriWin,
-    opLoseImg: AhriLose,
+      ".",
+    img: Anna,
+    icon: AnnaIcon,
+    opWinImg: AnnaWin,
+    opLoseImg: AnnaLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -73,7 +73,7 @@ export default {
     prefAttack: "vagina",
     prefTarget: "mouth",
     uniqueAttackText:
-      "Ahri opens her pussy and presses it soft wetness against xxxx's mouth.",
+      "Anna.",
     roughPlayLvl: 10,
     seductionResistance: 55,
     grapplingProwess: 48,
@@ -90,16 +90,16 @@ export default {
     anusResistance: 36,
     orgasmLimit: 3,
   },
-  akali: {
+  ariel: {
     seriesId,
-    id: "akali",
-    name: "Akali",
+    id: "ariel",
+    name: "Ariel",
     description:
-      "Abandoning the Kinkou Order and her title of the Fist of Shadow, Akali OriginalSquare Akali now strikes alone, ready to be the deadly weapon her people need.",
-    img: Akali,
-    icon: AkaliIcon,
-    opWinImg: AkaliWin,
-    opLoseImg: AkaliLose,
+      "A.",
+    img: Ariel,
+    icon: ArielIcon,
+    opWinImg: ArielWin,
+    opLoseImg: ArielLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -117,7 +117,7 @@ export default {
     prefAttack: "tongue",
     prefTarget: "touch",
     uniqueAttackText:
-      "Akali runs hers slobbering tongue over xxxx's back, then moves to sucking their neck.",
+      "Ariel.",
     roughPlayLvl: 25,
     seductionResistance: 45,
     grapplingProwess: 55,
@@ -134,16 +134,16 @@ export default {
     anusResistance: 25,
     orgasmLimit: 3,
   },
-  jinx: {
+  aurora: {
     seriesId,
-    id: "jinx",
-    name: "Jinx",
+    id: "aurora",
+    name: "Aurora",
     description:
-      "A manic and impulsive criminal from Zaun, Jinx lives to wreak havoc without care for the consequences.",
-    img: Jinx,
-    icon: JinxIcon,
-    opWinImg: JinxWin,
-    opLoseImg: JinxLose,
+      ".",
+    img: Aurora,
+    icon: AuroraIcon,
+    opWinImg: AuroraWin,
+    opLoseImg: AuroraLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -160,7 +160,7 @@ export default {
     throatSize: 1,
     prefAttack: "touch",
     prefTarget: "touch",
-    uniqueAttackText: "Jinx rubs her nubile young body against xxxx's body.",
+    uniqueAttackText: "Aurora .",
     roughPlayLvl: 5,
     seductionResistance: 55,
     grapplingProwess: 60,
@@ -177,16 +177,16 @@ export default {
     anusResistance: 45,
     orgasmLimit: 3,
   },
-  nidalee: {
+  jasmine: {
     seriesId,
-    id: "nidalee",
-    name: "Nidalee",
+    id: "jasmine",
+    name: "Jasmine",
     description:
-      "Raised in the deepest jungle, Nidalee is a master tracker who can shapeshift into a ferocious cougar at will.",
-    img: Nidalee,
-    icon: NidaleeIcon,
-    opWinImg: NidaleeWin,
-    opLoseImg: NidaleeLose,
+      ".",
+    img: Jasmine,
+    icon: JasmineIcon,
+    opWinImg: JasmineWin,
+    opLoseImg: JasmineLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -204,7 +204,7 @@ export default {
     prefAttack: "vagina",
     prefTarget: "cock",
     uniqueAttackText:
-      "Nidalee roughly plants herself onto xxxx's cock, and begins bucking while grunt wildly.",
+      "Jasmine.",
     roughPlayLvl: 15,
     seductionResistance: 50,
     grapplingProwess: 60,
@@ -221,16 +221,16 @@ export default {
     anusResistance: 38,
     orgasmLimit: 3,
   },
-  katarina: {
+  belle: {
     seriesId,
-    id: "katarina",
-    name: "Katarina",
+    id: "belle",
+    name: "Belle",
     description:
-      "Decisive in judgment and lethal in combat, Katarina is a Noxian assassin of the highest caliber.",
-    img: Katarina,
-    icon: KatarinaIcon,
-    opWinImg: KatarinaWin,
-    opLoseImg: KatarinaLose,
+      ".",
+    img: Belle,
+    icon: BelleIcon,
+    opWinImg: BelleWin,
+    opLoseImg: BelleLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -247,7 +247,7 @@ export default {
     throatSize: 2,
     prefAttack: "touch",
     prefTarget: "breasts",
-    uniqueAttackText: "Katarina gropes and pulls on xxxx's nipples, whilst kissing their neck.",
+    uniqueAttackText: "Belle.",
     roughPlayLvl: -5,
     seductionResistance: 62,
     grapplingProwess: 65,
@@ -264,16 +264,16 @@ export default {
     anusResistance: 50,
     orgasmLimit: 3,
   },
-  luxanna: {
+  elsa: {
     seriesId,
-    id: "luxanna",
-    name: "Luxanna",
+    id: "elsa",
+    name: "Elsa",
     description:
-      "Luxanna Crownguard hails from Demacia, an insular realm where magical abilities are viewed with fear and suspicion.",
-    img: Luxanna,
-    icon: LuxannaIcon,
-    opWinImg: LuxannaWin,
-    opLoseImg: LuxannaLose,
+      ".",
+    img: Elsa,
+    icon: ElsaIcon,
+    opWinImg: ElsaWin,
+    opLoseImg: ElsaLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -291,7 +291,7 @@ export default {
     prefAttack: "tongue",
     prefTarget: "cock",
     uniqueAttackText:
-      "Luxanna licks all around xxxx's hard shaft, then gently suckles the glans.",
+      ".",
     roughPlayLvl: 12,
     seductionResistance: 55,
     grapplingProwess: 48,
@@ -308,16 +308,16 @@ export default {
     anusResistance: 45,
     orgasmLimit: 3,
   },
-  riven: {
+  megara: {
     seriesId,
-    id: "riven",
-    name: "Riven",
+    id: "megara",
+    name: "Megara",
     description:
-      "Once a swordmaster in the warhosts of Noxus, Riven is an expatriate in a land she previously tried to conquer.",
-    img: Riven,
-    icon: RivenIcon,
-    opWinImg: RivenWin,
-    opLoseImg: RivenLose,
+      ".",
+    img: Megara,
+    icon: MegaraIcon,
+    opWinImg: MegaraWin,
+    opLoseImg: MegaraLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -334,7 +334,7 @@ export default {
     throatSize: 3,
     prefAttack: "tongue",
     prefTarget: "anus",
-    uniqueAttackText: "Riven digs her tongue deep into xxxx's anus.",
+    uniqueAttackText: "Megara.",
     roughPlayLvl: 15,
     seductionResistance: 62,
     grapplingProwess: 65,
@@ -351,16 +351,16 @@ export default {
     anusResistance: 45,
     orgasmLimit: 3,
   },
-  sarah: {
+  mulan: {
     seriesId,
-    id: "sarah",
-    name: "Sarah Fortune",
+    id: "mulan",
+    name: "Mulan Fortune",
     description:
-      "A Bilgewater captain famed for her looks but feared for her ruthlessness, Sarah Fortune paints a stark figure among the hardened criminals of the port city.",
-    img: Sarah,
-    icon: SarahIcon,
-    opWinImg: SarahWin,
-    opLoseImg: SarahLose,
+      ".",
+    img: Mulan,
+    icon: MulanIcon,
+    opWinImg: MulanWin,
+    opLoseImg: MulanLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -378,7 +378,7 @@ export default {
     prefAttack: "touch",
     prefTarget: "vagina",
     uniqueAttackText:
-      "Sarah's long, slender fingers dance deep inside xxxx's vagina.",
+      ".",
     roughPlayLvl: 15,
     seductionResistance: 45,
     grapplingProwess: 55,
@@ -395,16 +395,16 @@ export default {
     anusResistance: 25,
     orgasmLimit: 3,
   },
-  sonaBuvelle: {
+  rapunzel: {
     seriesId,
-    id: "sonaBuvelle",
-    name: "Sona Buvelle",
+    id: "rapunzel",
+    name: "Rapunzel",
     description:
-      "Sona is Demacia's foremost virtuoso of the stringed etwahl, speaking only through her graceful chords and vibrant arias.",
-    img: SonaBuvelle,
-    icon: SonaBuvelleIcon,
-    opWinImg: SonaBuvelleWin,
-    opLoseImg: SonaBuvelleLose,
+      ".",
+    img: Rapunzel,
+    icon: RapunzelIcon,
+    opWinImg: RapunzelWin,
+    opLoseImg: RapunzelLose,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -422,7 +422,7 @@ export default {
     prefAttack: "tongue",
     prefTarget: "breasts",
     uniqueAttackText:
-      "Sona Buvelle's long lucious tongue softly teases xxxx's heaving busom with wet tongue.",
+      ".",
     roughPlayLvl: -10,
     seductionResistance: 58,
     grapplingProwess: 52,
