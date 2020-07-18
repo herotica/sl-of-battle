@@ -24,6 +24,12 @@ paypal.me/herotica
 
 [Writing Guide](docs/WritingGuide.md)
 
+### Release process
+
+- Master -> synced to onrender.com
+- ~Weekly -> web server builds
+- 2 Weeks local App version -> Win/Linux
+
 ### To do
 
 - [doc] contribution:  character league /guide , fuckroom writing guide ,male, switch   
@@ -35,6 +41,7 @@ paypal.me/herotica
 - training, higher success chance
 - test deploy (https://render.com/)
 - exec - test Windows
+- limit prefAttack to sex
 
 ### bugs
 
@@ -48,7 +55,7 @@ paypal.me/herotica
 3>28-42 - cartoon   
 4>35-50 - marvel    
 5>42-60 - pokemon   
-6>50-68 - lol - data   
+6>50-68 - lol  
 7>60-75 - disney - clean img, add imd, data   
 8>70-85 - fighter - get img, clean img, add imd, data   
 
