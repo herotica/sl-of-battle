@@ -56,14 +56,10 @@ paypal.me/herotica
 4>35-50 - marvel    
 5>42-60 - pokemon   
 6>50-68 - lol  
-7>60-75 - disney - data   
-8>70-85 - fighter - get img, clean img, add imd, data   
+7>60-75 - disney 
+8>70-85 - fighter - add imd, data   
 
-### Development info
-
-<div class="center">
-  [![Dependency Status](https://img.shields.io/david/ReactJSResources/react-webpack-babel.svg)](https://david-dm.org/dylang/npm-check)
-</div>
+## Development info
 
 ### Prerequisites
 
