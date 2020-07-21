@@ -46,7 +46,7 @@ ${p.name} smiled, and pulled out ${p.pn.her} camera, ignoring ${c.name}’s piss
     ],
   },
   {
-    displayText: "Blow your load into her cunt.",
+    displayText: "Blow the load in her pussy.",
     textOptions: [(p, c) => `${p.name}'s creampies ${c.name}'s pussy`],
   },
 ];

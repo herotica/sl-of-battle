@@ -33,12 +33,12 @@ paypal.me/herotica
 ### To do
 
 - [doc] contribution:  character league /guide , fuckroom writing guide ,male, switch   
-- fuck text   
+- fuck text add
 - balance fight maths   
 - cleanup pleasure text   
 - slave    
   -- events    
-- training, higher success chance
+- training, higher success chance / more cash from fights
 - test deploy (https://render.com/)
 - exec - test Windows
 - limit prefAttack to sex
@@ -46,18 +46,6 @@ paypal.me/herotica
 ### bugs
 
 - normal fight orgasm number
-
-### Leagues
-
-0>5-20   
-1>12-30 - jrpg   
-2>20-35 - battleship   
-3>28-42 - cartoon   
-4>35-50 - marvel    
-5>42-60 - pokemon   
-6>50-68 - lol  
-7>60-75 - disney 
-8>70-85 - fighter - doa data   
 
 ## Development info
 

@@ -38,7 +38,7 @@ const FightOptions = [
   {
     name: "Amatuer",
     bet: 50,
-    reward: 120,
+    reward: 150,
     difficulty: 2,
     mediumDiffChance: 620,
     hardDiffChance: 30,
@@ -46,7 +46,7 @@ const FightOptions = [
   },
   {
     name: "Seasoned",
-    bet: 150,
+    bet: 120,
     reward: 400,
     difficulty: 4,
     mediumDiffChance: 1000,
