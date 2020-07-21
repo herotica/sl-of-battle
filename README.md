@@ -37,11 +37,10 @@ paypal.me/herotica
 - balance fight maths   
 - cleanup pleasure text   
 - slave    
-  -- events    
-- training, higher success chance / more cash from fights
+  -- events
 - test deploy (https://render.com/)
 - exec - test Windows
-- limit prefAttack to sex
+- check preAttack & prefTarget numbers - > balance
 
 ### bugs
 

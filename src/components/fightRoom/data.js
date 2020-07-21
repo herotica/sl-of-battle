@@ -28,6 +28,18 @@ export const FightPhaseTypes = [
   ["touch", "breasts", "mouth", "cock", "vagina", "anus", "opponent"],
 ];
 
+const fighterAttackOptions = ["tongue", "touch", "vagina", "anus"];
+const fighterTargetFemOpt = ["touch", "breasts", "mouth", "vagina", "anus"];
+const fighterTargetMaleOpt = ["touch", "mouth", "cock", "anus"];
+const fighterTargetFutaOpt = [
+  "touch",
+  "breasts",
+  "mouth",
+  "cock",
+  "vagina",
+  "anus",
+];
+
 const EndPhaseOption = {
   name: "The Round moves to a close.",
   options: [
@@ -528,7 +540,7 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She uses your thighs",
+              log: "She uses your thighs",
             };
           },
           nextPhaseTypeWin: FightPhaseTypes[4][0],
@@ -539,7 +551,7 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She fucks your breasts",
+              log: "She fucks your breasts",
             };
           },
           nextPhaseTypeWin: FightPhaseTypes[4][1],
@@ -550,7 +562,7 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She uses your mouth",
+              log: "She uses your mouth",
             };
           },
           nextPhaseTypeWin: FightPhaseTypes[4][2],
@@ -562,7 +574,7 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She fucks your cock.",
+              log: "She fucks your cock.",
             };
           },
           nextPhaseTypeWin: FightPhaseTypes[4][3],
@@ -573,7 +585,7 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She fucks your pussy",
+              log: "She fucks your pussy",
             };
           },
           nextPhaseTypeWin: FightPhaseTypes[4][4],
@@ -584,7 +596,7 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She fucks your arse",
+              log: "She fucks your arse",
             };
           },
           nextPhaseTypeWin: FightPhaseTypes[4][5],
@@ -600,7 +612,7 @@ export const FightPhaseData = [
           onAction() {
             return {
               isSuccess: true,
-              log: "Vary--She owns you.",
+              log: "Your opponent takes control.",
             };
           },
           nextPhaseTypeWin: FightPhaseTypes[4][6],
@@ -675,17 +687,45 @@ export const fightResolve = (
     );
     ResponseObj.result += `${ranTextEvent}, causing ${fighterData.name}'s arousal to increase by ${dealArousal} & ${charData.name}'s to grow ${arousalCost}`;
   } else {
-    // select Attacker's actions
+    // Check Options
     const isOpSeduced = phaseChoices[2] === FightPhaseTypes[3][5];
+    console.log("fighterData.prefTarget", fighterData.prefTarget);
+    let canUsePrefTarget = true;
+    if (fighterData.prefTarget === "cock" && !charData.hasCock) {
+      canUsePrefTarget = false;
+    }
+    if (
+      (fighterData.prefTarget === "breasts" ||
+        fighterData.prefTarget === "vagina") &&
+      !charData.isWoman
+    ) {
+      canUsePrefTarget = false;
+    }
+
+    // select Attacker's actions
     const UsePrefAttack = Math.floor(Math.random() * 2);
     if (UsePrefAttack) {
       opponentAttack = fighterData.prefAttack;
-      opponentTarget = isOpSeduced ? phaseChoices[3] : fighterData.prefTarget;
     } else {
-      opponentAttack = FightPhaseTypes[3][Math.floor(Math.random() * 5)];
+      opponentAttack = fighterAttackOptions[Math.floor(Math.random() * 4)];
       opponentTarget = isOpSeduced
         ? phaseChoices[3]
         : FightPhaseTypes[4][Math.floor(Math.random() * 6)];
+    }
+    if (isOpSeduced) {
+      opponentTarget = phaseChoices[3];
+    } else if (UsePrefAttack && canUsePrefTarget) {
+      opponentTarget = fighterData.prefTarget;
+    } else {
+      if (charData.hasCock && !charData.isWoman) {
+        if (charData.isWoman) {
+          opponentTarget = fighterTargetFutaOpt[Math.floor(Math.random() * 6)];
+        } else {
+          opponentTarget = fighterTargetMaleOpt[Math.floor(Math.random() * 4)];
+        }
+      } else {
+        opponentTarget = fighterTargetFemOpt[Math.floor(Math.random() * 5)];
+      }
     }
 
     const useRoughplayMod =
