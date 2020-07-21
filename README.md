@@ -34,16 +34,18 @@ paypal.me/herotica
 
 - [doc] contribution:  character league /guide , fuckroom writing guide ,male, switch   
 - fuck text add
-- balance fight maths   
 - cleanup pleasure text   
 - slave    
   -- events
+- check preAttack & prefTarget numbers - > balance
+
+
 - test deploy (https://render.com/)
 - exec - test Windows
-- check preAttack & prefTarget numbers - > balance
 
 ### bugs
 
+- add all variants sex text for AI
 
 ## Development info
 

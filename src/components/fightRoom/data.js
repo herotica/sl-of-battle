@@ -663,6 +663,7 @@ export const fightResolve = (
 
   // setup who is control/fucker and constants
   const isPlayerFucker = phaseChoices[0] === FightPhaseTypes[1][0];
+  const isOpSeduced = phaseChoices[2] === FightPhaseTypes[3][5];
   let opponentAttack = false;
   let opponentTarget = false;
 
@@ -674,7 +675,8 @@ export const fightResolve = (
       charData,
       phaseChoices[3],
       fighterData,
-      0
+      0,
+      isOpSeduced
     );
     ResponseObj.player = arousalCost;
     ResponseObj.fighter = dealArousal;
@@ -688,8 +690,6 @@ export const fightResolve = (
     ResponseObj.result += `${ranTextEvent}, causing ${fighterData.name}'s arousal to increase by ${dealArousal} & ${charData.name}'s to grow ${arousalCost}`;
   } else {
     // Check Options
-    const isOpSeduced = phaseChoices[2] === FightPhaseTypes[3][5];
-    console.log("fighterData.prefTarget", fighterData.prefTarget);
     let canUsePrefTarget = true;
     if (fighterData.prefTarget === "cock" && !charData.hasCock) {
       canUsePrefTarget = false;
@@ -743,7 +743,8 @@ export const fightResolve = (
       fighterData,
       opponentTarget,
       charData,
-      setRoughplayMod
+      setRoughplayMod,
+      isOpSeduced
     );
     ResponseObj.player = dealArousal;
     ResponseObj.fighter = arousalCost;
@@ -813,7 +814,8 @@ const recieverArousal = (
   fuckerData,
   receiverTarget,
   receiverData,
-  RoughplayMod
+  RoughplayMod,
+  playerSeduceSuccess = false
 ) => {
   // sets attack effect on reciever -> prowess , resistance , tightness , roughplay
   let tightnessMod = SizeDiffMod(fuckerOrgan, receiverTarget);
@@ -822,7 +824,8 @@ const recieverArousal = (
     fuckerData[prowessKey[fuckerOrgan]],
     receiverData[resistanceKey[receiverTarget]],
     tightnessMod,
-    RoughplayMod
+    RoughplayMod,
+    playerSeduceSuccess
   );
 };
 const prowessKey = {
