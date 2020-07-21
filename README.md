@@ -23,6 +23,7 @@ paypal.me/herotica
 ### Contribution Guide
 
 [Writing Guide](docs/WritingGuide.md)
+[Image Cleanup](docs/imageCleanup.md)
 
 ### Release process
 
@@ -32,20 +33,16 @@ paypal.me/herotica
 
 ### To do
 
-- [doc] contribution:  character league /guide , fuckroom writing guide ,male, switch   
+- [doc] contribution:  character league /guide 
 - fuck text add
 - cleanup pleasure text   
 - slave    
   -- events
-- check preAttack & prefTarget numbers - > balance
-
 
 - test deploy (https://render.com/)
 - exec - test Windows
 
 ### bugs
-
-- add all variants sex text for AI
 
 ## Development info
 
