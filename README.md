@@ -57,7 +57,7 @@ paypal.me/herotica
 5>42-60 - pokemon   
 6>50-68 - lol  
 7>60-75 - disney 
-8>70-85 - fighter - add imd, data   
+8>70-85 - fighter - doa data   
 
 ## Development info
 
