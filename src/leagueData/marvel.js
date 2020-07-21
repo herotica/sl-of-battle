@@ -10,7 +10,7 @@ export default {
   entryCost: 250,
   colors: {
     bgA: "#ff9151",
-    bgB: "#ffb4a8",
+    bgB: "#e84d34",
     border: "#d60000",
   },
   icon,

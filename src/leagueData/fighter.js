@@ -1,6 +1,6 @@
 import Tekken from "../combatants/fighter/tekken";
 import Doa from "../combatants/fighter/doa";
-import icon from "../assets/logo/disney.png";
+import icon from "../assets/logo/fight.png";
 
 export default {
   id: "fighters",
@@ -10,9 +10,9 @@ export default {
   renownRequired: 8,
   entryCost: 450,
   colors: {
-    bgA: "#f1cf48",
-    bgB: "#51bde0",
-    border: "#51bde0",
+    bgA: "#0c0803",
+    bgB: "#b76219",
+    border: "#0c0803",
   },
   icon,
   ranks: [

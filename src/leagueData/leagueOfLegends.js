@@ -10,9 +10,9 @@ export default {
   renownRequired: 6,
   entryCost: 350,
   colors: {
-    bgA: "#f1cf48",
+    bgA: "#0c6684",
     bgB: "#51bde0",
-    border: "#51bde0",
+    border: "#0c6684",
   },
   icon,
   ranks: [

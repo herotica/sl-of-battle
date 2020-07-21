@@ -9,7 +9,7 @@
 
 Online -> https://sluts-of-battle.onrender.com
 
-Localy - see [Releases](https://github.com/herotica/sl-of-battle/releases)
+Locally - see [Releases](https://github.com/herotica/sl-of-battle/releases)
 
 ### Like the game?
 
