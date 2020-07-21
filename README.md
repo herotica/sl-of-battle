@@ -45,7 +45,6 @@ paypal.me/herotica
 
 ### bugs
 
-- normal fight orgasm number
 
 ## Development info
 

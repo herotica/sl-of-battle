@@ -192,6 +192,7 @@ const CombatantBox = ({
     changeLeagueCredits,
     gainLeaguePoints,
     ChangeRenown,
+    orgasmLimit,
   } = useGlobalDataStore();
   const { id, ranks } = currentLeague;
   const { readyNewFight } = useFightDataStore();
@@ -227,7 +228,7 @@ const CombatantBox = ({
   };
 
   const onClick = () => {
-    readyNewFight(combatant, FightRooms.leagueA, onWin, onLose, 0);
+    readyNewFight(combatant, FightRooms.leagueA, onWin, onLose, 0, orgasmLimit);
     setRoom(Rooms.fight);
   };
   return (

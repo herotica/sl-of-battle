@@ -13,7 +13,7 @@ import UndergroundBg from "../../assets/room/underground.jpg";
 const Strings = {
   title: "Underground Slut Fighting",
   explain:
-    "Unable or unwilling to fight in the leagues, or just hungry for dark money, many people come to the undergound sluts league and either make or break their fortunes. This is good experience for beginners, but it can be rough, and the winnings are slim."
+    "Unable or unwilling to fight in the leagues, or just hungry for dark money, many people come to the undergound sluts league and either make or break their fortunes. This is good experience for beginners, but it can be rough, and the winnings are slim. Fights are shortened and first to two orgasms loses."
 };
 
 const FightOptions = [
@@ -102,7 +102,7 @@ const FightTierOption = observer(
         // select combatant
         const diffLevel = SelectDifficulty(mediumDiffChance, hardDiffChance);
         const combatant = SelectCombatant(diffLevel);
-        readyNewFight(combatant, FightRooms.underground, onWin, onLose, reward);
+        readyNewFight(combatant, FightRooms.underground, onWin, onLose, reward, false);
         setRoom(Rooms.fight);
       } else {
         window.alert("You can afford this.");

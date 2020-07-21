@@ -76,15 +76,26 @@ export function createFightStore() {
 
     fightMatchWinnings: 0,
 
-    readyNewFight(combatant, room, onWin, onLose, winnings) {
+    readyNewFight(
+      combatant,
+      room,
+      onWin,
+      onLose,
+      winnings,
+      playerMaxOrgasm = false
+    ) {
       this.setCombatant(combatant);
       this.setFightRoom(room);
       this.setOnWinFunc(onWin);
       this.setOnLoseFunc(onLose);
-      //Todo Undergroundcheck
+
       this.fightArousalState = [0, 0];
-      this.fightOrgasmState = [2, 2];
-      this.fightOrgasmStateOriginal = [2, 2];
+      this.fightOrgasmState = playerMaxOrgasm
+        ? [playerMaxOrgasm, combatant.orgasmLimit]
+        : [2, 2];
+      this.fightOrgasmStateOriginal = playerMaxOrgasm
+        ? [playerMaxOrgasm, combatant.orgasmLimit]
+        : [2, 2];
       this.fightLog = [];
       this.fightRoundEnd = false;
       this.fightWinner = false;
