@@ -1,7 +1,8 @@
-import { CharKeys } from "../state";
+import { CharKeys } from "../../state";
 
 // For text sizes are group 0-1:S, 2-3:M, 4-5:L, none:X
-const Dominate = {
+
+export default {
   // fucker organ
   [CharKeys.prowessTypes.tongue]: {
     sizeOpt: false,
@@ -16,15 +17,15 @@ const Dominate = {
       [CharKeys.resistTypes.breasts]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ licks xxxx's little tits, roughly nipping her breast meat`,
-          `++++ violently slaps xxxx's tits and proceeds to slather her nipples with spit`,
+          `++++ licks xxxx's little tits, passionately nipping her breast meat`,
+          `++++ playfully gropes xxxx's tits and proceeds to slather her nipples with spit`,
         ],
         sizeM: [
           `++++ licks energetically between xxxx's tits, spitting on her chest for extra wetness`,
           `++++ spits over xxxx's lovely nipples, then sucks it off hungrily`,
         ],
         sizeL: [
-          `++++'s face is buried as she roughly motorboats #### face, before nipping those big breasts`,
+          `++++'s face is buried as she tenderly motorboats #### face, before nipping those big breasts`,
           `++++ nips xxxx's solid nipples, before batting them with ==== tongue`,
         ],
       },
@@ -32,7 +33,7 @@ const Dominate = {
         sizeOpt: false,
         sizeX: [
           `++++ spits into xxxx's little throat, then pushes #### tongue in`,
-          `++++ slaps ==== wet tongue on xxxx's tongue, fighting for control of her mouth`,
+          `++++ slides ==== wet tongue over xxxx's tongue, french kissing her passionately`,
           `++++ jams ==== fat tongue between xxxx's lips`,
           `++++ dribbles ==== saliva into xxxx's mouth`,
           `++++ runs #### explorative tongue eagerly around xxxx's mouth`,
@@ -43,15 +44,15 @@ const Dominate = {
         sizeOpt: 3,
         sizeS: [
           `++++ evelopes xxxx's small cock with ==== mouth, sucking her hungrily `,
-          `++++ slaps xxxx's cute cock with ==== tongue, running it around her glans`,
+          `++++ licks xxxx's cute cock with ==== tongue, running it around her glans`,
         ],
         sizeM: [
           `++++ rubs #### tongue dominantly against xxxx's beefy cock`,
-          `++++ slaps xxxx's big cock with ==== tongue, before pushing it into #### mouth`,
+          `++++ licks xxxx's big cock with ==== tongue, before pushing it into #### mouth`,
         ],
         sizeL: [
-          `++++ hungrily gags herself on the massive member, while pumping it roughly`,
-          `++++ slaps xxxx's cock around, before pumping it steadily, wetting the glans with #### tongue`,
+          `++++ hungrily gags herself on the massive member, while pumping it tenderly`,
+          `++++ pushes xxxx's cock around, before pumping it steadily, wetting the glans with #### tongue`,
         ],
       },
       [CharKeys.resistTypes.vagina]: {
@@ -65,7 +66,7 @@ const Dominate = {
       [CharKeys.resistTypes.anus]: {
         sizeOpt: false,
         sizeX: [
-          `++++ fucks xxxx's backdoor with ==== tongue`,
+          `++++ fucks xxxx's backdoor tenderly with ==== tongue`,
           `++++ slather xxxx's arse with spit and saliva, teasing the edge with ==== tongue`,
         ],
       },
@@ -78,45 +79,44 @@ const Dominate = {
         sizeOpt: false,
         sizeX: [
           `++++ rubs ==== hands over xxxx's neck, slowly tightening #### grip`,
-          `++++ rubs against xxxx's body roughly, pushing her into the floor`,
+          `++++ rubs against xxxx's body tenderly, pushing her into the floor`,
         ],
       },
       [CharKeys.resistTypes.breasts]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ squeezes xxxx's little tits, roughly kneading her small breast meat`,
-          `++++ violently slaps xxxx's tits, and pinches her nipples`,
+          `++++ squeezes xxxx's little tits, tenderly kneading her small breast meat`,
+          `++++ playfully gropes xxxx's tits, and pinches her nipples`,
         ],
         sizeM: [
-          `++++ roughly gropes xxxx's tits, and squeezes her nipples`,
-          `++++ spits on === hands before kneading xxxx's breasts roughly and flicking her lovely nipples`,
+          `++++ tenderly gropes xxxx's tits, and squeezes her nipples`,
+          `++++ spits on === hands before kneading xxxx's breasts tenderly and teasing her lovely nipples`,
         ],
         sizeL: [
-          `++++ slaps her big breasts, and meanly crushes her breast meat`,
-          `++++ tugs on xxxx's solid nipples, before slapping them about`,
+          `++++ gropes xxxx's big breasts, and kneading them hungrily`,
+          `++++ tugs gently on xxxx's hard nipples, before softly playing with her breasts`,
         ],
       },
       [CharKeys.resistTypes.mouth]: {
         sizeOpt: false,
         sizeX: [
-          `++++ pushes === hand into xxxx's throat, releasing her saliva, and triggering her gag reflex`,
-          `++++ tugs roughly on her lips, demeaning her for being a little slut`,
-          `++++ slaps her face around, tells her to call ==== master from now on`,
+          `++++ tugs tenderly on her lips, teasing her mouth softly`,
+          `++++ stokes her face, tells her to what #### wants to to to her`,
         ],
       },
       [CharKeys.resistTypes.cock]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ evelopes xxxx's small cock with ==== hands, squeezing aggressively`,
-          `++++ slaps xxxx's cute cock with ==== hand, then rubs her glans`,
+          `++++ evelopes xxxx's small cock with ==== hands, massaging tenderly`,
+          `++++ strokes xxxx's cute cock with ==== hand, then rubs her glans`,
         ],
         sizeM: [
           `++++ dominantly pumps xxxx's beefy cock`,
-          `++++ slaps xxxx's big cock, before squeezing her balls`,
+          `++++ strokes xxxx's big cock, before massaging her balls`,
         ],
         sizeL: [
-          `++++ gets a solid two-handed grip, before pumping her massive cock roughly`,
-          `++++ slaps xxxx's cock around, before pumping it steadily, squeezing it uncomfortably tightly`,
+          `++++ gets a solid two-handed grip, before pumping her massive cock tenderly`,
+          `++++ teases xxxx's cock, before massaging it pleasurably`,
         ],
       },
       [CharKeys.resistTypes.vagina]: {
@@ -150,8 +150,8 @@ const Dominate = {
       [CharKeys.resistTypes.breasts]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ rubs ==== small cock roughly between xxxx's little tits`,
-          `++++ slaps ==== cute cock violently on xxxx's soft thighs`,
+          `++++ rubs ==== small cock tenderly between xxxx's little tits`,
+          `++++ rubs ==== cute cock playfully on xxxx's soft thighs`,
         ],
         sizeM: [
           `++++ jams ==== little cock between, xxxx's tits, fucking them energetically`,
@@ -235,16 +235,16 @@ const Dominate = {
       [CharKeys.resistTypes.breasts]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ pounds #### fat cock roughly between xxxx's tiny tits`,
-          `++++ slaps #### hard cock violently accross xxxx's soft breasts`,
+          `++++ pounds #### fat cock tenderly between xxxx's tiny tits`,
+          `++++ rubs #### hard cock playfully across xxxx's soft breasts`,
         ],
         sizeM: [
-          `++++ jams #### ready cock between xxxx's tits, fucking them roughly`,
+          `++++ jams #### ready cock between xxxx's tits, fucking them tenderly`,
           `++++ pushes #### precum covered glans into xxxx's lovely nipples`,
         ],
         sizeL: [
           `++++'s fat member is enveloped in xxxx's busty rack`,
-          `++++ grabs xxxx's breasts and roughly fucks ==== rack`,
+          `++++ grabs xxxx's breasts and tenderly fucks ==== rack`,
         ],
       },
       [CharKeys.resistTypes.mouth]: {
@@ -253,7 +253,7 @@ const Dominate = {
           `++++ jams #### pulsing cock into xxxx's tight throat`,
           `++++ slaps #### dick on xxxx's tongue`,
           `++++ holds xxxx's head while stuffing #### hard cock into ==== mouth`,
-          `Grabbing xxxx by the hair, ++++ fucks ==== face roughly`,
+          `Grabbing xxxx by the hair, ++++ fucks ==== face tenderly`,
           `++++ skull fucks xxxx, choking ==== on #### dick`,
         ],
         sizeM: [
@@ -261,7 +261,7 @@ const Dominate = {
           `++++ holds #### precum covered cock in xxxx's mouth`,
           `++++ slaps #### dick on xxxx's big tongue`,
           `++++ holds xxxx's head while stuffing #### hard cock into ==== mouth`,
-          `Grabbing xxxx by the hair, ++++ fucks ==== face roughly`,
+          `Grabbing xxxx by the hair, ++++ fucks ==== face tenderly`,
           `++++ skull fucks xxxx, gagging ==== on #### dick`,
         ],
         sizeL: [
@@ -292,18 +292,18 @@ const Dominate = {
         sizeS: [
           `++++ fucks xxxx's clit with #### ready cock`,
           `++++ batters xxxx's pussy with #### swollen cock`,
-          `++++ pushes #### way roughly into xxxx's tight cunt`,
+          `++++ pushes #### way gently into xxxx's tight cunt`,
           `++++ forces #### fat cock between xxxx's tight pussy lips`,
         ],
         sizeM: [
           `++++ rubs xxxx's clit dominantly`,
           `++++ slaps xxxx's pussy lips with #### erect cock`,
-          `++++ fucks xxxx's cunt roughly`,
+          `++++ fucks xxxx's cunt gently`,
         ],
         sizeL: [
           `++++'s little cock is rubbed around xxxx's pussy`,
           `++++ pushes ==== cock into xxxx's pussy, rubbing it around`,
-          `++++ pushes #### way roughly into xxxx's juicy cunt`,
+          `++++ pushes #### way gently into xxxx's juicy cunt`,
         ],
       },
       [CharKeys.resistTypes.anus]: {
@@ -311,19 +311,19 @@ const Dominate = {
         sizeS: [
           `++++ fucks xxxx's backdoor`,
           `++++ batters xxxx's arse with #### hungry cock`,
-          `++++ pushes #### way roughly into xxxx's tight arse`,
+          `++++ pushes #### way gently into xxxx's tight arse`,
           `++++ grabs xxxx's arse cheeks and forces #### fat cock into xxxx's tight back passage`,
         ],
         sizeM: [
           `++++ rubs ====self dominantly between xxxx's arsecheeks`,
           `++++ slaps xxxx's second cunt with #### cock`,
-          `++++ pushes #### way roughly into xxxx's warm arse`,
+          `++++ pushes #### way gently into xxxx's warm arse`,
           `++++ grabs xxxx's arse cheeks and forces #### fat cock into xxxx's fresh back passage`,
         ],
         sizeL: [
           `'s little cock is rubbed around xxxx's arse entrance`,
           `++++ pushes ==== cock into xxxx's arse, degrading ==== for ==== gaping hole`,
-          `++++ pushes #### way roughly into xxxx's loose arse`,
+          `++++ pushes #### way gently into xxxx's loose arse`,
           `++++ grabs xxxx's arse cheeks and pushes #### fat cock into xxxx's open back passage`,
         ],
       },
@@ -340,16 +340,16 @@ const Dominate = {
       [CharKeys.resistTypes.breasts]: {
         sizeOpt: 3,
         sizeS: [
-          `++++ pounds #### giant cock roughly between xxxx's tiny tits`,
-          `++++ slaps #### hard cock violently accross xxxx's soft breasts`,
+          `++++ pounds #### giant cock gently between xxxx's tiny tits`,
+          `++++ slaps #### hard cock playfully accross xxxx's soft breasts`,
         ],
         sizeM: [
-          `++++ jams #### massive cock between xxxx's tits, fucking them roughly`,
+          `++++ jams #### massive cock between xxxx's tits, fucking them gently`,
           `++++ pushes #### precum covered glans into xxxx's lovely nipples`,
         ],
         sizeL: [
           `++++'s giant swollen member is enveloped in xxxx's busty rack`,
-          `++++ grabs xxxx's breasts and roughly fucks ==== rack, with #### giant meaty pole`,
+          `++++ grabs xxxx's breasts and gently fucks ==== rack, with #### giant meaty pole`,
         ],
       },
       [CharKeys.resistTypes.mouth]: {
@@ -358,7 +358,7 @@ const Dominate = {
           `++++ jams #### giant cock into xxxx's tight throat, trying to force #### fat member in`,
           `++++ slaps #### fearinducingly big dick on xxxx's tongue`,
           `++++ holds xxxx's head while stuffing #### giant cock into ==== tiny mouth`,
-          `Grabbing xxxx by the hair, ++++ fucks ==== tight little mouth roughly`,
+          `Grabbing xxxx by the hair, ++++ fucks ==== tight little mouth passionately`,
           `++++ skull fucks xxxx, choking ==== on #### enourmous dick`,
         ],
         sizeM: [
@@ -366,7 +366,7 @@ const Dominate = {
           `++++ holds #### enourmous, precum covered cock in xxxx's mouth`,
           `++++ slaps #### giant dick on xxxx's big tongue`,
           `++++ holds xxxx's head while stuffing #### enourmous cock into ==== mouth`,
-          `Grabbing xxxx by the hair, ++++ fucks ==== face roughly`,
+          `Grabbing xxxx by the hair, ++++ fucks ==== face passionately`,
           `++++ skull fucks xxxx, gagging ==== on #### giant dick`,
         ],
         sizeL: [
@@ -397,18 +397,18 @@ const Dominate = {
         sizeS: [
           `++++ fucks xxxx's clit with #### enourmous, ready cock`,
           `++++ batters xxxx's tight pussy with #### swollen cock`,
-          `++++ pushes #### gaint meatstick roughly into xxxx's tight cunt`,
+          `++++ pushes #### gaint meatstick passionately into xxxx's tight cunt`,
           `++++ forces #### enourmous cock between xxxx's tight pussy lips`,
         ],
         sizeM: [
           `++++ rubs xxxx's clit dominantly`,
           `++++ slaps xxxx's pussy lips with #### enourmous, erect cock`,
-          `++++ fucks xxxx's cunt roughly`,
+          `++++ fucks xxxx's cunt passionately`,
         ],
         sizeL: [
           `++++'s enourmous cock is rubbed around xxxx's pussy`,
           `++++ pushes ==== enourmous cock into xxxx's pussy, rubbing it around`,
-          `++++ pushes #### way roughly into xxxx's juicy cunt`,
+          `++++ pushes #### way passionately into xxxx's juicy cunt`,
         ],
       },
       [CharKeys.resistTypes.anus]: {
@@ -416,19 +416,19 @@ const Dominate = {
         sizeS: [
           `++++ fucks xxxx's backdoor`,
           `++++ batters xxxx's arse with #### hungry, giant cock`,
-          `++++ pushes #### enourmous cock roughly into xxxx's tight arse`,
+          `++++ pushes #### enourmous cock passionately into xxxx's tight arse`,
           `++++ grabs xxxx's arse cheeks and forces #### enourmous cock into xxxx's tight back passage`,
         ],
         sizeM: [
           `++++ rubs ====self dominantly between xxxx's arsecheeks`,
           `++++ slaps xxxx's second cunt with #### giant cock`,
-          `++++ pushes #### way roughly into xxxx's warm arse`,
+          `++++ pushes #### way passionately into xxxx's warm arse`,
           `++++ grabs xxxx's arse cheeks and forces #### enourmous cock into xxxx's fresh back passage`,
         ],
         sizeL: [
           `++++'s enourmous cock is rubbed around xxxx's arse entrance`,
           `++++ pushes ==== cock into xxxx's arse, degrading ==== for ==== gaping hole`,
-          `++++ pushes #### way roughly into xxxx's loose arse`,
+          `++++ pushes #### way passionately into xxxx's loose arse`,
           `++++ grabs xxxx's arse cheeks and pushes #### fat cock into xxxx's open back passage`,
         ],
       },
@@ -491,7 +491,13 @@ const Dominate = {
         sizeX: [
           `++++ rubs #### slippery pussy lips over xxxx's`,
           `++++ grinds against xxxx's sopping wet pussy`,
-          `++++ roughly brushes #### clit against xxxx's`,
+          `++++ passionately brushes #### clit against xxxx's`,
+        ],
+      },
+      [CharKeys.resistTypes.anus]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's soft buttcheeks`,
         ],
       },
     },
@@ -550,7 +556,13 @@ const Dominate = {
         sizeX: [
           `++++ rubs #### slippery pussy lips over xxxx's`,
           `++++ grinds against xxxx's sopping wet pussy`,
-          `++++ roughly brushes #### clit against xxxx's`,
+          `++++ passionately brushes #### clit against xxxx's`,
+        ],
+      },
+      [CharKeys.resistTypes.anus]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's soft buttcheeks`,
         ],
       },
     },
@@ -609,7 +621,13 @@ const Dominate = {
         sizeX: [
           `++++ rubs #### slippery pussy lips over xxxx's`,
           `++++ grinds against xxxx's sopping wet pussy`,
-          `++++ roughly brushes #### clit against xxxx's`,
+          `++++ passionately brushes #### clit against xxxx's`,
+        ],
+      },
+      [CharKeys.resistTypes.anus]: {
+        sizeOpt: false,
+        sizeX: [
+          `++++ rubs #### slippery pussy lips over xxxx's soft buttcheeks`,
         ],
       },
     },
@@ -643,6 +661,22 @@ const Dominate = {
           `++++ slowly pushes the glans of xxxx's giant cock into #### slippery, tight arsehole`,
         ],
       },
+      [CharKeys.resistTypes.touch]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks over xxxx's body`,],
+      },
+      [CharKeys.resistTypes.breasts]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks over xxxx's breasts`,],
+      },
+      [CharKeys.resistTypes.vagina]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks against xxxx's clit`,],
+      },
+      [CharKeys.resistTypes.anus]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks against xxxx's`,],
+      },
     },
     sizeM: {
       [CharKeys.resistTypes.mouth]: {
@@ -670,6 +704,23 @@ const Dominate = {
           `++++ presses #### arsecheeks against xxxx's long, hard shaft, rubbing ####self along it's sizable length`,
           `++++ slowly pushes the top of xxxx's giant cock into #### slippery, tight arsehole`,
         ],
+      },
+
+      [CharKeys.resistTypes.touch]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks over xxxx's body`,],
+      },
+      [CharKeys.resistTypes.breasts]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks over xxxx's breasts`,],
+      },
+      [CharKeys.resistTypes.vagina]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks against xxxx's clit`,],
+      },
+      [CharKeys.resistTypes.anus]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks against xxxx's`,],
       },
     },
     sizeL: {
@@ -699,7 +750,22 @@ const Dominate = {
           `++++ slides ####self over xxxx's giant cock, taking the giant shaft entirely into #### arsehole`,
         ],
       },
+      [CharKeys.resistTypes.touch]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks over xxxx's body`,],
+      },
+      [CharKeys.resistTypes.breasts]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks over xxxx's breasts`,],
+      },
+      [CharKeys.resistTypes.vagina]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks against xxxx's clit`,],
+      },
+      [CharKeys.resistTypes.anus]: {
+        sizeOpt: false,
+        sizeX: [`++++ rubs #### soft arsecheeks against xxxx's`,],
+      },
     },
   },
 };
-export default Dominate;

@@ -1,6 +1,6 @@
 import { replacer } from "./replacers";
-import DominateFightText from "./dominate";
-import PleasureFightText from "./pleasure";
+import DominateFightText from "./fightLog/dominate";
+import PleasureFightText from "./fightLog/pleasure";
 
 const Data = {
   fight: {
@@ -47,6 +47,7 @@ export const FightTxtInterface = (
 ) => {
   const DataObj = isDominate ? Data.fight.dominate : Data.fight.pleasure;
   const FuckerOpts = DataObj[fuckerOrgan];
+
   let RecieverOpts = null;
   if (FuckerOpts.sizeOpt) {
     RecieverOpts =
@@ -56,16 +57,21 @@ export const FightTxtInterface = (
   } else {
     RecieverOpts = FuckerOpts.sizeX[recieverOrgan];
   }
+  console.log("RecieverOpts", RecieverOpts);
   let TextOpts = null;
   if (RecieverOpts.sizeOpt) {
     TextOpts =
-      RecieverOpts["size" + sizeOptions(recieverData[organSizeKey(recieverOrgan)])];
+      RecieverOpts[
+        "size" + sizeOptions(recieverData[organSizeKey(recieverOrgan)])
+      ];
   } else {
     TextOpts = RecieverOpts.sizeX;
   }
 
   const RNJesus = Math.floor(Math.random() * TextOpts.length);
   const TextoutputPre = TextOpts[RNJesus];
+  console.log("TextOpts", TextOpts);
+  console.log("TextoutputPre", TextoutputPre);
   const output = replacer(fuckerData, recieverData, TextoutputPre);
 
   return output;
