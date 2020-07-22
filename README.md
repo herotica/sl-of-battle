@@ -33,14 +33,21 @@ paypal.me/herotica
 
 ### To do
 
-- [doc] contribution:  character league /guide 
-- fuck text add
-- cleanup pleasure text   
-- slave    
-  -- events
+- fuck text add 
+  - dom cock
+  - bdsm
+  - dom Fem
+  - pleasure cock
+  - pleasure Fem
+- [doc] contribution: character league /guide
+- cleanup pleasure text
 
-- test deploy (https://render.com/)
-- exec - test Windows
+* test deploy (https://render.com/)
+* exec - test Windows
+
+### Future Additions
+
+- slave events (get x number, or precise names, unlock sex event)
 
 ### bugs
 
@@ -83,7 +90,6 @@ yarn build
 - See https://tauri.studio/
 
 - OSX? - Dont' have a Mac, if you do any help woul dbe appreciated with building the app, see https://tauri.studio/docs/getting-started/setup-macos
-
 
 ### Linting
 
