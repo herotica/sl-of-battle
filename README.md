@@ -39,7 +39,6 @@ paypal.me/herotica
   - dom Fem
   - pleasure cock
   - pleasure Fem
-- [doc] contribution: character league /guide
 - cleanup pleasure text
 
 * test deploy (https://render.com/)
