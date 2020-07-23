@@ -49,8 +49,6 @@ paypal.me/herotica
 
 ### bugs
 
-- correct replacers in dom fucklog
-
 ## Development info
 
 ### Prerequisites
