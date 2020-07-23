@@ -39,7 +39,6 @@ paypal.me/herotica
   - dom Fem
   - pleasure cock
   - pleasure Fem
-- cleanup pleasure text
 
 * test deploy (https://render.com/)
 * exec - test Windows
@@ -49,6 +48,8 @@ paypal.me/herotica
 - slave events (get x number, or precise names, unlock sex event)
 
 ### bugs
+
+- correct replacers in dom fucklog
 
 ## Development info
 
