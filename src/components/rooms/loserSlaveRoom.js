@@ -21,9 +21,6 @@ const LeaguePointsShop = observer(() => {
         <GoBack />
       </RoomHeader>
       <MdTitleMiddle>Enjoy the fruits of your success!</MdTitleMiddle>
-      <MdTitleMiddleMarginTop>
-        You have Series, {Object.keys(losersBought)}
-      </MdTitleMiddleMarginTop>
       {Object.keys(losersBought).map((seriesKey, index) => {
         const onClickSeriesBox = () => {
           setOpenSeries(index);
@@ -80,9 +77,6 @@ const SeriesBox = styled.div`
   &:hover {
     background: #da8f8f;
   }
-`;
-const MdTitleMiddleMarginTop = styled(MdTitleMiddle)`
-  margin-top: 30px;
 `;
 const CombatantButton = styled.div`
   position: relative;

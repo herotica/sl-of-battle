@@ -34,7 +34,6 @@ paypal.me/herotica
 ### To do
 
 - fuck text add 
-  - dom cock
   - bdsm
   - dom Fem
   - pleasure cock

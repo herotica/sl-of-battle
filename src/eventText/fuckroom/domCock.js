@@ -1,13 +1,63 @@
-import { PenisSize, BreastSize } from "../../constants";
+import { PenisSize, BreastSize, holeSize } from "../../constants";
 
 export default [
   {
     displayText: "Fuck her face",
     textOptions: [
       (p, c) =>
-        `${p.name} frees ${p.pn.her} ${PenisSize[p.penisSize]} cock from ${
+        `Hmmm... ${p.name} wondered, what should I do with her today? ${
+          p.pn.Cshe
+        } smiled.
+
+        "Lets focus on you swallowing my sexy, thick cock"
+        
+        ${c.name} looked at ${
+          p.name
+        } a little upset, then nodded nervously. She turned to face the hefty meat pole poking her face and gave it an afraid look.
+        
+        "You can do this, your a natural born deep-throater, your mouth just screams fuck me!" ${
+          p.name
+        } offered.
+        
+        ${
+          c.name
+        } took a few deep breaths and began to lather the warm, powerful member with her tongue, then placing the glans in her mouth she took another big breath and pushed forward.
+        
+        Forcing the ${
+          PenisSize[p.penisSize]
+        } member down so quickly was a horrendous burden on ${
+          c.name
+        }'s gag reflex, spit sprayed in jutted bursts from her lips, as her whimpering was hidden by a loud gurgling. Little by little she swallowed the ${
+          PenisSize[p.penisSize]
+        } cock, her eyes wincing as she pushed further. ${p.name} appreciated ${
+          c.name
+        }'s upset face, sadistically taking great pleasure in her streaming mascara tears.
+        
+        ${
+          p.name
+        }'s sexual rage grew, "Swallow it quicker, you cheap rookie whore, choke your tight, fresh young throat on my hard dick, earn my hot salty spunk."
+        
+        ${
+          c.name
+        }'s tears grew at the humiliation, and in large part the pulsing meat rod invading her neck.
+        
+        Eventually her nose touched ${
+          p.name
+        }'s chest, who smiled and roughly unplugged  ${
           p.pn.her
-        } pants, hanging it before ${c.name}'s face`,
+        } cock with a loud pop, then pushed the girl down and set about assaulting her soft tits. ${
+          c.name
+        } let out a soft whimper as she coughed up a big ball of spit and pre-cum.
+        
+        ${
+          p.name
+        } fucked her chest for a good while, before stopping and pulling her back on her knees "I'd love to spray a fat, white load all over you, just drench you in it, or feed you every drop of my warm, sticky baby batter, ooooooh, such hard choices, either way you'll need to suck it some more."
+        
+        ${c.name} shut her eyes fearfully as ${
+          p.name
+        } roughly plugged the teen’s unready mouth, and began fucking her face again, ${
+          p.pn.she
+        } moaned loadly as ${p.pn.she} slowly reach orgasm.`,
     ],
   },
   {
@@ -81,9 +131,9 @@ ${
         p.pn.her
       } bust was pounded eagerly.
 
-“Fuck yeah, this ${c.name} girl has a great rack, ${
-        p.pn.her
-      } ${c.skinColor} skin is a delight, I could fuck her for hours!”
+“Fuck yeah, this ${c.name} girl has a great rack, ${p.pn.her} ${
+        c.skinColor
+      } skin is a delight, I could fuck her for hours!”
 
 ${p.name} pounded ${c.name}’s tits harder, stopping only to swirl ${
         p.pn.her
@@ -136,10 +186,142 @@ ${c.name} wriggled uncomfortably, ${
   },
   {
     displayText: "Pound her arse",
-    textOptions: [(p, c) => `${p.name} pounds ${c.name}'s arse`],
+    textOptions: [
+      (p, c) => `${p.name} smiled as ${p.pn.she} eyed up ${p.pn.her} prize.
+
+    "Today I think I'm gonna fuck your lovely this arse, such I nice back door needs a good, hard fucking!"
+    
+    ${c.name} looked at ${
+        p.name
+      } a little upset, then nodded nervously, giving ${
+        p.pn.her
+      } an afraid look, she leant forward and presented her behind.
+    
+    "What soft peach bum, I can't wait to slim my cock inside" ${
+      p.name
+    } offered with a deep voice laden with lust.
+    
+    ${p.name} took a deep breaths and began to slide ${
+        p.pn.her
+      } powerful member between her soft buttcheeks, hotdogging her arse. ${
+        p.pn.Cshe
+      } speed increase as ${p.pn.she} enjoyed their soft skin against  ${
+        p.pn.her
+      } cock.
+    
+    Then ${p.pn.she} pulled free, and pressing  ${
+        p.pn.her
+      } glans against her anal ring, forced the ${
+        PenisSize[p.penisSize]
+      } member down so quickly ,${
+        c.name
+      } cried out in discomfort, unmercifully ${
+        p.pn.she
+      } began pounding her abused behind roughly, ignoring her pain. her ${
+        holeSize[c.anusSize]
+      } arse held ${p.pn.her} cock tightly as ${p.name} continued ${
+        p.pn.her
+      } anal assualt.
+      
+      Little by little her arse swallowed the ${
+        PenisSize[p.penisSize]
+      } cock, her eyes wincing as ${p.pn.she} pushed further in. ${
+        p.name
+      } then turned a little, allowing ${
+        p.pn.her
+      } foot to go forward and pin down her head.
+    
+      "Thats right slut I own you & your arse!" ${
+        p.pn.she
+      } barked, smushing her mouth with  ${
+        p.pn.her
+      } foot to stop her complaints, ${
+        c.name
+      } began tearing up as the arse was brutally destroyed by ${
+        p.name
+      }'s animal sexual rage. 
+    
+    "Deeper cum dump, soon you'll be rewarded by my fresh creamy load!"
+    
+    ${
+      p.name
+    } continued roughly pounding her arse, before finally pulling free and stepping back, ${
+        p.pn.she
+      } opened her arse cheeks and enjoyed the view of her loosened arse.
+    
+    "Good work slut" ${p.pn.Cshe} said patting her tender bottom.`,
+    ],
   },
   {
     displayText: "Destory her pussy",
-    textOptions: [(p, c) => `${p.name} destroys ${c.name}'s pussy`],
+    textOptions: [
+      (p, c) => `${p.name} smiled as ${p.pn.she} eyed up ${p.pn.her} prize.
+
+    "Today I think I'm gonna fuck your lovely this cunt, such a cute girl needs a hard fucking!"
+    
+    ${c.name} looked at ${
+        p.name
+      } a little upset, then nodded nervously, giving ${
+        p.pn.her
+      } an afraid look, she leant backward and presented herself.
+    
+    "What soft lips, I can't wait to slim my cock inside" ${
+      p.name
+    } offered with a deep voice laden with lust.
+    
+    ${p.name} pushed the girl back, lined up ${p.pn.her} and began to slide ${
+        p.pn.her
+      } powerful member between her the girls soft lower lips. ${
+        p.pn.Cshe
+      } let ${p.pn.her} speed increase as ${
+        p.pn.she
+      } enjoyed the soft warmness of ${c.name} sweet wet pussy.
+    
+    Then ${
+      p.pn.she
+    } pulled free, and pressing his glans against her clit, and slid ${
+        p.pn.her
+      } cock between her soft pussy flaps, ${
+        c.name
+      }'s pussy began to wet in readyness. 
+    
+    "Now to really have some fun!" ${p.name} smiled as ${p.pn.she} pulled free.
+    
+    ${p.pn.Cshe} growled and forced the ${
+        PenisSize[p.penisSize]
+      } member down so quickly into the girl's cunt that ${
+        c.name
+      } cried out in pain, unmercifully ${
+        p.pn.she
+      } began pounding her abused pussy roughly, ignoring her complaints. her ${
+        holeSize[c.vaginaSize]
+      } hole held ${p.pn.her} cock tightly as ${p.name} continued ${
+        p.pn.her
+      } assualt.
+      
+      Little by little the girl's pussy swallowed the ${
+        PenisSize[p.penisSize]
+      } cock, her eyes wincing as ${p.pn.she} pushed further in. ${
+        c.name
+      } cried out louder in protestation, but ${
+        p.name
+      } just clamped over her mouth with ${p.pn.her} hand.
+    
+      "I own you cump dump & your pussy!" ${p.pn.she} barked, ${
+        c.name
+      } began tearing up as her pussy was brutally destroyed by ${
+        p.name
+      }'s animal sexual rage. 
+    
+    "Deeper cum dump, soon you'll be rewarded by my fresh creamy load!"
+    
+    ${
+      p.name
+    } continued roughly pounding her cunt, before finally pulling free and stepping back, ${
+        p.pn.she
+      } opened her legs and enjoyed the view of her loosened pussy.
+    
+    "Good work slut" ${p.pn.Cshe} said patting one of her legs.`,
+    ],
   },
 ];

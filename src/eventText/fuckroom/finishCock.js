@@ -25,6 +25,19 @@ export default [
         “Fuuuck, oh your gonna be a good girl and swallow it all.”
         
         ${p.pn.Cshe} lets the last few drips spray into her, slowly pulling ${p.pn.her} cock free as the the last of ${p.pn.her} semen drips into Kim’s stomach.`,
+      (p, c) => `
+      ${p.name} groaned as ${p.pn.she} felt ${p.pn.her} balls ready to burst.
+      
+      Roughly ${p.pn.she} grabbed ${c.name} by the hair and pluged  ${p.pn.her} pulsing cock deep into the girls throat.
+      
+      ${p.pn.Cher} balls immediatly began firing a huge stream of hot cream down her throat. Ignoring the inexperienced youth’s gagging and clear disgust, ${p.name} kept up a thick flow of cum till her little mouth was overflowing.
+      
+      ${p.pn.Cshe} relished in the sight of a resigned ${c.name} futilely attempting to hold in the huge syrupy delivery. Slowly ${p.pn.she} freed ${p.pn.her} slathered, messy cock form the abused girl’s mouth, sliding the creamy coating off with ${p.pn.her} hand and depositing the remain onto ${c.name}’s weeping face.
+      ${p.name} groaned, ‘Damn sexy, my cock loved your face, look how shiny it is, but still it isn’t nearly clean enough, now hurry up and devour my milky gift, there’s still some left to clean up! But leave your face, a good cum-slut always has a face-mask of tears and cum.’
+      
+      ${c.name} sniffled as she continued to drain the cauldron of cum that filled her mouth almost to the brim, her head tilted back. ${c.name}'s mouth gurgled as she fought to keep the overpowering musky taste down, it was the biggest load by far she faced, fow now.
+      
+      Finally she finished, breathing in a few strained breaths, before ${p.name} gave her a deep kiss, "amazing, your gonna be a star one day, most girls can’t handle one of my big loads.", ${c.name} nodded sobbing a little and wiping away tears to leave a dark mascara stain. ${p.name} coughed, and presented ${c.name} her shiny cum slathered cock, a fat vein of cum ran from her glans to all down her shaft, submissively the girl sucked up the remaining rope, and took a moment to try and regain her composure.`,
     ],
   },
   {
