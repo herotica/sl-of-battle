@@ -1,5 +1,4 @@
 import domCock from "./fuckroom/domCock";
-import cockBdsm from "./fuckroom/cockBdsm";
 import domWoman from "./fuckroom/domWoman";
 import pleasureCock from "./fuckroom/pleasureCock";
 import pleasureWoman from "./fuckroom/pleasureWoman";
@@ -11,10 +10,6 @@ export default {
     {
       check: p => p.hasCock,
       options: domCock,
-    },
-    {
-      check: p => p.hasCock,
-      options: cockBdsm,
     },
     {
       check: p => p.isWoman,

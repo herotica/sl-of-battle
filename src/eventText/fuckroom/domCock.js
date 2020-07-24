@@ -55,7 +55,7 @@ export default [
         
         ${c.name} shut her eyes fearfully as ${
           p.name
-        } roughly plugged the teen’s unready mouth, and began fucking her face again, ${
+        } roughly plugged the girl’s unready mouth, and began fucking her face again, ${
           p.pn.she
         } moaned loadly as ${p.pn.she} slowly reach orgasm.`,
     ],
@@ -75,7 +75,7 @@ export default [
         p.pn.her
       } other hand fished out ${p.pn.her} ${
         PenisSize[p.penisSize]
-      }, growing dick, pulling down ${p.pn.her} own skirt as ${
+      }, growing dick, pulling down ${p.pn.her} own trousers as ${
         p.pn.she
       } did. Gently ${p.pn.she} rubbed ${p.pn.her} growing phallus against ${
         c.name
@@ -85,7 +85,7 @@ export default [
 
 ${p.pn.Cher} throbbing cock had grown sizeable, and ${
         p.name
-      } now ran it along the Lycra sports wear, pressing it against the centre, and slolwy following the breast's soft curve.
+      } now ran it along the Lycra sports wear, pressing it against the centre, and slowly following the breast's soft curve.
 
 “God, ${p.pn.her} ${c.bodyShape} body is a delight.”
 
@@ -127,9 +127,7 @@ ${
         BreastSize[c.breastSize]
       }, soft breasts. ${p.pn.Cher} hips began to move faster, and ${
         p.pn.she
-      } could hear muffled groans form the girl as ${
-        p.pn.her
-      } bust was pounded eagerly.
+      } could hear muffled groans form the girl as her bust was pounded eagerly.
 
 “Fuck yeah, this ${c.name} girl has a great rack, ${p.pn.her} ${
         c.skinColor
@@ -157,7 +155,7 @@ ${p.name} pounded ${c.name}’s tits harder, stopping only to swirl ${
 
 ${p.name} pushed ${c.name} onto her back, and pulled up her top, ${
         p.pn.she
-      } rubbed ${p.pn.her} own bare chest against the teen’s, slathering ${
+      } rubbed ${p.pn.her} own bare chest against the girls’s, slathering ${
         p.pn.self
       }self in oil and teasing ${
         p.pn.her
@@ -197,7 +195,7 @@ ${c.name} wriggled uncomfortably, ${
         p.pn.her
       } an afraid look, she leant forward and presented her behind.
     
-    "What soft peach bum, I can't wait to slim my cock inside" ${
+    "What a soft peach bum, I can't wait to slip my cock inside" ${
       p.name
     } offered with a deep voice laden with lust.
     
@@ -205,7 +203,7 @@ ${c.name} wriggled uncomfortably, ${
         p.pn.her
       } powerful member between her soft buttcheeks, hotdogging her arse. ${
         p.pn.Cshe
-      } speed increase as ${p.pn.she} enjoyed their soft skin against  ${
+      } speed increased as ${p.pn.she} enjoyed their soft skin against  ${
         p.pn.her
       } cock.
     

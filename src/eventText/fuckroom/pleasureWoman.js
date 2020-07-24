@@ -6,10 +6,6 @@ export default [
     ],
   },
   {
-    displayText: "Enjoy each others anal passages.",
-    textOptions: [(p, c) => `${p.name} enjoys some anal play with ${c.name}`],
-  },
-  {
     displayText: "Taste each others pussies.",
     textOptions: [
       (p, c) =>
