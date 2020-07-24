@@ -30,7 +30,7 @@ export default [
       
       Roughly ${p.pn.she} grabbed ${c.name} by the hair and pluged  ${p.pn.her} pulsing cock deep into the girls throat.
       
-      ${p.pn.Cher} balls immediatly began firing a huge stream of hot cream down her throat. Ignoring the inexperienced youth’s gagging and clear disgust, ${p.name} kept up a thick flow of cum till her little mouth was overflowing.
+      ${p.pn.Cher} balls immediatly began firing a huge stream of hot cream down her throat. Ignoring the inexperienced female's gagging and clear disgust, ${p.name} kept up a thick flow of cum till her little mouth was overflowing.
       
       ${p.pn.Cshe} relished in the sight of a resigned ${c.name} futilely attempting to hold in the huge syrupy delivery. Slowly ${p.pn.she} freed ${p.pn.her} slathered, messy cock form the abused girl’s mouth, sliding the creamy coating off with ${p.pn.her} hand and depositing the remain onto ${c.name}’s weeping face.
       ${p.name} groaned, ‘Damn sexy, my cock loved your face, look how shiny it is, but still it isn’t nearly clean enough, now hurry up and devour my milky gift, there’s still some left to clean up! But leave your face, a good cum-slut always has a face-mask of tears and cum.’
