@@ -9,7 +9,6 @@ export const StatTrainSuccessChance = (statLv, trainPower) => {
 export const TestStatTrain = (statLv, trainPower) => {
   const val = Math.floor(Math.random() * 100);
   const SuccessVal = StatTrainSuccessChance(statLv, trainPower);
-  console.log('SuccessVal',SuccessVal);
   return val < SuccessVal;
 };
 

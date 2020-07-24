@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import palette from "../../constants/palette";
 import { useGlobalDataStore } from "../../state";
 import { useFightDataStore } from "../../state/fight";
 import { observer } from "mobx-react-lite";
@@ -47,56 +48,58 @@ const FuckRoom = observer(() => {
           <Image src={fuckRoomCombatant.opWinImg} alt="loser" />
         </ImageWrap>
         <TextWrap>
-          {!fuckType && (
-            <>
-              <UpperCase onClick={() => setFuckType(FuckTypes.dom)}>
-                {FuckTypes.dom}
-              </UpperCase>
-              <UpperCase onClick={() => setFuckType(FuckTypes.please)}>
-                {FuckTypes.please}
-              </UpperCase>
-            </>
-          )}
-          {fuckType && !fuckChoice && (
-            <>
-              <FlexWrap>
-                {" "}
-                {FuckRoomText[fuckType].map((fuckGroupings) => {
-                  const Show = fuckGroupings.check(playerCharStore);
-                  if (Show) {
-                    return fuckGroupings.options.map((option) => (
-                      <UpperCase
-                        onClick={() => SetFuckChoiceText(option.textOptions)}
-                      >
-                        {option.displayText}
-                      </UpperCase>
-                    ));
-                  }
-                  return null;
-                })}
-              </FlexWrap>
-            </>
-          )}
-          {fuckChoice && (
-            <>
-              <div>{fuckChoice}</div>
-              {hasCock &&
-                !fuckEndChoice &&
-                FuckRoomText.finishCock[fuckType].map((option) => (
-                  <UpperCase
-                    onClick={() => SetFuckEndChoiceText(option.textOptions)}
-                  >
-                    {option.displayText}
-                  </UpperCase>
-                ))}
-            </>
-          )}
-          {fuckEndChoice && (
-            <div>
-              {hasCock && <Seperator>----</Seperator>}
-              {fuckEndChoice}
-            </div>
-          )}
+          <InnerWrap>
+            {!fuckType && (
+              <>
+                <UpperCase onClick={() => setFuckType(FuckTypes.dom)}>
+                  {FuckTypes.dom}
+                </UpperCase>
+                <UpperCase onClick={() => setFuckType(FuckTypes.please)}>
+                  {FuckTypes.please}
+                </UpperCase>
+              </>
+            )}
+            {fuckType && !fuckChoice && (
+              <>
+                <FlexWrap>
+                  {" "}
+                  {FuckRoomText[fuckType].map((fuckGroupings) => {
+                    const Show = fuckGroupings.check(playerCharStore);
+                    if (Show) {
+                      return fuckGroupings.options.map((option) => (
+                        <UpperCase
+                          onClick={() => SetFuckChoiceText(option.textOptions)}
+                        >
+                          {option.displayText}
+                        </UpperCase>
+                      ));
+                    }
+                    return null;
+                  })}
+                </FlexWrap>
+              </>
+            )}
+            {fuckChoice && (
+              <>
+                <div>{fuckChoice}</div>
+                {hasCock &&
+                  !fuckEndChoice &&
+                  FuckRoomText.finishCock[fuckType].map((option) => (
+                    <UpperCase
+                      onClick={() => SetFuckEndChoiceText(option.textOptions)}
+                    >
+                      {option.displayText}
+                    </UpperCase>
+                  ))}
+              </>
+            )}
+            {fuckEndChoice && (
+              <div>
+                {hasCock && <Seperator>----</Seperator>}
+                {fuckEndChoice}
+              </div>
+            )}
+          </InnerWrap>
         </TextWrap>
       </RoomWrap>
 
@@ -124,10 +127,16 @@ const ImageWrap = styled.div`
   overflow-y: auto;
 `;
 const TextWrap = styled.div`
+  flex-grow: 1;
   margin: 12px;
   white-space: pre-line;
   max-height: 80vh;
   overflow-y: auto;
+`;
+const InnerWrap = styled.div`
+  padding: 2em 0;
+  border-top: 2px solid ${palette.dark};
+  border-bottom: 2px solid ${palette.dark};
 `;
 const Image = styled.img`
   max-width: 320px;
