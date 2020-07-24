@@ -57,7 +57,6 @@ export const FightTxtInterface = (
   } else {
     RecieverOpts = FuckerOpts.sizeX[recieverOrgan];
   }
-  console.log("RecieverOpts", RecieverOpts);
   let TextOpts = null;
   if (RecieverOpts.sizeOpt) {
     TextOpts =
@@ -70,8 +69,6 @@ export const FightTxtInterface = (
 
   const RNJesus = Math.floor(Math.random() * TextOpts.length);
   const TextoutputPre = TextOpts[RNJesus];
-  console.log("TextOpts", TextOpts);
-  console.log("TextoutputPre", TextoutputPre);
   const output = replacer(fuckerData, recieverData, TextoutputPre);
 
   return output;

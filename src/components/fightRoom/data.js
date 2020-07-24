@@ -785,8 +785,6 @@ export const fightResolve = (
   } else {
     ResponseObj.skillGain = checkSkillGain(false, opponentTarget, charData);
   }
-
-  console.log("respObj", ResponseObj);
   return ResponseObj;
 };
 

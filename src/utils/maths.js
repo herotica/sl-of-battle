@@ -44,7 +44,6 @@ export const receiverArousalGain = (
   if (diff > 100) diff = 100;
   const seductionDefence = playerSeduceSuccess ? 0.5 : 1;
   const arousalGain = (A + B + C + diff + roughplayMod) * tightnessMod * seductionDefence;
-  console.log('playerSeduceSuccess', playerSeduceSuccess);
   return arousalGain;
   // output 20-120
 };

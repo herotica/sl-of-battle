@@ -82,7 +82,7 @@ const FuckRoom = observer(() => {
               <div>{fuckChoice}</div>
               {hasCock &&
                 !fuckEndChoice &&
-                FuckRoomText.finishCock.map((option) => (
+                FuckRoomText.finishCock[fuckType].map((option) => (
                   <UpperCase
                     onClick={() => SetFuckEndChoiceText(option.textOptions)}
                   >

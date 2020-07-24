@@ -36,7 +36,6 @@ paypal.me/herotica
 - fuck text add 
   - dom Fem
   - pleasure Fem
-  - finish cock pleasure
 
 * test deploy (https://render.com/)
 * exec - test Windows
