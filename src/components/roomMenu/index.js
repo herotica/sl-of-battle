@@ -33,7 +33,7 @@ export const RoomsData = [
   },
   {
     name: "League Point Shop",
-    description: "Purchase permanent bonus with League Points",
+    description: "Purchase permanent bonus with League Points, unlock all licences to be able to buy girls permanently",
     colors: {
       bgA: "grey",
       bgB: "darkgrey",
