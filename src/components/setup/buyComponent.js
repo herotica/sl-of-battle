@@ -185,7 +185,7 @@ const BuySkills = observer(() => {
         changeMouthResistance(10);
       },
       unselect() {
-        changeVaginaProwess(-10);
+        changeTouchResistance(-10);
         changeMouthResistance(-10);
       },
       isChoosable: true,
