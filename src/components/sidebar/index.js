@@ -25,6 +25,16 @@ const SideBar = observer(({ isCollapsed, onSwitch }) => {
           </>
         )}
       </MainWrapper>
+      <GitLink>
+        <a
+          href="https://github.com/herotica/sl-of-battle"
+          target="_blank"
+          rel="noreferrer
+noopener"
+        >
+          Github
+        </a>
+      </GitLink>
     </ExpandingSidebar>
   );
 });
@@ -157,6 +167,8 @@ const ExpandingSidebar = styled.div`
   direction: rtl;
   padding-left: 10px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 `;
 const MainWrapper = styled.div`
   padding: 10px;
@@ -202,6 +214,21 @@ const Split = styled.div`
 const SplitThirds = styled.div`
   display: inline-block;
   width: 33%;
+`;
+const GitLink = styled.div`
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1em 0;
+  & > a {
+    text-decoration: none;
+    color: #3e3333;
+
+    &:hover {
+      color: black;
+    }
+  }
 `;
 
 export default SideBar;

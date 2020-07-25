@@ -35,6 +35,7 @@ paypal.me/herotica
 
 * test deploy (https://render.com/)
 * exec - test Windows
+* site git link
 
 ### Future Additions
 
