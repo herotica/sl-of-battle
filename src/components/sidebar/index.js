@@ -38,7 +38,7 @@ const SmCharacter = ({ icon, name, gender, race }) => (
     </SmlrText>
   </CharWrap>
 );
-const SmCharDetails = props => (
+const SmCharDetails = (props) => (
   <DetailsWrap>
     <SmTitle>INV</SmTitle>
     <SmCap>£{props.cash}</SmCap>
@@ -47,9 +47,13 @@ const SmCharDetails = props => (
     <SmCap>LG Credits: {props.leagueCredits}</SmCap>
 
     <SmTitle>BODY</SmTitle>
-    <SmCap>{PenisSize[props.penisSize]} penis</SmCap>
-    <SmCap>{BreastSize[props.breastSize]} breasts</SmCap>
-    <SmCap>{holeSize[props.vaginaSize]} pussy</SmCap>
+    {props.hasCock && <SmCap>{PenisSize[props.penisSize]} penis</SmCap>}
+    {props.isWoman && (
+      <>
+        <SmCap>{BreastSize[props.breastSize]} breasts</SmCap>
+        <SmCap>{holeSize[props.vaginaSize]} pussy</SmCap>
+      </>
+    )}
     <SmCap>{holeSize[props.anusSize]} arse</SmCap>
     <SmCap>{holeSize[props.throatSize]} throat</SmCap>
 
@@ -91,7 +95,7 @@ const ExpandedCharacter = ({ img, name, gender, race }) => (
     </SmText>
   </CharWrap>
 );
-const ExpandedDetails = props => (
+const ExpandedDetails = (props) => (
   <DetailsWrap>
     <SmTitle>INV</SmTitle>
     <SmText>£{props.cash}</SmText>
@@ -101,11 +105,11 @@ const ExpandedDetails = props => (
 
     <SmTitle>BODY</SmTitle>
     <Split>
-      <SmText>{PenisSize[props.penisSize]} penis</SmText>
-      <SmText>{BreastSize[props.breastSize]} breasts</SmText>
+      {props.isWoman && <SmText>{BreastSize[props.breastSize]} breasts</SmText>}
+      {props.hasCock && <SmText>{PenisSize[props.penisSize]} penis</SmText>}
     </Split>
     <Split>
-      <SmText>{holeSize[props.vaginaSize]} pussy</SmText>
+      {props.isWoman && <SmText>{holeSize[props.vaginaSize]} pussy</SmText>}
       <SmText>{holeSize[props.anusSize]} arse</SmText>
       <SmText>{holeSize[props.throatSize]} throat</SmText>
     </Split>
@@ -145,8 +149,8 @@ const ExpandedDetails = props => (
 );
 
 const ExpandingSidebar = styled.div`
-  flex: 0 0 ${p => (p.isCollapsed ? "calc(160px + 0.4vw)" : "400px")};
-  background: ${p => (p.isCollapsed ? Palette.mid : Palette.light)};
+  flex: 0 0 ${(p) => (p.isCollapsed ? "calc(160px + 0.4vw)" : "400px")};
+  background: ${(p) => (p.isCollapsed ? Palette.mid : Palette.light)};
   overflow-y: auto;
   transition: flex 0.5s ease-in-out, background 0.5s ease-in-out;
   border-right: solid 4px ${Palette.dark};

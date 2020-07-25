@@ -13,7 +13,7 @@ import TrainingOptions, { ResistanceTraining } from "./data/training";
 const Strings = {
   title: "Slut Training",
   explain:
-    "Players work their muscles and sex organs here to prepare themselves for battle.",
+    "Players work their muscles and sex organs here to prepare themselves for battle. Training is less likely to suceed the higher your skill",
   modalTitle: "Training Complete",
 };
 
