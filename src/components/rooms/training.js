@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useGlobalDataStore } from "../../state";
 import { observer } from "mobx-react-lite";
-import { TestStatTrain } from "../../utils/maths";
 
 import Modal from "../modal";
 import GoBack from "../back";
@@ -20,32 +19,23 @@ const Strings = {
 const TrainingGym = () => {
   const [modalOpen, setModal] = useState(false);
   const [modalMsg, setModalMsg] = useState("");
-  const [modalIsFail, setModalIsFail] = useState(false);
 
   const HideModal = () => {
     setModal(false);
     setModalMsg("");
-    setModalIsFail(false);
   };
-  const OnTry = (isSuccess, skillText) => {
+  const OnTry = () => {
     setModal(true);
     setModalMsg(
-      `Your training in ${skillText} has ${
-        isSuccess ? "suceeded" : "failed, good luck next time"
-      }.`
+      `You have gained in skill`
     );
-    setModalIsFail(!isSuccess);
   };
 
   return (
     <UWrap>
       {modalOpen && (
         <Modal title={Strings.modalTitle} onHide={HideModal}>
-          {modalIsFail ? (
-            <TrainFailtxt>{modalMsg}</TrainFailtxt>
-          ) : (
-            <SmText>{modalMsg}</SmText>
-          )}
+          <SmText>{modalMsg}</SmText>
         </Modal>
       )}
       <FlexWrap>
@@ -79,14 +69,11 @@ const TrainingActionItem = observer(
     description,
     skill,
     onSkillUp,
-    cost,
-    power,
     reqFemale,
     reqCock,
     onTry,
     resistance,
     upgrade,
-    upgradePower,
   }) => {
     const {
       isWoman,
@@ -99,14 +86,12 @@ const TrainingActionItem = observer(
     } = useGlobalDataStore();
 
     const upgraded = boughtItems.includes(upgrade);
+    const VariedCost = (CharData[skill] * (upgraded ? 2 : 3));
+
     const onSelect = () => {
-      if (cost <= cash) {
-        changeCash(-1 * cost);
-        //check training
-        const effectPower = upgraded ? upgradePower : power;
-        const trainResult = TestStatTrain(CharData[skill], effectPower);
-        trainResult && CharData[onSkillUp](1);
-        onTry(trainResult, name);
+      if (VariedCost <= cash) {
+        changeCash(-1 * VariedCost);CharData[onSkillUp](1);
+        onTry();
         saveChar();
       } else {
         window.alert("You can afford this.");
@@ -123,11 +108,8 @@ const TrainingActionItem = observer(
         <TrainingOpt onClick={onSelect} resistance={resistance}>
           <SmText>- {name} -</SmText>
           <SmlrText>{description}</SmlrText>
-          <SmText>
-            Power Lvl :: {upgraded ? upgradePower : power}
-            {upgraded && " - Upg"}
-          </SmText>
-          <SmText>Training Cost ${cost}</SmText>
+          <SmText>Current Skill Lvl: {CharData[skill]}</SmText>
+          <SmText>Training Cost ${VariedCost}</SmText>
         </TrainingOpt>
       )
     );
@@ -175,9 +157,6 @@ const TrainingOpt = styled.div`
   &:hover {
     border: 2px solid orange;
   }
-`;
-const TrainFailtxt = styled.span`
-  color: darkred;
 `;
 
 export default TrainingGym;

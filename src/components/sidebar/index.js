@@ -29,8 +29,7 @@ const SideBar = observer(({ isCollapsed, onSwitch }) => {
         <a
           href="https://github.com/herotica/sl-of-battle"
           target="_blank"
-          rel="noreferrer
-noopener"
+          rel="noopener noreferrer"
         >
           Github
         </a>
