@@ -1,6 +1,6 @@
 // a characters stats run from 1 -> 100, training power runs from 0 -> 20
 export const StatTrainSuccessChance = (statLv, trainPower) => {
-  const statModifier = 1200 - statLv * 6; // 100-900
+  const statModifier = 1400 - statLv * 5; // 100-900
   const trainingModifier = trainPower * 4 + 15; //23 - 80
   //returns ~ 5 - 84, this being a % of success
   return statModifier * trainingModifier * 0.001;
