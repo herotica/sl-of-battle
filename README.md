@@ -40,6 +40,7 @@ paypal.me/herotica
 
 - slave events (get x number, or precise names, unlock sex event)
 - Lose fight text
+- better difficulty
 
 ### bugs
 
