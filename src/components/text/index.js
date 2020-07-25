@@ -15,7 +15,7 @@ export const MdTitleMiddle = styled(MdTitle)`
 `;
 
 export const SmTextCSS = `
-  font-size: calc(1.1rem + 0.2vw);
+  font-size: calc(1.0rem + 0.2vw);
 `;
 export const SmText = styled.div`
   line-height: 1.6;

@@ -35,11 +35,11 @@ paypal.me/herotica
 
 * test deploy (https://render.com/)
 * exec - test Windows
-* site git link
 
 ### Future Additions
 
 - slave events (get x number, or precise names, unlock sex event)
+- Lose fight text
 
 ### bugs
 

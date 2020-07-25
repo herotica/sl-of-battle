@@ -68,26 +68,26 @@ const SmCharDetails = (props) => (
 
     <SmTitle>PROWESS</SmTitle>
     <Split>
-      <SmCap>CCK: {props.cockProwess}</SmCap>
-      <SmCap>PSY: {props.vaginaProwess}</SmCap>
+      {props.hasCock && <SmCap>CCK: {props.cockProwess}</SmCap>}
+      {props.isWoman && <SmCap>PSY: {props.vaginaProwess}</SmCap>}
       <SmCap>ANS: {props.anusProwess}</SmCap>
+      <SmCap>TOU: {props.tongueProwess}</SmCap>
     </Split>
     <Split>
       <SmCap>SED: {props.seductionProwess}</SmCap>
       <SmCap>GRP: {props.grapplingProwess}</SmCap>
-      <SmCap>TOU: {props.tongueProwess}</SmCap>
       <SmCap>TCH: {props.touchProwess}</SmCap>
     </Split>
 
     <SmTitle>RESIST</SmTitle>
     <Split>
       <SmCap>TCH: {props.touchResistance}</SmCap>
-      <SmCap>BST: {props.breastResistance}</SmCap>
+      {props.isWoman && <SmCap>BST: {props.breastResistance}</SmCap>}
       <SmCap>MOU: {props.mouthResistance}</SmCap>
     </Split>
     <Split>
-      <SmCap>CCK: {props.cockResistance}</SmCap>
-      <SmCap>PSY: {props.vaginaResistance}</SmCap>
+      {props.hasCock && <SmCap>CCK: {props.cockResistance}</SmCap>}
+      {props.isWoman && <SmCap>PSY: {props.vaginaResistance}</SmCap>}
       <SmCap>ANS: {props.anusResistance}</SmCap>
     </Split>
     <PadTop>
@@ -125,13 +125,13 @@ const ExpandedDetails = (props) => (
 
     <SmTitle>PROWESS</SmTitle>
     <SplitThirds>
-      <SmText>Cock: {props.cockProwess}</SmText>
-      <SmText>Pussy: {props.vaginaProwess}</SmText>
-      <SmText>Arse: {props.anusProwess}</SmText>
+      <SmText>Seduction: {props.seductionProwess}</SmText>
+      <SmText>Grappling: {props.grapplingProwess}</SmText>
     </SplitThirds>
     <SplitThirds>
-      <SmText>Section: {props.seductionProwess}</SmText>
-      <SmText>Grappling: {props.grapplingProwess}</SmText>
+      {props.hasCock && <SmText>Cock: {props.cockProwess}</SmText>}
+      {props.isWoman && <SmText>Pussy: {props.vaginaProwess}</SmText>}
+      <SmText>Arse: {props.anusProwess}</SmText>
     </SplitThirds>
     <SplitThirds>
       <SmText>Tounge: {props.tongueProwess}</SmText>
@@ -140,16 +140,16 @@ const ExpandedDetails = (props) => (
 
     <SmTitle>RESIST</SmTitle>
     <SplitThirds>
+      {props.hasCock && <SmText>Cock: {props.cockResistance}</SmText>}
+      {props.isWoman && <SmText>Breasts: {props.breastResistance}</SmText>}
+    </SplitThirds>
+    <SplitThirds>
+      {props.isWoman && <SmText>Pussy: {props.vaginaResistance}</SmText>}
+      <SmText>Arse: {props.anusResistance}</SmText>
+    </SplitThirds>
+    <SplitThirds>
       <SmText>Touch: {props.touchResistance}</SmText>
       <SmText>Mouth: {props.mouthResistance}</SmText>
-    </SplitThirds>
-    <SplitThirds>
-      <SmText>Cock: {props.cockResistance}</SmText>
-      <SmText>Breasts: {props.breastResistance}</SmText>
-    </SplitThirds>
-    <SplitThirds>
-      <SmText>Pussy: {props.vaginaResistance}</SmText>
-      <SmText>Arse: {props.anusResistance}</SmText>
     </SplitThirds>
     <PadTop>
       <SmText>Orgasm Limit: {props.orgasmLimit}</SmText>
