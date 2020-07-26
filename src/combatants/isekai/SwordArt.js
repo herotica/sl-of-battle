@@ -56,7 +56,7 @@ export default {
     roughPlayLvl: 20,
     seductionResistance: 10,
     grapplingProwess: 25,
-    tongueProwess: 25,
+    tongueProwess: 20,
     touchProwess: 2,
     cockProwess: 15,
     vaginaProwess: 25,

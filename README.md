@@ -40,9 +40,13 @@ paypal.me/herotica
 
 - slave events (get x number, or precise names, unlock sex event)
 - Lose fight text
+  - ? set of types of winner (dom-pussy,dom-cock,pleasure...) assign to characters
 - better difficulty
+- dom slave
 
 ### bugs
+
+- underground exhibition broken
 
 ## Development info
 
