@@ -43,7 +43,7 @@ import RapunzelIcon from "../../assets/combatants/disney/rapunzel-icon.png";
 import RapunzelWin from "../../assets/combatants/disney/rapunzel-win.png";
 import RapunzelLose from "../../assets/combatants/disney/rapunzel-lose.png";
 
-export const seriesId = "League of Legends";
+export const seriesId = "disney";
 
 export default {
   anna: {

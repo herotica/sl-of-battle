@@ -23,7 +23,7 @@ import CagliostroIcon from "../../assets/combatants/jrpg/granblue/cagliostro-ico
 import CagliostroWin from "../../assets/combatants/jrpg/granblue/cagliostro-win.png";
 import CagliostroLose from "../../assets/combatants/jrpg/granblue/cagliostro-lose.png";
 
-export const seriesId = "Fire Emblem";
+export const seriesId = "Granblue Fantasy";
 
 export default {
   vikala: {
