@@ -547,6 +547,7 @@ export const FightPhaseData = [
         },
         {
           name: "Breasts",
+          reqFemale: true,
           description: "Present your breasts.",
           onAction() {
             return {
@@ -581,6 +582,7 @@ export const FightPhaseData = [
         },
         {
           name: "Pussy",
+          reqFemale: true,
           description: "Open your wet pussy lips.",
           onAction() {
             return {
