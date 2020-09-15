@@ -243,7 +243,7 @@ const Setup = () => {
             adjPenisSize(-1);
             adjBreastSize(-1);
             changeCockProwess(-15);
-            changeCockResistance(10);
+            changeCockResistance(-10);
             changeAnusResistance(-10);
           }
         },
