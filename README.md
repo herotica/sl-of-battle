@@ -33,8 +33,8 @@ paypal.me/herotica
 
 ### To do
 
-* test deploy (https://render.com/)
-* exec - test Windows
+- fix cock skill
+- exec - test Windows
 
 ### Future Additions
 
@@ -76,7 +76,7 @@ yarn start
 
 Open the web browser to `http://localhost:8080/`
 
-### To build the production package
+### To build the online production package
 
 ```
 yarn build
@@ -87,6 +87,10 @@ yarn build
 - See https://tauri.studio/
 
 - OSX? - Dont' have a Mac, if you do any help woul dbe appreciated with building the app, see https://tauri.studio/docs/getting-started/setup-macos
+
+##### Linux
+
+- yarn tauri build
 
 ### Linting
 

@@ -3,7 +3,8 @@
     "distDir": "../build",
     "devPath": "http://localhost:3000/",
     "beforeDevCommand": "",
-    "beforeBuildCommand": ""
+    "beforeBuildCommand": "",
+    "withGlobalTauri": true
   },
   "ctx": {},
   "tauri": {
@@ -38,9 +39,6 @@
       },
       "exceptionDomain": ""
     },
-    "whitelist": {
-      "all": true
-    },
     "window": {
       "title": "Sluts of Battle",
       "width": 1000,
@@ -51,11 +49,13 @@
     "security": {
       "csp": "default-src blob: data: filesystem: ws: http: https: 'unsafe-eval' 'unsafe-inline'"
     },
-    "edge": {
-      "active": true
-    },
     "inliner": {
       "active": true
+    },
+    "allowlist": {
+      "openDialog": true,
+      "saveDialog": true,
+      "writeFile": true
     }
   }
 }

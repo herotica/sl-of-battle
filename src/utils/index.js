@@ -10,7 +10,7 @@ export const GetFromStorage = () => {
   }
 };
 
-export const StoreObj = Data => {
+export const StoreObj = (Data) => {
   localStorage.setItem(LocalstorageKey, JSON.stringify(Data));
 };
 
@@ -23,7 +23,7 @@ export const createObjFromUpload = (importElementID, onFileLoad) => {
 
   var fr = new FileReader();
 
-  fr.onload = function(e) {
+  fr.onload = function (e) {
     var result = JSON.parse(e.target.result);
     onFileLoad(result);
   };
@@ -32,29 +32,44 @@ export const createObjFromUpload = (importElementID, onFileLoad) => {
 };
 
 export const createFileFromObj = (dataObj, name) => {
-  createFile(
-    JSON.stringify(dataObj),
-    `${name}.slutsofbattle.json`,
-    "application/json"
-  );
+  if (window.__TAURI__) {
+    window.__TAURI__.dialog.save().then(
+      (result) => {
+        window.__TAURI__.fs.writeFile(
+          {
+            path: result,
+            contents: JSON.stringify(dataObj),
+          },
+          {}
+        );
+      },
+      (error) => {}
+    );
+  } else {
+    createFile(
+      JSON.stringify(dataObj),
+      `${name}.slutsofbattle.json`,
+      "application/json"
+    );
+  }
 };
 
 export function createFile(data, filename, type) {
-    var file = new Blob([data], { type: type });
-    if (window.navigator.msSaveOrOpenBlob)
-      // IE10+
-      window.navigator.msSaveOrOpenBlob(file, filename);
-    else {
-      // Others
-      var a = document.createElement("a"),
-        url = URL.createObjectURL(file);
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(function () {
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-      }, 0);
-    }
+  var file = new Blob([data], { type: type });
+  if (window.navigator.msSaveOrOpenBlob)
+    // IE10+
+    window.navigator.msSaveOrOpenBlob(file, filename);
+  else {
+    // Others
+    var a = document.createElement("a"),
+      url = URL.createObjectURL(file);
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }, 0);
   }
+}
