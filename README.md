@@ -33,7 +33,7 @@ paypal.me/herotica
 
 ### To do
 
-- fix cock skill
+- add picture options
 - exec - test Windows
 
 ### Future Additions

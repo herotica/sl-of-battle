@@ -11,7 +11,7 @@ import {
   bodyShape,
   raceType,
   colors,
-  skinColor
+  skinColor,
 } from "../../constants";
 
 // move between pages, trigger events display choices, finish
@@ -55,7 +55,7 @@ const Setup = () => {
     changeCockResistance,
     changeVaginaResistance,
     changeAnusResistance,
-    adjOrgasmLimit
+    adjOrgasmLimit,
   } = useGlobalDataStore();
 
   const SetupPages = [
@@ -71,21 +71,25 @@ const Setup = () => {
             changeGrapplingProwess(15);
             setGender(gender.male);
           },
-          onUnSel: () => changeGrapplingProwess(-15)
+          onUnSel: () => changeGrapplingProwess(-15),
         },
         {
           name: "Female",
           img: Images.gender.female,
           details: "Be a Female",
-          onSelect: () => setGender(gender.female)
+          onSelect: () => setGender(gender.female),
         },
         {
           name: "Futanari",
           img: Images.gender.futanari,
           details: "Be a Futa",
-          onSelect: () => setGender(gender.futanari)
-        }
-      ]
+          onSelect: () => setGender(gender.futanari),
+        },
+      ],
+    },
+    {
+      title: "Set Icon & Image",
+      component: <SetupImg />,
     },
     {
       title: "Body Type",
@@ -108,7 +112,7 @@ const Setup = () => {
             adjVaginaSize(2);
             adjAnusSize(2);
             adjThroatSize(2);
-          }
+          },
         },
         {
           name: "Small",
@@ -130,13 +134,13 @@ const Setup = () => {
             adjAnusSize(1);
             adjThroatSize(2);
             changeSeductionProwess(-5);
-          }
+          },
         },
         {
           name: "Medium",
           img: Images.bodyShape.medium,
           details: "Gentle and feminine curves",
-          onSelect: () => setBodyShape(bodyShape.medium)
+          onSelect: () => setBodyShape(bodyShape.medium),
         },
         {
           name: "Chubby",
@@ -152,7 +156,7 @@ const Setup = () => {
             adjBreastSize(-2);
             adjAnusSize(-1);
             adjThroatSize(-1);
-          }
+          },
         },
         {
           name: "Buxom",
@@ -171,7 +175,7 @@ const Setup = () => {
             adjAnusSize(-2);
             adjVaginaSize(-1);
             adjThroatSize(-1);
-          }
+          },
         },
         {
           name: "Muscular",
@@ -191,9 +195,9 @@ const Setup = () => {
             adjBreastSize(-1);
             adjVaginaSize(-1);
             adjAnusSize(-1);
-          }
-        }
-      ]
+          },
+        },
+      ],
     },
     {
       title: "Race", // sets height
@@ -207,7 +211,7 @@ const Setup = () => {
           },
           onUnSel: () => {
             changePowerPoints(-30);
-          }
+          },
         },
         {
           name: "Dwarf",
@@ -224,7 +228,7 @@ const Setup = () => {
             setHeight(1);
             adjOrgasmLimit(-1);
             changeTouchResistance(-10);
-          }
+          },
         },
         {
           name: "Orc",
@@ -245,7 +249,7 @@ const Setup = () => {
             changeCockProwess(-15);
             changeCockResistance(-10);
             changeAnusResistance(-10);
-          }
+          },
         },
         {
           name: "Elf",
@@ -268,7 +272,7 @@ const Setup = () => {
             changeTongueProwess(-5);
             changeBreastResistance(-5);
             changeSeductionProwess(-5);
-          }
+          },
         },
         {
           name: "Dark Elf",
@@ -285,7 +289,7 @@ const Setup = () => {
             changeVaginaProwess(-15);
             changeTouchProwess(-10);
             changeTongueProwess(-10);
-          }
+          },
         },
         {
           name: "Gnome",
@@ -302,7 +306,7 @@ const Setup = () => {
             setHeight(2);
             changeTongueProwess(-10);
             changeVaginaResistance(-10);
-          }
+          },
         },
         {
           name: "Succubus",
@@ -319,7 +323,7 @@ const Setup = () => {
             changeVaginaProwess(-15);
             changeMouthResistance(-5);
             changeSeductionProwess(-10);
-          }
+          },
         },
         {
           name: "Fairy",
@@ -338,37 +342,33 @@ const Setup = () => {
             changeVaginaProwess(-15);
             changeTongueProwess(-5);
             changeSeductionProwess(-5);
-          }
-        }
-      ]
+          },
+        },
+      ],
     },
     {
       title: "Eye Color",
-      selections: colors.map(col => ({
+      selections: colors.map((col) => ({
         name: col,
-        onSelect: () => setEyeColor(col)
-      }))
+        onSelect: () => setEyeColor(col),
+      })),
     },
     {
       title: "Hair Color",
-      selections: colors.map(col => ({
+      selections: colors.map((col) => ({
         name: col,
-        onSelect: () => setHairColor(col)
-      }))
+        onSelect: () => setHairColor(col),
+      })),
     },
     {
       title: "Skin Color",
-      selections: skinColor.map(col => ({
+      selections: skinColor.map((col) => ({
         name: col,
-        onSelect: () => setSkinColor(col)
-      }))
-    },
-    {
-      title: "Set Icon & Image",
-      component: <SetupImg />
+        onSelect: () => setSkinColor(col),
+      })),
     },
     { title: "Buy Skills", component: <BuyComponent /> },
-    { title: "Create Character", component: <Complete /> }
+    { title: "Create Character", component: <Complete /> },
   ];
 
   return (

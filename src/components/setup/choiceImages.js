@@ -13,7 +13,7 @@ export default {
   gender: {
     male,
     female,
-    futanari
+    futanari,
   },
   bodyShape: {
     buxom,
@@ -21,6 +21,6 @@ export default {
     medium,
     muscular,
     petite,
-    small
-  }
+    small,
+  },
 };
