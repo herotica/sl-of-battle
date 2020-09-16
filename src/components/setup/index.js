@@ -426,6 +426,7 @@ const Selections = observer(
                   <SelectBox
                     selected={index === selectedIndex}
                     onClick={OnPress}
+                    key={selection.name}
                   >
                     {selection.img && (
                       <SelectionImg alt="img" src={selection.img} />

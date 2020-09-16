@@ -33,7 +33,6 @@ paypal.me/herotica
 
 ### To do
 
-- add picture options
 - exec - test Windows
 
 ### Future Additions

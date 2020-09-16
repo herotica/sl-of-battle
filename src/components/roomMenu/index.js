@@ -129,7 +129,7 @@ const LeagueWrapper = ({ room, league, isComplete, collapseComplete }) => {
   return (
     <ListBox
       colors={colors}
-      onClick={isLocked || onPress}
+      onClick={isLocked ? null : onPress}
       padLess={hide}
       locked={isLocked}
     >
