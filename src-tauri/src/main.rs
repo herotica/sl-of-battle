@@ -3,10 +3,12 @@
   windows_subsystem = "windows"
 )]
 
+mod local_storage_plugin;
 mod cmd;
 
 fn main() {
   tauri::AppBuilder::new()
+    .plugin(local_storage_plugin::LocalStorage)
     .invoke_handler(|_webview, arg| {
       use cmd::Cmd::*;
       match serde_json::from_str(arg) {

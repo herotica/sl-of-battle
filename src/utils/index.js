@@ -1,8 +1,14 @@
 // Browser LocalStorage
 const LocalstorageKey = "slutsofbattle";
+const useLocalStorage = window.__TAURI__
+  ? window.tauriLocalStorage
+  : window.localStorage;
+
+// console.log(">>>>>>>>>>>>>>> window.__TAURI__",  Object.keys( window.__TAURI__.window));
+// console.log(">>>>>>>>>>>>>>> window", Object.keys( window));
 
 export const GetFromStorage = () => {
-  const Data = localStorage.getItem(LocalstorageKey);
+  const Data = useLocalStorage.getItem(LocalstorageKey);
   try {
     return JSON.parse(Data);
   } catch (e) {
@@ -11,7 +17,7 @@ export const GetFromStorage = () => {
 };
 
 export const StoreObj = (Data) => {
-  localStorage.setItem(LocalstorageKey, JSON.stringify(Data));
+  useLocalStorage.setItem(LocalstorageKey, JSON.stringify(Data));
 };
 
 export const createObjFromUpload = (importElementID, onFileLoad) => {
