@@ -58,7 +58,7 @@ const LeaguePointsShop = observer(() => {
                     setRoom(Rooms.fuckRoom);
                   };
 
-                  return (
+                  return slave && (
                     <CombatantButton
                       key={slave.name}
                       onClick={onSelectSlaveToFuck}
