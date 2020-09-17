@@ -76,7 +76,7 @@ const Main = styled.div`
   background: ${Palette.light};
   flex-grow: 1;
   overflow-y: auto;
-  padding: calc(2rem + 0.4vw);
+  padding: 1rem calc(2rem + 0.4vw);
 `;
 
 export default Layout;

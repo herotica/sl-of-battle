@@ -25,6 +25,7 @@ import {
   FlexWrap,
   FlexBetween,
   ActionWrap,
+  ActionsFlex,
   FightLogWrap,
   OrgasmIcon,
 } from "./styled";
@@ -209,13 +210,16 @@ const FighterActions = observer(() => {
     <ActionWrap>
       <MdTitle>{PhaseData[fightPhaseType].name}</MdTitle>
       {isRoundEnd && <SmText>{roundResult}</SmText>}
-      {!fightWinner &&
-        PhaseData[fightPhaseType].options.map((phaseOpt, index) => {
-          const onPress = () => OnActionRan(phaseOpt.onAction, index);
-          const isHidden = shouldHideOpt(phaseOpt);
+      {!fightWinner && (
+        <ActionsFlex>
+          {PhaseData[fightPhaseType].options.map((phaseOpt, index) => {
+            const onPress = () => OnActionRan(phaseOpt.onAction, index);
+            const isHidden = shouldHideOpt(phaseOpt);
 
-          return !isHidden && <ActBtn onPress={onPress} {...phaseOpt} />;
-        })}
+            return !isHidden && <ActBtn onPress={onPress} {...phaseOpt} />;
+          })}
+        </ActionsFlex>
+      )}
       {fightWinner && (
         <FightEnd
           winType={fightWinner}

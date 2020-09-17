@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  LgTitle,
-  SmText,
-  SmlrText,
-} from "../text";
+import { LgTitle, SmText, SmlrText } from "../text";
 
 export const FightRoomWrap = ({ title, subTitle, children }) => (
   <Wrapper>
-    <CenterTitle>
-      <LgTitle>{title}</LgTitle>
-      <SmText>{subTitle}</SmText>
-    </CenterTitle>
+    <FlexTitle>
+      <TopTitle>{title}</TopTitle>
+      <Subtitle>{subTitle}</Subtitle>
+    </FlexTitle>
     {children}
   </Wrapper>
 );
@@ -22,10 +18,10 @@ export const ActBtn = ({ onPress, name, description }) => (
   </ActionItem>
 );
 const MatchEndOpt = {
-    draw: "draw",
-    playerWin: "win",
-    playerlose: "lose"
-  };
+  draw: "draw",
+  playerWin: "win",
+  playerlose: "lose",
+};
 export const FightEnd = ({ winType, onWin, onLose, winnings }) => {
   switch (winType) {
     case MatchEndOpt.draw:
@@ -57,11 +53,19 @@ export const FightEnd = ({ winType, onWin, onLose, winnings }) => {
   }
 };
 export const Wrapper = styled.div`
-  margin: 8px 16px;
+  margin: 0 12px;
 `;
-export const CenterTitle = styled.div`
+const TopTitle = styled(LgTitle)`
+  margin: 4px;
+`;
+const Subtitle = styled(SmText)`
+  margin-left: 12px;
+`;
+const FlexTitle = styled.div`
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
 `;
 export const MainWrap = styled.div`
   ${({ roomImg }) => roomImg && `background-image: url(${roomImg});`}
@@ -70,7 +74,7 @@ export const MainWrap = styled.div`
   align-items: stretch;
 `;
 export const FighterImg = styled.img`
-  height: 420px;
+  height: 400px;
 `;
 export const FighterData = styled.div`
   flex: 0 3 80%;
@@ -92,8 +96,10 @@ export const VSBox = styled.div`
 `;
 export const FlexWrap = styled.div`
   display: flex;
+  min-height: 240px;
 `;
-export const FlexBetween = styled(FlexWrap)`
+export const FlexBetween = styled.div`
+  display: flex;
   justify-content: space-between;
   align-items: center;
   margin-right: 16px;
@@ -104,10 +110,19 @@ export const ActionWrap = styled.div`
   padding: 8px;
   flex-grow: 4;
 `;
+export const ActionsFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media all and (min-width: 1000px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`;
 export const ActionItem = styled.div`
   border: 1px solid black;
   background: rgba(60, 60, 60, 0.8);
-  margin: 16px;
+  margin: 10px;
   cursor: pointer;
   padding: 8px;
   max-width: 400px;
@@ -119,7 +134,7 @@ export const FightLogWrap = styled.div`
   padding: 8px;
   flex: 1 0 35%;
   overflow-y: auto;
-  max-height: 240px;
+  justify-content: stretch;
 `;
 export const OrgasmIcon = styled.img`
   width: 30px;
