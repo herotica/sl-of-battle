@@ -89,7 +89,7 @@ const Dominate = {
         ],
         sizeM: [
           `++++ roughly gropes xxxx's tits, and squeezes ==== nipples`,
-          `++++ spits on === hands before kneading xxxx's breasts roughly and flicking ==== lovely nipples`,
+          `++++ spits on ==== hands before kneading xxxx's breasts roughly and flicking ==== lovely nipples`,
         ],
         sizeL: [
           `++++ slaps ==== big breasts, and meanly crushes ==== breast meat`,

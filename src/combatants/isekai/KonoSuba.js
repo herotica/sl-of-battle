@@ -13,6 +13,10 @@ import DarknessIcon from "../../assets/combatants/isekai-league/darkness-icon.pn
 import DarknessWin from "../../assets/combatants/isekai-league/darkness-win.png";
 import DarknessLose from "../../assets/combatants/isekai-league/darkness-lose.png";
 
+import Konosuba from "../../assets/events/konosuba.jpg";
+import KonosubaLg1 from "../../assets/events/konosuba-lg1.jpg";
+import KonosubaLg2 from "../../assets/events/konosuba-lg2.jpg";
+
 export const seriesId = "KonoSuba";
 
 export default {
@@ -150,3 +154,15 @@ export default {
     orgasmLimit: 3,
   },
 };
+
+export const Events = [
+  {
+    requires: ["megumin", "aqua", "darkness"],
+    reqMale: true,
+    reqFemale: false,
+    title: "1 cock 3 mouths",
+    icon: Konosuba,
+    imgs: [KonosubaLg2, KonosubaLg1],
+    story: (p) => `Story for ${p.name}`,
+  },
+];

@@ -11,7 +11,7 @@ import KantaiCollection, {
   seriesId as KantaiCollectionId,
 } from "./battleship/KantaiCollection";
 //isekai
-import KonoSuba, { seriesId as KonoSubaId } from "./isekai/KonoSuba";
+import KonoSuba, { seriesId as KonoSubaId, Events as KonoSubaEvents } from "./isekai/KonoSuba";
 import SwordArt, { seriesId as SwordArtId } from "./isekai/SwordArt";
 import howNotToSummonDemonLord, {
   seriesId as howDemonId,
@@ -83,10 +83,16 @@ const seriesDb = {
   [doaId]: doa,
   [tekkenId]: tekken,
 };
+const eventsDb = {
+  [KonoSubaId]: KonoSubaEvents,
+}
 
 export const leagueGirlsAccessor = (seriesId, charId) => {
   return seriesDb[seriesId][charId];
 };
+export const leagueSeriesEvents = (seriesId) => {
+  return eventsDb[seriesId];
+}
 // export const leagueFranchiseAccessor = (seriesId) => {};
 
 export default Underground;

@@ -33,9 +33,10 @@ paypal.me/herotica
 
 ### To do
 
-- slave events
+- flex wrap btns
 - femwin pic option
 - Lose fight text
+- konosuba event text
 - alt version
 - exec - test Windows
 
@@ -44,6 +45,7 @@ paypal.me/herotica
 - Lose fight text
   - ? set of types of winner (dom-pussy,dom-cock,pleasure...) assign to characters
 - dom slave
+- more events
 
 ### bugs
 

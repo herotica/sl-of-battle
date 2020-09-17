@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Palette from "../../constants/palette";
 
-import { leagueGirlsAccessor } from "../../combatants";
+import { leagueGirlsAccessor, leagueSeriesEvents } from "../../combatants";
 import RoomHeader from "../roomHeader";
 import GoBack from "../back";
 import { useGlobalDataStore } from "../../state";
@@ -13,8 +14,8 @@ import BeerIcon from "../../assets/logo/beer.png";
 
 const LeaguePointsShop = observer(() => {
   const [openSeries, setOpenSeries] = useState(false);
-  const { losersBought, setRoom } = useGlobalDataStore();
-  const { setFuckRoomCombatant } = useFightDataStore();
+  const { losersBought, setRoom, isWoman, hasCock } = useGlobalDataStore();
+  const { setFuckRoomCombatant, setSlaveEvent } = useFightDataStore();
 
   return (
     <>
@@ -58,18 +59,28 @@ const LeaguePointsShop = observer(() => {
                     setRoom(Rooms.fuckRoom);
                   };
 
-                  return slave && (
-                    <CombatantButton
-                      key={slave.name}
-                      onClick={onSelectSlaveToFuck}
-                    >
-                      <OverlayText>
-                        <SmText>Use {slave.name}</SmText>
-                      </OverlayText>
-                      <LoserIcon src={slave.icon} alt={slave.name} />
-                    </CombatantButton>
+                  return (
+                    slave && (
+                      <CombatantButton
+                        key={slave.name}
+                        onClick={onSelectSlaveToFuck}
+                      >
+                        <OverlayText>
+                          <SmText>Use {slave.name}</SmText>
+                        </OverlayText>
+                        <LoserIcon src={slave.icon} alt={slave.name} />
+                      </CombatantButton>
+                    )
                   );
                 })}
+                <EventsList
+                  seriesKey={seriesKey}
+                  isWoman={isWoman}
+                  hasCock={hasCock}
+                  charIds={losersBought[seriesKey]}
+                  setSlaveEvent={setSlaveEvent}
+                  setRoom={setRoom}
+                />
               </FlexWrap>
             )}
           </div>
@@ -78,6 +89,55 @@ const LeaguePointsShop = observer(() => {
     </>
   );
 });
+
+const EventsList = ({
+  seriesKey,
+  setSlaveEvent,
+  setRoom,
+  isWoman,
+  hasCock,
+  charIds,
+}) => {
+  const events = leagueSeriesEvents(seriesKey) || false;
+
+  return (
+    events &&
+    events.map((e) => {
+      let show = true;
+      if ((e.reqMale && !hasCock) || (e.reqFemale && !isWoman)) {
+        show = false;
+      }
+      let isLocked = false;
+      let reqUnlocks = "";
+      e.requires.forEach((reqSlave) => {
+        if (!charIds.includes(reqSlave)) {
+          isLocked = true;
+          reqUnlocks += reqSlave + ", ";
+        }
+      });
+      const onSelectEvent = () => {
+        setSlaveEvent(e);
+        setRoom(Rooms.slaveEventRoom);
+      };
+
+      return (
+        show && (
+          <CombatantButton
+            key={e.title}
+            onClick={onSelectEvent}
+            isLocked={isLocked}
+            isEvent
+          >
+            <OverlayText>
+              <SmText>{isLocked ? "Req: " + reqUnlocks : e.title}</SmText>
+            </OverlayText>
+            <LoserIcon src={e.icon} alt={e.title} />
+          </CombatantButton>
+        )
+      );
+    })
+  );
+};
 
 const FlexWrap = styled.div`
   display: flex;
@@ -101,10 +161,10 @@ const SeriesBox = styled.div`
 `;
 const CombatantButton = styled.div`
   position: relative;
-  border: 1px solid ${(p) => p.borderCol || "darkgrey"};
+  border: 1px solid ${(p) => (p.isEvent ? Palette.darker : "darkgrey")};
   border-radius: 5px;
   padding: 4px;
-  cursor: ${(p) => (p.isbeaten ? "not-allowed" : "pointer")};
+  cursor: ${(p) => (p.isLocked ? "not-allowed" : "pointer")};
   margin: 0 4px;
   width: 140px;
   height: 140px;
@@ -113,7 +173,7 @@ const CombatantButton = styled.div`
   align-items: center;
   justify-content: space-around;
   transition: background 0.3s ease-in-out;
-  ${(p) => p.isbeaten && "opacity: 0.4"};
+  ${(p) => p.isLocked && "opacity: 0.4"};
 
   &:hover {
     background: rgba(80, 80, 80, 0.2);

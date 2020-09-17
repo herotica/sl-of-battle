@@ -10,6 +10,7 @@ export const Rooms = {
   fuckRoom: "fuckroom",
   leaguePShop: "leaguepointshop",
   loserSlaveRoom: "loserSlaveRoom",
+  slaveEventRoom: "slaveEventRoom",
 };
 export const FightRooms = {
   underground: "underground-pit",
