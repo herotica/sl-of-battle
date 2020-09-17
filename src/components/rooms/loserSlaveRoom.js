@@ -9,6 +9,7 @@ import { useFightDataStore } from "../../state/fight";
 import { observer } from "mobx-react-lite";
 import { MdTitleMiddle, SmText } from "../text";
 import { Rooms } from "../../constants";
+import BeerIcon from "../../assets/logo/beer.png";
 
 const LeaguePointsShop = observer(() => {
   const [openSeries, setOpenSeries] = useState(false);
@@ -21,6 +22,26 @@ const LeaguePointsShop = observer(() => {
         <GoBack />
       </RoomHeader>
       <MdTitleMiddle>Enjoy the fruits of your success!</MdTitleMiddle>
+      <SmText>
+        Congrats on getting so far, here you can find all the girls you've
+        collected, if you've enjoyed the game please consider buying me a beer,
+        though I might spend it on porn..
+      </SmText>
+      <BtmLink
+        href="https://paypal.me/herotica"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SmIcon src={BeerIcon} />
+        <span>Like it? Toss a coin to the devs</span>
+      </BtmLink>
+      <BtmLink
+        href="https://github.com/herotica/sl-of-battle/blob/master/docs/requests.md"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>Request new characters</span>
+      </BtmLink>
       {Object.keys(losersBought).map((seriesKey, index) => {
         const onClickSeriesBox = () => {
           setOpenSeries(index);
@@ -115,6 +136,22 @@ const OverlayText = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+`;
+const SmIcon = styled.img`
+  height: 38px;
+  display: inline;
+`;
+const BtmLink = styled.a`
+  margin-bottom: 4px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #3e3333;
+
+  &:hover {
+    color: black;
+  }
 `;
 
 export default LeaguePointsShop;

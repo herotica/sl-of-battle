@@ -33,14 +33,16 @@ paypal.me/herotica
 
 ### To do
 
+- slave events
+- femwin pic option
+- Lose fight text
+- alt version
 - exec - test Windows
 
 ### Future Additions
 
-- slave events (get x number, or precise names, unlock sex event)
 - Lose fight text
   - ? set of types of winner (dom-pussy,dom-cock,pleasure...) assign to characters
-- better difficulty
 - dom slave
 
 ### bugs

@@ -1,11 +1,26 @@
 import React from "react";
-import styled from "styled-components";
 import { observer } from "mobx-react-lite";
 
 import { useGlobalDataStore } from "../../state";
-import Palette from "../../constants/palette";
 import { PenisSize, BreastSize, holeSize } from "../../constants";
 import { SmlrText, SmText, MdTitle } from "../text";
+import BeerIcon from "../../assets/logo/beer.png";
+import {
+  ExpandingSidebar,
+  MainWrapper,
+  LinksBox,
+  BtmLink,
+  SmIcon,
+  CharWrap,
+  Icon,
+  DetailsWrap,
+  SmTitle,
+  SmCap,
+  Split,
+  PadTop,
+  Img,
+  SplitThirds,
+} from "./styled";
 
 const SideBar = observer(({ isCollapsed, onSwitch }) => {
   const charStore = useGlobalDataStore();
@@ -25,7 +40,15 @@ const SideBar = observer(({ isCollapsed, onSwitch }) => {
           </>
         )}
       </MainWrapper>
-      <GitLink>
+      <LinksBox>
+        <BtmLink
+          href="https://paypal.me/herotica"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SmIcon src={BeerIcon} />
+          <span>Like it? Toss a coin to the devs</span>
+        </BtmLink>
         <a
           href="https://github.com/herotica/sl-of-battle"
           target="_blank"
@@ -33,7 +56,7 @@ const SideBar = observer(({ isCollapsed, onSwitch }) => {
         >
           Github
         </a>
-      </GitLink>
+      </LinksBox>
     </ExpandingSidebar>
   );
 });
@@ -156,78 +179,5 @@ const ExpandedDetails = (props) => (
     </PadTop>
   </DetailsWrap>
 );
-
-const ExpandingSidebar = styled.div`
-  flex: 0 0 ${(p) => (p.isCollapsed ? "calc(160px + 0.4vw)" : "400px")};
-  background: ${(p) => (p.isCollapsed ? Palette.mid : Palette.light)};
-  overflow-y: auto;
-  transition: flex 0.5s ease-in-out, background 0.5s ease-in-out;
-  border-right: solid 4px ${Palette.dark};
-  direction: rtl;
-  padding-left: 10px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-`;
-const MainWrapper = styled.div`
-  padding: 10px;
-`;
-const CharWrap = styled.div`
-  text-align: center;
-  margin-bottom: 20px;
-`;
-const DetailsWrap = styled.div`
-  text-align: left;
-  margin-bottom: 20px;
-`;
-const Img = styled.img`
-  max-height: 360px;
-  object-fit: contain;
-`;
-const Icon = styled.img`
-  width: calc(80px + 0.2vw);
-  height: calc(80px + 0.2vw);
-`;
-const SmCap = styled.div`
-  margin-bottom: 2px;
-  line-height: 1.1;
-  font-size: calc(0.75rem + 0.2vw);
-
-  &:first-letter {
-    text-transform: uppercase;
-  }
-`;
-const PadTop = styled.div`
-  margin-top: 8px;
-`;
-const SmTitle = styled(SmText)`
-  font-weight: bold;
-  margin: 8px 0;
-  text-align: center;
-  line-height: 1;
-`;
-const Split = styled.div`
-  display: inline-block;
-  width: 50%;
-`;
-const SplitThirds = styled.div`
-  display: inline-block;
-  width: 33%;
-`;
-const GitLink = styled.div`
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 1em 0;
-  & > a {
-    text-decoration: none;
-    color: #3e3333;
-
-    &:hover {
-      color: black;
-    }
-  }
-`;
 
 export default SideBar;
