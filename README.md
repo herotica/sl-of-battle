@@ -33,9 +33,8 @@ paypal.me/herotica
 
 ### To do
 
-- flex wrap btns
+- fix reload cheat
 - femwin pic option
-- Lose fight text
 - konosuba event text
 - alt version
 - exec - test Windows

@@ -9,11 +9,13 @@ import Button from "../button";
 import Modal from "../modal";
 import { InitialValues } from "../../state";
 import { FightRooms, Rooms } from "../../constants";
+import GetLoserText from "../../eventText/loseText";
 
 const RankAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 const LeagueRoom = observer(() => {
   const [showExit, setShowExit] = useState(false);
+  const p = useGlobalDataStore();
   const {
     currentLgWinNum,
     currentLeague,
@@ -26,7 +28,7 @@ const LeagueRoom = observer(() => {
     saveChar,
     addNewLeague,
     resetLeagueCredits,
-  } = useGlobalDataStore();
+  } = p;
   if (!currentLeague) setRoomSave(Rooms.main);
   const { ranks, id, initialPoints } = currentLeague;
   const missingLeagueData = !leagueProgress[id];
@@ -68,17 +70,28 @@ const LeagueRoom = observer(() => {
       )}
       {currentLeagueProgress.fightPic &&
         (currentLeagueProgress.hasLost ? (
-          <Modal title="Fight Over" onHide={() => {}} wide>
+          <Modal title="League Failed" onHide={() => {}} wide>
             <UWrap>
               <FlexCol>
                 <FightEndImg
                   src={currentLeagueProgress.fightPic}
                   alt="lose-img"
                 />
-                <SmlrText>
-                  Oh No!!, you were bested, and that means you've failed to
-                  complete the League, try again after you've trained some more.
-                </SmlrText>
+                <div>
+                  <SmlrText>
+                    {GetLoserText(
+                      p,
+                      currentLeagueProgress.opHasCock,
+                      currentLeagueProgress.opName
+                    )}
+                  </SmlrText>
+                  <SmlrText>---</SmlrText>
+                  <SmlrText>
+                    Oh No!!, you were bested, and that means you've failed to
+                    complete the League, try again after you've trained some
+                    more.
+                  </SmlrText>
+                </div>
               </FlexCol>
               <Button onClick={resetOnLeave}>Leave</Button>
             </UWrap>
@@ -223,6 +236,8 @@ const CombatantBox = ({
       ...currentLeagueProgress,
       hasLost: true,
       fightPic: combatant.opWinImg,
+      opHasCock: combatant.hasCock,
+      opName: combatant.name,
     };
     setCurrentLeagueProgress(newProgObj);
   };
