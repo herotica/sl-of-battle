@@ -33,22 +33,18 @@ paypal.me/herotica
 
 ### To do
 
-- fix reload cheat
-- femwin pic option
 - konosuba event text
+- add stories
 - alt version
 - exec - test Windows
 
 ### Future Additions
 
-- Lose fight text
-  - ? set of types of winner (dom-pussy,dom-cock,pleasure...) assign to characters
 - dom slave
 - more events
 
 ### bugs
 
-- underground exhibition broken
 
 ## Development info
 
