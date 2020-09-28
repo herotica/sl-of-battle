@@ -194,6 +194,7 @@ const CombatantBox = ({
   isLocked,
 }) => {
   const {
+    hasCock,
     currentLeague,
     setCurrentLgWinNum,
     currentLeagueProgress,
@@ -218,7 +219,7 @@ const CombatantBox = ({
         ...currentLeagueProgress.wins,
         [combatantVal]: true,
       },
-      fightPic: combatant.opLoseImg,
+      fightPic: !hasCock && combatant.opLoseLesImg ? combatant.opLoseLesImg : combatant.opLoseImg,
     };
     setCurrentLeagueProgress(newProgObj);
     setCurrentLgWinNum(groupID);

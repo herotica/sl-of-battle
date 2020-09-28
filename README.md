@@ -33,8 +33,8 @@ paypal.me/herotica
 
 ### To do
 
-- konosuba event text
 - add stories
+- konosuba event text
 - alt version
 - exec - test Windows
 
@@ -45,6 +45,8 @@ paypal.me/herotica
 
 ### bugs
 
+- on fuck room leave
+- enter league complete
 
 ## Development info
 

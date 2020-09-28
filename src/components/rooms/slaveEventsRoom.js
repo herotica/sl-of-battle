@@ -11,14 +11,12 @@ import {
   Image,
   TextWrap,
   InnerWrap,
-  UpperCase,
 } from "./styled";
 
 const EventRoom = observer(() => {
   const playerCharStore = useGlobalDataStore();
   const { setRoomSave } = playerCharStore;
   const { event, onBackRoom } = useFightDataStore();
-  console.log("event", event);
 
   const LeaveRoom = () => {
     setRoomSave(onBackRoom);

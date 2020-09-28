@@ -27,7 +27,7 @@ const FuckRoom = observer(() => {
   const [fuckChoice, setFuckChoice] = useState(false);
   const [fuckEndChoice, setFuckEndChoice] = useState(false);
   const playerCharStore = useGlobalDataStore();
-  const { hasCock, setRoomSave } = playerCharStore;
+  const { hasCock, setRoomSave, isWoman } = playerCharStore;
   const { fuckRoomCombatant, onBackRoom } = useFightDataStore();
 
   const LeaveRoom = () => {
@@ -53,6 +53,9 @@ const FuckRoom = observer(() => {
         <ImageWrap>
           <Image src={fuckRoomCombatant.img} alt="loser" />
           <Image src={fuckRoomCombatant.opLoseImg} alt="loser" />
+          {isWoman && fuckRoomCombatant.opLoseLesImg && (
+            <Image src={fuckRoomCombatant.opLoseLesImg} alt="loserlesbian" />
+          )}
           -- Win Image --
           <Image src={fuckRoomCombatant.opWinImg} alt="loser" />
         </ImageWrap>

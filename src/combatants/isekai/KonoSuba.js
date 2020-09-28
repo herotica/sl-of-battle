@@ -2,16 +2,19 @@ import Megumin from "../../assets/combatants/isekai-league/megumin.png";
 import MeguminIcon from "../../assets/combatants/isekai-league/megumin-icon.png";
 import MeguminWin from "../../assets/combatants/isekai-league/megumin-win.png";
 import MeguminLose from "../../assets/combatants/isekai-league/megumin-lose.png";
+import MeguminLes from "../../assets/combatants/isekai-league/megumin-les.png";
 
 import Aqua from "../../assets/combatants/isekai-league/aqua.png";
 import AquaIcon from "../../assets/combatants/isekai-league/aqua-icon.png";
 import AquaWin from "../../assets/combatants/isekai-league/aqua-win.png";
 import AquaLose from "../../assets/combatants/isekai-league/aqua-lose.png";
+import AquaLes from "../../assets/combatants/isekai-league/aqua-les.png";
 
 import Darkness from "../../assets/combatants/isekai-league/darkness.png";
 import DarknessIcon from "../../assets/combatants/isekai-league/darkness-icon.png";
 import DarknessWin from "../../assets/combatants/isekai-league/darkness-win.png";
 import DarknessLose from "../../assets/combatants/isekai-league/darkness-lose.png";
+import DarknessLes from "../../assets/combatants/isekai-league/darkness-les.png";
 
 import Konosuba from "../../assets/events/konosuba.jpg";
 import KonosubaLg1 from "../../assets/events/konosuba-lg1.jpg";
@@ -29,6 +32,7 @@ export default {
     icon: MeguminIcon,
     opWinImg: MeguminWin,
     opLoseImg: MeguminLose,
+    opLoseLesImg: MeguminLes,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -76,6 +80,7 @@ export default {
     icon: AquaIcon,
     opWinImg: AquaWin,
     opLoseImg: AquaLose,
+    opLoseLesImg: AquaLes,
     gender: "female",
     isWoman: true,
     hasCock: false,
@@ -119,6 +124,7 @@ export default {
     icon: DarknessIcon,
     opWinImg: DarknessWin,
     opLoseImg: DarknessLose,
+    opLoseLesImg: DarknessLes,
     gender: "female",
     isWoman: true,
     hasCock: false,
