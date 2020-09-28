@@ -45,9 +45,6 @@ paypal.me/herotica
 
 ### bugs
 
-- on fuck room leave
-- enter league complete
-
 ## Development info
 
 ### Prerequisites
