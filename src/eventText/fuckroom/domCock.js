@@ -61,6 +61,36 @@ export default [
     ],
   },
   {
+    displayText: "Bedtime creampie",
+    textOptions: [
+      (p, c) =>
+        `${p.name} crept in and snuggled into bed with ${c.name}, she turned over.
+  
+        "Please don't be too rough."
+        "I'll try, now lets get your pants free."
+    
+    ${p.name} began to 69 ${c.name}, plunging ${p.pn.her} cock into ${c.name}'s waiting mouth she moaned as it was delightfully tongued. ${p.name} began work on wetting her clit, and working her G spot with ${p.pn.her} tongue, soon her passage was dripping.
+    
+    ${p.name} lay on ${p.pn.her} back and instructed ${c.name}.
+    
+        "Now get on my cock you lazy fuckhole, spear yourself on my throbbing cock."
+    
+    ${c.name} moved quickly, sliding her cunt deep over the excited member. ${p.name} pulls her down, and her ready pussy rolls almost to the base, and ${p.pn.she} begins to pump up with ${p.pn.her} hips, ${c.name} grimaces at the sudden rush of painful pleasure, she moans loadly as she is vaginally pounded by ${p.name}'s bucking hips. 
+    
+    ${p.name} ploughs away excitedly, before finally pulling toward a climax, clutching ${c.name} and pulling on her shoulders ${p.name} pulls her round the base of ${p.pn.her} cock, and loudly cries out as she pumps ${p.pn.her} thick semen deep into ${c.name}'s womb. ${c.name} cries out as well as ${p.pn.she} reaches a pitching orgasm, ${p.name} grips her as the last of ${p.pn.her} seed empties out.
+    
+    Unfullfilled, ${p.name} pulls ${p.pn.her} cock free and pops the cum splattered and still hard cock directly into ${c.name}'s protesting mouth, fucking her face tenderly into the cushion, writhing around, ${c.name}'s legs kick as she loses self control under ${p.name}'s breath-play.
+    
+    "Ready to breath now cum slut?"
+    
+    ${p.name} pulls ${p.pn.her} cock free rubs it over the girl's panting face.
+    
+    "Now for my handjob.."
+    
+    ${c.name} obligingly pumps the messy penis, bringing it's already throbbing state even higher, ${p.name} moans loadly as ${p.pn.she} is again brought to orgasm.`,
+    ],
+  },
+  {
     displayText: "Use her tits",
     textOptions: [
       (p, c) => `${p.name} bit ${
@@ -248,6 +278,147 @@ ${c.name} wriggled uncomfortably, ${
       } opened her arse cheeks and enjoyed the view of her loosened arse.
     
     "Good work slut" ${p.pn.Cshe} said patting her tender bottom.`,
+    ],
+  },
+  {
+    displayText: "Anal cocksleeve",
+    textOptions: [
+      (p, c) =>
+        `"Time for my fuckslave to pleasure me, I'm getting hungry for you soft arse."
+  
+        ${p.name} shouted as ${
+          p.pn.she
+        } entered the room, and walked straight toward ${
+          c.name
+        }, who scowled aggravatedly. ${p.name} slowly pushed ${
+          c.name
+        } to the edge of the room and pressed her against the wall, ${
+          p.pn.her
+        } hands crept under ${
+          c.name
+        }'s skirt and wrenched down her silky underwear, rubbing ${
+          p.pn.her
+        } cock with lube, growing it to it's full ${
+          PenisSize[p.penisSize]
+        } size, ${p.pn.she} guided it in to ${c.name}'s now visible arse. ${
+          c.name
+        } moaned as the ${PenisSize[p.penisSize]} prick broke through, ${
+          p.pn.she
+        } pushed on, digging a third of ${p.pn.her} meaty cock into ${
+          c.name
+        }'s streched behind.
+        
+            "Shame I missed your tighter years, some of the others girks said you had the greatest arse."
+            "I did, till they fucked it loose." ${
+              c.name
+            } responded in an antoginsed tone.
+        
+            "Winners perks, win more next time slut, but for now I'm gonna use your arse as my personal cock sleeve."
+        
+        ${p.name} added as ${p.pn.she} began to hammer at ${
+          c.name
+        }'s slowly giving anal passage, ${p.pn.Cher} cock
+         had now breached halfway in, and ${
+           c.name
+         }'s expression had turned to one of great discomfort.
+        
+            "You can't go any further!"
+        
+        ${c.name} squeaked, ${p.name} ignored her as ${p.pn.she} worked ${
+          p.pn.her
+        } hips, each thrust sent waves across ${
+          c.name
+        }'s arse as she was pressed helplessly against the wall. ${
+          p.name
+        } lent forward and a hand worked its way up ${
+          c.name
+        }'s top and a hand groped round one of her ${
+          BreastSize[p.breastSize]
+        } breasts, and began to pull on her nipple, which caused ${
+          c.name
+        } to moan loadly.
+        
+        Unable to dig further ${p.name} pulled ${
+          p.pn.her
+        } cock free, and pulled ${c.name} around.
+        
+            "Take off your top, I need to taste your slutty breasts."
+        
+        ${c.name} bit her lip, as ${
+          p.name
+        } instantly moved as soon as her nipples were free, sucking hungrly on the hard nipples, ${
+          p.pn.her
+        } other hand toyed with the free nipple before switching sides. ${
+          c.name
+        } moaned loader.
+            
+            "Ohhh, your tongue, please, more!"
+            "Mmmm.. lovely, but now back to the main course cockslut."
+        
+        ${p.name} pulled the confused looking ${
+          c.name
+        } down to the floor, and told her to lay on her front. Spreading ${
+          c.name
+        }'s arse cheeks again ${p.pn.she} lay onto top of her pushing ${
+          p.pn.her
+        } fat cock slowly back into place, and raising her arse of the floor. ${
+          p.name
+        } wrapped ${c.name}'s hair around ${p.pn.her} hands, and pushed ${
+          p.pn.her
+        } hips foward as ${p.pn.she} pressed ${
+          p.pn.her
+        } feet into the floor, slowly ${p.pn.she} skewered ${
+          c.name
+        }'s arse on ${
+          p.pn.her
+        } hard cock, which had now entered 3/4 of it's length in. ${
+          c.name
+        } screamed out.
+        
+            "Arrggh, you can't, you'll break me."
+            "I'll do what I have to."
+            "I can't feel my legs!
+        
+        ${p.name} pulled harder, slowly ${p.pn.her} cock slid in further, as ${
+          c.name
+        } bent backward, finally ${c.name}'s arse slid fully on.
+        
+            "See I new you had it in you."
+        
+        ${c.name} could only dribble, half in pain, half in ecstasy. ${
+          p.name
+        } then pinned ${c.name} to the floor as ${
+          p.pn.she
+        } lent forward, placing ${
+          p.pn.her
+        } hands on the girl's shoulders. Rocking on ${p.pn.her} knees ${
+          p.name
+        } began to fuck ${c.name}'s hole, still resistant ${
+          p.pn.she
+        } pulled herself forward as ${p.pn.she} slammed into the ${
+          c.name
+        }'s arse cheeks, each strike producing a loud wail from ${
+          c.name
+        }. Eventually ${p.name} pressed herself as deep in as ${
+          p.pn.she
+        } could, and pulled ${p.pn.self}self tight against ${c.name}.
+        
+            "Oh, ${p.name}!, Fill my arse with your hot seed!" She cried.
+            "Enjoy my little cumslut."
+        
+        ${p.name} bit ${c.name}'s ear as a flood of cum washed out into ${
+          c.name
+        }'s intestine, three great loads barrelled out, each making ${
+          c.name
+        } shiver at the feeling. ${p.name} slipped ${
+          p.pn.her
+        } cock out, and wiped off the fluids on ${
+          c.name
+        }'s skirt, patted her bum and walked away. Lokoing back, ${
+          p.name
+        } watched, as ${
+          c.name
+        } pushed herself slowly to her knees, cum slowly draining from her arse, and wiped a few tears from her eyes.`,
     ],
   },
   {
