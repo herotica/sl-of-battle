@@ -105,7 +105,7 @@ export function createFightStore() {
     onBackRoom: Rooms.league,
 
     fuckRoomCombatant: null,
-    setFuckRoomCombatant(combatant, onBackRoom = Rooms.leaguee) {
+    setFuckRoomCombatant(combatant, onBackRoom = Rooms.league) {
       this.fuckRoomCombatant = combatant;
       this.onBackRoom = onBackRoom;
     },
