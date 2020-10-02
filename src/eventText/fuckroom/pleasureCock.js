@@ -365,4 +365,118 @@ export default [
     "My balls are ready, I hope your ready for the giant wave of spunk you've made by balls produce!"`,
     ],
   },
+  {
+    displayText: "nightime fucking",
+    textOptions: [
+      (p, c) =>
+        `${p.name} walked up to ${c.name}'s bed, ${c.name} smiled enticingly, and motioned ${p.pn.her} over, ${p.name} undressed slowly, enjoying the sound of ${c.name} breathing lustily as everything was revealed.
+
+      Naked, and with a throbbing member, ${p.name} walked over, ${c.name} hungrily grasped ${p.pn.her} cock and began to lather it with attention, caressing it with her hands and tongue, she switched to swallowing it deeply and teasing it with her teeth.
+     
+     ${p.name} pushed her down, and clambered on top, ${p.pn.she} first teased ${c.name}'s soft cunt, running ${p.pn.her} fingers and cock over it, stopping, and starting again, driving the girl wild with desire. Slowly ${p.pn.she} began to press it in, parting ${c.name}'s lowers lips and gently climbing into her moist passage, enjoying the soft cling. Spearing ${c.name}, ${p.pn.she} moved in for a forceful explorative kiss, gripping ${c.name}'s hair commandingly as ${p.pn.she} began to buck with ${p.pn.her} hips, ${c.name} struggled to continue the soft embrace of tongues as moans escaped from her orgasmic fucking.
+     
+     ${p.name} began to explore the girls neck, biting and licking as ${p.pn.her} thrusts became longer and deeper, ${p.pn.her} immense length was threaded all the way in and out, pulling loud cries from ${c.name}. Pulling and pinching at the girls supple body, and teasing her hard nipples, ${p.name} began to moan as ${p.pn.she} enjoyed the delights of ${c.name}'s sweet pussy.
+     
+     Feeling ${p.pn.self}self peak, ${p.pn.she} pulled the girl in close and pushed herself completly in, ${c.name} gripped her back.
+     
+       "Pump your seed deep into me ${p.name}, I want your hot cream to drown my womb."
+       "Take it cumslut, drain my cock with your pussy!"
+     
+     ${p.name} gritted ${p.pn.her} teeth as multiples waves of cum burst into ${c.name}, ${p.pn.she} held her tight, squeezing out every drop right into the deepest part of her womb. Fully satiated, ${p.pn.she} again explored the girls reponsive mouth, then stood up, admiring ${c.name} lying on the bed breathing heavily and smiling at the warm feeling inside her.
+     
+     "Got a last few pumps of my hot cum for you left, now where shall I spray it?"
+
+     ${c.name} bit her lip in lustful hunger.
+     `,
+    ],
+  },
+  {
+    displayText: "Pounding at the tennis courts.",
+    textOptions: [
+      (p, c) =>
+        `${p.name} smiled hungrily at ${c.name} the gorgeous ${c.bodyShape} ${
+          c.hairColor
+        }, admiring her ${
+          BreastSize[c.breastSize]
+        } bust, held tightly in a pink sportsbra, walking up behind her ${
+          p.pn.she
+        } gripped her soft tush.
+
+        "Hi ${c.name} my sweet, could you get on your knees for me?"
+      
+      ${c.name} looked round at ${p.pn.her} and happily obliged, ${
+          p.name
+        } walked to her front, and presented ${p.pn.her} limp cock, ${
+          c.name
+        } quickly began to give it attention, rubbing it and licking it, she smiled up at ${
+          p.name
+        } as it grew hard.
+      
+        "It's looks lovely, I want it in me!"
+      
+      Her eyes looked up with powerful lust, ${p.name} stroked her soft hair.
+      
+        "My pleasure."
+      
+      ${p.name} proceeded to thread ${
+          p.pn.her
+        } cock into the girls tightly held cleavage, and began to fuck her chest, ${
+          c.name
+        } licked the ${
+          PenisSize[p.penisSize]
+        } cock's tip enthusiastically. After a short while of titfucking, ${
+          p.name
+        } dripped a large precum load into ${c.name}'s sports bra. ${
+          c.name
+        } began to moan before ${
+          p.name
+        } pulled her to her feet, and then just as quick freed her of her bottoms, lifting her legs as ${
+          p.pn.she
+        } took them, ${p.pn.she} looked at ${c.name}, who was still complaining.
+      
+        "I can still feel your precum squishing about, it's weird.."
+        "enjoy it, you pulled it from my with those soft tits of yours!"
+      
+      ${
+        p.name
+      } placed the girl's bottoms over her head, blindfolding her eyes, and guided over to the net. Pulling a square in the net open, ${
+          p.pn.she
+        } pushed ${
+          c.name
+        }'s head through, then pushed her hands through other holes, ducking under ${
+          p.pn.she
+        } tied the girls hands to the net, as ${c.name} purred demurely.
+
+      "what are you planning to do to your poor slave?"
+      "Oh, she'll find out soon enough."
+      
+      ${
+        p.name
+      } then returned to the girls bottom, and grabbing it firmly in both hands ${
+          p.pn.she
+        } explored her cunt with ${p.pn.her} hungry tongue, ${
+          p.pn.she
+        } could feel ${c.name} buck and shift under the waves of pleasure.
+      
+      Fully wet, ${p.name} stood and gently slid ${p.pn.her} cock in, ${
+          c.name
+        }'s pussy was tight, but ${p.name} pushed on, beginning slowly, ${
+          p.pn.her
+        } hips sped up as ${p.pn.she} entered further. ${
+          c.name
+        } writhed and moaned meekly as ${
+          p.name
+        } began to pound her roughly, fucking her tight pussy with a growing lustful energy that made ${
+          c.name
+        }'s legs shudder.
+      
+      ${p.name} moaned as ${
+          p.pn.she
+        } continued to fuck the girl's wet clinging cunt, enjoying the delights of her soft pussy's grip and squirming body. 
+      
+      "Please cum in me!"
+      "Maybe sweety, you have to earn my warm cum!"
+       `,
+    ],
+  },
 ];
