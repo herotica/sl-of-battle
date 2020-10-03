@@ -33,9 +33,8 @@ paypal.me/herotica
 
 ### To do
 
-- add stories
+- save test
 - alt version
-- konosuba event text
 - exec - test Windows
 
 ### Future Additions
