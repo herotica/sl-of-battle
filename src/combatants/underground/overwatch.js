@@ -1,10 +1,10 @@
 //interface for getting data
-import Mei from "../../assets/body-type/chubby.png";
+import Mei from "../../assets/body-type/chubby.jpg";
 
-const Overwatch = {
+export default {
   mei: {
-    name: "Mei",
-    description: "The curvaceous, busty Mei, she doesn't look confident.",
+    name: "Melanie",
+    description: "The curvaceous, busty Melanie",
     img: Mei,
     gender: "female",
     isWoman: true,
@@ -12,11 +12,11 @@ const Overwatch = {
     race: "Human",
     bodyShape: "chubby",
     eyeColor: "brown",
-    hairColor: "brown",
+    hairColor: "black",
     skinColor: "fair",
     height: 2,
     penisSize: 0,
-    breastSize: 5,
+    breastSize: 3,
     vaginaSize: 3,
     anusSize: 2,
     throatSize: 3,
@@ -40,8 +40,6 @@ const Overwatch = {
     cockResistance: 5,
     vaginaResistance: 25,
     anusResistance: 15,
-    orgasmLimit: 3
-  }
+    orgasmLimit: 3,
+  },
 };
-
-export default Overwatch;

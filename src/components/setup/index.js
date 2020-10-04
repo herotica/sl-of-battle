@@ -31,11 +31,9 @@ const Setup = () => {
   const {
     setGender,
     setBodyShape,
-    setRace,
     setEyeColor,
     setHairColor,
     setSkinColor,
-    setHeight,
     adjPenisSize,
     adjBreastSize,
     adjVaginaSize,
@@ -43,19 +41,6 @@ const Setup = () => {
     adjThroatSize,
     changeSeductionProwess,
     changeGrapplingProwess,
-    changeTongueProwess,
-    changeTouchProwess,
-    changeCockProwess,
-    changeVaginaProwess,
-    changeAnusProwess,
-    changePowerPoints,
-    changeTouchResistance,
-    changeBreastResistance,
-    changeMouthResistance,
-    changeCockResistance,
-    changeVaginaResistance,
-    changeAnusResistance,
-    adjOrgasmLimit,
   } = useGlobalDataStore();
 
   const SetupPages = [
@@ -195,153 +180,6 @@ const Setup = () => {
             adjBreastSize(-1);
             adjVaginaSize(-1);
             adjAnusSize(-1);
-          },
-        },
-      ],
-    },
-    {
-      title: "Race", // sets height
-      selections: [
-        {
-          name: "Human",
-          details: "A normal human, very varied.",
-          onSelect: () => {
-            setRace(raceType.human);
-            changePowerPoints(30);
-          },
-          onUnSel: () => {
-            changePowerPoints(-30);
-          },
-        },
-        {
-          name: "Dwarf",
-          details: "A hardy but short dwarf, resistant and strong.",
-          onSelect: () => {
-            setRace(raceType.dwarf);
-            changePowerPoints(10);
-            setHeight(-1);
-            adjOrgasmLimit(1);
-            changeTouchResistance(10);
-          },
-          onUnSel: () => {
-            changePowerPoints(-10);
-            setHeight(1);
-            adjOrgasmLimit(-1);
-            changeTouchResistance(-10);
-          },
-        },
-        {
-          name: "Orc",
-          details: "A powerful Orc, tall and gifted with large organs.",
-          onSelect: () => {
-            setRace(raceType.orc);
-            setHeight(2);
-            adjPenisSize(1);
-            adjBreastSize(1);
-            changeCockProwess(15);
-            changeCockResistance(10);
-            changeAnusResistance(10);
-          },
-          onUnSel: () => {
-            setHeight(-2);
-            adjPenisSize(-1);
-            adjBreastSize(-1);
-            changeCockProwess(-15);
-            changeCockResistance(-10);
-            changeAnusResistance(-10);
-          },
-        },
-        {
-          name: "Elf",
-          details: "Lithe and feminine Elf, resistance to much pleasure.",
-          onSelect: () => {
-            setRace(raceType.elf);
-            setHeight(1);
-            changeVaginaProwess(10);
-            changeVaginaResistance(10);
-            changeMouthResistance(10);
-            changeTongueProwess(5);
-            changeBreastResistance(5);
-            changeSeductionProwess(5);
-          },
-          onUnSel: () => {
-            setHeight(-1);
-            changeVaginaProwess(-10);
-            changeVaginaResistance(-10);
-            changeMouthResistance(-10);
-            changeTongueProwess(-5);
-            changeBreastResistance(-5);
-            changeSeductionProwess(-5);
-          },
-        },
-        {
-          name: "Dark Elf",
-          details: "A plumper stronger Elf, seductively capable.",
-          onSelect: () => {
-            setRace(raceType.darkelf);
-            setHeight(1);
-            changeVaginaProwess(15);
-            changeTouchProwess(10);
-            changeTongueProwess(10);
-          },
-          onUnSel: () => {
-            setHeight(-1);
-            changeVaginaProwess(-15);
-            changeTouchProwess(-10);
-            changeTongueProwess(-10);
-          },
-        },
-        {
-          name: "Gnome",
-          details: "Small but intelligent, good with their tongue.",
-          onSelect: () => {
-            setRace(raceType.gnome);
-            changePowerPoints(20);
-            setHeight(-2);
-            changeTongueProwess(10);
-            changeVaginaResistance(10);
-          },
-          onUnSel: () => {
-            changePowerPoints(-20);
-            setHeight(2);
-            changeTongueProwess(-10);
-            changeVaginaResistance(-10);
-          },
-        },
-        {
-          name: "Succubus",
-          details: "Wise, alluring & seductive.",
-          onSelect: () => {
-            setRace(raceType.succubus);
-            changeTongueProwess(15);
-            changeVaginaProwess(15);
-            changeMouthResistance(5);
-            changeSeductionProwess(10);
-          },
-          onUnSel: () => {
-            changeTongueProwess(-15);
-            changeVaginaProwess(-15);
-            changeMouthResistance(-5);
-            changeSeductionProwess(-10);
-          },
-        },
-        {
-          name: "Fairy",
-          details: "Small and graceful. knows how to use their tight holes.",
-          onSelect: () => {
-            setRace(raceType.fairy);
-            setHeight(-2);
-            changeAnusProwess(10);
-            changeVaginaProwess(15);
-            changeTongueProwess(5);
-            changeSeductionProwess(5);
-          },
-          onUnSel: () => {
-            setHeight(2);
-            changeAnusProwess(-10);
-            changeVaginaProwess(-15);
-            changeTongueProwess(-5);
-            changeSeductionProwess(-5);
           },
         },
       ],

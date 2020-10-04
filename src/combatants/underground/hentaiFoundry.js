@@ -1,12 +1,12 @@
 //interface for getting data
-import Carmen from "../../assets/body-type/muscular.png";
-import Meryl from "../../assets/gender/futa.png";
+import Carmen from "../../assets/body-type/muscular.jpg";
+import Meryl from "../../assets/gender/futa.jpg";
 
 export const hentaiFoundry = {
   carmen: {
     name: "Carmen",
     description:
-      "the sexy and ruthless Carmen, a beautiful girl brought to us by Dmitrys",
+      "the sexy and ruthless Carmen, a beautiful girl, with beautiful muscles",
     img: Carmen,
     gender: "female",
     isWoman: true,
@@ -14,11 +14,11 @@ export const hentaiFoundry = {
     race: "Human",
     bodyShape: "muscular",
     eyeColor: "brown",
-    hairColor: "black",
-    skinColor: "olive",
+    hairColor: "brown",
+    skinColor: "tanned",
     height: 4,
     penisSize: 0,
-    breastSize: 4,
+    breastSize: 2,
     vaginaSize: 4,
     anusSize: 4,
     throatSize: 4,
@@ -47,16 +47,16 @@ export const hentaiFoundry = {
   meryl: {
     name: "Meryl",
     description:
-      "the powerful and well hung Meryl, a alluring but scary futa from Dmitrys",
+      "the powerful and well hung Meryl, a alluring but scary futa",
     img: Meryl,
     gender: "futa",
     isWoman: true,
     hasCock: true,
     race: "Human",
-    bodyShape: "muscular",
-    eyeColor: "blue",
-    hairColor: "white",
-    skinColor: "fair",
+    bodyShape: "curved",
+    eyeColor: "brown",
+    hairColor: "brown",
+    skinColor: "olive",
     height: 4,
     penisSize: 4,
     breastSize: 5,

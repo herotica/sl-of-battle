@@ -1,9 +1,9 @@
 // Browser LocalStorage
 const LocalstorageKey = "slutsofbattle";
-const autosave = "sluts-of-battle/current-autosave";
+const autosave = "real-sluts-of-battle/current-autosave";
 
 if (window.__TAURI__) {
-  window.__TAURI__.fs.createDir("sluts-of-battle", {
+  window.__TAURI__.fs.createDir("real-sluts-of-battle", {
     dir: 7,
   });
 }
@@ -35,7 +35,7 @@ export const StoreObj = (Data) => {
     window.__TAURI__.fs
       .writeFile(
         {
-          path: "sluts-of-battle/autosave-" + Data.name,
+          path: "real-sluts-of-battle/autosave-" + Data.name,
           contents,
         },
         {
@@ -44,14 +44,14 @@ export const StoreObj = (Data) => {
       )
       .catch(() => {
         window.__TAURI__.fs.removeFile(
-          "sluts-of-battle/autosave-" + Data.name,
+          "real-sluts-of-battle/autosave-" + Data.name,
           {
             dir: 7,
           }
         );
         window.__TAURI__.fs.writeFile(
           {
-            path: "sluts-of-battle/autosave-" + Data.name,
+            path: "real-sluts-of-battle/autosave-" + Data.name,
             contents,
           },
           {
@@ -107,7 +107,7 @@ export const createFileFromObj = (dataObj, name) => {
   } else {
     createFile(
       JSON.stringify(dataObj),
-      `${name}.slutsofbattle.json`,
+      `${name}.realslutsofbattle.json`,
       "application/json"
     );
   }

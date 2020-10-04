@@ -100,7 +100,7 @@ export const InitialValues = {
   vaginaSize: 2,
   anusSize: 2,
   throatSize: 2,
-  powerPoints: 30, // spent at character setup
+  powerPoints: 60, // spent at character setup
   choiceSelection: new Array(50).fill(false),
   selectionArr: new Array(50).fill(false),
   seductionProwess: 5,
