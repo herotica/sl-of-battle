@@ -384,7 +384,10 @@ export function createGlobalStore() {
     importSaveFile(importedObj) {
       try {
         Object.assign(this, importedObj);
-        window.alert("Character imported successfully");
+
+        if (!window.__TAURI__) {
+          window.alert("Character imported successfully");
+        }
         this.saveChar();
       } catch (e) {
         window.alert("Failed character import", e);

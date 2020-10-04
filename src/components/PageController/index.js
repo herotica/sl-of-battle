@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Palette from "../../constants/palette";
 import { useGlobalDataStore } from "../../state";
 import { observer } from "mobx-react-lite";
 import Sidebar from "../sidebar";
+import { GetFileAsync } from "../../utils";
 
 // Rooms
 import { Rooms } from "../../constants";
@@ -33,7 +34,17 @@ const Layout = () => {
 };
 
 const RoomManager = observer(() => {
-  const { currentRoom, setRoom } = useGlobalDataStore();
+  const { currentRoom, setRoom, importSaveFile } = useGlobalDataStore();
+
+  useEffect(() => {
+    if (window.__TAURI__) {
+      GetFileAsync().then((result) => {
+        if (result.name) {
+          importSaveFile(result);
+        }
+      });
+    }
+  }, [importSaveFile]);
 
   switch (currentRoom) {
     case Rooms.setup:

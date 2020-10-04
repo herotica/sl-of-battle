@@ -82,10 +82,9 @@ yarn build
 
 - See https://tauri.studio/
 
-- OSX? - Dont' have a Mac, if you do any help woul dbe appreciated with building the app, see https://tauri.studio/docs/getting-started/setup-macos
+- OSX? - Dont' have a Mac, if you do, any help would be appreciated with building the app, see https://tauri.studio/docs/getting-started/setup-macos
 
-##### Linux
-
+- yarn tauri dev
 - yarn tauri build
 
 ### Linting

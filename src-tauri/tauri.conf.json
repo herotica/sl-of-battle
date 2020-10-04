@@ -55,7 +55,10 @@
     "allowlist": {
       "openDialog": true,
       "saveDialog": true,
-      "writeFile": true
+      "writeFile": true,
+      "createDir": true,
+      "removeFile": true,
+      "readTextFile": true
     }
   }
 }

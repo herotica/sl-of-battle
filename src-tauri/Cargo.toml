@@ -1,6 +1,6 @@
 [package]
 name = "Sluts-of-Battle"
-version = "0.1.0"
+version = "1.1.0"
 description = "A Tauri App"
 authors = [ "you" ]
 license = ""
@@ -12,7 +12,14 @@ build = "src/build.rs"
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = [ "derive" ] }
-tauri = { version = "0.9", features = [ "open-dialog", "save-dialog", "write-file" ] }
+tauri = { version = "0.9", features = [
+  "open-dialog",
+  "save-dialog",
+  "write-file",
+  "create-dir",
+  "remove-file",
+  "read-text-file"
+] }
 
 [target."cfg(windows)".build-dependencies]
 winres = "0.1"
