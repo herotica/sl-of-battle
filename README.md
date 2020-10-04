@@ -33,9 +33,7 @@ paypal.me/herotica
 
 ### To do
 
-- save test
 - alt version
-- exec - test Windows
 
 ### Future Additions
 
