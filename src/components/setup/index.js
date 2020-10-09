@@ -9,7 +9,6 @@ import Complete from "./complete";
 import {
   gender,
   bodyShape,
-  raceType,
   colors,
   skinColor,
 } from "../../constants";

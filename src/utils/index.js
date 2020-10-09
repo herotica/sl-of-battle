@@ -1,5 +1,5 @@
 // Browser LocalStorage
-const LocalstorageKey = "slutsofbattle";
+const LocalstorageKey = "realslutsofbattle";
 const autosave = "real-sluts-of-battle/current-autosave";
 
 if (window.__TAURI__) {

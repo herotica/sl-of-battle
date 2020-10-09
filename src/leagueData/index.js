@@ -1,5 +1,4 @@
 import { Rooms } from "../constants";
-import Isekai from "./isekai-league";
 import Superpower from "./superpower";
 import jrpg from "./jrpg";
 import Battleship from "./battleship";
@@ -10,8 +9,10 @@ import LeagueOfLegends from "./leagueOfLegends";
 import disney from "./disney";
 import fighter from "./fighter";
 
+import pornstarA from "./pornstar-a";
+
 const leagues = [
-  { room: Rooms.league, league: Isekai },
+  { room: Rooms.league, league: pornstarA },
   { room: Rooms.league, league: Superpower },
   { room: Rooms.league, league: jrpg },
   { room: Rooms.league, league: Battleship },
