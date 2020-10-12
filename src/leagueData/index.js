@@ -1,6 +1,5 @@
 import { Rooms } from "../constants";
 import Superpower from "./superpower";
-import jrpg from "./jrpg";
 import Battleship from "./battleship";
 import Cartoon from "./cartoon";
 import Marvel from "./marvel";
@@ -16,7 +15,6 @@ const leagues = [
   { room: Rooms.league, league: pornstarA },
   { room: Rooms.league, league: pornstarB },
   { room: Rooms.league, league: Superpower },
-  { room: Rooms.league, league: jrpg },
   { room: Rooms.league, league: Battleship },
   { room: Rooms.league, league: Cartoon },
   { room: Rooms.league, league: Marvel },

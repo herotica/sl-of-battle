@@ -13,11 +13,6 @@ import AzurLane, { seriesId as AzurLaneId } from "./battleship/AzurLane";
 import KantaiCollection, {
   seriesId as KantaiCollectionId,
 } from "./battleship/KantaiCollection";
-//jrpg
-import FireEmblem, { seriesId as FireEmblemId } from "./jrpg/FireEmblem";
-import GranblueFantasy, {
-  seriesId as GranblueFantasyId,
-} from "./jrpg/GranblueFantasy";
 //marvel
 import Marvel, { seriesId as MarvelId } from "./marvel/marvel";
 //na-toons
@@ -66,8 +61,6 @@ const seriesDb = {
   [PornstarBId]:PornstarB,
   [AzurLaneId]: AzurLane,
   [KantaiCollectionId]: KantaiCollection,
-  [FireEmblemId]: FireEmblem,
-  [GranblueFantasyId]: GranblueFantasy,
   [MarvelId]: Marvel,
   [ToonsId]: Toons,
   [PokemonId]: Pokemon,
