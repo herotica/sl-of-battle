@@ -31,9 +31,14 @@ paypal.me/herotica
 - ~Weekly -> web server builds
 - 2 Weeks local App version -> Win/Linux
 
-### To do
+### To do Alt Girls
 
-- alt version
+- music
+- film
+- tv
+- jav
+- model
+
 
 ### Future Additions
 
