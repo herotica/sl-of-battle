@@ -7,6 +7,7 @@ import HentaiFoundry from "./underground/hentaiFoundry";
 // Series Imports
 // pornstars
 import PornstarA, {seriesId as PornstarAId} from "./pornstar-a";
+import PornstarB, {seriesId as PornstarBId} from "./pornstar-b";
 //battleship
 import AzurLane, { seriesId as AzurLaneId } from "./battleship/AzurLane";
 import KantaiCollection, {
@@ -62,6 +63,7 @@ export const keys = {
 
 const seriesDb = {
   [PornstarAId]:PornstarA,
+  [PornstarBId]:PornstarB,
   [AzurLaneId]: AzurLane,
   [KantaiCollectionId]: KantaiCollection,
   [FireEmblemId]: FireEmblem,
