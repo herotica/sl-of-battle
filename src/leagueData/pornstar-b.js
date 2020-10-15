@@ -2,7 +2,7 @@ import pornstarB from "../combatants/pornstar-b";
 import icon from "../assets/logo/league-of-legends.png";
 
 export default {
-  id: "pornstarA",
+  id: "pornstarB",
   name: "Stars of Porn - B",
   description: "More sexy girls from the world of porn.",
   initialPoints: 70,

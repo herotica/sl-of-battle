@@ -6,32 +6,11 @@ import HentaiFoundry from "./underground/hentaiFoundry";
 
 // Series Imports
 // pornstars
-import PornstarA, {seriesId as PornstarAId} from "./pornstar-a";
-import PornstarB, {seriesId as PornstarBId} from "./pornstar-b";
-//battleship
-import AzurLane, { seriesId as AzurLaneId } from "./battleship/AzurLane";
-import KantaiCollection, {
-  seriesId as KantaiCollectionId,
-} from "./battleship/KantaiCollection";
-//marvel
-import Marvel, { seriesId as MarvelId } from "./marvel/marvel";
-//na-toons
-import Toons, { seriesId as ToonsId } from "./na-toons/toons";
-import KimPossible, { seriesId as KimPossibleId } from "./na-toons/KimPossible";
-// Pokemon
-import Pokemon, { seriesId as PokemonId } from "./pokemon";
-//superhero
-import BokuNoHero, { seriesId as BokuNoHeroId } from "./superhero/BokuNoHero";
-import OnePiece, { seriesId as OnePieceId } from "./superhero/OnePiece";
-// league-of-legends
-import leagueOfLegends, {
-  seriesId as leagueOfLegendsId,
-} from "./league-of-legends";
-// disneys
-import disney, { seriesId as disneyId } from "./disney";
-// league-of-legends
-import tekken, { seriesId as tekkenId } from "./fighter/tekken";
-import doa, { seriesId as doaId } from "./fighter/doa";
+import PornstarA, { seriesId as PornstarAId } from "./pornstar-a";
+import PornstarB, { seriesId as PornstarBId } from "./pornstar-b";
+//Actress
+import ActressA, { seriesId as ActressId } from "./actress-a";
+
 
 export const Underground = {
   // Max 3 difficulty tiers, A is the lowest
@@ -57,30 +36,18 @@ export const keys = {
 };
 
 const seriesDb = {
-  [PornstarAId]:PornstarA,
-  [PornstarBId]:PornstarB,
-  [AzurLaneId]: AzurLane,
-  [KantaiCollectionId]: KantaiCollection,
-  [MarvelId]: Marvel,
-  [ToonsId]: Toons,
-  [PokemonId]: Pokemon,
-  [KimPossibleId]: KimPossible,
-  [BokuNoHeroId]: BokuNoHero,
-  [OnePieceId]: OnePiece,
-  [leagueOfLegendsId]: leagueOfLegends,
-  [disneyId]: disney,
-  [doaId]: doa,
-  [tekkenId]: tekken,
+  [PornstarAId]: PornstarA,
+  [PornstarBId]: PornstarB,
+  [ActressId]: ActressA,
 };
-const eventsDb = {
-}
+const eventsDb = {};
 
 export const leagueGirlsAccessor = (seriesId, charId) => {
   return seriesDb[seriesId][charId];
 };
 export const leagueSeriesEvents = (seriesId) => {
   return eventsDb[seriesId];
-}
+};
 // export const leagueFranchiseAccessor = (seriesId) => {};
 
 export default Underground;
