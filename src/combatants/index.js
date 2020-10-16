@@ -2,7 +2,6 @@
 import { OtherMid } from "./underground/othersMid";
 import OtherBasic from "./underground/otherBasic";
 import othersHard from "./underground/othersHard";
-import HentaiFoundry from "./underground/hentaiFoundry";
 
 // Series Imports
 // pornstars
@@ -21,8 +20,6 @@ export const Underground = {
     ...OtherMid,
   },
   tierHard: {
-    carmen: HentaiFoundry.carmen,
-    meryl: HentaiFoundry.meryl,
     ...othersHard,
   },
 };
