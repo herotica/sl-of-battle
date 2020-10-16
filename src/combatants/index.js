@@ -7,9 +7,10 @@ import othersHard from "./underground/othersHard";
 // pornstars
 import PornstarA, { seriesId as PornstarAId } from "./pornstar-a";
 import PornstarB, { seriesId as PornstarBId } from "./pornstar-b";
-//Actress
+// Actress
 import ActressA, { seriesId as ActressId } from "./actress-a";
-
+// JAV
+import JavA, { seriesId as JavAId } from "./jav-a";
 
 export const Underground = {
   // Max 3 difficulty tiers, A is the lowest
@@ -36,6 +37,7 @@ const seriesDb = {
   [PornstarAId]: PornstarA,
   [PornstarBId]: PornstarB,
   [ActressId]: ActressA,
+  [JavAId]: JavA,
 };
 const eventsDb = {};
 
