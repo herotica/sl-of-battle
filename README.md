@@ -33,9 +33,7 @@ paypal.me/herotica
 
 ### To do Alt Girls
 
-- film
-- tv
-- model
+- actress
 
 ### bugs
 
