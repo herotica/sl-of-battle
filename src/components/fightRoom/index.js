@@ -4,6 +4,8 @@ import { useFightDataStore } from "../../state/fight";
 import { observer } from "mobx-react-lite";
 import OrgasmImg from "../../assets/logo/orgasm.png";
 import OrgasmLossImg from "../../assets/logo/orgasmLoss.png";
+import helpIcon from "../../assets/logo/help.png";
+import HelpModal from "./help";
 
 import { SmText, MdTitle, SmlrText, LogText, TextSpanLog } from "../text";
 import {
@@ -28,6 +30,7 @@ import {
   ActionsFlex,
   FightLogWrap,
   OrgasmIcon,
+  Icon,
 } from "./styled";
 
 const FightRoom = () => {
@@ -107,6 +110,9 @@ const FightersInfo = observer(() => {
 });
 
 const FighterActions = observer(() => {
+  const [showHelp, setShowHelp] = useState(false);
+  const hideHelp = () => setShowHelp(false);
+  const openHelp = () => setShowHelp(true);
   const [fightPhase, setFightPhase] = useState(0);
   const [fightPhaseType, setFightPhaseType] = useState(FightPhaseTypes[0][0]);
   const [phaseChoices, setPhaseChoices] = useState([]);
@@ -207,28 +213,32 @@ const FighterActions = observer(() => {
   }
 
   return (
-    <ActionWrap>
-      <MdTitle>{PhaseData[fightPhaseType].name}</MdTitle>
-      {isRoundEnd && <SmText>{roundResult}</SmText>}
-      {!fightWinner && (
-        <ActionsFlex>
-          {PhaseData[fightPhaseType].options.map((phaseOpt, index) => {
-            const onPress = () => OnActionRan(phaseOpt.onAction, index);
-            const isHidden = shouldHideOpt(phaseOpt);
+    <>
+      <HelpModal show={showHelp} onHide={hideHelp} />
+      <ActionWrap>
+        <MdTitle>{PhaseData[fightPhaseType].name}</MdTitle>
+        {isRoundEnd && <SmText>{roundResult}</SmText>}
+        {!fightWinner && (
+          <ActionsFlex>
+            {PhaseData[fightPhaseType].options.map((phaseOpt, index) => {
+              const onPress = () => OnActionRan(phaseOpt.onAction, index);
+              const isHidden = shouldHideOpt(phaseOpt);
 
-            return !isHidden && <ActBtn onPress={onPress} {...phaseOpt} />;
-          })}
-        </ActionsFlex>
-      )}
-      {fightWinner && (
-        <FightEnd
-          winType={fightWinner}
-          onWin={onFightWin}
-          onLose={onFightLose}
-          winnings={fightMatchWinnings}
-        />
-      )}
-    </ActionWrap>
+              return !isHidden && <ActBtn onPress={onPress} {...phaseOpt} />;
+            })}
+          </ActionsFlex>
+        )}
+        {fightWinner && (
+          <FightEnd
+            winType={fightWinner}
+            onWin={onFightWin}
+            onLose={onFightLose}
+            winnings={fightMatchWinnings}
+          />
+        )}
+        <Icon src={helpIcon} onClick={openHelp} />
+      </ActionWrap>
+    </>
   );
 });
 
