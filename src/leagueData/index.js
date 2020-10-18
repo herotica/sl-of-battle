@@ -1,6 +1,4 @@
 import { Rooms } from "../constants";
-// import Battleship from "./battleship";
-// import Cartoon from "./cartoon";
 // import Marvel from "./marvel";
 // import Pokemon from "./pokemon";
 // import LeagueOfLegends from "./leagueOfLegends";
@@ -11,15 +9,14 @@ import pornstarA from "./pornstar-a";
 import pornstarB from "./pornstar-b";
 import ActressA from "./actress-a";
 import JavA from "./jav-a";
+import Musician from "./musician";
 
 const leagues = [
   { room: Rooms.league, league: pornstarA },
   { room: Rooms.league, league: pornstarB },
   { room: Rooms.league, league: ActressA },
   { room: Rooms.league, league: JavA },
-  // { room: Rooms.league, league: Superpower },
-  // { room: Rooms.league, league: Battleship },
-  // { room: Rooms.league, league: Cartoon },
+  { room: Rooms.league, league: Musician },
   // { room: Rooms.league, league: Marvel },
   // { room: Rooms.league, league: Pokemon },
   // { room: Rooms.league, league: LeagueOfLegends },

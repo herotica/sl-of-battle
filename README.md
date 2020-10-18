@@ -33,17 +33,9 @@ paypal.me/herotica
 
 ### To do Alt Girls
 
-- music
 - film
 - tv
-- jav
 - model
-
-
-### Future Additions
-
-- dom slave
-- more events
 
 ### bugs
 
