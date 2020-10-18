@@ -105,6 +105,7 @@ export const FlexBetween = styled.div`
   margin-right: 16px;
 `;
 export const ActionWrap = styled.div`
+  position: relative;
   border: 1px solid darkgreen;
   background: rgba(25, 146, 91, 0.85);
   padding: 8px;
@@ -140,4 +141,26 @@ export const OrgasmIcon = styled.img`
   width: 30px;
   height: 30px;
   margin: 4px;
+`;
+
+//help modal
+
+export const PreText = styled(SmText)`
+  white-space: pre-line;
+  line-height: 1.2;
+`;
+
+// icon
+
+export const Icon = styled.img`
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
 `;
