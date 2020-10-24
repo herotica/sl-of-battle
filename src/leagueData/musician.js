@@ -2,9 +2,9 @@ import M from "../combatants/musician";
 import icon from "../assets/logo/tv.svg";
 
 export default {
-  id: "natoons",
-  name: "North American Toons",
-  description: "The hottest toons from north america, are ready for action.",
+  id: "music",
+  name: "Musicians",
+  description: "The hottest musicians are ready for action.",
   initialPoints: 60,
   renownRequired: 3,
   entryCost: 200,
