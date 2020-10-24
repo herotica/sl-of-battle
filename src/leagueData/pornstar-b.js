@@ -1,5 +1,5 @@
 import pornstarB from "../combatants/pornstar-b";
-import icon from "../assets/logo/league-of-legends.png";
+import icon from "../assets/logo/boobs.png";
 
 export default {
   id: "pornstarB",

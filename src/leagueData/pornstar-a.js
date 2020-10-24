@@ -1,5 +1,5 @@
 import pornstarA from "../combatants/pornstar-a";
-import icon from "../assets/logo/league-of-legends.png";
+import icon from "../assets/logo/vagina.png";
 
 export default {
   id: "pornstarA",

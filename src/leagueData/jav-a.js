@@ -1,6 +1,5 @@
 import JavA from "../combatants/jav-a";
-import icon from "../assets/logo/battleship.svg";
-import javA from "../combatants/jav-a";
+import icon from "../assets/logo/jav.png";
 
 export default {
   id: "jav-a",
@@ -35,7 +34,7 @@ export default {
       combatants: [
         JavA.HibikiOtsuki,
         JavA.NozomiArimura,
-        javA.TsukasaAoi
+        JavA.TsukasaAoi
       ],
     },
     {

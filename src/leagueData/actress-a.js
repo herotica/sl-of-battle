@@ -1,5 +1,5 @@
 import ActressessA from "../combatants/actress-a";
-import icon from "../assets/logo/battleship.svg";
+import icon from "../assets/logo/acting.png";
 
 export default {
   id: "actressA",

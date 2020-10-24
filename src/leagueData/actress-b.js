@@ -1,5 +1,5 @@
 import A from "../combatants/actress-b";
-import icon from "../assets/logo/marvel.png";
+import icon from "../assets/logo/acting2.png";
 
 export default {
   id: "actressesB",

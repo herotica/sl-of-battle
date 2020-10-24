@@ -1,5 +1,5 @@
 import M from "../combatants/musician";
-import icon from "../assets/logo/tv.svg";
+import icon from "../assets/logo/music.png";
 
 export default {
   id: "music",
